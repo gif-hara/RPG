@@ -27,6 +27,15 @@ namespace RPG.Battle
 		[SerializeField]
 		private List<CharacterData> playerDataList;
 
+		/// <summary>
+		/// 敵パーティデータ.
+		/// </summary>
+		/// <value>The enemy data list.</value>
+		public List<CharacterData> EnemyDataList{ get{ return this.enemyDataList; } }
+		[SerializeField]
+		private List<CharacterData> enemyDataList;
+
+
 		public InitializeData( List<CharacterData> playerData )
 		{
 			this.playerDataList = playerData;

@@ -66,7 +66,7 @@ public class Define : MonoBehaviour
 	public static GameObject GetPlayerModel( int id )
 	{
 		string path = string.Format( "Model/Player/Player{0}", id );
-		return (GameObject)Instantiate( Resources.Load( path ) );
+		return Resources.Load<GameObject>( path );
 	}
 	/// <summary>
 	/// 敵モデルを返す.
@@ -80,7 +80,7 @@ public class Define : MonoBehaviour
 	public static GameObject GetEnemyModel( int id )
 	{
 		string path = string.Format( "Model/Enemy/Enemy{0}", id );
-		return (GameObject)Instantiate( Resources.Load( path ) );
+		return Resources.Load<GameObject>( path );
 	}
 	
 	private static CharacterData[] GetCharacterData( string path )

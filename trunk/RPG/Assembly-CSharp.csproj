@@ -47,8 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleEnemyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleInitializeData.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattlePlayerModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSceneManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleSharedData.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />
      <Compile Include="Assets\Scripts\Character\WorldMapPlayer.cs" />
      <Compile Include="Assets\Scripts\Common\Define.cs" />

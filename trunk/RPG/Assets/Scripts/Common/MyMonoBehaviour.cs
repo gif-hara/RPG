@@ -45,4 +45,25 @@ public class MyMonoBehaviour : MonoBehaviour
 		#endif
 		self.BroadcastMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
 	}
+
+	public void TODO( string message )
+	{
+		Debug.Log(
+			string.Format(
+			"<color=magenta>TODO[{0}]</color>",
+			message
+			)
+			);
+	}
+
+	public GameObject Instantiate( GameObject prefab, Transform parent )
+	{
+		var obj = Instantiate( prefab ) as GameObject;
+		obj.transform.parent = parent;
+		obj.transform.localPosition = prefab.transform.localPosition;
+		obj.transform.localScale = prefab.transform.localScale;
+		obj.transform.localRotation = prefab.transform.localRotation;
+
+		return obj;
+	}
 }

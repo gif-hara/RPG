@@ -32,13 +32,9 @@ namespace RPG.Battle
 		{
 			if( isDebug )
 			{
-				this.BroadcastMessage( this, BattleMessageConstants.DebugInitializeSystemMessage );
+				SharedData.initializeData = debugInitializeData;
 			}
 			this.BroadcastMessage( this, BattleMessageConstants.PreInitializeSystemMessage );
-		}
-		
-		void Update ()
-		{
 		}
 	}
 }

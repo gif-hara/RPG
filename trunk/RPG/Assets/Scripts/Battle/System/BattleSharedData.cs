@@ -1,8 +1,8 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : BattleMessageConstants.cs
+*     * FileName    : BattleSharedData.cs
 *
-*     * Description : .
+*     * Description : バトルの共有データ.
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -14,13 +14,10 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// .
+	/// バトルの共有データ.
 	/// </summary>
-	public class BattleMessageConstants
+	public static class SharedData
 	{
-		/// <summary>
-		/// バトルシステム初期化時のメッセージ.
-		/// </summary>
-		public const string PreInitializeSystemMessage = "OnPreInitializeSystem";
+		public static Battle.InitializeData initializeData;
 	}
 }
