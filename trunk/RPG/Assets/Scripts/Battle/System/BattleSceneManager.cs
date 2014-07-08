@@ -2,7 +2,7 @@
 /*
 *     * FileName    :BattleSceneManager.cs
 *
-*     * Description : .
+*     * Description : バトルシーンのルートコンポーネント.
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -10,17 +10,35 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Battle;
 
-/// <summary>
-/// .
-/// </summary>
-public class BattleSceneManager : MonoBehaviour
+namespace RPG.Battle
 {
-	void Start ()
+	/// <summary>
+	/// バトルシーンのルートコンポーネント.
+	/// </summary>
+	public class BattleSceneManager : MyMonoBehaviour
 	{
-	}
-	
-	void Update ()
-	{
+		/// <summary>
+		/// デバッグフラグ.
+		/// </summary>
+		[SerializeField]
+		private bool isDebug;
+
+		[SerializeField]
+		private InitializeData debugInitializeData;
+
+		void Start ()
+		{
+			if( isDebug )
+			{
+				this.BroadcastMessage( this, BattleMessageConstants.DebugInitializeSystemMessage );
+			}
+			this.BroadcastMessage( this, BattleMessageConstants.PreInitializeSystemMessage );
+		}
+		
+		void Update ()
+		{
+		}
 	}
 }
