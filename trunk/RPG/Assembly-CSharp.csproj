@@ -51,10 +51,13 @@
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleEnemyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleInitializeData.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattlePlayerActiveTimeManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattlePlayerCommandManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattlePlayerModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSceneManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSharedData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleStateManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateCommandSelect.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateUpdateActiveTime.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />
@@ -63,6 +66,7 @@
      <Compile Include="Assets\Scripts\Common\GUITextUtility.cs" />
      <Compile Include="Assets\Scripts\Common\MonoBehaviourExtension.cs" />
      <Compile Include="Assets\Scripts\Common\MyMonoBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Common\SceneRootBase.cs" />
      <Compile Include="Assets\Scripts\Common\StateMachine\StateElementBase.cs" />
      <Compile Include="Assets\Scripts\Common\StateMachine\StateMachine.cs" />
      <Compile Include="Assets\Scripts\Common\WorldMapData.cs" />

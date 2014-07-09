@@ -10,6 +10,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Common;
 
 namespace RPG.Battle
 {

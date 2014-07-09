@@ -16,65 +16,65 @@ using System.Collections.Generic;
 /// </summary>
 public class MyMonoBehaviour : MonoBehaviour
 {
-	public static void BroadcastMessage( MonoBehaviour self, string methodName )
+	public static void BroadcastMessage( MonoBehaviour sender, string methodName )
 	{
 		#if DEBUG
 		Debug.Log(
 			string.Format(
 			"<color=red>Sender[{0}]</color> <color=blue>Broadcast[{1}]</color>",
-			self.gameObject.name,
+			sender.gameObject.name,
 			methodName
 			),
-			self
+			sender
 			);
 		#endif
-		self.BroadcastMessage( methodName, SendMessageOptions.DontRequireReceiver );
+		sender.BroadcastMessage( methodName, SendMessageOptions.DontRequireReceiver );
 	}
-	public static void BroadcastMessage( MonoBehaviour self, string methodName, object parameter )
+	public static void BroadcastMessage( MonoBehaviour sender, string methodName, object parameter )
 	{
 		#if DEBUG
 		Debug.Log(
 			string.Format(
 			"<color=red>Sender[{0}]</color> <color=blue>Broadcast[{1}]</color> <color=yellow>parameter[{2}]</color>",
-			self.gameObject.name,
+			sender.gameObject.name,
 			methodName,
 			parameter.ToString()
 			),
-			self
+			sender
 			);
 		#endif
-		self.BroadcastMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
+		sender.BroadcastMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
 	}
 
-	public static void SendMessage( MonoBehaviour self, string methodName )
+	public static void SendMessage( MonoBehaviour sender, string methodName )
 	{
 		#if DEBUG
 		Debug.Log(
 			string.Format(
 			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color>",
-			self.gameObject.name,
+			sender.gameObject.name,
 			methodName
 			),
-			self
+			sender
 			);
 		#endif
-		self.SendMessage( methodName, SendMessageOptions.DontRequireReceiver );
+		sender.SendMessage( methodName, SendMessageOptions.DontRequireReceiver );
 	}
 
-	public static void SendMessage( MonoBehaviour self, string methodName, object parameter )
+	public static void SendMessage( MonoBehaviour sender, string methodName, object parameter )
 	{
 		#if DEBUG
 		Debug.Log(
 			string.Format(
 			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color> <color=yellow>parameter[{2}]</color>",
-			self.gameObject.name,
+			sender.gameObject.name,
 			methodName,
 			parameter.ToString()
 			),
-			self
+			sender
 			);
 		#endif
-		self.SendMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
+		sender.SendMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
 	}
 	
 	public void TODO( string message )

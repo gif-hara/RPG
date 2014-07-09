@@ -10,6 +10,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Common;
 
 namespace RPG.Battle
 {
@@ -27,7 +28,21 @@ namespace RPG.Battle
 		/// <summary>
 		/// モデル生成後の拡張メッセージ.
 		/// </summary>
-		public const string CreateExtensionMessage = "OnCreateModelExtension";
+		public const string CreateExtensionMessage = "OnBattleCreatePlayerModelExtension";
+
+		public class CreateExtensionArgument
+		{
+			public GameObject Model{ private set; get; }
+
+			public CharacterData Data{ private set; get; }
+
+			public CreateExtensionArgument( GameObject model, CharacterData data )
+			{
+				this.Model = model;
+				this.Data = data;
+			}
+		}
+
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
@@ -39,7 +54,7 @@ namespace RPG.Battle
 				var model = Instantiate( Define.GetPlayerModel( playerDataList[i].id ), transform  );
 				model.transform.localPosition = new Vector3( originPosX + Interval * i, 0.0f, 0.0f );
 
-				this.SendMessage( this, CreateExtensionMessage, model );
+				this.BroadcastMessage( Common.SceneRootBase.Root, CreateExtensionMessage, new CreateExtensionArgument( model, playerDataList[i] ) );
 			}
 		}
 	}

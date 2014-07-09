@@ -17,7 +17,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// バトルシーンのルートコンポーネント.
 	/// </summary>
-	public class BattleSceneManager : MyMonoBehaviour
+	public class BattleSceneManager : Common.SceneRootBase
 	{
 		/// <summary>
 		/// デバッグフラグ.

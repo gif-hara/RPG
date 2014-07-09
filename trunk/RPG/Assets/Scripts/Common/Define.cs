@@ -10,6 +10,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using RPG.Common;
 
 public class Define : MonoBehaviour
 {
