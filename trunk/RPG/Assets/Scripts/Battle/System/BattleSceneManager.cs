@@ -34,6 +34,7 @@ namespace RPG.Battle
 			{
 				SharedData.initializeData = debugInitializeData;
 			}
+
 			this.BroadcastMessage( this, BattleMessageConstants.PreInitializeSystemMessage );
 		}
 	}

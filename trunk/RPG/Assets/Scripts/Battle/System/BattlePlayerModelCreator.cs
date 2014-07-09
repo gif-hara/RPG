@@ -18,8 +18,18 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattlePlayerModelCreator : MyMonoBehaviour
 	{
-		private const float Interval = 2.0f;
+		/// <summary>
+		/// モデルの生成間隔.
+		/// </summary>
+		[SerializeField]
+		private float Interval;
 
+		/// <summary>
+		/// モデル生成後の拡張メッセージ.
+		/// </summary>
+		public const string CreateExtensionMessage = "OnCreateModelExtension";
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
 			var playerDataList = Battle.SharedData.initializeData.PlayerDataList;
@@ -28,6 +38,8 @@ namespace RPG.Battle
 			{
 				var model = Instantiate( Define.GetPlayerModel( playerDataList[i].id ), transform  );
 				model.transform.localPosition = new Vector3( originPosX + Interval * i, 0.0f, 0.0f );
+
+				this.SendMessage( this, CreateExtensionMessage, model );
 			}
 		}
 	}

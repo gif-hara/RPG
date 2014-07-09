@@ -20,6 +20,7 @@ namespace RPG.Battle
 	{
 		private const float Interval = 2.0f;
 		
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
 			var enemyDataList = Battle.SharedData.initializeData.EnemyDataList;
