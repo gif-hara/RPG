@@ -23,5 +23,20 @@ namespace RPG.Battle
 		/// バトルシステム初期化時のメッセージ.
 		/// </summary>
 		public const string PreInitializeSystemMessage = "OnPreInitializeSystem";
+
+		/// <summary>
+		/// バトル開始時のメッセージ.
+		/// </summary>
+		public const string StartBattleMessage = "OnStartBattle";
+
+		/// <summary>
+		/// コマンド選択開始時のメッセージ.
+		/// </summary>
+		public const string StartCommandSelectMessage = "OnStartCommandSelect";
+
+		/// <summary>
+		/// コマンドを選択するキャラクターを選択した際のメッセージ.
+		/// </summary>
+		public const string SelectCommandSelectCharacterMessage = "OnSelectCommandSelectCharacter";
 	}
 }

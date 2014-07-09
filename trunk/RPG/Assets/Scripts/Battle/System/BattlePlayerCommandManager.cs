@@ -41,5 +41,12 @@ namespace RPG.Battle
 				this.dataList.Add( new CommandData( SharedData.initializeData.PlayerDataList[i] ) );
 			}
 		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
+		void OnStartCommandSelect()
+		{
+			var selectCharacter = dataList.Find( d => d.IsInput );
+			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SelectCommandSelectCharacterMessage, selectCharacter.Data );
+		}
 	}
 }

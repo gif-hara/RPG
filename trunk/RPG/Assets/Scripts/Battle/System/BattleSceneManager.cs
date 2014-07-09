@@ -36,6 +36,7 @@ namespace RPG.Battle
 			}
 
 			this.BroadcastMessage( this, BattleMessageConstants.PreInitializeSystemMessage );
+			this.BroadcastMessage( this, BattleMessageConstants.StartBattleMessage );
 		}
 	}
 }

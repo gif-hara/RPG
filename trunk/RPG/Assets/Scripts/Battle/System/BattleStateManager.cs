@@ -32,6 +32,11 @@ namespace RPG.Battle
 			this.stateMachine = new StateMachine<BattleStateManager>( this );
 			this.stateMachine.Add( new BattleStateCommandSelect() );
 			this.stateMachine.Add( new BattleStateUpdateActiveTime() );
+		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
+		void OnStartBattle()
+		{
 			ChangeState( State.CommandSelect );
 		}
 

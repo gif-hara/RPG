@@ -23,5 +23,14 @@ namespace RPG.Battle
 			:base( (int)state )
 		{
 		}
+
+		protected void BroadcastMessage( MonoBehaviour sender, string methodName )
+		{
+			MyMonoBehaviour.BroadcastMessage( sender, methodName );
+		}
+		protected void BroadcastMessage( MonoBehaviour sender, string methodName, object parameter )
+		{
+			MyMonoBehaviour.BroadcastMessage( sender, methodName, parameter );
+		}
 	}
 }

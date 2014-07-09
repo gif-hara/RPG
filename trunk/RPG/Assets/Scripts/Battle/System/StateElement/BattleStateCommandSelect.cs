@@ -10,6 +10,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Common;
 
 namespace RPG.Battle
 {
@@ -26,6 +27,7 @@ namespace RPG.Battle
 		
 		public override void Enter (BattleStateManager owner)
 		{
+			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartCommandSelectMessage );
 
 		}
 		
