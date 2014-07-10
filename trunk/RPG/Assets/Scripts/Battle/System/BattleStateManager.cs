@@ -47,6 +47,14 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
 		void OnDecisionCommand( BattleAllyPartyManager.AllyData allyData )
 		{
+			if( refCommandManager.IsExistNoneCommandAlly() )
+			{
+				ChangeState( State.CommandSelect );
+			}
+			else
+			{
+				ChangeState( State.UpdateActiveTime );
+			}
 		}
 
 		public void ChangeState( State state )

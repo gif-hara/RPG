@@ -27,17 +27,14 @@ namespace RPG.Battle
 
 		public override void Enter (BattleStateManager owner)
 		{
-			throw new System.NotImplementedException ();
 		}
 
 		public override void Update (BattleStateManager owner)
 		{
-			throw new System.NotImplementedException ();
 		}
 
 		public override void Exit (BattleStateManager owner)
 		{
-			throw new System.NotImplementedException ();
 		}
 	}
 }

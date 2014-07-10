@@ -42,8 +42,11 @@ namespace RPG.Battle
 
 		void Update()
 		{
+			if( !IsPossibleInput )	return;
+
 			if( Input.GetKeyDown( KeyCode.Space ) )
 			{
+				TODO( "コマンド選択処理の実装." );
 				DecisionCommand();
 			}
 		}
@@ -58,12 +61,33 @@ namespace RPG.Battle
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SelectCommandSelectCharacterMessage, this.currentCommandSelectAllyData );
 		}
 
+		/// <summary>
+		/// コマンド入力が可能な味方がまだ存在しているか返す.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is exist none command ally; otherwise, <c>false</c>.</returns>
+		public bool IsExistNoneCommandAlly()
+		{
+			return refAllyPartyManager.Party.List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None ) != null;
+		}
+
 		private void DecisionCommand()
 		{
 			currentCommandSelectAllyData.DecisionCommand( BattleTypeConstants.CommandType.UsualAttack );
 			var tempAllyData = this.currentCommandSelectAllyData;
 			this.currentCommandSelectAllyData = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
+		}
+
+		/// <summary>
+		/// 入力可能か返す.
+		/// </summary>
+		/// <value><c>true</c> if this instance is possible input; otherwise, <c>false</c>.</value>
+		private bool IsPossibleInput
+		{
+			get
+			{
+				return this.currentCommandSelectAllyData != null;
+			}
 		}
 	}
 }
