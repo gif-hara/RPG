@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\Database\MasterData.cs" />
      <Compile Include="Assets\Scripts\Library\iTween.cs" />
      <Compile Include="Assets\Scripts\System\DebugSystem.cs" />
+     <Compile Include="Assets\Scripts\System\FrameRateSetter.cs" />
      <Compile Include="Assets\Scripts\WorldMap\EncountManager.cs" />
      <Compile Include="Assets\Scripts\WorldMap\WorldMapCamera.cs" />
      <Compile Include="Assets\Scripts\WorldMap\WorldMapCellManager.cs" />
