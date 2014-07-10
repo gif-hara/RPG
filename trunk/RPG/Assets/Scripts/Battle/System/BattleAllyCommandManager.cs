@@ -62,12 +62,15 @@ namespace RPG.Battle
 		}
 
 		/// <summary>
-		/// コマンド入力が可能な味方がまだ存在しているか返す.
+		/// コマンド入力が可能な味方が存在しているか返す.
 		/// </summary>
 		/// <returns><c>true</c> if this instance is exist none command ally; otherwise, <c>false</c>.</returns>
-		public bool IsExistNoneCommandAlly()
+		public bool IsExistNoneCommandAlly
 		{
-			return refAllyPartyManager.Party.List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None ) != null;
+			get
+			{
+				return refAllyPartyManager.Party.List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None ) != null;
+			}
 		}
 
 		private void DecisionCommand()

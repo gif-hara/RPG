@@ -19,7 +19,13 @@ namespace RPG.Battle
 	public class BattleAllyActiveTimeManager : MyMonoBehaviour
 	{
 		[SerializeField]
+		private BattleStateManager refStateManager;
+
+		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
+
+		[SerializeField]
+		private BattleAllyCommandManager refCommandManager;
 
 		private bool isUpdate = false;
 
@@ -31,6 +37,11 @@ namespace RPG.Battle
 			for( int i=0,imax=party.List.Count; i<imax; i++ )
 			{
 				party.List[i].UpdateActiveTime( 1.0f / 60.0f );
+			}
+
+			if( refCommandManager.IsExistNoneCommandAlly )
+			{
+				refStateManager.ChangeState( BattleStateManager.State.CommandSelect );
 			}
 		}
 
