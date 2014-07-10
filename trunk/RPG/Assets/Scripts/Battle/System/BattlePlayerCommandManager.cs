@@ -34,27 +34,36 @@ namespace RPG.Battle
 				this.IsInput = true;
 			}
 		}
-		private List<CommandData> dataList = new List<CommandData>();
+
+		[SerializeField]
+		private BattleAllyPartyManager refAllyPartyManager;
+
+		private BattleAllyPartyManager.AllyData currentCommandSelectAllyData = null;
 
 		void Update()
 		{
-
-		}
-
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
-		void OnPreInitializeSystem()
-		{
-			for( int i=0,imax=SharedData.initializeData.PlayerDataList.Count; i<imax; i++ )
+			if( Input.GetKeyDown( KeyCode.Space ) )
 			{
-				this.dataList.Add( new CommandData( SharedData.initializeData.PlayerDataList[i] ) );
+				DecisionCommand();
 			}
 		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
 		void OnStartCommandSelect()
 		{
-			var selectCharacter = dataList.Find( d => d.IsInput );
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SelectCommandSelectCharacterMessage, selectCharacter.Data );
+			this.currentCommandSelectAllyData = refAllyPartyManager.Party.List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None );
+
+			if( this.currentCommandSelectAllyData == null )	return;
+
+			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SelectCommandSelectCharacterMessage, this.currentCommandSelectAllyData );
+		}
+
+		private void DecisionCommand()
+		{
+			currentCommandSelectAllyData.DecisionCommand( BattleTypeConstants.CommandType.UsualAttack );
+			var tempAllyData = this.currentCommandSelectAllyData;
+			this.currentCommandSelectAllyData = null;
+			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
 		}
 	}
 }

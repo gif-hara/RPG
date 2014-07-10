@@ -24,6 +24,10 @@ namespace RPG.Battle
 			CommandSelect,
 			UpdateActiveTime,
 		}
+
+		[SerializeField]
+		private BattlePlayerCommandManager refCommandManager;
+
 		private Common.StateMachine<BattleStateManager> stateMachine;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
@@ -38,6 +42,11 @@ namespace RPG.Battle
 		void OnStartBattle()
 		{
 			ChangeState( State.CommandSelect );
+		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
+		void OnDecisionCommand( BattleAllyPartyManager.AllyData allyData )
+		{
 		}
 
 		public void ChangeState( State state )

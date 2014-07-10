@@ -46,9 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Attribute\MessageMethodArgumentAttribute.cs" />
      <Compile Include="Assets\Scripts\Attribute\MessageMethodReceiverAttribute.cs" />
      <Compile Include="Assets\Scripts\Battle\Camera\BattleCameraObjectLookAt.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleAllyPartyManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleEnemyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleInitializeData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattlePlayerActiveTimeManager.cs" />

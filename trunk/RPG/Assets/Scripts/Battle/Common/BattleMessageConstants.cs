@@ -37,6 +37,32 @@ namespace RPG.Battle
 		/// <summary>
 		/// コマンドを選択するキャラクターを選択した際のメッセージ.
 		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( BattleAllyPartyManager.AllyData ) )]
 		public const string SelectCommandSelectCharacterMessage = "OnSelectCommandSelectCharacter";
+
+		/// <summary>
+		/// コマンドが決定した際のメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( BattleAllyPartyManager.AllyData ) )]
+		public const string DecisionCommandMessage = "OnDecisionCommand";
+	}
+
+	public class BattleTypeConstants
+	{
+		/// <summary>
+		/// コマンドタイプ.
+		/// </summary>
+		public enum CommandType : int
+		{
+			/// <summary>
+			/// 無し.
+			/// </summary>
+			None,
+
+			/// <summary>
+			/// 戦う.
+			/// </summary>
+			UsualAttack,
+		}
 	}
 }
