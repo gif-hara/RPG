@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : BattlePlayerActiveTimeManager.cs
+*     * FileName    : BattleAllyActiveTimeManager.cs
 *
 *     * Description : プレイヤーのアクティブタイムを管理するコンポーネント.
 *
@@ -16,10 +16,10 @@ namespace RPG.Battle
 	/// <summary>
 	/// プレイヤーのアクティブタイムを管理するコンポーネント.
 	/// </summary>
-	public class BattlePlayerActiveTimeManager : MyMonoBehaviour
+	public class BattleAllyActiveTimeManager : MyMonoBehaviour
 	{
-		[Attribute.MessageMethodReceiver( BattlePlayerModelCreator.CreateExtensionMessage, typeof( BattlePlayerModelCreator.CreateExtensionArgument ) )]
-		void OnBattleCreatePlayerModelExtension( BattlePlayerModelCreator.CreateExtensionArgument parameter )
+		[Attribute.MessageMethodReceiver( BattleAllyModelCreator.CreateExtensionMessage, typeof( BattleAllyModelCreator.CreateExtensionArgument ) )]
+		void OnBattleCreatePlayerModelExtension( BattleAllyModelCreator.CreateExtensionArgument parameter )
 		{
 			TODO( "アクティブタイム管理を行う." );
 		}

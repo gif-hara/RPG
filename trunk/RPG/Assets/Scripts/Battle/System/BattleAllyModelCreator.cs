@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : BattlePlayerModelCreator.cs
+*     * FileName    : BattleAllyModelCreator.cs
 *
 *     * Description : バトル時のプレイヤーモデルを生成するコンポーネント.
 *
@@ -17,7 +17,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// バトル時のプレイヤーモデルを生成するコンポーネント.
 	/// </summary>
-	public class BattlePlayerModelCreator : MyMonoBehaviour
+	public class BattleAllyModelCreator : MyMonoBehaviour
 	{
 		/// <summary>
 		/// モデルの生成間隔.

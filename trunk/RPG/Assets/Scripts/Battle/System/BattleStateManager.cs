@@ -26,7 +26,7 @@ namespace RPG.Battle
 		}
 
 		[SerializeField]
-		private BattlePlayerCommandManager refCommandManager;
+		private BattleAllyCommandManager refCommandManager;
 
 		private Common.StateMachine<BattleStateManager> stateMachine;
 

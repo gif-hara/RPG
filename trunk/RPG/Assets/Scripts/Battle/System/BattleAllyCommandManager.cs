@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : BattlePlayerCommandManager.cs
+*     * FileName    : BattleAllyCommandManager.cs
 *
 *     * Description : プレイヤーのコマンドを管理するコンポーネント.
 *
@@ -17,7 +17,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// プレイヤーのコマンドを管理するコンポーネント.
 	/// </summary>
-	public class BattlePlayerCommandManager : MyMonoBehaviour
+	public class BattleAllyCommandManager : MyMonoBehaviour
 	{
 		/// <summary>
 		/// コマンドデータ.

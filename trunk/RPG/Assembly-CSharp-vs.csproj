@@ -50,12 +50,12 @@
      <Compile Include="Assets\Scripts\Attribute\MessageMethodReceiverAttribute.cs" />
      <Compile Include="Assets\Scripts\Battle\Camera\BattleCameraObjectLookAt.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleAllyActiveTimeManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleAllyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyPartyManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleEnemyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleInitializeData.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\BattlePlayerActiveTimeManager.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\BattlePlayerCommandManager.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\BattlePlayerModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSceneManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSharedData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleStateManager.cs" />
