@@ -2,7 +2,7 @@
 /*
 *     * FileName    : BattleAllyPartyManager.cs
 *
-*     * Description : .
+*     * Description : 味方パーティデータ管理者コンポーネント.
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -15,7 +15,7 @@ using RPG.Common;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// .
+	/// 味方パーティデータ管理者コンポーネント.
 	/// </summary>
 	public class BattleAllyPartyManager : MyMonoBehaviour
 	{
@@ -37,14 +37,14 @@ namespace RPG.Battle
 		{
 			public CharacterData Data{ private set; get; }
 
-			private float activeTime;
+			public float ActiveTime{ private set; get; }
 
 			public BattleTypeConstants.CommandType SelectCommandType{ private set; get; }
 
 			public AllyData( CharacterData data )
 			{
 				this.Data = data;
-				this.activeTime = 0.0f;
+				this.ActiveTime = 0.0f;
 				this.SelectCommandType = BattleTypeConstants.CommandType.None;
 			}
 
@@ -55,7 +55,7 @@ namespace RPG.Battle
 			public void DecisionCommand( BattleTypeConstants.CommandType type )
 			{
 				this.SelectCommandType = type;
-				this.activeTime = 0.0f;
+				this.ActiveTime = 0.0f;
 			}
 
 			/// <summary>
@@ -64,14 +64,14 @@ namespace RPG.Battle
 			/// <param name="value">Value.</param>
 			public void UpdateActiveTime( float value )
 			{
-				this.activeTime += value;
+				this.ActiveTime += value;
 			}
 
 			public bool IsActiveTimeMax
 			{
 				get
 				{
-					return this.activeTime >= 1.0f;
+					return this.ActiveTime >= 1.0f;
 				}
 			}
 		}

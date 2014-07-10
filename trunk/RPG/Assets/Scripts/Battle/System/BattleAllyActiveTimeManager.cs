@@ -18,10 +18,25 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleAllyActiveTimeManager : MyMonoBehaviour
 	{
-		[Attribute.MessageMethodReceiver( BattleAllyModelCreator.CreateExtensionMessage, typeof( BattleAllyModelCreator.CreateExtensionArgument ) )]
-		void OnBattleCreatePlayerModelExtension( BattleAllyModelCreator.CreateExtensionArgument parameter )
+		private bool isUpdate = false;
+
+		void Update()
 		{
-			TODO( "アクティブタイム管理を行う." );
+			if( !this.isUpdate )	return;
+
+			TODO( "アクティブタイムの更新処理." );
+		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
+		void OnStartCommandSelect()
+		{
+			this.isUpdate = false;
+		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
+		void OnDecisionCommand()
+		{
+			this.isUpdate = true;
 		}
 	}
 }
