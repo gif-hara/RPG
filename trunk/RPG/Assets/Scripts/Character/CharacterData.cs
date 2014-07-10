@@ -42,16 +42,6 @@ namespace RPG.Common
 		public int hitPoint;
 		
 		/// <summary>
-		/// 最大技量.
-		/// </summary>
-		public int maxMagicPoint;
-		
-		/// <summary>
-		/// 技量.
-		/// </summary>
-		public int magicPoint;
-		
-		/// <summary>
 		/// 攻撃力.
 		/// </summary>
 		public int strength;
@@ -98,14 +88,12 @@ namespace RPG.Common
 			string[] split = data.Split( ',' );
 			name = split[0];
 			hitPoint = int.Parse( split[1] );
-			magicPoint = int.Parse( split[2] );
 			strength = int.Parse( split[3] );
 			defence = int.Parse( split[4] );
 			speed = int.Parse( split[5] );
 			avoid = int.Parse( split[6] );
 			
 			maxHitPoint = hitPoint;
-			maxMagicPoint = magicPoint;
 		}
 	}
 }

@@ -19,6 +19,9 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattlePlayerCommandManager : MyMonoBehaviour
 	{
+		/// <summary>
+		/// コマンドデータ.
+		/// </summary>
 		public class CommandData
 		{
 			public CharacterData Data{ private set; get; }
@@ -32,6 +35,11 @@ namespace RPG.Battle
 			}
 		}
 		private List<CommandData> dataList = new List<CommandData>();
+
+		void Update()
+		{
+
+		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()

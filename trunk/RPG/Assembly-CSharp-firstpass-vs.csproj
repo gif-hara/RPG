@@ -49,15 +49,15 @@
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
-     <None Include="Assets\Resources\Data\BattleMessage\WaitAndSeeCommandMessage.txt" />
-     <None Include="Assets\Resources\Data\BattleCommand.txt" />
+     <None Include="Assets\Resources\Database\BattleMessage\WaitAndSeeCommandMessage.txt" />
+     <None Include="Assets\Resources\Database\BattleCommand.txt" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
-     <None Include="Assets\Resources\Data\BattleMessage\DefenceCommandMessage.txt" />
-     <None Include="Assets\Resources\Data\BattleMessage\EnemyFightCommandMessage.txt" />
-     <None Include="Assets\Resources\Data\SkillName.txt" />
-     <None Include="Assets\Resources\Data\EnemyData.txt" />
-     <None Include="Assets\Resources\Data\BattleMessage\PlayerFightCommandMessage.txt" />
-     <None Include="Assets\Resources\Data\PlayerData.txt" />
+     <None Include="Assets\Resources\Database\BattleMessage\DefenceCommandMessage.txt" />
+     <None Include="Assets\Resources\Database\BattleMessage\EnemyFightCommandMessage.txt" />
+     <None Include="Assets\Resources\Database\SkillName.txt" />
+     <None Include="Assets\Resources\Database\EnemyData.txt" />
+     <None Include="Assets\Resources\Database\BattleMessage\PlayerFightCommandMessage.txt" />
+     <None Include="Assets\Resources\Database\PlayerData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
