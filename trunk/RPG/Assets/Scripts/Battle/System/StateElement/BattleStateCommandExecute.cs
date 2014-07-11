@@ -1,8 +1,8 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : BattleStateCommandSelect.cs
+*     * FileName    : BattleStateCommandExecute.cs
 *
-*     * Description : コマンドを選択するバトルステート.
+*     * Description : コマンドを実行するバトルステート.
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -15,19 +15,19 @@ using RPG.Common;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンドを選択するバトルステート.
+	/// コマンドを実行するバトルステート.
 	/// </summary>
-	public class BattleStateCommandSelect : BattleStateElementBase
+	public class BattleStateCommandExecute : BattleStateElementBase
 	{
-		public BattleStateCommandSelect()
-			:base( BattleStateManager.State.SelectCommand )
+		public BattleStateCommandExecute()
+			:base( BattleStateManager.State.ExecuteCommand )
 		{
 			
 		}
 		
 		public override void Enter (BattleStateManager owner)
 		{
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartCommandSelectMessage );
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartCommandExecuteMessage );
 		}
 		
 		public override void Update (BattleStateManager owner)

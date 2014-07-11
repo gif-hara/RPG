@@ -36,12 +36,14 @@ namespace RPG.Battle
 			var party = refAllyPartyManager.Party;
 			for( int i=0,imax=party.List.Count; i<imax; i++ )
 			{
-				party.List[i].UpdateActiveTime( 1.0f / 60.0f );
+				var allyData = party.List[i];
+				allyData.UpdateActiveTime( (1.0f + allyData.Data.speed) / 60.0f );
 			}
 
-			if( refCommandManager.IsExistNoneCommandAlly )
+			var executableAlly = party.List.Find( a => a.IsActiveTimeMax );
+			if( executableAlly != null )
 			{
-				refStateManager.ChangeState( BattleStateManager.State.CommandSelect );
+				this.BroadcastMessage( BattleSceneManager.Root, BattleMessageConstants.AllyMaxActiveTimeMessage, executableAlly );
 			}
 		}
 
@@ -51,10 +53,16 @@ namespace RPG.Battle
 			this.isUpdate = false;
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
-		void OnDecisionCommand()
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartUpdateActiveTimeMessage )]
+		void OnStartUpdateActiveTime()
 		{
 			this.isUpdate = true;
+		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandExecuteMessage )]
+		void OnStartCommandExecute()
+		{
+			this.isUpdate = false;
 		}
 	}
 }

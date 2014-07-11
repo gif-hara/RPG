@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyActiveTimeManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandExecuter.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyPartyManager.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\Battle\System\BattleSceneManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSharedData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleStateManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateCommandExecute.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateCommandSelect.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateUpdateActiveTime.cs" />

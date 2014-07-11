@@ -45,6 +45,22 @@ namespace RPG.Battle
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( BattleAllyPartyManager.AllyData ) )]
 		public const string DecisionCommandMessage = "OnDecisionCommand";
+
+		/// <summary>
+		/// アクティブタイム更新処理開始時のメッセージ.
+		/// </summary>
+		public const string StartUpdateActiveTimeMessage = "OnStartUpdateActiveTime";
+
+		/// <summary>
+		/// いずれかの味方のアクティブタイムが最大値に達した際のメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( BattleAllyPartyManager.AllyData ) )]
+		public const string AllyMaxActiveTimeMessage = "OnAllyMaxActiveTime";
+
+		/// <summary>
+		/// コマンドを実行する際のメッセージ.
+		/// </summary>
+		public const string StartCommandExecuteMessage = "OnStartCommandExecute";
 	}
 
 	public class BattleTypeConstants

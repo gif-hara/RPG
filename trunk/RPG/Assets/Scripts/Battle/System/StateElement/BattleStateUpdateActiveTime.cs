@@ -27,6 +27,7 @@ namespace RPG.Battle
 
 		public override void Enter (BattleStateManager owner)
 		{
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartUpdateActiveTimeMessage );
 		}
 
 		public override void Update (BattleStateManager owner)

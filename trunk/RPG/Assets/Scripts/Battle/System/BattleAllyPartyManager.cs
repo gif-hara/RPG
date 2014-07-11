@@ -67,6 +67,10 @@ namespace RPG.Battle
 				this.ActiveTime += value;
 			}
 
+			/// <summary>
+			/// アクティブタイムが最大値か返す.
+			/// </summary>
+			/// <value><c>true</c> if this instance is active time max; otherwise, <c>false</c>.</value>
 			public bool IsActiveTimeMax
 			{
 				get

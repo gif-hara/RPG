@@ -21,8 +21,9 @@ namespace RPG.Battle
 	{
 		public enum State : int
 		{
-			CommandSelect,
+			SelectCommand,
 			UpdateActiveTime,
+			ExecuteCommand,
 		}
 
 		[SerializeField]
@@ -36,12 +37,13 @@ namespace RPG.Battle
 			this.stateMachine = new StateMachine<BattleStateManager>( this );
 			this.stateMachine.Add( new BattleStateCommandSelect() );
 			this.stateMachine.Add( new BattleStateUpdateActiveTime() );
+			this.stateMachine.Add( new BattleStateCommandExecute() );
 		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
 		void OnStartBattle()
 		{
-			ChangeState( State.CommandSelect );
+			ChangeState( State.SelectCommand );
 		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
@@ -49,12 +51,18 @@ namespace RPG.Battle
 		{
 			if( refCommandManager.IsExistNoneCommandAlly )
 			{
-				ChangeState( State.CommandSelect );
+				ChangeState( State.SelectCommand );
 			}
 			else
 			{
 				ChangeState( State.UpdateActiveTime );
 			}
+		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.AllyMaxActiveTimeMessage )]
+		void OnAllyMaxActiveTime( BattleAllyPartyManager.AllyData allyData )
+		{
+			ChangeState( State.ExecuteCommand );
 		}
 
 		public void ChangeState( State state )
