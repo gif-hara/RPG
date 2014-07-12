@@ -25,7 +25,7 @@ namespace RPG.Battle
 		private BattleAllyPartyManager refAllyPartyManager;
 
 		[SerializeField]
-		private BattleAllyCommandManager refCommandManager;
+		private BattleAllyCommandSelector refCommandManager;
 
 		private bool isUpdate = false;
 

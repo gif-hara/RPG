@@ -1,8 +1,8 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : BattleAllyCommandManager.cs
+*     * FileName    : BattleAllyCommandSelector.cs
 *
-*     * Description : プレイヤーのコマンドを管理するコンポーネント.
+*     * Description : 味方のコマンドを選択するコンポーネント.
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -15,9 +15,9 @@ using RPG.Common;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// プレイヤーのコマンドを管理するコンポーネント.
+	/// 味方のコマンドを選択するコンポーネント.
 	/// </summary>
-	public class BattleAllyCommandManager : MyMonoBehaviour
+	public class BattleAllyCommandSelector : MyMonoBehaviour
 	{
 		/// <summary>
 		/// コマンドデータ.
@@ -59,18 +59,6 @@ namespace RPG.Battle
 			if( this.currentCommandSelectAllyData == null )	return;
 
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SelectCommandSelectCharacterMessage, this.currentCommandSelectAllyData );
-		}
-
-		/// <summary>
-		/// コマンド入力が可能な味方が存在しているか返す.
-		/// </summary>
-		/// <returns><c>true</c> if this instance is exist none command ally; otherwise, <c>false</c>.</returns>
-		public bool IsExistNoneCommandAlly
-		{
-			get
-			{
-				return refAllyPartyManager.Party.List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None ) != null;
-			}
 		}
 
 		private void DecisionCommand()

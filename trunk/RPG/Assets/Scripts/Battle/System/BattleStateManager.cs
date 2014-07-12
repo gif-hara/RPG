@@ -27,7 +27,7 @@ namespace RPG.Battle
 		}
 
 		[SerializeField]
-		private BattleAllyCommandManager refCommandManager;
+		private BattleAllyPartyManager refAllyPartyManager;
 
 		private Common.StateMachine<BattleStateManager> stateMachine;
 
@@ -49,7 +49,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
 		void OnDecisionCommand( BattleAllyPartyManager.AllyData allyData )
 		{
-			if( refCommandManager.IsExistNoneCommandAlly )
+			if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{
 				ChangeState( State.SelectCommand );
 			}
@@ -65,9 +65,22 @@ namespace RPG.Battle
 			ChangeState( State.ExecuteCommand );
 		}
 
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.EndCommandExecuteMessage )]
+		void OnEndCommandExecute()
+		{
+		}
+
 		public void ChangeState( State state )
 		{
 			this.stateMachine.Change( (int)state );
+		}
+
+		public State CurrentState
+		{
+			get
+			{
+				return (State)this.stateMachine.CurrentElementId;
+			}
 		}
 	}
 }

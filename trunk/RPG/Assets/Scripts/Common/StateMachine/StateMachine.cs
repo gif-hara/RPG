@@ -46,5 +46,13 @@ namespace RPG.Common
 			this.currentElement = this.elementList.Find( e => e.ID == id );
 			this.currentElement.Enter( owner );
 		}
+
+		public int CurrentElementId
+		{
+			get
+			{
+				return this.currentElement.ID;
+			}
+		}
 	}
 }

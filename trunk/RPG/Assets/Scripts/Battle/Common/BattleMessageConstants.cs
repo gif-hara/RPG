@@ -61,6 +61,11 @@ namespace RPG.Battle
 		/// コマンドを実行する際のメッセージ.
 		/// </summary>
 		public const string StartCommandExecuteMessage = "OnStartCommandExecute";
+
+		/// <summary>
+		/// コマンド実行終了時のメッセージ.
+		/// </summary>
+		public const string EndCommandExecuteMessage = "OnEndCommandExecute";
 	}
 
 	public class BattleTypeConstants

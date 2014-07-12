@@ -53,7 +53,7 @@
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyActiveTimeManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandExecuter.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandSelector.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyPartyManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleEnemyModelCreator.cs" />
