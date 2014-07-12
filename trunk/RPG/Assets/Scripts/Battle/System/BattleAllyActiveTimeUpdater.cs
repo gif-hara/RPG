@@ -37,13 +37,12 @@ namespace RPG.Battle
 			for( int i=0,imax=party.List.Count; i<imax; i++ )
 			{
 				var allyData = party.List[i];
-				allyData.UpdateActiveTime( (1.0f + allyData.Data.speed) / 60.0f );
+				allyData.UpdateActiveTime( (1.0f + (allyData.Data.speed / 255.0f)) / 60.0f );
 			}
 
-			var executableAlly = party.ActiveTimeMaxAllyData;
-			if( executableAlly != null )
+			if( party.IsAnyActiveTimeMax )
 			{
-				this.BroadcastMessage( BattleSceneManager.Root, BattleMessageConstants.AllyMaxActiveTimeMessage, executableAlly );
+				this.BroadcastMessage( BattleSceneManager.Root, BattleMessageConstants.EndUpdateActiveTimeMessage );
 			}
 		}
 

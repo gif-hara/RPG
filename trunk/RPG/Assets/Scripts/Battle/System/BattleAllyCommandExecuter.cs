@@ -19,19 +19,31 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleAllyCommandExecuter : MyMonoBehaviour
 	{
+		[SerializeField]
+		private BattleAllyPartyManager refAllyPartyManager;
+
 		private BattleAllyPartyManager.AllyData executeAllyData = null;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.AllyMaxActiveTimeMessage )]
-		void OnAllyMaxActiveTime( BattleAllyPartyManager.AllyData allyData )
+		private bool isUpdate = false;
+
+		void Update()
 		{
-			this.executeAllyData = allyData;
+			if( !this.isUpdate )	return;
+
+			if( Input.GetKeyDown( KeyCode.Space ) )
+			{
+				this.isUpdate = false;
+				executeAllyData.ExecuteCommand();
+				this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.EndCommandExecuteMessage );
+			}
 		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandExecuteMessage )]
 		void OnStartCommandExecute()
 		{
 			TODO( "コマンド実行処理の実装." );
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.EndCommandExecuteMessage );
+			this.executeAllyData = refAllyPartyManager.Party.ActiveTimeMaxAllyData;
+			this.isUpdate = true;
 		}
 	}
 }

@@ -53,14 +53,18 @@ namespace RPG.Battle
 			{
 				ChangeState( State.SelectCommand );
 			}
+			else if( refAllyPartyManager.Party.IsAnyActiveTimeMax )
+			{
+				ChangeState( State.ExecuteCommand );
+			}
 			else
 			{
 				ChangeState( State.UpdateActiveTime );
 			}
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.AllyMaxActiveTimeMessage )]
-		void OnAllyMaxActiveTime( BattleAllyPartyManager.AllyData allyData )
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.EndUpdateActiveTimeMessage )]
+		void OnEndUpdateActiveTime()
 		{
 			ChangeState( State.ExecuteCommand );
 		}
@@ -68,6 +72,14 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.EndCommandExecuteMessage )]
 		void OnEndCommandExecute()
 		{
+			if( refAllyPartyManager.Party.IsAnyNoneCommand )
+			{
+				ChangeState( State.SelectCommand );
+			}
+			else
+			{
+				ChangeState( State.ExecuteCommand );
+			}
 		}
 
 		public void ChangeState( State state )

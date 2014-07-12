@@ -54,8 +54,7 @@ namespace RPG.Battle
 		/// <summary>
 		/// いずれかの味方のアクティブタイムが最大値に達した際のメッセージ.
 		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( BattleAllyPartyManager.AllyData ) )]
-		public const string AllyMaxActiveTimeMessage = "OnAllyMaxActiveTime";
+		public const string EndUpdateActiveTimeMessage = "OnEndUpdateActiveTime";
 
 		/// <summary>
 		/// コマンドを実行する際のメッセージ.

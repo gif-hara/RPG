@@ -103,6 +103,14 @@ namespace RPG.Battle
 			public void DecisionCommand( BattleTypeConstants.CommandType type )
 			{
 				this.SelectCommandType = type;
+			}
+
+			/// <summary>
+			/// コマンド実行処理.
+			/// </summary>
+			public void ExecuteCommand()
+			{
+				this.SelectCommandType = BattleTypeConstants.CommandType.None;
 				this.ActiveTime = 0.0f;
 			}
 
