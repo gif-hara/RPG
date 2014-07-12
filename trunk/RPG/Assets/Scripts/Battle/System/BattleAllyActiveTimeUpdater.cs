@@ -1,8 +1,8 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : BattleAllyActiveTimeManager.cs
+*     * FileName    : BattleAllyActiveTimeUpdater.cs
 *
-*     * Description : プレイヤーのアクティブタイムを管理するコンポーネント.
+*     * Description : プレイヤーのアクティブタイムを更新するコンポーネント.
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -14,9 +14,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// プレイヤーのアクティブタイムを管理するコンポーネント.
+	/// プレイヤーのアクティブタイムを更新するコンポーネント.
 	/// </summary>
-	public class BattleAllyActiveTimeManager : MyMonoBehaviour
+	public class BattleAllyActiveTimeUpdater : MyMonoBehaviour
 	{
 		[SerializeField]
 		private BattleStateManager refStateManager;
@@ -40,7 +40,7 @@ namespace RPG.Battle
 				allyData.UpdateActiveTime( (1.0f + allyData.Data.speed) / 60.0f );
 			}
 
-			var executableAlly = party.List.Find( a => a.IsActiveTimeMax );
+			var executableAlly = party.ActiveTimeMaxAllyData;
 			if( executableAlly != null )
 			{
 				this.BroadcastMessage( BattleSceneManager.Root, BattleMessageConstants.AllyMaxActiveTimeMessage, executableAlly );

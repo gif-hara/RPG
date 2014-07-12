@@ -51,7 +51,7 @@
      <Compile Include="Assets\Scripts\Battle\Camera\BattleCameraObjectLookAt.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\BattleAllyActiveTimeManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\BattleAllyActiveTimeUpdater.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandExecuter.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandSelector.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyModelCreator.cs" />
