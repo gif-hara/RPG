@@ -20,7 +20,7 @@ namespace RPG.Battle
 	public class BattleDebugTextMesh : MyMonoBehaviour
 	{
 		[SerializeField]
-		private TextMesh refText;
+		private UILabel refLabel;
 
 		[SerializeField]
 		private BattleAllyPartyManager refAllyManager;
@@ -35,7 +35,7 @@ namespace RPG.Battle
 			AppendState( builder );
 			AppendAllyData( builder );
 
-			refText.text = builder.ToString();
+			refLabel.text = builder.ToString();
 		}
 
 		private void AppendState( StringBuilder builder )

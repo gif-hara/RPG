@@ -15,7 +15,7 @@ Platform assembly: C:\Users\hiroki\Documents\UnityProjects\RPG\trunk\RPG\Test_Da
 Loading C:\Users\hiroki\Documents\UnityProjects\RPG\trunk\RPG\Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\hiroki\Documents\UnityProjects\RPG\trunk\RPG\Test_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\hiroki\Documents\UnityProjects\RPG\trunk\RPG\Test_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.037 seconds
+- Completed reload, in  0.057 seconds
 desktop: 1366x768 60Hz; virtual: 3286x1645 at -1920,-877
 <RI> Initializing input.
 <RI> Input initialized.
