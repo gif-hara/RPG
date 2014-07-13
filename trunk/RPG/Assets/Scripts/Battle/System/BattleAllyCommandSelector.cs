@@ -19,26 +19,10 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleAllyCommandSelector : MyMonoBehaviour
 	{
-		/// <summary>
-		/// コマンドデータ.
-		/// </summary>
-		public class CommandData
-		{
-			public CharacterData Data{ private set; get; }
-
-			public bool IsInput{ private set; get; }
-
-			public CommandData( CharacterData data )
-			{
-				this.Data = data;
-				this.IsInput = true;
-			}
-		}
-
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
-		private BattleAllyPartyManager.AllyData currentCommandSelectAllyData = null;
+		private AllyData currentCommandSelectAllyData = null;
 
 		void Update()
 		{
@@ -48,6 +32,11 @@ namespace RPG.Battle
 			{
 				TODO( "コマンド選択処理の実装." );
 				DecisionCommand();
+			}
+
+			if( MyInput.Left )
+			{
+				Debug.Log( "Left Input!" );
 			}
 		}
 
@@ -63,7 +52,7 @@ namespace RPG.Battle
 
 		private void DecisionCommand()
 		{
-			currentCommandSelectAllyData.DecisionCommand( BattleTypeConstants.CommandType.UsualAttack );
+			currentCommandSelectAllyData.DecisionCommand( BattleTypeConstants.CommandType.Attack );
 			var tempAllyData = this.currentCommandSelectAllyData;
 			this.currentCommandSelectAllyData = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );

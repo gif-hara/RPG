@@ -47,7 +47,7 @@ namespace RPG.Battle
 		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
-		void OnDecisionCommand( BattleAllyPartyManager.AllyData allyData )
+		void OnDecisionCommand( AllyData allyData )
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{

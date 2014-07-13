@@ -168,6 +168,9 @@
      <Compile Include="Assets\Scripts\Attribute\MessageMethodReceiverAttribute.cs" />
      <Compile Include="Assets\Scripts\Battle\Camera\BattleCameraObjectLookAt.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\BattleMemberData.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\CommandData.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyActiveTimeUpdater.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleAllyCommandExecuter.cs" />
@@ -199,6 +202,7 @@
      <Compile Include="Assets\Scripts\Library\iTween.cs" />
      <Compile Include="Assets\Scripts\System\DebugSystem.cs" />
      <Compile Include="Assets\Scripts\System\FrameRateSetter.cs" />
+     <Compile Include="Assets\Scripts\System\MyInput.cs" />
      <Compile Include="Assets\Scripts\WorldMap\EncountManager.cs" />
      <Compile Include="Assets\Scripts\WorldMap\WorldMapCamera.cs" />
      <Compile Include="Assets\Scripts\WorldMap\WorldMapCellManager.cs" />

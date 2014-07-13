@@ -37,13 +37,13 @@ namespace RPG.Battle
 		/// <summary>
 		/// コマンドを選択するキャラクターを選択した際のメッセージ.
 		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( BattleAllyPartyManager.AllyData ) )]
+		[Attribute.MessageMethodArgument( typeof( AllyData ) )]
 		public const string SelectCommandSelectCharacterMessage = "OnSelectCommandSelectCharacter";
 
 		/// <summary>
 		/// コマンドが決定した際のメッセージ.
 		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( BattleAllyPartyManager.AllyData ) )]
+		[Attribute.MessageMethodArgument( typeof( AllyData ) )]
 		public const string DecisionCommandMessage = "OnDecisionCommand";
 
 		/// <summary>
@@ -74,15 +74,27 @@ namespace RPG.Battle
 		/// </summary>
 		public enum CommandType : int
 		{
-			/// <summary>
-			/// 無し.
-			/// </summary>
+			/// <summary> 無し. </summary>
 			None,
 
-			/// <summary>
-			/// 戦う.
-			/// </summary>
-			UsualAttack,
+			/// <summary> 戦う. </summary>
+			Attack,
+
+			/// <summary> 道具. </summary>
+			Item,
+
+			/// <summary> 守る. </summary>
+			Deffence,
+
+			/// <summary> かばう. </summary>
+			CoverUp,
+
+			/// <summary> 逃げる. </summary>
+			Escape,
+
+			/// <summary> 術. </summary>
+			Magic,
+			
 		}
 	}
 }

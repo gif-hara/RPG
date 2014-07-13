@@ -22,7 +22,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
-		private BattleAllyPartyManager.AllyData executeAllyData = null;
+		private AllyData executeAllyData = null;
 
 		private bool isUpdate = false;
 
