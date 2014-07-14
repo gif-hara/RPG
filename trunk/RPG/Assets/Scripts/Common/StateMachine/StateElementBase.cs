@@ -41,5 +41,14 @@ namespace RPG.Common
 		/// </summary>
 		/// <param name="owner">Owner.</param>
 		public abstract void Exit( TOwner owner );
+
+		protected void BroadcastMessage( MonoBehaviour sender, string methodName )
+		{
+			MyMonoBehaviour.BroadcastMessage( sender, methodName );
+		}
+		protected void BroadcastMessage( MonoBehaviour sender, string methodName, object parameter )
+		{
+			MyMonoBehaviour.BroadcastMessage( sender, methodName, parameter );
+		}
 	}
 }

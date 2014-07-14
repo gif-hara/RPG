@@ -47,5 +47,21 @@ namespace RPG.Common
 				return Input.GetKeyDown( KeyCode.DownArrow );
 			}
 		}
+
+		public static bool Decision
+		{
+			get
+			{
+				return Input.GetKeyDown( KeyCode.Z ) || Input.GetKeyDown( KeyCode.Return );
+			}
+		}
+
+		public static bool Cancel
+		{
+			get
+			{
+				return Input.GetKeyDown( KeyCode.X ) || Input.GetKeyDown( KeyCode.Backspace );
+			}
+		}
 	}
 }

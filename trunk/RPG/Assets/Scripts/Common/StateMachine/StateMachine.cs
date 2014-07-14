@@ -47,6 +47,11 @@ namespace RPG.Common
 			this.currentElement.Enter( owner );
 		}
 
+		public void Update()
+		{
+			this.currentElement.Update( owner );
+		}
+
 		public int CurrentElementId
 		{
 			get

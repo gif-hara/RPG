@@ -65,6 +65,12 @@ namespace RPG.Battle
 		/// コマンド実行終了時のメッセージ.
 		/// </summary>
 		public const string EndCommandExecuteMessage = "OnEndCommandExecute";
+
+		/// <summary>
+		/// コマンドIDが変更された際のメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( int ) )]
+		public const string ModifiedCommandIdMessage = "OnModifiedCommandId";
 	}
 
 	public class BattleTypeConstants
@@ -95,6 +101,37 @@ namespace RPG.Battle
 			/// <summary> 術. </summary>
 			Magic,
 			
+		}
+
+		/// <summary>
+		/// コマンド選択タイプ.
+		/// </summary>
+		public enum CommandSelectType : int
+		{
+			/// <summary>
+			/// メインコマンド.
+			/// </summary>
+			Main,
+
+			/// <summary>
+			/// アイテム.
+			/// </summary>
+			Item,
+
+			/// <summary>
+			/// 味方.
+			/// </summary>
+			Ally,
+
+			/// <summary>
+			/// 敵.
+			/// </summary>
+			Enemy,
+
+			/// <summary>
+			/// 術.
+			/// </summary>
+			Magic,
 		}
 	}
 }

@@ -182,10 +182,13 @@
      <Compile Include="Assets\Scripts\Battle\System\BattleSceneManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSharedData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleStateManager.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateCommandExecute.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateCommandSelect.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateElementBase.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleStateUpdateActiveTime.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateCommandExecute.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateCommandSelect.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateElementBase.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateUpdateActiveTime.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\CommandInputElementBase.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromCommandId.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />
      <Compile Include="Assets\Scripts\Character\WorldMapPlayer.cs" />
      <Compile Include="Assets\Scripts\Common\Define.cs" />

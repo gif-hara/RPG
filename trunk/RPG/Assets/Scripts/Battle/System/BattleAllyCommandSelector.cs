@@ -24,20 +24,18 @@ namespace RPG.Battle
 
 		private AllyData currentCommandSelectAllyData = null;
 
+		private StateMachine<BattleAllyCommandSelector> inputArrowStateMachine;
+
+		void Awake()
+		{
+			this.inputArrowStateMachine = new StateMachine<BattleAllyCommandSelector>( this );
+			this.inputArrowStateMachine.Add( new MainCommandInput() );
+		}
 		void Update()
 		{
 			if( !IsPossibleInput )	return;
 
-			if( Input.GetKeyDown( KeyCode.Space ) )
-			{
-				TODO( "コマンド選択処理の実装." );
-				DecisionCommand();
-			}
-
-			if( MyInput.Left )
-			{
-				Debug.Log( "Left Input!" );
-			}
+			this.inputArrowStateMachine.Update();
 		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
@@ -47,6 +45,7 @@ namespace RPG.Battle
 
 			if( this.currentCommandSelectAllyData == null )	return;
 
+			this.inputArrowStateMachine.Change( (int)BattleTypeConstants.CommandSelectType.Main );
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SelectCommandSelectCharacterMessage, this.currentCommandSelectAllyData );
 		}
 
@@ -56,6 +55,11 @@ namespace RPG.Battle
 			var tempAllyData = this.currentCommandSelectAllyData;
 			this.currentCommandSelectAllyData = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
+		}
+
+		private void InputArrowKey()
+		{
+
 		}
 
 		/// <summary>
