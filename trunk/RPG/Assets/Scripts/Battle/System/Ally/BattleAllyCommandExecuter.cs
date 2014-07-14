@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleAllyCommandExecuter.cs
 *
@@ -42,7 +42,7 @@ namespace RPG.Battle
 		void OnStartCommandExecute()
 		{
 			TODO( "コマンド実行処理の実装." );
-			this.executeAllyData = refAllyPartyManager.Party.ActiveTimeMaxAllyData;
+			this.executeAllyData = refAllyPartyManager.Party.ActiveTimeMaxBattleMember;
 			this.isUpdate = true;
 		}
 	}

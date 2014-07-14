@@ -16,16 +16,16 @@ namespace RPG.Battle
 	/// <summary>
 	/// 味方パーティ.
 	/// </summary>
-	public class AllyParty
+	public class Party<BattleMember> where BattleMember : BattleMemberData
 	{
-		public List<AllyData> List{ private set; get; }
+		public List<BattleMember> List{ private set; get; }
 		
-		public AllyParty()
+		public Party()
 		{
-			this.List = new List<AllyData>();
+			this.List = new List<BattleMember>();
 		}
 		
-		public void Add( AllyData data )
+		public void Add( BattleMember data )
 		{
 			this.List.Add( data );
 		}
@@ -38,15 +38,15 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return ActiveTimeMaxAllyData != null;
+				return ActiveTimeMaxBattleMember != null;
 			}
 		}
 		
 		/// <summary>
-		/// アクティブタイムが最大の味方を返す.
+		/// アクティブタイムが最大のバトルメンバーを返す.
 		/// </summary>
 		/// <value>The active time max ally data.</value>
-		public AllyData ActiveTimeMaxAllyData
+		public BattleMember ActiveTimeMaxBattleMember
 		{
 			get
 			{
@@ -55,22 +55,22 @@ namespace RPG.Battle
 		}
 		
 		/// <summary>
-		/// 誰かしらの味方がコマンドを選択していないか返す.
+		/// 誰かしらのバトルメンバーがコマンドを選択していないか返す.
 		/// </summary>
 		/// <value><c>true</c> if this instance is any none command; otherwise, <c>false</c>.</value>
 		public bool IsAnyNoneCommand
 		{
 			get
 			{
-				return NoneCommandAllyData != null;
+				return NoneCommandBattleMember != null;
 			}
 		}
 		
 		/// <summary>
-		/// コマンド選択していない味方を返す.
+		/// コマンド選択していないバトルメンバーを返す.
 		/// </summary>
 		/// <value>The none command ally data.</value>
-		public AllyData NoneCommandAllyData
+		public BattleMember NoneCommandBattleMember
 		{
 			get
 			{

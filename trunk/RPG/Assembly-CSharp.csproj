@@ -169,10 +169,10 @@
      <Compile Include="Assets\Scripts\Battle\Camera\BattleCameraObjectLookAt.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
-     <Compile Include="Assets\Scripts\Battle\Data\AllyParty.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleInitializeData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleMemberData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\CommandData.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\Party.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyActiveTimeUpdater.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs" />
