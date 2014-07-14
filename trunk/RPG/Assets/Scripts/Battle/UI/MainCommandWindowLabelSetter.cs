@@ -21,10 +21,10 @@ namespace RPG.Battle
 		[SerializeField]
 		private UILabel refLabel;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.SelectCommandSelectCharacterMessage )]
-		void OnSelectCommandSelectCharacter( AllyData allyData )
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow( BattleMessageConstants.OpenCommandWindowData parameter )
 		{
-			refLabel.text = StringAsset.Format( "MainCommandLeftLabel", Common.StringAssetUtility.AbilityName( allyData.Data.abilityType ) );
+			refLabel.text = StringAsset.Format( "MainCommandLeftLabel", Common.StringAssetUtility.AbilityName( parameter.AllyData.Data.abilityType ) );
 		}
 	}
 }

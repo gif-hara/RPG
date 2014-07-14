@@ -22,7 +22,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
-		private AllyData currentCommandSelectAllyData = null;
+		public AllyData CurrentCommandSelectAllyData{ private set; get; }
 
 		private StateMachine<BattleAllyCommandSelector> inputArrowStateMachine;
 
@@ -41,19 +41,18 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
 		void OnStartCommandSelect()
 		{
-			this.currentCommandSelectAllyData = refAllyPartyManager.Party.List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None );
+			this.CurrentCommandSelectAllyData = refAllyPartyManager.Party.List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None );
 
-			if( this.currentCommandSelectAllyData == null )	return;
+			if( this.CurrentCommandSelectAllyData == null )	return;
 
 			this.inputArrowStateMachine.Change( (int)BattleTypeConstants.CommandSelectType.Main );
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SelectCommandSelectCharacterMessage, this.currentCommandSelectAllyData );
 		}
 
 		public void Decision( int commandId )
 		{
-			currentCommandSelectAllyData.DecisionCommand( BattleTypeConstants.CommandType.Attack );
-			var tempAllyData = this.currentCommandSelectAllyData;
-			this.currentCommandSelectAllyData = null;
+			CurrentCommandSelectAllyData.DecisionCommand( BattleTypeConstants.CommandType.Attack );
+			var tempAllyData = this.CurrentCommandSelectAllyData;
+			this.CurrentCommandSelectAllyData = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
 		}
 
@@ -65,7 +64,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return this.currentCommandSelectAllyData != null;
+				return this.CurrentCommandSelectAllyData != null;
 			}
 		}
 	}

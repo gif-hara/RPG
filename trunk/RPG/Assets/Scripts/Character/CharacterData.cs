@@ -100,6 +100,26 @@ namespace RPG.Common
 			
 			maxHitPoint = hitPoint;
 		}
+
+		public override string ToString ()
+		{
+			return string.Format (
+				"[CharacterData: id={0}, name={1}, level={2}, abilityType={3}, maxHitPoint={4}, hitPoint={5} strength={6} defence={7}, speed={8}, avoid={9}, maxSpirit={10}, minSpirit={11}, spirit={12}]",
+				id,
+				name,
+				level,
+				abilityType,
+				maxHitPoint,
+				hitPoint,
+				strength,
+				defence,
+				speed,
+				avoid,
+				maxSpirit,
+				minSpirit,
+				spirit
+				);
+		}
 	}
 }
 /* End of file ==============================================================*/

@@ -70,5 +70,10 @@ namespace RPG.Battle
 				return this.ActiveTime >= 1.0f;
 			}
 		}
+
+		public override string ToString ()
+		{
+			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandType={2}, IsActiveTimeMax={3}]", Data, ActiveTime, SelectCommandType, IsActiveTimeMax);
+		}
 	}
 }

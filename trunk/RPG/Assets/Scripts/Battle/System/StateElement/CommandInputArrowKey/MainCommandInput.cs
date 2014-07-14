@@ -24,6 +24,13 @@ namespace RPG.Battle
 		{
 		}
 
+		public override void Enter (BattleAllyCommandSelector owner)
+		{
+			base.Enter (owner);
+			var parameter = new BattleMessageConstants.OpenCommandWindowData( BattleTypeConstants.CommandSelectType.Main, owner.CurrentCommandSelectAllyData );
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, parameter );
+		}
+
 		protected override void DecisionAction (BattleAllyCommandSelector owner)
 		{
 			if( commandId != 0 )

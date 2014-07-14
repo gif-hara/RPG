@@ -35,12 +35,6 @@ namespace RPG.Battle
 		public const string StartCommandSelectMessage = "OnStartCommandSelect";
 
 		/// <summary>
-		/// コマンドを選択するキャラクターを選択した際のメッセージ.
-		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( AllyData ) )]
-		public const string SelectCommandSelectCharacterMessage = "OnSelectCommandSelectCharacter";
-
-		/// <summary>
 		/// コマンドが決定した際のメッセージ.
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( AllyData ) )]
@@ -71,6 +65,26 @@ namespace RPG.Battle
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( int ) )]
 		public const string ModifiedCommandIdMessage = "OnModifiedCommandId";
+
+		public class OpenCommandWindowData
+		{
+			public BattleTypeConstants.CommandSelectType SelectType{ private set; get; }
+
+			public AllyData AllyData{ private set; get; }
+
+			public OpenCommandWindowData( BattleTypeConstants.CommandSelectType selectType, AllyData allyData )
+			{
+				this.SelectType = selectType;
+				this.AllyData = allyData;
+			}
+
+			public override string ToString ()
+			{
+				return string.Format ("[OpenCommandWindowData: SelectType={0}, AllyData={1}]", SelectType, AllyData);
+			}
+		}
+		[Attribute.MessageMethodArgument( typeof( OpenCommandWindowData ) )]
+		public const string OpenCommandWindowMessage = "OnOpenCommandWindow";
 	}
 
 	public class BattleTypeConstants
