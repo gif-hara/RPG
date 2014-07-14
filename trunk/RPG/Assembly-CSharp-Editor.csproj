@@ -46,7 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Editor\A_EditorBase.cs" />
+     <Compile Include="Assets\Editor\A_EditorScriptableObject.cs" />
      <Compile Include="Assets\Editor\CreateScriptableObjectPrefub.cs" />
+     <Compile Include="Assets\Editor\StringAssetEditor.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\BMFontReader.cs" />

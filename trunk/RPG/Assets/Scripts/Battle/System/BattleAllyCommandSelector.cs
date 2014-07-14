@@ -49,17 +49,12 @@ namespace RPG.Battle
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SelectCommandSelectCharacterMessage, this.currentCommandSelectAllyData );
 		}
 
-		private void DecisionCommand()
+		public void Decision( int commandId )
 		{
 			currentCommandSelectAllyData.DecisionCommand( BattleTypeConstants.CommandType.Attack );
 			var tempAllyData = this.currentCommandSelectAllyData;
 			this.currentCommandSelectAllyData = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
-		}
-
-		private void InputArrowKey()
-		{
-
 		}
 
 		/// <summary>

@@ -77,7 +77,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		sender.SendMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
 	}
 	
-	public void TODO( string message )
+	public static void TODO( string message )
 	{
 		Debug.Log(
 			string.Format(

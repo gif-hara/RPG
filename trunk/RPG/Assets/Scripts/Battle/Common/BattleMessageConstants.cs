@@ -83,6 +83,9 @@ namespace RPG.Battle
 			/// <summary> 無し. </summary>
 			None,
 
+			/// <summary> 特殊能力. </summary>
+			Ability,
+
 			/// <summary> 戦う. </summary>
 			Attack,
 
@@ -98,9 +101,6 @@ namespace RPG.Battle
 			/// <summary> 逃げる. </summary>
 			Escape,
 
-			/// <summary> 術. </summary>
-			Magic,
-			
 		}
 
 		/// <summary>
@@ -108,30 +108,38 @@ namespace RPG.Battle
 		/// </summary>
 		public enum CommandSelectType : int
 		{
-			/// <summary>
-			/// メインコマンド.
-			/// </summary>
+			/// <summary> メインコマンド. </summary>
 			Main,
 
-			/// <summary>
-			/// アイテム.
-			/// </summary>
+			/// <summary> 特殊能力. </summary>
+			Ability,
+
+			/// <summary> アイテム. </summary>
 			Item,
 
-			/// <summary>
-			/// 味方.
-			/// </summary>
+			/// <summary> 味方. </summary>
 			Ally,
 
-			/// <summary>
-			/// 敵.
-			/// </summary>
+			/// <summary> 敵. </summary>
 			Enemy,
+		}
 
-			/// <summary>
-			/// 術.
-			/// </summary>
+		/// <summary>
+		/// 特殊能力タイプ.
+		/// </summary>
+		public enum AbilityType : int
+		{
+			/// <summary> 無し. </summary>
+			None,
+
+			/// <summary> 術. </summary>
 			Magic,
+
+			/// <summary> すもう技. </summary>
+			Sumo,
+
+			/// <summary> 盗む. </summary>
+			Steal,
 		}
 	}
 }

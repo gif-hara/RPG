@@ -30,6 +30,11 @@ namespace RPG.Common
 		/// 段.
 		/// </summary>
 		public int level;
+
+		/// <summary>
+		/// 特殊能力.
+		/// </summary>
+		public Battle.BattleTypeConstants.AbilityType abilityType;
 		
 		/// <summary>
 		/// 最大体力.

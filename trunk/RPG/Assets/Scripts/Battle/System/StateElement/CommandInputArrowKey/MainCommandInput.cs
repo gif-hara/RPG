@@ -26,6 +26,13 @@ namespace RPG.Battle
 
 		protected override void DecisionAction (BattleAllyCommandSelector owner)
 		{
+			if( commandId != 0 )
+			{
+				MyMonoBehaviour.TODO( "戦う以外のコマンド実装." );
+				return;
+			}
+
+			owner.Decision( commandId );
 		}
 
 		protected override void CancelAction (BattleAllyCommandSelector owner)

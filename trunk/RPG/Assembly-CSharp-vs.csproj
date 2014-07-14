@@ -188,6 +188,7 @@
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateUpdateActiveTime.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\CommandInputElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\MainCommandWindowLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromCommandId.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />
      <Compile Include="Assets\Scripts\Character\WorldMapPlayer.cs" />
@@ -206,6 +207,8 @@
      <Compile Include="Assets\Scripts\System\DebugSystem.cs" />
      <Compile Include="Assets\Scripts\System\FrameRateSetter.cs" />
      <Compile Include="Assets\Scripts\System\MyInput.cs" />
+     <Compile Include="Assets\Scripts\Utility\StringAsset.cs" />
+     <Compile Include="Assets\Scripts\Utility\StringAssetUtility.cs" />
      <Compile Include="Assets\Scripts\WorldMap\EncountManager.cs" />
      <Compile Include="Assets\Scripts\WorldMap\WorldMapCamera.cs" />
      <Compile Include="Assets\Scripts\WorldMap\WorldMapCellManager.cs" />

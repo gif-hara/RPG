@@ -30,7 +30,7 @@ namespace RPG.Battle
 		{
 			if( !this.isUpdate )	return;
 
-			if( Input.GetKeyDown( KeyCode.Space ) )
+			if( MyInput.Decision )
 			{
 				this.isUpdate = false;
 				executeAllyData.ExecuteCommand();
