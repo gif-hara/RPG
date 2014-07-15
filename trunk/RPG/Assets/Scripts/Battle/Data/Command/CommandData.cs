@@ -10,15 +10,20 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Common;
 
 namespace RPG.Battle
 {
 	/// <summary>
 	/// コマンドデータ.
 	/// </summary>
-	public abstract class CommandData
+	public abstract class CommandData : FactoryElement
 	{
-		public int CommandId{ private set; get; }
+		public CommandData( BattleTypeConstants.CommandType type )
+			:base( (int)type )
+		{
+
+		}
 
 		/// <summary>
 		/// コマンドを実行するバトルメンバー.

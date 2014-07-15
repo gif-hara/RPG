@@ -33,13 +33,14 @@ namespace RPG.Battle
 
 		protected override void DecisionAction (BattleAllyCommandSelector owner)
 		{
-			if( commandId != 0 )
+			if( commandId != 4 )
 			{
 				MyMonoBehaviour.TODO( "戦う以外のコマンド実装." );
 				return;
 			}
 
-			owner.Decision( commandId );
+			owner.CreateCommandData( (BattleTypeConstants.CommandType)(commandId + 1) );
+			owner.ChangeInputState( NextCommandSelectType );
 		}
 
 		protected override void CancelAction (BattleAllyCommandSelector owner)
@@ -95,5 +96,24 @@ namespace RPG.Battle
 
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
+
+		private BattleTypeConstants.CommandSelectType NextCommandSelectType
+		{
+			get
+			{
+				BattleTypeConstants.CommandSelectType[] types =
+				{
+					BattleTypeConstants.CommandSelectType.Enemy,
+					BattleTypeConstants.CommandSelectType.Ability,
+					BattleTypeConstants.CommandSelectType.Item,
+					BattleTypeConstants.CommandSelectType.Main,
+					BattleTypeConstants.CommandSelectType.Ally,
+					BattleTypeConstants.CommandSelectType.Main,
+				};
+
+				return types[commandId];
+			}
+		}
+
 	}
 }

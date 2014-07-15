@@ -171,7 +171,9 @@
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleInitializeData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleMemberData.cs" />
-     <Compile Include="Assets\Scripts\Battle\Data\CommandData.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\Command\AttackCommandData.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\Command\CommandData.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\Command\CoverUpCommandData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\Party.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyActiveTimeUpdater.cs" />
@@ -188,12 +190,14 @@
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateCommandSelect.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateUpdateActiveTime.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\AllyCommandInput.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\CommandInputElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\AllySelectCommandWindowLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\BattleWindowActiveSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\MainCommandWindowLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromCommandId.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromTiled.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />
      <Compile Include="Assets\Scripts\Character\WorldMapPlayer.cs" />
      <Compile Include="Assets\Scripts\Common\Define.cs" />

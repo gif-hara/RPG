@@ -44,6 +44,10 @@ namespace RPG.Common
 			}
 
 			this.currentElement = this.elementList.Find( e => e.ID == id );
+			if( this.currentElement == null )
+			{
+				Debug.LogException( new System.ArgumentException( string.Format( "id={0} のElementが存在しません.", id ) ) );
+			}
 			this.currentElement.Enter( owner );
 		}
 
