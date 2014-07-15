@@ -1,19 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\UI\PositionSetterFromCommandId1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs">
     <Files>
-      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" Line="20" Column="57" />
-      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyCommandSelector.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Common\FactoryPattern\Factory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Common\FactoryPattern\FactoryElement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\Data\Command\AttackCommandData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\Data\Command\CoverUpCommandData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\Data\Command\CommandData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Battle\System\Enemy\BattleEnemyPartyManager.cs" Line="26" Column="36" />
+      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyPartyManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Battle\Data\EnemyData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Battle\Data\AllyData.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Battle\Data\BattleMemberData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Common\StateMachine\StateMachine.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\AllyCommandInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\UI\PositionSetterFromTiled.cs" Line="58" Column="1" />
-      <File FileName="Assets\Scripts\Battle\UI\PositionSetterFromCommandId1.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Battle\UI\EnemySelectCommandWindowLabelSetter.cs" Line="31" Column="30" />
+      <File FileName="Assets\Scripts\Battle\UI\AllySelectCommandWindowLabelSetter.cs" Line="32" Column="1" />
+      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" Line="36" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -16,14 +16,20 @@ namespace RPG.Battle
 	/// <summary>
 	/// 敵パーティ管理者コンポーネント.
 	/// </summary>
-	public class BattleEnemyPartyManager : MonoBehaviour
+	public class BattleEnemyPartyManager : MyMonoBehaviour
 	{
-		void Start ()
+		public Party<EnemyData> Party{ private set; get; }
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
+		void OnPreInitializeSystem()
 		{
-		}
-		
-		void Update ()
-		{
+			this.Party = new Party<EnemyData>();
+			
+			var initializeData = SharedData.initializeData.EnemyDataList;
+			for( int i=0,imax=initializeData.Count; i<imax; i++ )
+			{
+				this.Party.Add( new EnemyData( initializeData[i] ) );
+			}
 		}
 	}
 }

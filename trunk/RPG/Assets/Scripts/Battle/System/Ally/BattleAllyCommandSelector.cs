@@ -43,6 +43,7 @@ namespace RPG.Battle
 			this.inputArrowStateMachine = new StateMachine<BattleAllyCommandSelector>( this );
 			this.inputArrowStateMachine.Add( new MainCommandInput() );
 			this.inputArrowStateMachine.Add( new AllyCommandInput() );
+			this.inputArrowStateMachine.Add( new EnemyCommandInput() );
 
 			this.commandDataFactory = new Factory<CommandData>();
 			this.commandDataFactory.Add( new AttackCommandData() );

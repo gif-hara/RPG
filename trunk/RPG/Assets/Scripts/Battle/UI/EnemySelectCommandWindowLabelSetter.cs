@@ -1,8 +1,8 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : AllySelectCommandWindowLabelSetter.cs
+*     * FileName    : EnemySelectCommandWindowLabelSetter.cs
 *
-*     * Description : 味方選択コマンドウィンドウのラベルを設定するコンポーネント.
+*     * Description : 敵選択コマンドウィンドウのラベルを設定するコンポーネント.
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -15,28 +15,28 @@ using System.Text;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// 味方選択コマンドウィンドウのラベルを設定するコンポーネント.
+	/// 敵選択コマンドウィンドウのラベルを設定するコンポーネント.
 	/// </summary>
-	public class AllySelectCommandWindowLabelSetter : MyMonoBehaviour
+	public class EnemySelectCommandWindowLabelSetter : MyMonoBehaviour
 	{
 		[SerializeField]
 		private UILabel refLabel;
-
+		
 		[SerializeField]
-		private BattleAllyPartyManager refAllyPartyManager;
-
+		private BattleEnemyPartyManager refEnemyPartyManager;
+		
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
 		void OnOpenCommandWindow( BattleMessageConstants.OpenCommandWindowData parameter )
 		{
-			if( parameter.SelectType != BattleTypeConstants.CommandSelectType.Ally )	return;
+			if( parameter.SelectType != BattleTypeConstants.CommandSelectType.Enemy )	return;
 
 			StringBuilder builder = new StringBuilder();
-			var party = refAllyPartyManager.Party.List;
+			var party = refEnemyPartyManager.Party.List;
 			for( int i=0,imax=party.Count; i<imax; i++ )
 			{
 				builder.AppendLine( party[i].Data.name );
 			}
-
+			
 			refLabel.text = builder.ToString();
 		}
 	}

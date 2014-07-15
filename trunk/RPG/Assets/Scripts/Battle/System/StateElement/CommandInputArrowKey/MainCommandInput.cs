@@ -33,7 +33,7 @@ namespace RPG.Battle
 
 		protected override void DecisionAction (BattleAllyCommandSelector owner)
 		{
-			if( commandId != 4 )
+			if( commandId != 0 && commandId != 4 )
 			{
 				MyMonoBehaviour.TODO( "戦う以外のコマンド実装." );
 				return;
