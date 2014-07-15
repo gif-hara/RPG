@@ -50,15 +50,15 @@ namespace RPG.Common
 		/// </summary>
 		private Vector3 originPosition;
 
-
-		void Start()
-		{
-			this.originPosition = transform.localPosition;
-		}
+		/// <summary>
+		/// 初期化したか.
+		/// </summary>
+		private bool isInitialize = false;
 
 		protected void Set( int id )
 		{
-			var result = originPosition;
+			Initialize();
+
 			var x = xPositionType == PositionType.Surplus
 				? interval.x * (id % split)
 					: interval.x * (id / split);
@@ -66,6 +66,14 @@ namespace RPG.Common
 				? interval.y * (id % split)
 					: interval.y * (id / split);
 			transform.localPosition = originPosition + new Vector3( x, y, 0.0f );
+		}
+
+		private void Initialize()
+		{
+			if( this.isInitialize )	return;
+
+			this.isInitialize = true;
+			this.originPosition = transform.localPosition;
 		}
 	}
 }

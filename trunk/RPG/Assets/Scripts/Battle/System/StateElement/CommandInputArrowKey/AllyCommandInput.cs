@@ -37,6 +37,7 @@ namespace RPG.Battle
 		
 		protected override void CancelAction (BattleAllyCommandSelector owner)
 		{
+			owner.Cancel();
 		}
 		
 		protected override void LeftAction (BattleAllyCommandSelector owner)

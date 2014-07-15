@@ -22,23 +22,22 @@ namespace RPG.Battle
 		public CharacterData Data{ private set; get; }
 
 		public float ActiveTime{ private set; get; }
-		
-		public BattleTypeConstants.CommandType SelectCommandType{ private set; get; }
-		
+
+		public CommandData SelectCommandData{ private set; get; }
+				
 		public BattleMemberData( CharacterData data )
 		{
 			this.Data = data;
 			this.ActiveTime = 0.0f;
-			this.SelectCommandType = BattleTypeConstants.CommandType.None;
 		}
 		
 		/// <summary>
 		/// コマンド決定処理.
 		/// </summary>
 		/// <param name="type">Type.</param>
-		public void DecisionCommand( BattleTypeConstants.CommandType type )
+		public void DecisionCommand( CommandData commandData )
 		{
-			this.SelectCommandType = type;
+			this.SelectCommandData = commandData;
 		}
 		
 		/// <summary>
@@ -46,7 +45,7 @@ namespace RPG.Battle
 		/// </summary>
 		public void ExecuteCommand()
 		{
-			this.SelectCommandType = BattleTypeConstants.CommandType.None;
+			this.SelectCommandData = null;
 			this.ActiveTime = 0.0f;
 		}
 		
@@ -58,7 +57,19 @@ namespace RPG.Battle
 		{
 			this.ActiveTime += value;
 		}
-		
+
+		public BattleTypeConstants.CommandType SelectCommandType
+		{
+			get
+			{
+				if( this.SelectCommandData == null )
+				{
+					return BattleTypeConstants.CommandType.None;
+				}
+
+				return (BattleTypeConstants.CommandType)this.SelectCommandData.Id;
+			}
+		}
 		/// <summary>
 		/// アクティブタイムが最大値か返す.
 		/// </summary>

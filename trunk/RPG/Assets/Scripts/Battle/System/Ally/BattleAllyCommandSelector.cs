@@ -67,10 +67,16 @@ namespace RPG.Battle
 
 		public void Decision( int commandId )
 		{
-			CurrentCommandSelectAllyData.DecisionCommand( BattleTypeConstants.CommandType.Attack );
+			CurrentCommandSelectAllyData.DecisionCommand( temporaryCommandData );
 			var tempAllyData = this.CurrentCommandSelectAllyData;
 			this.CurrentCommandSelectAllyData = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
+		}
+
+		public void Cancel()
+		{
+			this.temporaryCommandData = null;
+			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 		}
 
 		public void CreateCommandData( BattleTypeConstants.CommandType type )

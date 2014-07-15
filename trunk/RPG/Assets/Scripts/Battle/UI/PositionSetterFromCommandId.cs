@@ -24,5 +24,11 @@ namespace RPG.Common
 		{
 			Set( commandId );
 		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow()
+		{
+			Set( 0 );
+		}
 	}
 }
