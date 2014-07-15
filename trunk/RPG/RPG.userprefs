@@ -1,21 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Common\FactoryPattern\Factory.cs">
     <Files>
-      <File FileName="Assets\Scripts\Battle\UI\AllySelectCommandWindowLabelSetter.cs" Line="38" Column="39" />
-      <File FileName="Assets\Scripts\Battle\UI\MainCommandWindowLabelSetter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\BattleSceneManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharacterData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Utility\StringAssetUtility.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" Line="39" Column="12" />
+      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyCommandSelector.cs" Line="51" Column="40" />
       <File FileName="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\Data\AllyData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\Data\BattleMemberData.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\Enemy\BattleEnemyPartyManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\Data\Party.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyPartyManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\UI\BattleWindowActiveSetter.cs" Line="40" Column="5" />
-      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs" Line="44" Column="27" />
+      <File FileName="Assets\Scripts\Common\FactoryPattern\Factory.cs" Line="20" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

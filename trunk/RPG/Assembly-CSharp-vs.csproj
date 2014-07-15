@@ -197,6 +197,8 @@
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />
      <Compile Include="Assets\Scripts\Character\WorldMapPlayer.cs" />
      <Compile Include="Assets\Scripts\Common\Define.cs" />
+     <Compile Include="Assets\Scripts\Common\FactoryPattern\Factory.cs" />
+     <Compile Include="Assets\Scripts\Common\FactoryPattern\FactoryElement.cs" />
      <Compile Include="Assets\Scripts\Common\GUITextUtility.cs" />
      <Compile Include="Assets\Scripts\Common\MonoBehaviourExtension.cs" />
      <Compile Include="Assets\Scripts\Common\MyMonoBehaviour.cs" />
