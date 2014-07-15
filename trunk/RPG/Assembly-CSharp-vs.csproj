@@ -190,6 +190,8 @@
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateUpdateActiveTime.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\CommandInputElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\AllySelectCommandWindowLabelSetter.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\BattleWindowActiveSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\MainCommandWindowLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromCommandId.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />

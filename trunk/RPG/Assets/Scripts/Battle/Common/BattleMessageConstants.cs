@@ -97,11 +97,11 @@ namespace RPG.Battle
 			/// <summary> 無し. </summary>
 			None,
 
-			/// <summary> 特殊能力. </summary>
-			Ability,
-
 			/// <summary> 戦う. </summary>
 			Attack,
+
+			/// <summary> 特殊能力. </summary>
+			Ability,
 
 			/// <summary> 道具. </summary>
 			Item,
