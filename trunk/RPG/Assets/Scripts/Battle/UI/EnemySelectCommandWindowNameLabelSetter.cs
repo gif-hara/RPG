@@ -1,8 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : EnemySelectCommandWindowLabelSetter.cs
-*
-*     * Description : 敵選択コマンドウィンドウのラベルを設定するコンポーネント.
+*     * FileName    : EnemySelectCommandWindowNameLabelSetter.cs
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -15,9 +13,9 @@ using System.Text;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// 敵選択コマンドウィンドウのラベルを設定するコンポーネント.
+	/// 敵選択コマンドウィンドウの名前ラベルを設定するコンポーネント.
 	/// </summary>
-	public class EnemySelectCommandWindowLabelSetter : MyMonoBehaviour
+	public class EnemySelectCommandWindowNameLabelSetter : MyMonoBehaviour
 	{
 		[SerializeField]
 		private UILabel refLabel;
@@ -32,11 +30,19 @@ namespace RPG.Battle
 
 			StringBuilder builder = new StringBuilder();
 			var party = refEnemyPartyManager.Party.List;
-			for( int i=0,imax=party.Count; i<imax; i++ )
+			var enemyData = party[0].Data;
+			for( int i=1,imax=party.Count; i<imax; i++ )
 			{
-				builder.AppendLine( party[i].Data.name );
+				if( enemyData.id == party[i].Data.id )
+				{
+					continue;
+				}
+
+				builder.AppendLine( enemyData.name );
+				enemyData = party[i].Data;
 			}
-			
+
+			builder.AppendLine( enemyData.name );
 			refLabel.text = builder.ToString();
 		}
 	}

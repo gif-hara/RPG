@@ -197,7 +197,8 @@
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\AllySelectCommandWindowLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\BattleWindowActiveSetter.cs" />
-     <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowLabelSetter.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNameLabelSetter.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNumberLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\MainCommandWindowLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromCommandId.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromTiled.cs" />

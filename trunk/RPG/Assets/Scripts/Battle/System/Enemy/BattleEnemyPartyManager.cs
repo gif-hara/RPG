@@ -31,5 +31,32 @@ namespace RPG.Battle
 				this.Party.Add( new EnemyData( initializeData[i] ) );
 			}
 		}
+		/// <summary>
+		/// パーティの数をグループ単位で返す.
+		/// </summary>
+		/// <value>The group count.</value>
+		public int GroupCount
+		{
+			get
+			{
+				var list = Party.List;
+				if( list.Count == 0 )	return 0;
+
+				int result = 1;
+				var enemyData = list[0].Data;
+				for( int i=1,imax=list.Count; i<imax; i++ )
+				{
+					if( enemyData.id == list[i].Data.id )
+					{
+						continue;
+					}
+					
+					enemyData = list[i].Data;
+					result++;
+				}
+
+				return result;
+			}
+		}
 	}
 }

@@ -19,6 +19,8 @@ namespace RPG.Battle
 	/// </summary>
 	public class EnemyCommandInput : CommandInputElementBase
 	{
+		int max = 0;
+
 		public EnemyCommandInput()
 			:base( BattleTypeConstants.CommandSelectType.Enemy )
 		{
@@ -27,6 +29,7 @@ namespace RPG.Battle
 		public override void Enter (BattleAllyCommandSelector owner)
 		{
 			base.Enter (owner);
+			this.max = owner.EnemyPartyManager.GroupCount;
 			var parameter = new BattleMessageConstants.OpenCommandWindowData( BattleTypeConstants.CommandSelectType.Enemy, owner.CurrentCommandSelectAllyData );
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, parameter );
 		}
@@ -53,28 +56,20 @@ namespace RPG.Battle
 			commandId -= 1;
 			if( commandId == -1 )
 			{
-				commandId = 2;
+				commandId = this.max - 1;
 			}
-			else if( commandId == 2 )
-			{
-				commandId = 5;
-			}
-			
+
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 		
 		protected override void DownAction (BattleAllyCommandSelector owner)
 		{
 			commandId += 1;
-			if( commandId == 3 )
+			if( commandId == this.max )
 			{
 				commandId = 0;
 			}
-			else if( commandId == 6 )
-			{
-				commandId = 3;
-			}
-			
+
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 	}

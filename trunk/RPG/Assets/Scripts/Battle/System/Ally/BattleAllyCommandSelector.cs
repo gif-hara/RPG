@@ -23,6 +23,10 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
+		public BattleEnemyPartyManager EnemyPartyManager{ get{ return refEnemyPartyManager; } }
+		[SerializeField]
+		private BattleEnemyPartyManager refEnemyPartyManager;
+
 		/// <summary>
 		/// コマンド入力を行っている味方データ.
 		/// </summary>
