@@ -195,8 +195,11 @@
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\CommandInputElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\EnemyCommandInput.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\AllySelectCommandWindowFrameSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\AllySelectCommandWindowLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\BattleWindowActiveSetter.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\CommandWindowFrameSetter.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowFrameScaleSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNameLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNumberLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\MainCommandWindowLabelSetter.cs" />

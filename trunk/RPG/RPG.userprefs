@@ -1,11 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNameLabelSetter.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\UI\EnemySelectCommandWindowFrameScaleSetter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNameLabelSetter.cs" Line="5" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\EnemyCommandInput.cs" Line="40" Column="19" />
-      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyCommandSelector.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Battle\UI\CommandWindowFrameSetter.cs" Line="34" Column="87" />
+      <File FileName="Assets\Scripts\Battle\UI\EnemySelectCommandWindowFrameScaleSetter.cs" Line="26" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
