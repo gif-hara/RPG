@@ -19,22 +19,28 @@ namespace RPG.Battle
 	/// </summary>
 	public abstract class CommandData : FactoryElement
 	{
-		public CommandData( BattleTypeConstants.CommandType type )
-			:base( (int)type )
-		{
-
-		}
-
 		/// <summary>
 		/// コマンドを実行するバトルメンバー.
 		/// </summary>
 		/// <value>The executable member.</value>
-		public BattleMemberData executableMember{ private set; get; }
+		public BattleMemberData ExecutableMember{ private set; get; }
 
 		/// <summary>
 		/// 誰に対してコマンドを実行するかのリスト.
 		/// </summary>
 		/// <value>The target identifier list.</value>
 		public List<int> TargetIdList{ private set; get; }
+
+		public CommandData( BattleTypeConstants.CommandType type )
+			:base( (int)type )
+		{
+			this.ExecutableMember = null;
+			this.TargetIdList = new List<int>();
+		}
+
+		public void Initialize( BattleAllyCommandSelector allyCommandSelector )
+		{
+			this.ExecutableMember = allyCommandSelector.CurrentCommandSelectAllyData;
+		}
 	}
 }

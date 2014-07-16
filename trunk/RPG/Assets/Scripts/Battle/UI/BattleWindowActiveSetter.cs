@@ -41,5 +41,14 @@ namespace RPG.Battle
 				data[i].TargetObject.SetActive( data[i].Type == parameter.SelectType );
 			}
 		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartUpdateActiveTimeMessage )]
+		void OnStartUpdateActiveTime()
+		{
+			for( int i=0,imax=data.Count; i<imax; i++ )
+			{
+				data[i].TargetObject.SetActive( false );
+			}
+		}
 	}
 }

@@ -70,7 +70,7 @@ namespace RPG.Battle
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 		}
 
-		public void Decision( int commandId )
+		public void Decision()
 		{
 			CurrentCommandSelectAllyData.DecisionCommand( temporaryCommandData );
 			var tempAllyData = this.CurrentCommandSelectAllyData;
@@ -87,11 +87,21 @@ namespace RPG.Battle
 		public void CreateCommandData( BattleTypeConstants.CommandType type )
 		{
 			this.temporaryCommandData = this.commandDataFactory.Clone( (int)type );
+			this.temporaryCommandData.Initialize( this );
 		}
 
 		public void ChangeInputState( BattleTypeConstants.CommandSelectType type )
 		{
 			this.inputArrowStateMachine.Change( (int)type );
+		}
+
+		/// <summary>
+		/// コマンドデータの変更を受け入れる.
+		/// </summary>
+		/// <param name="acceptFunction">Accept function.</param>
+		public void AcceptChangeCommandData( System.Action<CommandData> acceptFunction )
+		{
+			acceptFunction( this.temporaryCommandData );
 		}
 
 		/// <summary>

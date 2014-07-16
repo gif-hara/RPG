@@ -24,6 +24,7 @@ namespace RPG.Battle
 		{
 
 		}
+
 		public override FactoryElement Clone ()
 		{
 			return new AttackCommandData();

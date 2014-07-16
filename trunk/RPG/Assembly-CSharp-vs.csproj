@@ -171,9 +171,6 @@
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleInitializeData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleMemberData.cs" />
-     <Compile Include="Assets\Scripts\Battle\Data\Command\AttackCommandData.cs" />
-     <Compile Include="Assets\Scripts\Battle\Data\Command\CommandData.cs" />
-     <Compile Include="Assets\Scripts\Battle\Data\Command\CoverUpCommandData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\EnemyData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\Party.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
@@ -187,6 +184,9 @@
      <Compile Include="Assets\Scripts\Battle\System\BattleStateManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Enemy\BattleEnemyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Enemy\BattleEnemyPartyManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\FactoryPattern\AttackCommandData.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\FactoryPattern\CommandData.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\FactoryPattern\CoverUpCommandData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateCommandExecute.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateCommandSelect.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateElementBase.cs" />
