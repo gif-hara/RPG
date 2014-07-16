@@ -87,7 +87,6 @@ namespace RPG.Battle
 		public void CreateCommandData( BattleTypeConstants.CommandType type )
 		{
 			this.temporaryCommandData = this.commandDataFactory.Clone( (int)type );
-			this.temporaryCommandData.Initialize( this );
 		}
 
 		public void ChangeInputState( BattleTypeConstants.CommandSelectType type )

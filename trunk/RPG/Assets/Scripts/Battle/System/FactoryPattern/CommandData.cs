@@ -20,12 +20,6 @@ namespace RPG.Battle
 	public abstract class CommandData : FactoryElement
 	{
 		/// <summary>
-		/// コマンドを実行するバトルメンバー.
-		/// </summary>
-		/// <value>The executable member.</value>
-		public BattleMemberData ExecutableMember{ private set; get; }
-
-		/// <summary>
 		/// 誰に対してコマンドを実行するかのリスト.
 		/// </summary>
 		/// <value>The target identifier list.</value>
@@ -34,13 +28,12 @@ namespace RPG.Battle
 		public CommandData( BattleTypeConstants.CommandType type )
 			:base( (int)type )
 		{
-			this.ExecutableMember = null;
 			this.TargetIdList = new List<int>();
 		}
 
-		public void Initialize( BattleAllyCommandSelector allyCommandSelector )
+		public override string ToString ()
 		{
-			this.ExecutableMember = allyCommandSelector.CurrentCommandSelectAllyData;
+			return string.Format ("[CommandData: TargetIdList={0}]", TargetIdList);
 		}
 	}
 }

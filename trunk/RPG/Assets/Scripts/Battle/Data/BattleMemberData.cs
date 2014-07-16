@@ -84,7 +84,7 @@ namespace RPG.Battle
 
 		public override string ToString ()
 		{
-			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandType={2}, IsActiveTimeMax={3}]", Data, ActiveTime, SelectCommandType, IsActiveTimeMax);
+			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandData={2}, SelectCommandType={3}, IsActiveTimeMax={4}]", Data, ActiveTime, SelectCommandData, SelectCommandType, IsActiveTimeMax);
 		}
 	}
 }
