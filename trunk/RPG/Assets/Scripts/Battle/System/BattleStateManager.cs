@@ -11,9 +11,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
+using RPG.Battle;
+using RPG.Attribute;
 
-namespace RPG.Battle
-{
+//namespace RPG.Battle
+//{
 	/// <summary>
 	/// .
 	/// </summary>
@@ -29,9 +31,9 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
-		private Common.StateMachine<BattleStateManager> stateMachine;
+		private StateMachine<BattleStateManager> stateMachine;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
+		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
 			this.stateMachine = new StateMachine<BattleStateManager>( this );
@@ -40,13 +42,13 @@ namespace RPG.Battle
 			this.stateMachine.Add( new BattleStateCommandExecute() );
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
+		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
 		void OnStartBattle()
 		{
 			ChangeState( State.SelectCommand );
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
+		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
 		void OnDecisionCommand( AllyData allyData )
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
@@ -55,7 +57,7 @@ namespace RPG.Battle
 			}
 			else if( refAllyPartyManager.Party.IsAnyActiveTimeMax )
 			{
-				ChangeState( State.ExecuteCommand );
+				ChangeState( State.ExecuteCommand, 1 );
 			}
 			else
 			{
@@ -63,13 +65,13 @@ namespace RPG.Battle
 			}
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.EndUpdateActiveTimeMessage )]
+		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndUpdateActiveTimeMessage )]
 		void OnEndUpdateActiveTime()
 		{
 			ChangeState( State.ExecuteCommand );
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.EndCommandExecuteMessage )]
+		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndCommandExecuteMessage )]
 		void OnEndCommandExecute()
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
@@ -82,9 +84,16 @@ namespace RPG.Battle
 			}
 		}
 
-		public void ChangeState( State state )
+		public void ChangeState( State state, int delayFrame = 0 )
 		{
-			this.stateMachine.Change( (int)state );
+			if( delayFrame == 0 )
+			{
+				this.stateMachine.Change( (int)state );
+			}
+			else
+			{
+				StartCoroutine( ChangeStateCoroutine( state, delayFrame ) );
+			}
 		}
 
 		public State CurrentState
@@ -94,5 +103,17 @@ namespace RPG.Battle
 				return (State)this.stateMachine.CurrentElementId;
 			}
 		}
+
+		private IEnumerator ChangeStateCoroutine( State state, int delayFrame )
+		{
+			this.stateMachine.ClearElement();
+
+			for( int i=0; i<delayFrame; i++ )
+			{
+				yield return new WaitForEndOfFrame();
+			}
+
+			this.stateMachine.Change( (int)state );
+		}
 	}
-}
+//}

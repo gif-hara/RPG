@@ -45,6 +45,17 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartUpdateActiveTimeMessage )]
 		void OnStartUpdateActiveTime()
 		{
+			AllDeactive();
+		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandExecuteMessage )]
+		void OnStartCommandExecute()
+		{
+			AllDeactive();
+		}
+
+		private void AllDeactive()
+		{
 			for( int i=0,imax=data.Count; i<imax; i++ )
 			{
 				data[i].TargetObject.SetActive( false );

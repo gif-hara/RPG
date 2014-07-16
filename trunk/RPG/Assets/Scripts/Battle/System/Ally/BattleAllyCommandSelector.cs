@@ -72,7 +72,7 @@ namespace RPG.Battle
 
 		public void Decision()
 		{
-			CurrentCommandSelectAllyData.DecisionCommand( temporaryCommandData );
+			this.CurrentCommandSelectAllyData.DecisionCommand( temporaryCommandData );
 			var tempAllyData = this.CurrentCommandSelectAllyData;
 			this.CurrentCommandSelectAllyData = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );

@@ -51,6 +51,11 @@ namespace RPG.Common
 			this.currentElement.Enter( owner );
 		}
 
+		public void ClearElement()
+		{
+			this.currentElement = null;
+		}
+
 		public void Update()
 		{
 			this.currentElement.Update( owner );
