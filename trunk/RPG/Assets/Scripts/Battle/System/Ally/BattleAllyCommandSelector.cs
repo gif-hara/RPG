@@ -40,7 +40,7 @@ namespace RPG.Battle
 
 		private Factory<CommandData> commandDataFactory;
 
-		private CommandData temporaryCommandData = null;
+		public CommandData CommandData{ private set; get; }
 
 		void Awake()
 		{
@@ -72,7 +72,7 @@ namespace RPG.Battle
 
 		public void Decision()
 		{
-			this.CurrentCommandSelectAllyData.DecisionCommand( temporaryCommandData );
+			this.CurrentCommandSelectAllyData.DecisionCommand( CommandData );
 			var tempAllyData = this.CurrentCommandSelectAllyData;
 			this.CurrentCommandSelectAllyData = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
@@ -80,27 +80,18 @@ namespace RPG.Battle
 
 		public void Cancel()
 		{
-			this.temporaryCommandData = null;
+			this.CommandData = null;
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 		}
 
 		public void CreateCommandData( BattleTypeConstants.CommandType type )
 		{
-			this.temporaryCommandData = this.commandDataFactory.Clone( (int)type );
+			this.CommandData = this.commandDataFactory.Clone( (int)type );
 		}
 
 		public void ChangeInputState( BattleTypeConstants.CommandSelectType type )
 		{
 			this.inputArrowStateMachine.Change( (int)type );
-		}
-
-		/// <summary>
-		/// コマンドデータの変更を受け入れる.
-		/// </summary>
-		/// <param name="acceptFunction">Accept function.</param>
-		public void AcceptChangeCommandData( System.Action<CommandData> acceptFunction )
-		{
-			acceptFunction( this.temporaryCommandData );
 		}
 
 		/// <summary>

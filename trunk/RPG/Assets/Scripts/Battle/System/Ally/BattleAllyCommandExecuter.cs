@@ -22,9 +22,17 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
+		[SerializeField]
+		private AllPartyManager refAllPartyManager;
+
+		[SerializeField]
+		private CommandEventHolder refCommandEventHolder;
+
 		private AllyData executeAllyData = null;
 
 		private bool isUpdate = false;
+
+		private Queue<List<CommandEventBase>> commandEventList;
 
 		void Update()
 		{
@@ -33,7 +41,6 @@ namespace RPG.Battle
 			if( MyInput.Decision )
 			{
 				this.isUpdate = false;
-				executeAllyData.ExecuteCommand();
 				this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.EndCommandExecuteMessage );
 			}
 		}
@@ -43,7 +50,25 @@ namespace RPG.Battle
 		{
 			TODO( "コマンド実行処理の実装." );
 			this.executeAllyData = refAllyPartyManager.Party.ActiveTimeMaxBattleMember;
+			SetCommandEventList();
+			ExecuteCommandEvent();
 			this.isUpdate = true;
+		}
+
+		private void SetCommandEventList()
+		{
+			this.commandEventList = this.executeAllyData.SelectCommandData.NextState( this.executeAllyData, this.refCommandEventHolder );
+		}
+
+		private void ExecuteCommandEvent()
+		{
+			var parameter = new BattleMessageConstants.NoticeCommandEventArgument(
+				this.commandEventList.Dequeue(),
+				refAllPartyManager.AllParty,
+				this.executeAllyData,
+				this.executeAllyData.SelectCommandData
+				);
+			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.NoticeCommandEventMessage, parameter );
 		}
 	}
 }

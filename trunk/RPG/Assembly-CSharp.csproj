@@ -171,9 +171,13 @@
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleInitializeData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleMemberData.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\CommandEvent\CommandEventBase.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\CommandEvent\CommandEventConstants.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\CommandEvent\InformationLabelSetterCommandEvent.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\EnemyData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\Party.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\AllPartyManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyActiveTimeUpdater.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyCommandSelector.cs" />
@@ -182,6 +186,7 @@
      <Compile Include="Assets\Scripts\Battle\System\BattleSceneManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSharedData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleStateManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\CommandEventHolder.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Enemy\BattleEnemyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Enemy\BattleEnemyPartyManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\FactoryPattern\AttackCommandData.cs" />
@@ -202,6 +207,7 @@
      <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowFrameScaleSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNameLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNumberLabelSetter.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\InformationCommandEventLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\MainCommandWindowLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromCommandId.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromTiled.cs" />

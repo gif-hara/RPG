@@ -39,11 +39,8 @@ namespace RPG.Battle
 		{
 			this.SelectCommandData = commandData;
 		}
-		
-		/// <summary>
-		/// コマンド実行処理.
-		/// </summary>
-		public void ExecuteCommand()
+
+		public void EndExecuteCommand()
 		{
 			this.SelectCommandData = null;
 			this.ActiveTime = 0.0f;

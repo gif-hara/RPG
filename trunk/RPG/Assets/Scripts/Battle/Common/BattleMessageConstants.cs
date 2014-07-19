@@ -83,8 +83,36 @@ namespace RPG.Battle
 				return string.Format ("[OpenCommandWindowData: SelectType={0}, AllyData={1}]", SelectType, AllyData);
 			}
 		}
+
+		/// <summary>
+		/// コマンドウィンドウを表示する際のメッセージ.
+		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( OpenCommandWindowData ) )]
 		public const string OpenCommandWindowMessage = "OnOpenCommandWindow";
+
+		public class NoticeCommandEventArgument
+		{
+			public List<CommandEventBase> CommandEventList{ private set; get; }
+
+			public AllParty AllParty{ private set; get; }
+
+			public BattleMemberData ExecuteMember{ private set; get; }
+
+			public CommandData CommandData{ private set; get; }
+
+			public NoticeCommandEventArgument( List<CommandEventBase> commandEventList, AllParty allParty, BattleMemberData executeMember, CommandData commandData )
+			{
+				this.CommandEventList = commandEventList;
+				this.AllParty = allParty;
+				this.ExecuteMember = executeMember;
+				this.CommandData = commandData;
+			}
+		}
+		/// <summary>
+		/// コマンドイベントを通知するメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( NoticeCommandEventArgument ) )] 
+		public const string NoticeCommandEventMessage = "OnNoticeCommandEvent";
 	}
 
 	public class BattleTypeConstants

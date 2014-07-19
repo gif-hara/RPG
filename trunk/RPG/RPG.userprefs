@@ -1,16 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\System\FactoryPattern\CommandDataFactory.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Battle\UI\CommandWindowFrameSetter.cs" Line="34" Column="87" />
-      <File FileName="Assets\Scripts\Battle\UI\EnemySelectCommandWindowFrameScaleSetter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\UI\AllySelectCommandWindowFrameSetter.cs" Line="20" Column="40" />
-      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\EnemyCommandInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyCommandSelector.cs" Line="53" Column="52" />
-      <File FileName="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\MainCommandInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\FactoryPattern\CommandDataFactory.cs" Line="19" Column="3" />
-      <File FileName="Assets\Scripts\Common\FactoryPattern\FactoryElement.cs" Line="26" Column="1" />
-      <File FileName="Assets\Scripts\Battle\System\FactoryPattern\CommandData.cs" Line="26" Column="40" />
+      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs" Line="57" Column="1" />
+      <File FileName="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" Line="95" Column="71" />
+      <File FileName="Assets\Scripts\Battle\UI\InformationCommandEventLabelSetter.cs" Line="34" Column="33" />
+      <File FileName="Assets\Scripts\Battle\Data\CommandEvent\InformationLabelSetterCommandEvent.cs" Line="42" Column="28" />
+      <File FileName="Assets\Scripts\Utility\StringAsset.cs" Line="115" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

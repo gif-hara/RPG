@@ -33,10 +33,7 @@ namespace RPG.Battle
 		
 		protected override void DecisionAction (BattleAllyCommandSelector owner)
 		{
-			owner.AcceptChangeCommandData( c =>
-			{
-				c.TargetIdList.Add( commandId );
-			});
+			owner.CommandData.AddTargetId( commandId );
 			owner.Decision();
 		}
 		
