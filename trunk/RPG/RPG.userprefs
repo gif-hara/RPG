@@ -1,12 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Character/WorldMapPlayer.cs">
     <Files>
-      <File FileName="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs" Line="57" Column="1" />
-      <File FileName="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" Line="95" Column="71" />
-      <File FileName="Assets\Scripts\Battle\UI\InformationCommandEventLabelSetter.cs" Line="34" Column="33" />
-      <File FileName="Assets\Scripts\Battle\Data\CommandEvent\InformationLabelSetterCommandEvent.cs" Line="42" Column="28" />
-      <File FileName="Assets\Scripts\Utility\StringAsset.cs" Line="115" Column="1" />
+      <File FileName="Assets/Scripts/Character/WorldMapPlayer.cs" Line="88" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
