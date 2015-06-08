@@ -57,18 +57,20 @@ namespace RPG.Battle
 
 		private void SetCommandEventList()
 		{
-			this.commandEventList = this.executeAllyData.SelectCommandData.NextState( this.executeAllyData, this.refCommandEventHolder );
+//			this.commandEventList = this.executeAllyData.SelectCommandData.NextState( this.executeAllyData, this.refCommandEventHolder );
 		}
 
 		private void ExecuteCommandEvent()
 		{
-			var parameter = new BattleMessageConstants.NoticeCommandEventArgument(
-				this.commandEventList.Dequeue(),
-				refAllPartyManager.AllParty,
-				this.executeAllyData,
-				this.executeAllyData.SelectCommandData
-				);
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.NoticeCommandEventMessage, parameter );
+//			var commandEvent = this.commandEventList.Dequeue();
+//			Debug.Log( commandEvent[0] );
+//			var parameter = new BattleMessageConstants.NoticeCommandEventArgument(
+//				commandEvent,
+//				refAllPartyManager.AllParty,
+//				this.executeAllyData,
+//				this.executeAllyData.SelectCommandData
+//				);
+//			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.NoticeCommandEventMessage, parameter );
 		}
 	}
 }

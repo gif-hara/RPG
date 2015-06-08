@@ -19,12 +19,18 @@ namespace RPG.Battle
 	public class MainCommandWindowLabelSetter : MyMonoBehaviour
 	{
 		[SerializeField]
+		private BattleAllyCommandSelector refAllyCommandSelector;
+
+		[SerializeField]
 		private UILabel refLabel;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleMessageConstants.OpenCommandWindowData parameter )
+		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
-			refLabel.text = StringAsset.Format( "MainCommandLeftLabel", Common.StringAssetUtility.AbilityName( parameter.AllyData.Data.abilityType ) );
+			refLabel.text = StringAsset.Format(
+				"MainCommandLeftLabel",
+				Common.StringAssetUtility.AbilityName( this.refAllyCommandSelector.CurrentCommandSelectAllyData.Data.abilityType )
+				);
 		}
 	}
 }

@@ -27,24 +27,26 @@ namespace RPG.Battle
 		public override void Enter (BattleAllyCommandSelector owner)
 		{
 			base.Enter (owner);
-			var parameter = new BattleMessageConstants.OpenCommandWindowData( BattleTypeConstants.CommandSelectType.Main, owner.CurrentCommandSelectAllyData );
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, parameter );
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Main );
 		}
 
 		protected override void DecisionAction (BattleAllyCommandSelector owner)
 		{
-			if( commandId != 0 && commandId != 4 )
-			{
-				MyMonoBehaviour.TODO( "戦う以外のコマンド実装." );
-				return;
-			}
+			owner.DecideMainCommand( this.ConvertCommandType( owner ) );
 
-			owner.CreateCommandData( (BattleTypeConstants.CommandType)(commandId + 1) );
-			owner.ChangeInputState( NextCommandSelectType );
+//			if( commandId != 0 && commandId != 4 )
+//			{
+//				MyMonoBehaviour.TODO( "戦う以外のコマンド実装." );
+//				return;
+//			}
+//
+//			owner.CreateCommandData( (BattleTypeConstants.CommandType)(commandId + 1) );
+//			owner.ChangeInputState( NextCommandSelectType );
 		}
 
 		protected override void CancelAction (BattleAllyCommandSelector owner)
 		{
+			MyMonoBehaviour.TODO( "キャンセル処理の実装" );
 		}
 
 		protected override void LeftAction (BattleAllyCommandSelector owner)
@@ -97,23 +99,14 @@ namespace RPG.Battle
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
-		private BattleTypeConstants.CommandSelectType NextCommandSelectType
+		private int ConvertCommandType( BattleAllyCommandSelector owner )
 		{
-			get
+			if( commandId == 1 )
 			{
-				BattleTypeConstants.CommandSelectType[] types =
-				{
-					BattleTypeConstants.CommandSelectType.Enemy,
-					BattleTypeConstants.CommandSelectType.Ability,
-					BattleTypeConstants.CommandSelectType.Item,
-					BattleTypeConstants.CommandSelectType.Main,
-					BattleTypeConstants.CommandSelectType.Ally,
-					BattleTypeConstants.CommandSelectType.Main,
-				};
-
-				return types[commandId];
+				return (int)owner.CurrentCommandSelectAllyData.Data.abilityType;
 			}
-		}
 
+			return commandId;
+		}
 	}
 }

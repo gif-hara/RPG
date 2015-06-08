@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_6_1;UNITY_4_6;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;DEBUG</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_1_0;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>/Applications/Unity4.6.1/Unity4.6.1.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>/Applications/Unity4.6.1/Unity4.6.1.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +167,11 @@
      <Compile Include="Assets\Scripts\Attribute\MessageMethodArgumentAttribute.cs" />
      <Compile Include="Assets\Scripts\Attribute\MessageMethodReceiverAttribute.cs" />
      <Compile Include="Assets\Scripts\Battle\Camera\BattleCameraObjectLookAt.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\EnemyCommand\OnDecideEnemyCommandAddTargetId.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\EnemyCommand\OnDecideEnemyCommandComplete.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideMainCommandChangeInputState.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideMainCommandOpenWindow.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideMainCommandSetCommandType.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleInitializeData.cs" />
@@ -178,7 +183,6 @@
      <Compile Include="Assets\Scripts\Battle\Data\Party.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
      <Compile Include="Assets\Scripts\Battle\System\AllPartyManager.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyActiveTimeUpdater.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyCommandSelector.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyModelCreator.cs" />
@@ -196,6 +200,9 @@
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateCommandSelect.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateUpdateActiveTime.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\OnActiveStateBroadcastStartCommandSelect.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\OnActiveStateUpdateActiveTime.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\OnActiveStateWindowDeactive.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\AllyCommandInput.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\CommandInputElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\EnemyCommandInput.cs" />
@@ -279,7 +286,16 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity4.6.1/Unity4.6.1.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

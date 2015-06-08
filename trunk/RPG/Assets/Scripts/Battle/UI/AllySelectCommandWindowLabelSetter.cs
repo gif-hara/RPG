@@ -26,9 +26,9 @@ namespace RPG.Battle
 		private BattleAllyPartyManager refAllyPartyManager;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleMessageConstants.OpenCommandWindowData parameter )
+		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
-			if( parameter.SelectType != BattleTypeConstants.CommandSelectType.Ally )	return;
+			if( type != BattleTypeConstants.CommandSelectType.Ally )	return;
 
 			StringBuilder builder = new StringBuilder();
 			var party = refAllyPartyManager.Party.List;

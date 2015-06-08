@@ -40,7 +40,7 @@ namespace RPG.Battle
 
 		private void AppendState( StringBuilder builder )
 		{
-			builder.AppendLine( string.Format( "State = {0}", refStateManager.CurrentState ) );
+//			builder.AppendLine( string.Format( "State = {0}", refStateManager.CurrentState ) );
 		}
 
 		private void AppendAllyData( StringBuilder builder )

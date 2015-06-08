@@ -31,13 +31,14 @@ namespace RPG.Battle
 			base.Enter (owner);
 			this.max = owner.EnemyPartyManager.GroupCount;
 			var parameter = new BattleMessageConstants.OpenCommandWindowData( BattleTypeConstants.CommandSelectType.Enemy, owner.CurrentCommandSelectAllyData );
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, parameter );
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Enemy );
 		}
 		
 		protected override void DecisionAction (BattleAllyCommandSelector owner)
 		{
-			owner.CommandData.AddTargetId( commandId );
-			owner.Decision();
+			owner.DecideEnemyCommand( commandId );
+//			owner.CommandData.AddTargetId( commandId );
+//			owner.Complete();
 		}
 		
 		protected override void CancelAction (BattleAllyCommandSelector owner)

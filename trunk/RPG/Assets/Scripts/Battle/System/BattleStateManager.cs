@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleStateManager.cs
 *
@@ -14,8 +14,8 @@ using RPG.Common;
 using RPG.Battle;
 using RPG.Attribute;
 
-//namespace RPG.Battle
-//{
+namespace RPG.Battle
+{
 	/// <summary>
 	/// .
 	/// </summary>
@@ -23,7 +23,7 @@ using RPG.Attribute;
 	{
 		public enum State : int
 		{
-			SelectCommand,
+			SelectCommand = 0,
 			UpdateActiveTime,
 			ExecuteCommand,
 		}
@@ -32,6 +32,11 @@ using RPG.Attribute;
 		private BattleAllyPartyManager refAllyPartyManager;
 
 		private StateMachine<BattleStateManager> stateMachine;
+
+		[SerializeField]
+		private List<GameObject> refStateEventHolders;
+
+		private GameObject currentStateEventHolder;
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
@@ -45,30 +50,30 @@ using RPG.Attribute;
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
 		void OnStartBattle()
 		{
-			ChangeState( State.SelectCommand );
+			this.NotifyActiveStateMessage( State.SelectCommand );
 		}
 
-		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
-		void OnDecisionCommand( AllyData allyData )
+		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.CompleteCommandSelectMessage )]
+		void OnCompleteCommandSelect( AllyData allyData )
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{
-				ChangeState( State.SelectCommand );
+				this.NotifyActiveStateMessage( State.SelectCommand );
 			}
 			else if( refAllyPartyManager.Party.IsAnyActiveTimeMax )
 			{
-				ChangeState( State.ExecuteCommand, 1 );
+				this.NotifyActiveStateMessage( State.ExecuteCommand );
 			}
 			else
 			{
-				ChangeState( State.UpdateActiveTime );
+				this.NotifyActiveStateMessage( State.UpdateActiveTime );
 			}
 		}
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndUpdateActiveTimeMessage )]
 		void OnEndUpdateActiveTime()
 		{
-			ChangeState( State.ExecuteCommand );
+			this.NotifyActiveStateMessage( State.ExecuteCommand );
 		}
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndCommandExecuteMessage )]
@@ -115,5 +120,16 @@ using RPG.Attribute;
 
 			this.stateMachine.Change( (int)state );
 		}
+
+		private void NotifyActiveStateMessage( State state )
+		{
+			if( this.currentStateEventHolder != null )
+			{
+				this.BroadcastMessage( this.currentStateEventHolder, BattleMessageConstants.DeactiveStateMessage );
+			}
+
+			this.currentStateEventHolder = this.refStateEventHolders[(int)state];
+			this.BroadcastMessage( this.currentStateEventHolder, BattleMessageConstants.ActiveStateMessage );
+		}
 	}
-//}
+}

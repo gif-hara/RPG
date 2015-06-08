@@ -38,7 +38,7 @@ namespace RPG.Battle
 		/// コマンドが決定した際のメッセージ.
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( AllyData ) )]
-		public const string DecisionCommandMessage = "OnDecisionCommand";
+		public const string CompleteCommandSelectMessage = "OnCompleteCommandSelect";
 
 		/// <summary>
 		/// アクティブタイム更新処理開始時のメッセージ.
@@ -65,6 +65,27 @@ namespace RPG.Battle
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( int ) )]
 		public const string ModifiedCommandIdMessage = "OnModifiedCommandId";
+
+		/// <summary>
+		/// ステートがアクティブ状態になった際のメッセージ.
+		/// </summary>
+		public const string ActiveStateMessage = "OnActiveState";
+
+		/// <summary>
+		/// ステートが非アクティブ状態になった際のメッセージ.
+		/// </summary>
+		public const string DeactiveStateMessage = "OnDeactiveState";
+
+		/// <summary>
+		/// メインコマンドが選択された際のメッセージ.
+		/// </summary>
+		public const string DecideMainCommandMessage = "OnDecideMainCommand";
+
+		/// <summary>
+		/// 敵コマンドが選択された際のメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( int ) )]
+		public const string DecideEnemyCommandMessage = "OnDecideEnemyCommand";
 
 		public class OpenCommandWindowData
 		{
@@ -122,14 +143,8 @@ namespace RPG.Battle
 		/// </summary>
 		public enum CommandType : int
 		{
-			/// <summary> 無し. </summary>
-			None,
-
 			/// <summary> 戦う. </summary>
 			Attack,
-
-			/// <summary> 特殊能力. </summary>
-			Ability,
 
 			/// <summary> 道具. </summary>
 			Item,
@@ -143,6 +158,17 @@ namespace RPG.Battle
 			/// <summary> 逃げる. </summary>
 			Escape,
 
+			/// <summary> 無し. </summary>
+			None,
+			
+			/// <summary> 術. </summary>
+			Magic,
+
+			/// <summary> すもう技. </summary>
+			Sumo,
+			
+			/// <summary> 盗む. </summary>
+			Steal,
 		}
 
 		/// <summary>
@@ -152,9 +178,6 @@ namespace RPG.Battle
 		{
 			/// <summary> メインコマンド. </summary>
 			Main,
-
-			/// <summary> 特殊能力. </summary>
-			Ability,
 
 			/// <summary> アイテム. </summary>
 			Item,

@@ -91,7 +91,5 @@ namespace RPG.Battle
 		/// 下キー処理.
 		/// </summary>
 		protected abstract void DownAction(BattleAllyCommandSelector owner);
-
-
 	}
 }

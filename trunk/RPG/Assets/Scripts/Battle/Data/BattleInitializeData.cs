@@ -2,8 +2,6 @@
 /*
 *     * FileName    : BattleInitializeData.cs
 *
-*     * Description : バトル初期時に必要なデータ群.
-*
 *     * Author      : Hiroki_Kitahara.
 */
 /*===========================================================================*/

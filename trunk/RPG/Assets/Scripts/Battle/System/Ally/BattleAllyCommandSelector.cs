@@ -2,8 +2,6 @@
 /*
 *     * FileName    : BattleAllyCommandSelector.cs
 *
-*     * Description : 味方のコマンドを選択するコンポーネント.
-*
 *     * Author      : Hiroki_Kitahara.
 */
 /*===========================================================================*/
@@ -38,7 +36,17 @@ namespace RPG.Battle
 		/// </summary>
 		private StateMachine<BattleAllyCommandSelector> inputArrowStateMachine;
 
-		private Factory<CommandData> commandDataFactory;
+		/// <summary>
+		/// メインコマンドのイベントデータを保持したゲームオブジェクトリスト.
+		/// </summary>
+		[SerializeField]
+		private List<GameObject> refMainCommandEventHolders;
+
+		/// <summary>
+		/// 敵コマンドのイベントデータを保持したゲームオブジェクト.
+		/// </summary>
+		[SerializeField]
+		private GameObject refEnemyCommandEventHolder;
 
 		public CommandData CommandData{ private set; get; }
 
@@ -48,10 +56,6 @@ namespace RPG.Battle
 			this.inputArrowStateMachine.Add( new MainCommandInput() );
 			this.inputArrowStateMachine.Add( new AllyCommandInput() );
 			this.inputArrowStateMachine.Add( new EnemyCommandInput() );
-
-			this.commandDataFactory = new Factory<CommandData>();
-			this.commandDataFactory.Add( new AttackCommandData() );
-			this.commandDataFactory.Add( new CoverUpCommandData() );
 		}
 		void Update()
 		{
@@ -67,26 +71,43 @@ namespace RPG.Battle
 
 			if( this.CurrentCommandSelectAllyData == null )	return;
 
+			this.CommandData = new CommandData();
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 		}
 
-		public void Decision()
+		/// <summary>
+		/// メインコマンドの決定処理
+		/// </summary>
+		/// <param name="id">Identifier.</param>
+		public void DecideMainCommand( int id )
+		{
+			this.BroadcastMessage( refMainCommandEventHolders[id], BattleMessageConstants.DecideMainCommandMessage );
+		}
+
+		/// <summary>
+		/// 敵コマンドの決定処理.
+		/// </summary>
+		/// <param name="id">Identifier.</param>
+		public void DecideEnemyCommand( int id )
+		{
+			this.BroadcastMessage( refEnemyCommandEventHolder, BattleMessageConstants.DecideEnemyCommandMessage, id );
+		}
+
+		/// <summary>
+		/// コマンド選択完了処理.
+		/// </summary>
+		public void Complete()
 		{
 			this.CurrentCommandSelectAllyData.DecisionCommand( CommandData );
 			var tempAllyData = this.CurrentCommandSelectAllyData;
 			this.CurrentCommandSelectAllyData = null;
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
+			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.CompleteCommandSelectMessage, tempAllyData );
 		}
 
 		public void Cancel()
 		{
 			this.CommandData = null;
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
-		}
-
-		public void CreateCommandData( BattleTypeConstants.CommandType type )
-		{
-			this.CommandData = this.commandDataFactory.Clone( (int)type );
 		}
 
 		public void ChangeInputState( BattleTypeConstants.CommandSelectType type )

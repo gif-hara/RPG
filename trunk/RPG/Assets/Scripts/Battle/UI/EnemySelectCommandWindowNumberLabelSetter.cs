@@ -24,9 +24,9 @@ namespace RPG.Battle
 		private BattleEnemyPartyManager refEnemyPartyManager;
 		
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleMessageConstants.OpenCommandWindowData parameter )
+		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
-			if( parameter.SelectType != BattleTypeConstants.CommandSelectType.Enemy )	return;
+			if( type != BattleTypeConstants.CommandSelectType.Enemy )	return;
 
 			StringBuilder builder = new StringBuilder();
 			var party = refEnemyPartyManager.Party.List;

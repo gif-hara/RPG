@@ -34,7 +34,7 @@ namespace RPG.Common
 		/// <summary>
 		/// 特殊能力.
 		/// </summary>
-		public Battle.BattleTypeConstants.AbilityType abilityType;
+		public Battle.BattleTypeConstants.CommandType abilityType;
 		
 		/// <summary>
 		/// 最大体力.

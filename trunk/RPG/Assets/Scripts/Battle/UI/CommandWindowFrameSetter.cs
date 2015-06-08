@@ -26,9 +26,9 @@ namespace RPG.Battle
 		private int addScale;
 		
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleMessageConstants.OpenCommandWindowData parameter )
+		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
-			if( parameter.SelectType != commandSelectType )	return;
+			if( type != commandSelectType )	return;
 			
 			var scale = transform.localScale;
 			transform.localScale = new Vector3( scale.x, defaultScale + addScale * ElementCount, scale.z );

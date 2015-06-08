@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : BattleAllyActiveTimeUpdater.cs
+*     * FileName    : OnActiveStateUpdateActiveTime.cs
 *
 *     * Description : プレイヤーのアクティブタイムを更新するコンポーネント.
 *
@@ -16,16 +16,13 @@ namespace RPG.Battle
 	/// <summary>
 	/// プレイヤーのアクティブタイムを更新するコンポーネント.
 	/// </summary>
-	public class BattleAllyActiveTimeUpdater : MyMonoBehaviour
+	public class OnActiveStateUpdateActiveTime : MyMonoBehaviour
 	{
 		[SerializeField]
 		private BattleStateManager refStateManager;
 
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
-
-		[SerializeField]
-		private BattleAllyCommandSelector refCommandManager;
 
 		private bool isUpdate = false;
 
@@ -46,22 +43,32 @@ namespace RPG.Battle
 			}
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
-		void OnStartCommandSelect()
-		{
-			this.isUpdate = false;
-		}
-
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartUpdateActiveTimeMessage )]
-		void OnStartUpdateActiveTime()
+		void OnActiveState()
 		{
 			this.isUpdate = true;
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandExecuteMessage )]
-		void OnStartCommandExecute()
+		void OnDeactiveState()
 		{
 			this.isUpdate = false;
 		}
+
+//		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
+//		void OnStartCommandSelect()
+//		{
+//			this.isUpdate = false;
+//		}
+//
+//		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartUpdateActiveTimeMessage )]
+//		void OnStartUpdateActiveTime()
+//		{
+//			this.isUpdate = true;
+//		}
+//
+//		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandExecuteMessage )]
+//		void OnStartCommandExecute()
+//		{
+//			this.isUpdate = false;
+//		}
 	}
 }
