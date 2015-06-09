@@ -27,8 +27,8 @@ namespace RPG.Battle
 		void OnActiveState()
 		{
 			var executeMember = refPartyManager.Party.ActiveTimeMaxBattleMember;
-			var commandExecutor = refHolder.Get( executeMember.SelectCommandData.Type );
-			Debug.Log( commandExecutor.name );
+			var commandExecutorPrefab = refHolder.Get( executeMember.SelectCommandData.Type );
+			var commandExecutorObject = Instantiate( commandExecutorPrefab, transform );
 		}
 	}
 }

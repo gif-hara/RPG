@@ -48,7 +48,7 @@ namespace RPG.Common
 			}
 		}
 
-		public static bool Decision
+		public static bool Decide
 		{
 			get
 			{

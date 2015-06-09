@@ -30,7 +30,7 @@ namespace RPG.Battle
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Main );
 		}
 
-		protected override void DecisionAction (BattleAllyCommandSelector owner)
+		public override void DecisionAction (BattleAllyCommandSelector owner)
 		{
 			owner.DecideMainCommand( this.ConvertCommandType( owner ) );
 
@@ -44,12 +44,12 @@ namespace RPG.Battle
 //			owner.ChangeInputState( NextCommandSelectType );
 		}
 
-		protected override void CancelAction (BattleAllyCommandSelector owner)
+		public override void CancelAction (BattleAllyCommandSelector owner)
 		{
 			MyMonoBehaviour.TODO( "キャンセル処理の実装" );
 		}
 
-		protected override void LeftAction (BattleAllyCommandSelector owner)
+		public override void LeftAction (BattleAllyCommandSelector owner)
 		{
 			commandId -= 3;
 			if( commandId < 0 )
@@ -59,7 +59,7 @@ namespace RPG.Battle
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
-		protected override void RightAction (BattleAllyCommandSelector owner)
+		public override void RightAction (BattleAllyCommandSelector owner)
 		{
 			commandId += 3;
 			if( commandId >= 6 )
@@ -69,7 +69,7 @@ namespace RPG.Battle
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
-		protected override void UpAction (BattleAllyCommandSelector owner)
+		public override void UpAction (BattleAllyCommandSelector owner)
 		{
 			commandId -= 1;
 			if( commandId == -1 )
@@ -84,7 +84,7 @@ namespace RPG.Battle
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
-		protected override void DownAction (BattleAllyCommandSelector owner)
+		public override void DownAction (BattleAllyCommandSelector owner)
 		{
 			commandId += 1;
 			if( commandId == 3 )

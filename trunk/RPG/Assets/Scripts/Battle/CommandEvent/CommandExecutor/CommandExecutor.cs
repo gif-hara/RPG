@@ -7,6 +7,7 @@
 /*===========================================================================*/
 using UnityEngine;
 using System.Collections.Generic;
+using RPG.Common;
 
 namespace RPG.Battle
 {
@@ -21,5 +22,18 @@ namespace RPG.Battle
 
 		[SerializeField]
 		private List<GameObject> refEventList;
+
+		private int currentId = 0;
+
+		void Awake()
+		{
+			this.Execute();
+		}
+
+		private void Execute()
+		{
+			this.BroadcastMessage( refEventList[this.currentId], BattleMessageConstants.ExecuteCommandMessage );
+			this.currentId++;
+		}
 	}
 }

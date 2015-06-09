@@ -35,7 +35,7 @@ namespace RPG.Battle
 		{
 			if( !this.isUpdate )	return;
 
-			if( MyInput.Decision )
+			if( MyInput.Decide )
 			{
 				this.isUpdate = false;
 				this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.EndCommandExecuteMessage );

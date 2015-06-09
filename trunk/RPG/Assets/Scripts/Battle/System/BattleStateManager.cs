@@ -31,8 +31,6 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
-		private StateMachine<BattleStateManager> stateMachine;
-
 		[SerializeField]
 		private List<GameObject> refStateEventHolders;
 
@@ -41,10 +39,6 @@ namespace RPG.Battle
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
-			this.stateMachine = new StateMachine<BattleStateManager>( this );
-			this.stateMachine.Add( new BattleStateCommandSelect() );
-			this.stateMachine.Add( new BattleStateUpdateActiveTime() );
-			this.stateMachine.Add( new BattleStateCommandExecute() );
 		}
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
@@ -81,44 +75,12 @@ namespace RPG.Battle
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{
-				ChangeState( State.SelectCommand );
+				this.NotifyActiveStateMessage( State.SelectCommand );
 			}
 			else
 			{
-				ChangeState( State.ExecuteCommand );
+				this.NotifyActiveStateMessage( State.ExecuteCommand );
 			}
-		}
-
-		public void ChangeState( State state, int delayFrame = 0 )
-		{
-			if( delayFrame == 0 )
-			{
-				this.stateMachine.Change( (int)state );
-			}
-			else
-			{
-				StartCoroutine( ChangeStateCoroutine( state, delayFrame ) );
-			}
-		}
-
-		public State CurrentState
-		{
-			get
-			{
-				return (State)this.stateMachine.CurrentElementId;
-			}
-		}
-
-		private IEnumerator ChangeStateCoroutine( State state, int delayFrame )
-		{
-			this.stateMachine.ClearElement();
-
-			for( int i=0; i<delayFrame; i++ )
-			{
-				yield return new WaitForEndOfFrame();
-			}
-
-			this.stateMachine.Change( (int)state );
 		}
 
 		private void NotifyActiveStateMessage( State state )

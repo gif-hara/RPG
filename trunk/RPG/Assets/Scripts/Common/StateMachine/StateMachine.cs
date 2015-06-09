@@ -17,21 +17,23 @@ namespace RPG.Common
 	/// <summary>
 	/// ステートマシン.
 	/// </summary>
-	public class StateMachine<TOwner> where TOwner : class
+	public class StateMachine<TOwner, TElement>
+		where TOwner : class
+		where TElement : StateElementBase<TOwner>
 	{
 		private TOwner owner;
 
-		private List<StateElementBase<TOwner>> elementList;
+		private List<TElement> elementList;
 
-		private StateElementBase<TOwner> currentElement;
+		private TElement currentElement;
 
 		public StateMachine( TOwner owner )
 		{
 			this.owner = owner;
-			this.elementList = new List<StateElementBase<TOwner>>();
+			this.elementList = new List<TElement>();
 		}
 
-		public void Add( StateElementBase<TOwner> element ) 
+		public void Add( TElement element ) 
 		{
 			this.elementList.Add( element );
 		}
@@ -56,16 +58,19 @@ namespace RPG.Common
 			this.currentElement = null;
 		}
 
-		public void Update()
-		{
-			this.currentElement.Update( owner );
-		}
-
 		public int CurrentElementId
 		{
 			get
 			{
 				return this.currentElement.ID;
+			}
+		}
+
+		public TElement Current
+		{
+			get
+			{
+				return this.currentElement;
 			}
 		}
 	}

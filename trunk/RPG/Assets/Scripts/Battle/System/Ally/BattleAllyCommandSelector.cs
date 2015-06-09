@@ -34,7 +34,7 @@ namespace RPG.Battle
 		/// <summary>
 		/// 入力操作ステートマシン.
 		/// </summary>
-		private StateMachine<BattleAllyCommandSelector> inputArrowStateMachine;
+		private StateMachine<BattleAllyCommandSelector, CommandInputElementBase> inputArrowStateMachine;
 
 		/// <summary>
 		/// メインコマンドのイベントデータを保持したゲームオブジェクトリスト.
@@ -48,21 +48,85 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject refEnemyCommandEventHolder;
 
+		/// <summary>
+		/// 入力処理が可能であるか.
+		/// </summary>
+		private bool canInput = false;
+
+		/// <summary>
+		/// 編集中のコマンドデータ.
+		/// </summary>
+		/// <value>The command data.</value>
 		public CommandData CommandData{ private set; get; }
 
 		void Awake()
 		{
-			this.inputArrowStateMachine = new StateMachine<BattleAllyCommandSelector>( this );
+			this.inputArrowStateMachine = new StateMachine<BattleAllyCommandSelector, CommandInputElementBase>( this );
 			this.inputArrowStateMachine.Add( new MainCommandInput() );
 			this.inputArrowStateMachine.Add( new AllyCommandInput() );
 			this.inputArrowStateMachine.Add( new EnemyCommandInput() );
 		}
-		void Update()
-		{
-			if( !IsPossibleInput )	return;
 
-			this.inputArrowStateMachine.Update();
+		void OnInputLeft()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+
+			this.inputArrowStateMachine.Current.LeftAction( this );
 		}
+
+		void OnInputRight()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.RightAction( this );
+		}
+		
+		void OnInputUp()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.UpAction( this );
+		}
+		
+		void OnInputDown()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.DownAction( this );
+		}
+		
+		void OnInputDecide()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.DecisionAction( this );
+		}
+		
+		void OnInputCancel()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.CancelAction( this );
+		}
+		
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
 		void OnStartCommandSelect()
