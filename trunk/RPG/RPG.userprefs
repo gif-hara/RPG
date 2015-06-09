@@ -1,15 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Battle/System/Ally/BattleAllyActiveTimeUpdater.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Framework/Assert.cs">
     <Files>
-      <File FileName="Assets/Scripts/Battle/System/Ally/BattleAllyActiveTimeUpdater.cs" Line="52" Column="10" />
-      <File FileName="Assets/Scripts/Battle/System/BattleStateManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Battle/System/StateElement/BattleState/OnActiveStateCreateCommandExecutor.cs" Line="29" Column="38" />
       <File FileName="Assets/Scripts/Battle/System/StateElement/BattleState/OnActiveStateBroadcastStartCommandSelect.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Battle/Common/BattleMessageConstants.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Battle/System/Ally/BattleAllyCommandSelector.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Battle/System/StateElement/CommandInputArrowKey/MainCommandInput.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Battle/UI/BattleWindowActiveSetter.cs" Line="56" Column="3" />
-      <File FileName="Assets/Scripts/Battle/System/StateElement/BattleState/OnActiveStateWindowDeactive.cs" Line="31" Column="40" />
+      <File FileName="Assets/Scripts/Battle/System/Ally/BattleAllyCommandExecuter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Battle/Data/Party.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Battle/System/AllPartyManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Battle/CommandEvent/CommandExecutor/CommandExecutorHolder.cs" Line="22" Column="64" />
+      <File FileName="Assets/Scripts/Framework/Assert.cs" Line="14" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

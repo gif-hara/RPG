@@ -134,6 +134,11 @@ namespace RPG.Battle
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( NoticeCommandEventArgument ) )] 
 		public const string NoticeCommandEventMessage = "OnNoticeCommandEvent";
+
+		/// <summary>
+		/// コマンドが実行された際のメッセージ.
+		/// </summary>
+		public const string ExecuteCommandMessage = "OnExecuteCommand";
 	}
 
 	public class BattleTypeConstants

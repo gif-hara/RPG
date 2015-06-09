@@ -167,6 +167,9 @@
      <Compile Include="Assets\Scripts\Attribute\MessageMethodArgumentAttribute.cs" />
      <Compile Include="Assets\Scripts\Attribute\MessageMethodReceiverAttribute.cs" />
      <Compile Include="Assets\Scripts\Battle\Camera\BattleCameraObjectLookAt.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutor.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutorHolder.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetInformation.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\EnemyCommand\OnDecideEnemyCommandAddTargetId.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\EnemyCommand\OnDecideEnemyCommandComplete.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideMainCommandChangeInputState.cs" />
@@ -190,7 +193,6 @@
      <Compile Include="Assets\Scripts\Battle\System\BattleSceneManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSharedData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleStateManager.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\CommandEventHolder.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Enemy\BattleEnemyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Enemy\BattleEnemyPartyManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\FactoryPattern\AttackCommandData.cs" />
@@ -201,6 +203,7 @@
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateElementBase.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\BattleStateUpdateActiveTime.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\OnActiveStateBroadcastStartCommandSelect.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\OnActiveStateCreateCommandExecutor.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\OnActiveStateUpdateActiveTime.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\BattleState\OnActiveStateWindowDeactive.cs" />
      <Compile Include="Assets\Scripts\Battle\System\StateElement\CommandInputArrowKey\AllyCommandInput.cs" />
@@ -233,6 +236,7 @@
      <Compile Include="Assets\Scripts\Database\Database.cs" />
      <Compile Include="Assets\Scripts\Database\Master\AllyMasterData.cs" />
      <Compile Include="Assets\Scripts\Database\MasterData.cs" />
+     <Compile Include="Assets\Scripts\Framework\Debug.cs" />
      <Compile Include="Assets\Scripts\Plugins\iTween.cs" />
      <Compile Include="Assets\Scripts\System\DebugSystem.cs" />
      <Compile Include="Assets\Scripts\System\FrameRateSetter.cs" />

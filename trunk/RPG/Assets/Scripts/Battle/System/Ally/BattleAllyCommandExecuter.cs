@@ -25,9 +25,6 @@ namespace RPG.Battle
 		[SerializeField]
 		private AllPartyManager refAllPartyManager;
 
-		[SerializeField]
-		private CommandEventHolder refCommandEventHolder;
-
 		private AllyData executeAllyData = null;
 
 		private bool isUpdate = false;
