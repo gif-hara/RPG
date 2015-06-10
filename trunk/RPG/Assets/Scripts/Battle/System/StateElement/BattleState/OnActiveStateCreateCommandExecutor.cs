@@ -18,15 +18,12 @@ namespace RPG.Battle
 	public class OnActiveStateCreateCommandExecutor : MyMonoBehaviour
 	{
 		[SerializeField]
-		private BattleAllyPartyManager refPartyManager;
-
-		[SerializeField]
 		private CommandExecutorHolder refHolder;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ActiveStateMessage )]
 		void OnActiveState()
 		{
-			var executeMember = refPartyManager.Party.ActiveTimeMaxBattleMember;
+			var executeMember = BattleAllyPartyManager.Instance.Party.ActiveTimeMaxBattleMember;
 			var commandExecutorPrefab = refHolder.Get( executeMember.SelectCommandData.Type );
 			var commandExecutorObject = Instantiate( commandExecutorPrefab, transform );
 		}

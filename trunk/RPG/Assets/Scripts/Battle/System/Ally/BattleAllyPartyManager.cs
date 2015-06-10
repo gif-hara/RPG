@@ -17,9 +17,14 @@ namespace RPG.Battle
 	/// <summary>
 	/// 味方パーティデータ管理者コンポーネント.
 	/// </summary>
-	public class BattleAllyPartyManager : MyMonoBehaviour
+	public class BattleAllyPartyManager : A_Singleton<BattleAllyPartyManager>
 	{
 		public Party<AllyData> Party{ private set; get; }
+
+		void Awake()
+		{
+			Instance = this;
+		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()

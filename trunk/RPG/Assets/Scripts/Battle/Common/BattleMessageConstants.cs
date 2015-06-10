@@ -46,7 +46,7 @@ namespace RPG.Battle
 		public const string StartUpdateActiveTimeMessage = "OnStartUpdateActiveTime";
 
 		/// <summary>
-		/// いずれかの味方のアクティブタイムが最大値に達した際のメッセージ.
+		/// いずれかのキャラクターのアクティブタイムが最大値に達した際のメッセージ.
 		/// </summary>
 		public const string EndUpdateActiveTimeMessage = "OnEndUpdateActiveTime";
 
@@ -139,6 +139,24 @@ namespace RPG.Battle
 		/// コマンドが実行された際のメッセージ.
 		/// </summary>
 		public const string ExecuteCommandMessage = "OnExecuteCommand";
+
+		/// <summary>
+		/// 情報ラベルに文字列を設定するメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( string ) )]
+		public const string SetInformationTextMessage = "OnSetInformationText";
+
+		/// <summary>
+		/// 情報ラベルに文字列を追加するメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( string ) )]
+		public const string AppendInformationTextMessage = "OnAppendInformationText";
+
+		/// <summary>
+		/// 情報ラベルに文字列を新しい行に追加するメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( string ) )]
+		public const string NewLineInformationTextMessage = "OnNewLineInformationText";
 	}
 
 	public class BattleTypeConstants

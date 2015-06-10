@@ -213,8 +213,10 @@
      <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowFrameScaleSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNameLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\EnemySelectCommandWindowNumberLabelSetter.cs" />
-     <Compile Include="Assets\Scripts\Battle\UI\InformationCommandEventLabelSetter.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\MainCommandWindowLabelSetter.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\OnAppendInformationTextAppendText.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\OnNewLineInformationTextNewLineText.cs" />
+     <Compile Include="Assets\Scripts\Battle\UI\OnSetInformationTextSetText.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromCommandId.cs" />
      <Compile Include="Assets\Scripts\Battle\UI\PositionSetterFromTiled.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterData.cs" />
@@ -235,6 +237,7 @@
      <Compile Include="Assets\Scripts\Database\MasterData.cs" />
      <Compile Include="Assets\Scripts\Framework\Debug.cs" />
      <Compile Include="Assets\Scripts\Plugins\iTween.cs" />
+     <Compile Include="Assets\Scripts\System\A_Singleton.cs" />
      <Compile Include="Assets\Scripts\System\DebugSystem.cs" />
      <Compile Include="Assets\Scripts\System\FrameRateSetter.cs" />
      <Compile Include="Assets\Scripts\System\InputSender.cs" />
