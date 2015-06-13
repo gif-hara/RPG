@@ -6,6 +6,7 @@
 */
 /*===========================================================================*/
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +19,7 @@ namespace RPG.Battle
 	public class EnemySelectCommandWindowNameLabelSetter : MyMonoBehaviour
 	{
 		[SerializeField]
-		private UILabel refLabel;
+		private Text refText;
 		
 		[SerializeField]
 		private BattleEnemyPartyManager refEnemyPartyManager;
@@ -43,7 +44,7 @@ namespace RPG.Battle
 			}
 
 			builder.AppendLine( enemyData.name );
-			refLabel.text = builder.ToString();
+			refText.text = builder.ToString();
 		}
 	}
 }

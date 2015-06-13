@@ -8,6 +8,7 @@
 */
 /*===========================================================================*/
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -22,12 +23,12 @@ namespace RPG.Battle
 		private BattleAllyCommandSelector refAllyCommandSelector;
 
 		[SerializeField]
-		private UILabel refLabel;
+		private Text refText;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
 		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
-			refLabel.text = StringAsset.Format(
+			refText.text = StringAsset.Format(
 				"MainCommandLeftLabel",
 				Common.StringAssetUtility.AbilityName( this.refAllyCommandSelector.CurrentCommandSelectAllyData.Data.abilityType )
 				);

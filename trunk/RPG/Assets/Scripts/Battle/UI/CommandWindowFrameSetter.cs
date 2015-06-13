@@ -6,6 +6,7 @@
 */
 /*===========================================================================*/
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -16,6 +17,9 @@ namespace RPG.Battle
 	/// </summary>
 	public abstract class CommandWindowFrameSetter : MyMonoBehaviour
 	{
+		[SerializeField]
+		private RectTransform refRectTransform;
+
 		[SerializeField]
 		private BattleTypeConstants.CommandSelectType commandSelectType;
 
@@ -29,9 +33,9 @@ namespace RPG.Battle
 		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
 			if( type != commandSelectType )	return;
-			
-			var scale = transform.localScale;
-			transform.localScale = new Vector3( scale.x, defaultScale + addScale * ElementCount, scale.z );
+
+			var rect = refRectTransform.rect;
+			this.refRectTransform.sizeDelta = new Vector2(rect.width, defaultScale + addScale * ElementCount);
 		}
 
 		protected abstract int ElementCount{ get; }

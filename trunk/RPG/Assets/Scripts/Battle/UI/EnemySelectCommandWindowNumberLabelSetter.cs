@@ -6,6 +6,7 @@
 */
 /*===========================================================================*/
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +19,7 @@ namespace RPG.Battle
 	public class EnemySelectCommandWindowNumberLabelSetter : MyMonoBehaviour
 	{
 		[SerializeField]
-		private UILabel refLabel;
+		private Text refText;
 		
 		[SerializeField]
 		private BattleEnemyPartyManager refEnemyPartyManager;
@@ -47,7 +48,7 @@ namespace RPG.Battle
 			}
 
 			AppendNumber( ref builder, number );
-			refLabel.text = builder.ToString();
+			refText.text = builder.ToString();
 		}
 
 		private static void AppendNumber( ref StringBuilder builder, int number )
