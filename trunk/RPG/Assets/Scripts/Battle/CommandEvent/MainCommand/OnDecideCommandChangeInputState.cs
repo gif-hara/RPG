@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : OnDecideMainCommandChangeInputState.cs
+*     * FileName    : OnDecideCommandChangeInputState.cs
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -11,9 +11,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// メインコマンドが決定された際に入力操作ステートを切り替えるコンポーネント.
+	/// コマンドが決定された際に入力操作ステートを切り替えるコンポーネント.
 	/// </summary>
-	public class OnDecideMainCommandChangeInputState : MyMonoBehaviour
+	public class OnDecideCommandChangeInputState : MyMonoBehaviour
 	{
 		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
@@ -21,8 +21,8 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleTypeConstants.CommandSelectType type;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideMainCommandMessage )]
-		void OnDecideMainCommand()
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideCommandMessage )]
+		void OnDecideCommand()
 		{
 			refAllyCommandSelector.ChangeInputState(type);
 		}

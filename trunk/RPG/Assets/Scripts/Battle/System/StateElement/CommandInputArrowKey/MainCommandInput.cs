@@ -32,7 +32,7 @@ namespace RPG.Battle
 
 		public override void DecisionAction (BattleAllyCommandSelector owner)
 		{
-			owner.DecideMainCommand( this.ConvertCommandType( owner ) );
+			owner.DecideMainCommand( commandId );
 
 //			if( commandId != 0 && commandId != 4 )
 //			{
@@ -101,11 +101,6 @@ namespace RPG.Battle
 
 		private int ConvertCommandType( BattleAllyCommandSelector owner )
 		{
-			if( commandId == 1 )
-			{
-				return (int)owner.CurrentCommandSelectAllyData.Data.abilityType;
-			}
-
 			return commandId;
 		}
 	}

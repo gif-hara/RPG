@@ -170,11 +170,11 @@
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutor.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutorHolder.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetInformation.cs" />
-     <Compile Include="Assets\Scripts\Battle\CommandEvent\EnemyCommand\OnDecideEnemyCommandAddTargetId.cs" />
-     <Compile Include="Assets\Scripts\Battle\CommandEvent\EnemyCommand\OnDecideEnemyCommandComplete.cs" />
-     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideMainCommandChangeInputState.cs" />
-     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideMainCommandOpenWindow.cs" />
-     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideMainCommandSetCommandType.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\EnemyCommand\OnDecideCommandAddTargetId.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\EnemyCommand\OnDecideCommandCompleteCommandEdit.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideCommandChangeInputState.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideCommandOpenWindow.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\MainCommand\OnDecideCommandSetCommandType.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleInitializeData.cs" />

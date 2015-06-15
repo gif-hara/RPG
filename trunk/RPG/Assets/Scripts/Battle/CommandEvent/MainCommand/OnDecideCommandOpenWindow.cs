@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : OnDecideMainCommandOpenWindow.cs
+*     * FileName    : OnDecideCommandOpenWindow.cs
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -11,15 +11,15 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// メインコマンドが決定された際にコマンドウィンドウを開くコンポーネント.
+	/// コマンドが決定された際にコマンドウィンドウを開くコンポーネント.
 	/// </summary>
-	public class OnDecideMainCommandOpenWindow : MyMonoBehaviour
+	public class OnDecideCommandOpenWindow : MyMonoBehaviour
 	{
 		[SerializeField]
 		private BattleTypeConstants.CommandSelectType type;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideMainCommandMessage )]
-		void OnDecideMainCommand()
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideCommandMessage )]
+		void OnDecideCommand()
 		{
 			this.BroadcastMessage( Common.SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, this.type );
 		}

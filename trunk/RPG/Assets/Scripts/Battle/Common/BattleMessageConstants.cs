@@ -77,15 +77,10 @@ namespace RPG.Battle
 		public const string DeactiveStateMessage = "OnDeactiveState";
 
 		/// <summary>
-		/// メインコマンドが選択された際のメッセージ.
-		/// </summary>
-		public const string DecideMainCommandMessage = "OnDecideMainCommand";
-
-		/// <summary>
-		/// 敵コマンドが選択された際のメッセージ.
+		/// コマンドが選択された際のメッセージ.
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( int ) )]
-		public const string DecideEnemyCommandMessage = "OnDecideEnemyCommand";
+		public const string DecideCommandMessage = "OnDecideCommand";
 
 		public class OpenCommandWindowData
 		{
@@ -173,7 +168,7 @@ namespace RPG.Battle
 			Item,
 
 			/// <summary> 守る. </summary>
-			Deffence,
+			Defence,
 
 			/// <summary> かばう. </summary>
 			CoverUp,

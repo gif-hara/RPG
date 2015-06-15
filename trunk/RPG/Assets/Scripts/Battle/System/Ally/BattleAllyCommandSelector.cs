@@ -145,7 +145,7 @@ namespace RPG.Battle
 		/// <param name="id">Identifier.</param>
 		public void DecideMainCommand( int id )
 		{
-			this.BroadcastMessage( refMainCommandEventHolders[id], BattleMessageConstants.DecideMainCommandMessage );
+			this.BroadcastMessage( refMainCommandEventHolders[id], BattleMessageConstants.DecideCommandMessage, id );
 		}
 
 		/// <summary>
@@ -154,7 +154,7 @@ namespace RPG.Battle
 		/// <param name="id">Identifier.</param>
 		public void DecideEnemyCommand( int id )
 		{
-			this.BroadcastMessage( refEnemyCommandEventHolder, BattleMessageConstants.DecideEnemyCommandMessage, id );
+			this.BroadcastMessage( refEnemyCommandEventHolder, BattleMessageConstants.DecideCommandMessage, id );
 		}
 
 		/// <summary>

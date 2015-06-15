@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : OnDecideMainCommandSetCommandType.cs
+*     * FileName    : OnDecideCommandSetCommandType.cs
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -11,9 +11,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// メインコマンドが決定された際にコマンドタイプを設定するコンポーネント.
+	/// コマンドが決定された際にコマンドタイプを設定するコンポーネント.
 	/// </summary>
-	public class OnDecideMainCommandSetCommandType : MonoBehaviour
+	public class OnDecideCommandSetCommandType : MonoBehaviour
 	{
 		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
@@ -21,8 +21,8 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleTypeConstants.CommandType type;
 
-		[Attribute.MessageMethodReceiver(BattleMessageConstants.DecideMainCommandMessage)]
-		void OnDecideMainCommand()
+		[Attribute.MessageMethodReceiver(BattleMessageConstants.DecideCommandMessage)]
+		void OnDecideCommand()
 		{
 			refAllyCommandSelector.CommandData.SetCommandType( this.type );
 		}

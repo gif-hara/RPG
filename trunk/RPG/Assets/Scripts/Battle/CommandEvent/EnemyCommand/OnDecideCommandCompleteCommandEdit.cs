@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : OnDecideEnemyCommandAddTargetId.cs
+*     * FileName    : OnDecideCommandCompleteCommandEdit.cs
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -11,16 +11,16 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// 敵コマンドが選択された際にターゲットリストを追加するコンポーネント.
+	/// 敵コマンド選択イベントの際にコマンド選択処理を完了するコンポーネント.
 	/// </summary>
-	public class OnDecideEnemyCommandAddTargetId : MyMonoBehaviour
+	public class OnDecideCommandCompleteCommandEdit : MyMonoBehaviour
 	{
 		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
 
-		void OnDecideEnemyCommand( int id )
+		void OnDecideCommand()
 		{
-			refAllyCommandSelector.CommandData.AddTargetId( id );
+			this.refAllyCommandSelector.Complete();
 		}
 	}
 }
