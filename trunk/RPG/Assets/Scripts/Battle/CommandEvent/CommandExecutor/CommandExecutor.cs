@@ -21,19 +21,26 @@ namespace RPG.Battle
 		private BattleTypeConstants.CommandType type;
 
 		[SerializeField]
-		private List<GameObject> refEventList;
-
-		private int currentId = 0;
+		private GameObject refEventHolder;
 
 		void Awake()
 		{
 			this.Execute();
 		}
 
+		void OnInputDecide()
+		{
+			this.Execute();
+		}
+
+		public void SetEventHolder( GameObject eventHolder )
+		{
+			this.refEventHolder = eventHolder;
+		}
+
 		private void Execute()
 		{
-			this.BroadcastMessage( refEventList[this.currentId], BattleMessageConstants.ExecuteCommandMessage );
-			this.currentId++;
+			this.BroadcastMessage( refEventHolder, BattleMessageConstants.ExecuteCommandMessage );
 		}
 	}
 }

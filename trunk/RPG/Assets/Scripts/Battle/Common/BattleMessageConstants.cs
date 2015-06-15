@@ -87,30 +87,6 @@ namespace RPG.Battle
 		/// </summary>
 		public const string OpenCommandWindowMessage = "OnOpenCommandWindow";
 
-		public class NoticeCommandEventArgument
-		{
-			public List<CommandEventBase> CommandEventList{ private set; get; }
-
-			public AllParty AllParty{ private set; get; }
-
-			public BattleMemberData ExecuteMember{ private set; get; }
-
-			public CommandData CommandData{ private set; get; }
-
-			public NoticeCommandEventArgument( List<CommandEventBase> commandEventList, AllParty allParty, BattleMemberData executeMember, CommandData commandData )
-			{
-				this.CommandEventList = commandEventList;
-				this.AllParty = allParty;
-				this.ExecuteMember = executeMember;
-				this.CommandData = commandData;
-			}
-		}
-		/// <summary>
-		/// コマンドイベントを通知するメッセージ.
-		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( NoticeCommandEventArgument ) )] 
-		public const string NoticeCommandEventMessage = "OnNoticeCommandEvent";
-
 		/// <summary>
 		/// コマンドが実行された際のメッセージ.
 		/// </summary>
@@ -133,77 +109,5 @@ namespace RPG.Battle
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( string ) )]
 		public const string NewLineInformationTextMessage = "OnNewLineInformationText";
-	}
-
-	public class BattleTypeConstants
-	{
-		/// <summary>
-		/// コマンドタイプ.
-		/// </summary>
-		public enum CommandType : int
-		{
-			/// <summary> 戦う. </summary>
-			Attack,
-
-			/// <summary> 道具. </summary>
-			Item,
-
-			/// <summary> 守る. </summary>
-			Defence,
-
-			/// <summary> かばう. </summary>
-			CoverUp,
-
-			/// <summary> 逃げる. </summary>
-			Escape,
-
-			/// <summary> 無し. </summary>
-			None,
-			
-			/// <summary> 術. </summary>
-			Magic,
-
-			/// <summary> すもう技. </summary>
-			Sumo,
-			
-			/// <summary> 盗む. </summary>
-			Steal,
-		}
-
-		/// <summary>
-		/// コマンド選択タイプ.
-		/// </summary>
-		public enum CommandSelectType : int
-		{
-			/// <summary> メインコマンド. </summary>
-			Main,
-
-			/// <summary> アイテム. </summary>
-			Item,
-
-			/// <summary> 味方. </summary>
-			Ally,
-
-			/// <summary> 敵. </summary>
-			Enemy,
-		}
-
-		/// <summary>
-		/// 特殊能力タイプ.
-		/// </summary>
-		public enum AbilityType : int
-		{
-			/// <summary> 無し. </summary>
-			None,
-
-			/// <summary> 術. </summary>
-			Magic,
-
-			/// <summary> すもう技. </summary>
-			Sumo,
-
-			/// <summary> 盗む. </summary>
-			Steal,
-		}
 	}
 }

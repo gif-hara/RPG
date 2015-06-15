@@ -175,7 +175,9 @@
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutor.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutorHolder.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetInformation.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetNextEvent.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
+     <Compile Include="Assets\Scripts\Battle\Common\BattleTypeConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleInitializeData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\BattleMemberData.cs" />
@@ -186,7 +188,6 @@
      <Compile Include="Assets\Scripts\Battle\Data\Party.cs" />
      <Compile Include="Assets\Scripts\Battle\Debug\BattleDebugTextMesh.cs" />
      <Compile Include="Assets\Scripts\Battle\System\AllPartyManager.cs" />
-     <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyCommandExecuter.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyCommandSelector.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Ally\BattleAllyPartyManager.cs" />

@@ -29,6 +29,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private SetTextType type;
 
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
 			var methodName = this.type == SetTextType.Set
