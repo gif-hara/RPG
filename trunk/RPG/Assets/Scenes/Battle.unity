@@ -2976,7 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae44b63dc65c47489becca1394f4db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refWindowActiveSetter: {fileID: 0}
+  refWindowActiveSetter: {fileID: 1490677762}
 --- !u!1 &1411561502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,7 +3349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae44b63dc65c47489becca1394f4db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refWindowActiveSetter: {fileID: 0}
+  refWindowActiveSetter: {fileID: 1490677762}
 --- !u!114 &1583995268
 MonoBehaviour:
   m_ObjectHideFlags: 0
