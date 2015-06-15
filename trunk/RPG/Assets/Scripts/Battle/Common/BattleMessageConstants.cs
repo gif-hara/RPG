@@ -82,28 +82,9 @@ namespace RPG.Battle
 		[Attribute.MessageMethodArgument( typeof( int ) )]
 		public const string DecideCommandMessage = "OnDecideCommand";
 
-		public class OpenCommandWindowData
-		{
-			public BattleTypeConstants.CommandSelectType SelectType{ private set; get; }
-
-			public AllyData AllyData{ private set; get; }
-
-			public OpenCommandWindowData( BattleTypeConstants.CommandSelectType selectType, AllyData allyData )
-			{
-				this.SelectType = selectType;
-				this.AllyData = allyData;
-			}
-
-			public override string ToString ()
-			{
-				return string.Format ("[OpenCommandWindowData: SelectType={0}, AllyData={1}]", SelectType, AllyData);
-			}
-		}
-
 		/// <summary>
 		/// コマンドウィンドウを表示する際のメッセージ.
 		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( OpenCommandWindowData ) )]
 		public const string OpenCommandWindowMessage = "OnOpenCommandWindow";
 
 		public class NoticeCommandEventArgument

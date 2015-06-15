@@ -148,45 +148,6 @@ MonoBehaviour:
       maxSpirit: 0
       minSpirit: 0
       spirit: 0
-    - id: 1
-      name: "\u91D1\u592A\u90CE"
-      level: 0
-      abilityType: 7
-      maxHitPoint: 0
-      hitPoint: 0
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 2
-      name: "\u6D66\u5CF6"
-      level: 0
-      abilityType: 6
-      maxHitPoint: 0
-      hitPoint: 0
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 3
-      name: "\u591C\u53C9\u59EB"
-      level: 0
-      abilityType: 6
-      maxHitPoint: 0
-      hitPoint: 0
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
     enemyDataList:
     - id: 0
       name: "\u8D64\u9B3C"

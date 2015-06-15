@@ -30,7 +30,6 @@ namespace RPG.Battle
 		{
 			base.Enter (owner);
 			this.max = owner.EnemyPartyManager.GroupCount;
-			var parameter = new BattleMessageConstants.OpenCommandWindowData( BattleTypeConstants.CommandSelectType.Enemy, owner.CurrentCommandSelectAllyData );
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Enemy );
 		}
 		
