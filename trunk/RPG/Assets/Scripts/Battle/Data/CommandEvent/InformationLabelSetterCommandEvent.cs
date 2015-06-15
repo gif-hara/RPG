@@ -26,7 +26,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private string informationKey;
 
-		public List<CommandEventConstants.InformationParameterType> Parameter
+		public List<BattleTypeConstants.InformationParameterType> Parameter
 		{
 			get
 			{
@@ -34,7 +34,7 @@ namespace RPG.Battle
 			}
 		}
 		[SerializeField]
-		private List<CommandEventConstants.InformationParameterType> param;
+		private List<BattleTypeConstants.InformationParameterType> param;
 
 	}
 }

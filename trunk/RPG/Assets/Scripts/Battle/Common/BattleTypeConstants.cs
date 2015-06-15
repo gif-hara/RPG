@@ -65,5 +65,14 @@ namespace RPG.Battle
 			/// <summary> 敵. </summary>
 			Enemy,
 		}
+
+		/// <summary>
+		/// 情報文字列表示の引数タイプ.
+		/// </summary>
+		public enum InformationParameterType : int
+		{
+			/// <summary> コマンド実行者の名前. </summary>
+			ExecuteMemberName,
+		}
 	}
 }

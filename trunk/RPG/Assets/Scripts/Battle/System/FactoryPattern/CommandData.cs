@@ -50,14 +50,6 @@ namespace RPG.Battle
 			this.TargetIdList.Add( id );
 		}
 
-		/// <summary>
-		/// 内部初期化処理.
-		/// </summary>
-		protected void InternalInitialize()
-		{
-			this.TargetIdList.Clear();
-		}
-
 		public override string ToString ()
 		{
 			return string.Format ("[CommandData: TargetIdList={0}]", TargetIdList);

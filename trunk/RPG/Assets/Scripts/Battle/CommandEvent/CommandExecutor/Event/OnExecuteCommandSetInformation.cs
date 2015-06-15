@@ -58,7 +58,7 @@ namespace RPG.Battle
 				{
 					switch( refData.Parameter[i] )
 					{
-					case CommandEventConstants.InformationParameterType.ExecuteMemberName:
+					case BattleTypeConstants.InformationParameterType.ExecuteMemberName:
 						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.Data.name );
 						break;
 					}
