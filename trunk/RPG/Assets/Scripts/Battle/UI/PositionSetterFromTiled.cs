@@ -80,7 +80,6 @@ namespace RPG.Common
 
 			this.isInitialize = true;
 			this.originPosition = this.refRectTransform.anchoredPosition;
-			Debug.Log( "this.originPosition = " + this.originPosition );
 		}
 	}
 }

@@ -21,10 +21,10 @@ namespace RPG.Battle
 
 		public GameObject Get( BattleTypeConstants.CommandType type )
 		{
-			var executor = executorList.Find( e => e.CommandType == type ).gameObject;
+			var executor = executorList.Find( e => e.CommandType == type );
 			Debug.Assert( executor, string.Format( "CommandExecutorがありません. {0} に対応したCommandExecutorが登録されているか確認してください.", type ), this );
 
-			return executor;
+			return executor.gameObject;
 		}
 	}
 }

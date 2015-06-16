@@ -19,6 +19,9 @@ MonoBehaviour:
   - Ability_Steal
   - EnemyNumber
   - Information_Command_Attack
+  - Empty
+  - Information_GiveDamage
+  - Information_ReceiveDamage
   asset:
   - "\u6226\u3046\n{0}\n\u9053\u5177"
   - 
@@ -27,3 +30,6 @@ MonoBehaviour:
   - "\u76D7\u3080"
   - "{0}\u4F53"
   - "{0}\u306E\u653B\u6483\uFF01"
+  - 
+  - "{0}\u306B\n{1}\u306E\u6253\u6483\u3092\u4E0E\u3048\u305F\uFF01"
+  - "{0}\u306B\n{1}\u306E\u6253\u6483\u3092\u53D7\u3051\u305F\uFF01"

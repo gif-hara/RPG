@@ -65,10 +65,5 @@ namespace RPG.Battle
 //			this.isUpdate = true;
 //		}
 //
-//		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandExecuteMessage )]
-//		void OnStartCommandExecute()
-//		{
-//			this.isUpdate = false;
-//		}
 	}
 }

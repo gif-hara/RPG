@@ -73,6 +73,8 @@ namespace RPG.Battle
 		{
 			/// <summary> コマンド実行者の名前. </summary>
 			ExecuteMemberName,
+
+
 		}
 	}
 }

@@ -51,9 +51,9 @@ namespace RPG.Battle
 		public const string EndUpdateActiveTimeMessage = "OnEndUpdateActiveTime";
 
 		/// <summary>
-		/// コマンドを実行する際のメッセージ.
+		/// コマンドが実行された際のメッセージ.
 		/// </summary>
-		public const string StartCommandExecuteMessage = "OnStartCommandExecute";
+		public const string ExecuteCommandMessage = "OnExecuteCommand";
 
 		/// <summary>
 		/// コマンド実行終了時のメッセージ.
@@ -86,11 +86,6 @@ namespace RPG.Battle
 		/// コマンドウィンドウを表示する際のメッセージ.
 		/// </summary>
 		public const string OpenCommandWindowMessage = "OnOpenCommandWindow";
-
-		/// <summary>
-		/// コマンドが実行された際のメッセージ.
-		/// </summary>
-		public const string ExecuteCommandMessage = "OnExecuteCommand";
 
 		/// <summary>
 		/// 情報ラベルに文字列を設定するメッセージ.

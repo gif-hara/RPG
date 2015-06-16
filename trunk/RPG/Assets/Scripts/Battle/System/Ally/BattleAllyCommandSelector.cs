@@ -51,7 +51,7 @@ namespace RPG.Battle
 		/// <summary>
 		/// 入力処理が可能であるか.
 		/// </summary>
-		private bool canInput = false;
+		private bool canInput = true;
 
 		/// <summary>
 		/// 編集中のコマンドデータ.
@@ -137,6 +137,7 @@ namespace RPG.Battle
 
 			this.CommandData = new CommandData();
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
+			StartCoroutine( LockInputCoroutine() );
 		}
 
 		/// <summary>
@@ -179,6 +180,16 @@ namespace RPG.Battle
 			this.inputArrowStateMachine.Change( (int)type );
 		}
 
+		private IEnumerator LockInputCoroutine()
+		{
+			this.canInput = false;
+
+			yield return new WaitForEndOfFrame();
+
+			this.canInput = true;
+			Debug.Log( "Unlock" );
+		}
+
 		/// <summary>
 		/// 入力可能か返す.
 		/// </summary>
@@ -187,7 +198,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return this.CurrentCommandSelectAllyData != null;
+				return this.canInput && this.CurrentCommandSelectAllyData != null;
 			}
 		}
 	}

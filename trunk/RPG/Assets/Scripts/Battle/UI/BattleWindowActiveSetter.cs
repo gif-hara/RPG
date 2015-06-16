@@ -47,12 +47,6 @@ namespace RPG.Battle
 //		{
 //			AllDeactive();
 //		}
-//
-//		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandExecuteMessage )]
-//		void OnStartCommandExecute()
-//		{
-//			AllDeactive();
-//		}
 
 		public void AllDeactive()
 		{
