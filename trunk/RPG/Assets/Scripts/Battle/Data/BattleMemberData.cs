@@ -64,7 +64,7 @@ namespace RPG.Battle
 					return BattleTypeConstants.CommandType.None;
 				}
 
-				return (BattleTypeConstants.CommandType)this.SelectCommandData.Id;
+				return this.SelectCommandData.Type;
 			}
 		}
 		/// <summary>

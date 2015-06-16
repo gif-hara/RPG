@@ -16,38 +16,25 @@ namespace RPG.Battle
 	/// </summary>
 	public class InformationLabelSetterCommandEvent : CommandEventBase
 	{
-		[SerializeField]
-		private string informationKey;
-
-		[SerializeField]
-		private List<CommandEventConstants.InformationParameterType> param;
-
-		public string Message( AllParty allParty, BattleMemberData executeMember, CommandData commandData )
-		{
-			return StringAsset.Format( informationKey, FormatArguments( allParty, executeMember, commandData ) );
-		}
-
-		private object[] FormatArguments( AllParty allParty, BattleMemberData executeMember, CommandData commandData )
-		{
-			List<object> result = new List<object>();
-			for( int i=0,imax=param.Count; i<imax; i++ )
-			{
-				switch( param[i] )
-				{
-				case CommandEventConstants.InformationParameterType.ExecuteMemberName:
-					result.Add( executeMember.Data.name );
-					break;
-				}
-			}
-			return result.ToArray();
-		}
-
-		public override CommandEventConstants.EventType EventType
+		public string Key
 		{
 			get
 			{
-				return CommandEventConstants.EventType.Information;
+				return this.informationKey;
 			}
 		}
+		[SerializeField]
+		private string informationKey;
+
+		public List<BattleTypeConstants.InformationParameterType> Parameter
+		{
+			get
+			{
+				return this.param;
+			}
+		}
+		[SerializeField]
+		private List<BattleTypeConstants.InformationParameterType> param;
+
 	}
 }

@@ -1,8 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Character/WorldMapPlayer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Battle/Common/BattleTypeConstants.cs">
     <Files>
-      <File FileName="Assets/Scripts/Character/WorldMapPlayer.cs" Line="88" Column="35" />
+      <File FileName="Assets/Scripts/Battle/System/Ally/BattleAllyCommandSelector.cs" Line="138" Column="1" />
+      <File FileName="Assets/Scripts/Battle/System/FactoryPattern/AttackCommandData.cs" Line="33" Column="2" />
+      <File FileName="Assets/Scripts/Battle/System/FactoryPattern/CommandData.cs" Line="36" Column="40" />
+      <File FileName="Assets/Scripts/Battle/Common/BattleTypeConstants.cs" Line="77" Column="4" />
+      <File FileName="Assets/Scripts/Battle/System/FactoryPattern/CoverUpCommandData.cs" Line="20" Column="49" />
+      <File FileName="Assets/Scripts/Battle/CommandEvent/CommandEdit/OnDecideCommandSetCommandType.cs" Line="27" Column="44" />
+      <File FileName="Assets/Scripts/Battle/Data/CommandEvent/InformationLabelSetterCommandEvent.cs" Line="37" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

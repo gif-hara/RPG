@@ -8,6 +8,7 @@
 */
 /*===========================================================================*/
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,12 +20,18 @@ namespace RPG.Battle
 	public class MainCommandWindowLabelSetter : MyMonoBehaviour
 	{
 		[SerializeField]
-		private UILabel refLabel;
+		private BattleAllyCommandSelector refAllyCommandSelector;
+
+		[SerializeField]
+		private Text refText;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleMessageConstants.OpenCommandWindowData parameter )
+		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
-			refLabel.text = StringAsset.Format( "MainCommandLeftLabel", Common.StringAssetUtility.AbilityName( parameter.AllyData.Data.abilityType ) );
+			refText.text = StringAsset.Format(
+				"MainCommandLeftLabel",
+				Common.StringAssetUtility.AbilityName( this.refAllyCommandSelector.CurrentCommandSelectAllyData.Data.abilityType )
+				);
 		}
 	}
 }

@@ -34,6 +34,9 @@ namespace RPG.Common
 		}
 
 		[SerializeField]
+		private RectTransform refRectTransform;
+
+		[SerializeField]
 		private PositionType xPositionType;
 
 		[SerializeField]
@@ -55,17 +58,20 @@ namespace RPG.Common
 		/// </summary>
 		private bool isInitialize = false;
 
-		protected void Set( int id )
+		void Awake()
 		{
 			Initialize();
+		}
 
+		protected void Set( int id )
+		{
 			var x = xPositionType == PositionType.Surplus
 				? interval.x * (id % split)
 					: interval.x * (id / split);
 			var y = yPositionType == PositionType.Surplus
 				? interval.y * (id % split)
 					: interval.y * (id / split);
-			transform.localPosition = originPosition + new Vector3( x, y, 0.0f );
+			this.refRectTransform.anchoredPosition = originPosition + new Vector3( x, y, 0.0f );
 		}
 
 		private void Initialize()
@@ -73,7 +79,7 @@ namespace RPG.Common
 			if( this.isInitialize )	return;
 
 			this.isInitialize = true;
-			this.originPosition = transform.localPosition;
+			this.originPosition = this.refRectTransform.anchoredPosition;
 		}
 	}
 }

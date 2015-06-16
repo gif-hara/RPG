@@ -16,6 +16,5 @@ namespace RPG.Battle
 	/// </summary>
 	public abstract class CommandEventBase : ScriptableObject
 	{
-		public abstract CommandEventConstants.EventType EventType{ get; }
 	}
 }

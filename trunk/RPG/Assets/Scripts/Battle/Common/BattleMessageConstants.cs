@@ -38,7 +38,7 @@ namespace RPG.Battle
 		/// コマンドが決定した際のメッセージ.
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( AllyData ) )]
-		public const string DecisionCommandMessage = "OnDecisionCommand";
+		public const string CompleteCommandSelectMessage = "OnCompleteCommandSelect";
 
 		/// <summary>
 		/// アクティブタイム更新処理開始時のメッセージ.
@@ -46,14 +46,14 @@ namespace RPG.Battle
 		public const string StartUpdateActiveTimeMessage = "OnStartUpdateActiveTime";
 
 		/// <summary>
-		/// いずれかの味方のアクティブタイムが最大値に達した際のメッセージ.
+		/// いずれかのキャラクターのアクティブタイムが最大値に達した際のメッセージ.
 		/// </summary>
 		public const string EndUpdateActiveTimeMessage = "OnEndUpdateActiveTime";
 
 		/// <summary>
-		/// コマンドを実行する際のメッセージ.
+		/// コマンドが実行された際のメッセージ.
 		/// </summary>
-		public const string StartCommandExecuteMessage = "OnStartCommandExecute";
+		public const string ExecuteCommandMessage = "OnExecuteCommand";
 
 		/// <summary>
 		/// コマンド実行終了時のメッセージ.
@@ -66,122 +66,43 @@ namespace RPG.Battle
 		[Attribute.MessageMethodArgument( typeof( int ) )]
 		public const string ModifiedCommandIdMessage = "OnModifiedCommandId";
 
-		public class OpenCommandWindowData
-		{
-			public BattleTypeConstants.CommandSelectType SelectType{ private set; get; }
+		/// <summary>
+		/// ステートがアクティブ状態になった際のメッセージ.
+		/// </summary>
+		public const string ActiveStateMessage = "OnActiveState";
 
-			public AllyData AllyData{ private set; get; }
+		/// <summary>
+		/// ステートが非アクティブ状態になった際のメッセージ.
+		/// </summary>
+		public const string DeactiveStateMessage = "OnDeactiveState";
 
-			public OpenCommandWindowData( BattleTypeConstants.CommandSelectType selectType, AllyData allyData )
-			{
-				this.SelectType = selectType;
-				this.AllyData = allyData;
-			}
-
-			public override string ToString ()
-			{
-				return string.Format ("[OpenCommandWindowData: SelectType={0}, AllyData={1}]", SelectType, AllyData);
-			}
-		}
+		/// <summary>
+		/// コマンドが選択された際のメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( int ) )]
+		public const string DecideCommandMessage = "OnDecideCommand";
 
 		/// <summary>
 		/// コマンドウィンドウを表示する際のメッセージ.
 		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( OpenCommandWindowData ) )]
 		public const string OpenCommandWindowMessage = "OnOpenCommandWindow";
 
-		public class NoticeCommandEventArgument
-		{
-			public List<CommandEventBase> CommandEventList{ private set; get; }
-
-			public AllParty AllParty{ private set; get; }
-
-			public BattleMemberData ExecuteMember{ private set; get; }
-
-			public CommandData CommandData{ private set; get; }
-
-			public NoticeCommandEventArgument( List<CommandEventBase> commandEventList, AllParty allParty, BattleMemberData executeMember, CommandData commandData )
-			{
-				this.CommandEventList = commandEventList;
-				this.AllParty = allParty;
-				this.ExecuteMember = executeMember;
-				this.CommandData = commandData;
-			}
-		}
 		/// <summary>
-		/// コマンドイベントを通知するメッセージ.
+		/// 情報ラベルに文字列を設定するメッセージ.
 		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( NoticeCommandEventArgument ) )] 
-		public const string NoticeCommandEventMessage = "OnNoticeCommandEvent";
-	}
-
-	public class BattleTypeConstants
-	{
-		/// <summary>
-		/// コマンドタイプ.
-		/// </summary>
-		public enum CommandType : int
-		{
-			/// <summary> 無し. </summary>
-			None,
-
-			/// <summary> 戦う. </summary>
-			Attack,
-
-			/// <summary> 特殊能力. </summary>
-			Ability,
-
-			/// <summary> 道具. </summary>
-			Item,
-
-			/// <summary> 守る. </summary>
-			Deffence,
-
-			/// <summary> かばう. </summary>
-			CoverUp,
-
-			/// <summary> 逃げる. </summary>
-			Escape,
-
-		}
+		[Attribute.MessageMethodArgument( typeof( string ) )]
+		public const string SetInformationTextMessage = "OnSetInformationText";
 
 		/// <summary>
-		/// コマンド選択タイプ.
+		/// 情報ラベルに文字列を追加するメッセージ.
 		/// </summary>
-		public enum CommandSelectType : int
-		{
-			/// <summary> メインコマンド. </summary>
-			Main,
-
-			/// <summary> 特殊能力. </summary>
-			Ability,
-
-			/// <summary> アイテム. </summary>
-			Item,
-
-			/// <summary> 味方. </summary>
-			Ally,
-
-			/// <summary> 敵. </summary>
-			Enemy,
-		}
+		[Attribute.MessageMethodArgument( typeof( string ) )]
+		public const string AppendInformationTextMessage = "OnAppendInformationText";
 
 		/// <summary>
-		/// 特殊能力タイプ.
+		/// 情報ラベルに文字列を新しい行に追加するメッセージ.
 		/// </summary>
-		public enum AbilityType : int
-		{
-			/// <summary> 無し. </summary>
-			None,
-
-			/// <summary> 術. </summary>
-			Magic,
-
-			/// <summary> すもう技. </summary>
-			Sumo,
-
-			/// <summary> 盗む. </summary>
-			Steal,
-		}
+		[Attribute.MessageMethodArgument( typeof( string ) )]
+		public const string NewLineInformationTextMessage = "OnNewLineInformationText";
 	}
 }

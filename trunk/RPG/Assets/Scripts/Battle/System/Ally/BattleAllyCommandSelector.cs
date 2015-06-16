@@ -2,8 +2,6 @@
 /*
 *     * FileName    : BattleAllyCommandSelector.cs
 *
-*     * Description : 味方のコマンドを選択するコンポーネント.
-*
 *     * Author      : Hiroki_Kitahara.
 */
 /*===========================================================================*/
@@ -36,29 +34,99 @@ namespace RPG.Battle
 		/// <summary>
 		/// 入力操作ステートマシン.
 		/// </summary>
-		private StateMachine<BattleAllyCommandSelector> inputArrowStateMachine;
+		private StateMachine<BattleAllyCommandSelector, CommandInputElementBase> inputArrowStateMachine;
 
-		private Factory<CommandData> commandDataFactory;
+		/// <summary>
+		/// メインコマンドのイベントデータを保持したゲームオブジェクトリスト.
+		/// </summary>
+		[SerializeField]
+		private List<GameObject> refMainCommandEventHolders;
 
+		/// <summary>
+		/// 敵コマンドのイベントデータを保持したゲームオブジェクト.
+		/// </summary>
+		[SerializeField]
+		private GameObject refEnemyCommandEventHolder;
+
+		/// <summary>
+		/// 入力処理が可能であるか.
+		/// </summary>
+		private bool canInput = true;
+
+		/// <summary>
+		/// 編集中のコマンドデータ.
+		/// </summary>
+		/// <value>The command data.</value>
 		public CommandData CommandData{ private set; get; }
 
 		void Awake()
 		{
-			this.inputArrowStateMachine = new StateMachine<BattleAllyCommandSelector>( this );
+			this.inputArrowStateMachine = new StateMachine<BattleAllyCommandSelector, CommandInputElementBase>( this );
 			this.inputArrowStateMachine.Add( new MainCommandInput() );
 			this.inputArrowStateMachine.Add( new AllyCommandInput() );
 			this.inputArrowStateMachine.Add( new EnemyCommandInput() );
-
-			this.commandDataFactory = new Factory<CommandData>();
-			this.commandDataFactory.Add( new AttackCommandData() );
-			this.commandDataFactory.Add( new CoverUpCommandData() );
 		}
-		void Update()
+
+		void OnInputLeft()
 		{
-			if( !IsPossibleInput )	return;
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
 
-			this.inputArrowStateMachine.Update();
+			this.inputArrowStateMachine.Current.LeftAction( this );
 		}
+
+		void OnInputRight()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.RightAction( this );
+		}
+		
+		void OnInputUp()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.UpAction( this );
+		}
+		
+		void OnInputDown()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.DownAction( this );
+		}
+		
+		void OnInputDecide()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.DecisionAction( this );
+		}
+		
+		void OnInputCancel()
+		{
+			if( !this.IsPossibleInput )
+			{
+				return;
+			}
+			
+			this.inputArrowStateMachine.Current.CancelAction( this );
+		}
+		
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
 		void OnStartCommandSelect()
@@ -67,15 +135,38 @@ namespace RPG.Battle
 
 			if( this.CurrentCommandSelectAllyData == null )	return;
 
+			this.CommandData = new CommandData();
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
+			StartCoroutine( LockInputCoroutine() );
 		}
 
-		public void Decision()
+		/// <summary>
+		/// メインコマンドの決定処理
+		/// </summary>
+		/// <param name="id">Identifier.</param>
+		public void DecideMainCommand( int id )
+		{
+			this.BroadcastMessage( refMainCommandEventHolders[id], BattleMessageConstants.DecideCommandMessage, id );
+		}
+
+		/// <summary>
+		/// 敵コマンドの決定処理.
+		/// </summary>
+		/// <param name="id">Identifier.</param>
+		public void DecideEnemyCommand( int id )
+		{
+			this.BroadcastMessage( refEnemyCommandEventHolder, BattleMessageConstants.DecideCommandMessage, id );
+		}
+
+		/// <summary>
+		/// コマンド選択完了処理.
+		/// </summary>
+		public void Complete()
 		{
 			this.CurrentCommandSelectAllyData.DecisionCommand( CommandData );
 			var tempAllyData = this.CurrentCommandSelectAllyData;
 			this.CurrentCommandSelectAllyData = null;
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.DecisionCommandMessage, tempAllyData );
+			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.CompleteCommandSelectMessage, tempAllyData );
 		}
 
 		public void Cancel()
@@ -84,14 +175,19 @@ namespace RPG.Battle
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 		}
 
-		public void CreateCommandData( BattleTypeConstants.CommandType type )
-		{
-			this.CommandData = this.commandDataFactory.Clone( (int)type );
-		}
-
 		public void ChangeInputState( BattleTypeConstants.CommandSelectType type )
 		{
 			this.inputArrowStateMachine.Change( (int)type );
+		}
+
+		private IEnumerator LockInputCoroutine()
+		{
+			this.canInput = false;
+
+			yield return new WaitForEndOfFrame();
+
+			this.canInput = true;
+			Debug.Log( "Unlock" );
 		}
 
 		/// <summary>
@@ -102,7 +198,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return this.CurrentCommandSelectAllyData != null;
+				return this.canInput && this.CurrentCommandSelectAllyData != null;
 			}
 		}
 	}

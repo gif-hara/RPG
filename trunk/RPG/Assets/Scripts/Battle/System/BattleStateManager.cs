@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleStateManager.cs
 *
@@ -14,8 +14,8 @@ using RPG.Common;
 using RPG.Battle;
 using RPG.Attribute;
 
-//namespace RPG.Battle
-//{
+namespace RPG.Battle
+{
 	/// <summary>
 	/// .
 	/// </summary>
@@ -23,7 +23,7 @@ using RPG.Attribute;
 	{
 		public enum State : int
 		{
-			SelectCommand,
+			SelectCommand = 0,
 			UpdateActiveTime,
 			ExecuteCommand,
 		}
@@ -31,44 +31,43 @@ using RPG.Attribute;
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
-		private StateMachine<BattleStateManager> stateMachine;
+		[SerializeField]
+		private List<GameObject> refStateEventHolders;
+
+		private GameObject currentStateEventHolder;
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
-			this.stateMachine = new StateMachine<BattleStateManager>( this );
-			this.stateMachine.Add( new BattleStateCommandSelect() );
-			this.stateMachine.Add( new BattleStateUpdateActiveTime() );
-			this.stateMachine.Add( new BattleStateCommandExecute() );
 		}
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
 		void OnStartBattle()
 		{
-			ChangeState( State.SelectCommand );
+			this.NotifyActiveStateMessage( State.SelectCommand );
 		}
 
-		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.DecisionCommandMessage )]
-		void OnDecisionCommand( AllyData allyData )
+		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.CompleteCommandSelectMessage )]
+		void OnCompleteCommandSelect( AllyData allyData )
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{
-				ChangeState( State.SelectCommand );
+				this.NotifyActiveStateMessage( State.SelectCommand );
 			}
 			else if( refAllyPartyManager.Party.IsAnyActiveTimeMax )
 			{
-				ChangeState( State.ExecuteCommand, 1 );
+				this.NotifyActiveStateMessage( State.ExecuteCommand );
 			}
 			else
 			{
-				ChangeState( State.UpdateActiveTime );
+				this.NotifyActiveStateMessage( State.UpdateActiveTime );
 			}
 		}
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndUpdateActiveTimeMessage )]
 		void OnEndUpdateActiveTime()
 		{
-			ChangeState( State.ExecuteCommand );
+			this.NotifyActiveStateMessage( State.ExecuteCommand );
 		}
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndCommandExecuteMessage )]
@@ -76,44 +75,23 @@ using RPG.Attribute;
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{
-				ChangeState( State.SelectCommand );
+				this.NotifyActiveStateMessage( State.SelectCommand );
 			}
 			else
 			{
-				ChangeState( State.ExecuteCommand );
+				this.NotifyActiveStateMessage( State.ExecuteCommand );
 			}
 		}
 
-		public void ChangeState( State state, int delayFrame = 0 )
+		private void NotifyActiveStateMessage( State state )
 		{
-			if( delayFrame == 0 )
+			if( this.currentStateEventHolder != null )
 			{
-				this.stateMachine.Change( (int)state );
-			}
-			else
-			{
-				StartCoroutine( ChangeStateCoroutine( state, delayFrame ) );
-			}
-		}
-
-		public State CurrentState
-		{
-			get
-			{
-				return (State)this.stateMachine.CurrentElementId;
-			}
-		}
-
-		private IEnumerator ChangeStateCoroutine( State state, int delayFrame )
-		{
-			this.stateMachine.ClearElement();
-
-			for( int i=0; i<delayFrame; i++ )
-			{
-				yield return new WaitForEndOfFrame();
+				this.BroadcastMessage( this.currentStateEventHolder, BattleMessageConstants.DeactiveStateMessage );
 			}
 
-			this.stateMachine.Change( (int)state );
+			this.currentStateEventHolder = this.refStateEventHolders[(int)state];
+			this.BroadcastMessage( this.currentStateEventHolder, BattleMessageConstants.ActiveStateMessage );
 		}
 	}
-//}
+}

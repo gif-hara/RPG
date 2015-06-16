@@ -8,6 +8,7 @@
 */
 /*===========================================================================*/
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -20,7 +21,7 @@ namespace RPG.Battle
 	public class BattleDebugTextMesh : MyMonoBehaviour
 	{
 		[SerializeField]
-		private UILabel refLabel;
+		private Text refText;
 
 		[SerializeField]
 		private BattleAllyPartyManager refAllyManager;
@@ -35,12 +36,12 @@ namespace RPG.Battle
 			AppendState( builder );
 			AppendAllyData( builder );
 
-			refLabel.text = builder.ToString();
+			refText.text = builder.ToString();
 		}
 
 		private void AppendState( StringBuilder builder )
 		{
-			builder.AppendLine( string.Format( "State = {0}", refStateManager.CurrentState ) );
+//			builder.AppendLine( string.Format( "State = {0}", refStateManager.CurrentState ) );
 		}
 
 		private void AppendAllyData( StringBuilder builder )

@@ -28,19 +28,19 @@ namespace RPG.Common
 		/// 初期化処理.
 		/// </summary>
 		/// <param name="owner">Owner.</param>
-		public abstract void Enter( TOwner owner );
+		public virtual void Enter( TOwner owner )
+		{
 
-		/// <summary>
-		/// 更新処理.
-		/// </summary>
-		/// <param name="owner">Owner.</param>
-		public abstract void Update( TOwner owner );
+		}
 
 		/// <summary>
 		/// 終了処理.
 		/// </summary>
 		/// <param name="owner">Owner.</param>
-		public abstract void Exit( TOwner owner );
+		public virtual void Exit( TOwner owner )
+		{
+
+		}
 
 		protected void BroadcastMessage( MonoBehaviour sender, string methodName )
 		{

@@ -27,30 +27,29 @@ namespace RPG.Battle
 		public override void Enter (BattleAllyCommandSelector owner)
 		{
 			base.Enter (owner);
-			var parameter = new BattleMessageConstants.OpenCommandWindowData( BattleTypeConstants.CommandSelectType.Ally, owner.CurrentCommandSelectAllyData );
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, parameter );
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Ally );
 		}
 		
-		protected override void DecisionAction (BattleAllyCommandSelector owner)
+		public override void DecisionAction (BattleAllyCommandSelector owner)
 		{
 			owner.CommandData.AddTargetId( commandId );
-			owner.Decision();
+			owner.Complete();
 		}
 		
-		protected override void CancelAction (BattleAllyCommandSelector owner)
+		public override void CancelAction (BattleAllyCommandSelector owner)
 		{
 			owner.Cancel();
 		}
 		
-		protected override void LeftAction (BattleAllyCommandSelector owner)
+		public override void LeftAction (BattleAllyCommandSelector owner)
 		{
 		}
 		
-		protected override void RightAction (BattleAllyCommandSelector owner)
+		public override void RightAction (BattleAllyCommandSelector owner)
 		{
 		}
 		
-		protected override void UpAction (BattleAllyCommandSelector owner)
+		public override void UpAction (BattleAllyCommandSelector owner)
 		{
 			commandId -= 1;
 			if( commandId == -1 )
@@ -61,7 +60,7 @@ namespace RPG.Battle
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 		
-		protected override void DownAction (BattleAllyCommandSelector owner)
+		public override void DownAction (BattleAllyCommandSelector owner)
 		{
 			commandId += 1;
 			if( commandId == owner.AllyPartyManager.Party.List.Count )

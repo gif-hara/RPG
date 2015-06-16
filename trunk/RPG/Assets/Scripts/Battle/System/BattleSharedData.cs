@@ -2,8 +2,6 @@
 /*
 *     * FileName    : BattleSharedData.cs
 *
-*     * Description : バトルの共有データ.
-*
 *     * Author      : Hiroki_Kitahara.
 */
 /*===========================================================================*/

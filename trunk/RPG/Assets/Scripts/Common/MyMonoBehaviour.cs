@@ -30,6 +30,20 @@ public class MyMonoBehaviour : MonoBehaviour
 		#endif
 		sender.BroadcastMessage( methodName, SendMessageOptions.DontRequireReceiver );
 	}
+	public static void BroadcastMessage( GameObject sender, string methodName )
+	{
+		#if DEBUG
+		Debug.Log(
+			string.Format(
+			"<color=red>Sender[{0}]</color> <color=blue>Broadcast[{1}]</color>",
+			sender.name,
+			methodName
+			),
+			sender
+			);
+		#endif
+		sender.BroadcastMessage( methodName, SendMessageOptions.DontRequireReceiver );
+	}
 	public static void BroadcastMessage( MonoBehaviour sender, string methodName, object parameter )
 	{
 		#if DEBUG
@@ -45,10 +59,25 @@ public class MyMonoBehaviour : MonoBehaviour
 		#endif
 		sender.BroadcastMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
 	}
+	public static void BroadcastMessage( GameObject sender, string methodName, object parameter )
+	{
+		#if DEBUG
+		Debug.Log(
+			string.Format(
+			"<color=red>Sender[{0}]</color> <color=blue>Broadcast[{1}]</color> <color=yellow>parameter[{2}]</color>",
+			sender.name,
+			methodName,
+			parameter.ToString()
+			),
+			sender
+			);
+		#endif
+		sender.BroadcastMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
+	}
 
 	public static void SendMessage( MonoBehaviour sender, string methodName )
 	{
-		#if DEBUG
+#if DEBUG
 		Debug.Log(
 			string.Format(
 			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color>",
@@ -57,13 +86,13 @@ public class MyMonoBehaviour : MonoBehaviour
 			),
 			sender
 			);
-		#endif
+#endif
 		sender.SendMessage( methodName, SendMessageOptions.DontRequireReceiver );
 	}
 
 	public static void SendMessage( MonoBehaviour sender, string methodName, object parameter )
 	{
-		#if DEBUG
+#if DEBUG
 		Debug.Log(
 			string.Format(
 			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color> <color=yellow>parameter[{2}]</color>",
@@ -73,7 +102,7 @@ public class MyMonoBehaviour : MonoBehaviour
 			),
 			sender
 			);
-		#endif
+#endif
 		sender.SendMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
 	}
 	

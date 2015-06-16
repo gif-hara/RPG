@@ -8,6 +8,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Common;
 
 namespace RPG.Battle
 {
@@ -26,7 +27,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// 全パーティを管理するコンポーネント.
 	/// </summary>
-	public class AllPartyManager : MyMonoBehaviour
+	public class AllPartyManager : A_Singleton<AllPartyManager>
 	{
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
@@ -34,11 +35,29 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleEnemyPartyManager refEnemyPartyManager;
 
-		public AllParty AllParty
+		public AllParty AllParty{ private set; get; }
+
+		void Awake()
+		{
+			Instance = this;
+		}
+
+		void Start()
+		{
+			this.AllParty = new AllParty( this.refAllyPartyManager, this.refEnemyPartyManager );
+		}
+
+		public BattleMemberData ActiveTimeMaxBattleMember
 		{
 			get
 			{
-				return new AllParty( this.refAllyPartyManager, this.refEnemyPartyManager );
+				var memberData = this.refAllyPartyManager.Party.ActiveTimeMaxBattleMember;
+				if( memberData != null )
+				{
+					return memberData;
+				}
+
+				return this.refEnemyPartyManager.Party.ActiveTimeMaxBattleMember;
 			}
 		}
 	}

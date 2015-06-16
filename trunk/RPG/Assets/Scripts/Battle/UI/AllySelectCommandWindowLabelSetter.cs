@@ -8,6 +8,7 @@
 */
 /*===========================================================================*/
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -20,15 +21,15 @@ namespace RPG.Battle
 	public class AllySelectCommandWindowLabelSetter : MyMonoBehaviour
 	{
 		[SerializeField]
-		private UILabel refLabel;
+		private Text refText;
 
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleMessageConstants.OpenCommandWindowData parameter )
+		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
-			if( parameter.SelectType != BattleTypeConstants.CommandSelectType.Ally )	return;
+			if( type != BattleTypeConstants.CommandSelectType.Ally )	return;
 
 			StringBuilder builder = new StringBuilder();
 			var party = refAllyPartyManager.Party.List;
@@ -37,7 +38,7 @@ namespace RPG.Battle
 				builder.AppendLine( party[i].Data.name );
 			}
 
-			refLabel.text = builder.ToString();
+			refText.text = builder.ToString();
 		}
 	}
 }
