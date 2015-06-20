@@ -206,7 +206,7 @@ MonoBehaviour:
       level: 0
       abilityType: 5
       maxHitPoint: 0
-      hitPoint: 0
+      hitPoint: 10
       strength: 0
       defence: 0
       speed: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
       level: 0
       abilityType: 5
       maxHitPoint: 0
-      hitPoint: 0
+      hitPoint: 1
       strength: 0
       defence: 0
       speed: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
       level: 0
       abilityType: 5
       maxHitPoint: 0
-      hitPoint: 0
+      hitPoint: 1
       strength: 0
       defence: 0
       speed: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
       level: 0
       abilityType: 5
       maxHitPoint: 0
-      hitPoint: 0
+      hitPoint: 1
       strength: 0
       defence: 0
       speed: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
       level: 0
       abilityType: 5
       maxHitPoint: 0
-      hitPoint: 0
+      hitPoint: 1
       strength: 0
       defence: 0
       speed: 0
@@ -2287,7 +2287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refText: {fileID: 1357291826}
-  refEnemyPartyManager: {fileID: 1421216111}
 --- !u!114 &1357291825
 MonoBehaviour:
   m_ObjectHideFlags: 0

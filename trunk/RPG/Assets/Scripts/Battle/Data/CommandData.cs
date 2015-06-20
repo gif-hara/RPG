@@ -61,16 +61,16 @@ namespace RPG.Battle
 			}
 		}
 		
-		public List<BattleMemberData> GetGroupBattleMemberData( int targetId )
+		public Group GetGroupBattleMemberData( int targetId )
 		{
 			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
 			{
-				return AllPartyManager.Instance.AllParty.EnemyParty.GroupList[targetData.Id].List;
+				return AllPartyManager.Instance.AllParty.EnemyParty.GroupList[targetData.Id];
 			}
 			else
 			{
-				return AllPartyManager.Instance.AllParty.AllyParty.GroupList[targetData.Id].List;
+				return AllPartyManager.Instance.AllParty.AllyParty.GroupList[targetData.Id];
 			}
 		}
 
@@ -79,9 +79,23 @@ namespace RPG.Battle
 		/// </summary>
 		/// <returns>The group battle member data safe.</returns>
 		/// <param name="targetId">Target identifier.</param>
-		public List<BattleMemberData> GetGroupBattleMemberDataSafe( int targetId )
+		public Group GetGroupBattleMemberDataSafe( int targetId )
 		{
-			return null;
+			var result = this.GetGroupBattleMemberData( targetId );
+			if( result.IsAllDead )
+			{
+				var targetData = this.TargetIdList[targetId];
+				if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
+				{
+					return BattleEnemyPartyManager.Instance.Party.GroupList.List.Find( g => !g.IsAllDead );
+				}
+				else
+				{
+					return BattleAllyPartyManager.Instance.Party.GroupList.List.Find( g => !g.IsAllDead );
+				}
+			}
+
+			return result;
 		}
 		
 		/// <summary>

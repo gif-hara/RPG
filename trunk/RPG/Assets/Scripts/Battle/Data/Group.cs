@@ -35,6 +35,28 @@ namespace RPG.Battle
 			this.List.Add( data );
 		}
 
+		/// <summary>
+		/// HPが一番低いキャラクターを返す.
+		/// </summary>
+		/// <value>The weak member.</value>
+		public BattleMemberData WeakMember
+		{
+			get
+			{
+				var result = this.List[0];
+				this.List.ForEach( b =>
+				{
+					Debug.Log( "b.IsDead = " + b.IsDead );
+					if( !b.IsDead )
+					{
+						result = result.InstanceData.hitPoint > b.InstanceData.hitPoint ? b : result;
+					}
+				});
+
+				return result;
+			}
+		}
+
 		public int Count
 		{
 			get
@@ -43,11 +65,19 @@ namespace RPG.Battle
 			}
 		}
 
+		public int CountAlive
+		{
+			get
+			{
+				return this.List.FindAll( b => !b.IsDead ).Count;
+			}
+		}
+
 		public bool IsAllDead
 		{
 			get
 			{
-				return this.List.Find( b => !b.IsDead ) == null;
+				return CountAlive <= 0;
 			}
 		}
 	}
