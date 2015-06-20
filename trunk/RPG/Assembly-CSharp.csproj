@@ -187,6 +187,7 @@
      <Compile Include="Assets\Scripts\Battle\Data\CommandEvent\CommandEventBase.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\CommandEvent\InformationLabelSetterCommandEvent.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\EnemyData.cs" />
+     <Compile Include="Assets\Scripts\Battle\Data\GiveDamageData.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\Group.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\Party.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\TargetData.cs" />

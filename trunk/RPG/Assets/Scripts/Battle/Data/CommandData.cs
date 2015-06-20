@@ -31,14 +31,11 @@ namespace RPG.Battle
 		/// <value>The type.</value>
 		public BattleTypeConstants.CommandType Type{ private set; get; }
 
-		public int GiveDamage{ private set; get; }
-
-		public int CurrentTargetId{ private set; get; }
+		public GiveDamageData GiveDamage{ private set; get; }
 
 		public CommandData()
 		{
 			this.TargetIdList = new List<TargetData>();
-			this.CurrentTargetId = 0;
 		}
 
 		public void SetCommandType( BattleTypeConstants.CommandType type )
@@ -46,19 +43,14 @@ namespace RPG.Battle
 			this.Type = type;
 		}
 
-		public void SetGiveDamage( int value )
+		public void SetGiveDamage( BattleMemberData target, int value )
 		{
-			this.GiveDamage = value;
+			this.GiveDamage = new GiveDamageData( target, value );
 		}
 
-		public void NextTarget()
+		public BattleMemberData GetTargetBattleMemberData( AllPartyManager allPartyManager, int targetId )
 		{
-			this.CurrentTargetId++;
-		}
-
-		public BattleMemberData GetTargetCommandData( AllPartyManager allPartyManager )
-		{
-			var targetData = this.TargetIdList[this.CurrentTargetId];
+			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
 			{
 				return allPartyManager.AllParty.EnemyParty.List[targetData.Id];
@@ -68,7 +60,20 @@ namespace RPG.Battle
 				return allPartyManager.AllParty.AllyParty.List[targetData.Id];
 			}
 		}
-
+		
+		public List<BattleMemberData> GetGroupBattleMemberData( AllPartyManager allPartyManager, int targetId )
+		{
+			var targetData = this.TargetIdList[targetId];
+			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
+			{
+				return allPartyManager.AllParty.EnemyParty.Group.List[targetData.Id];
+			}
+			else
+			{
+				return allPartyManager.AllParty.AllyParty.Group.List[targetData.Id];
+			}
+		}
+		
 		/// <summary>
 		/// ターゲットIDの追加.
 		/// </summary>

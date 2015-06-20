@@ -13,20 +13,20 @@ namespace RPG.Battle
 	/// <summary>
 	/// パーティのグループ分け.
 	/// </summary>
-	public class Group<TBattleMemberData> where TBattleMemberData : BattleMemberData
+	public class Group
 	{
-		public List<List<TBattleMemberData>> List{ private set; get; }
+		public List<List<BattleMemberData>> List{ private set; get; }
 
 		public Group()
 		{
-			this.List = new List<List<TBattleMemberData>>();
+			this.List = new List<List<BattleMemberData>>();
 		}
 
-		public void Add( TBattleMemberData data )
+		public void Add( BattleMemberData data )
 		{
 			if( this.List.Count <= 0 )
 			{
-				var groupElement = new List<TBattleMemberData>();
+				var groupElement = new List<BattleMemberData>();
 				groupElement.Add( data );
 				this.List.Add( groupElement );
 			}
@@ -39,14 +39,28 @@ namespace RPG.Battle
 				}
 				else
 				{
-					groupElement = new List<TBattleMemberData>();
+					groupElement = new List<BattleMemberData>();
 					groupElement.Add( data );
 					this.List.Add( groupElement );
 				}
 			}
 		}
 
-		public TBattleMemberData GetBattleMemberData( int index )
+		public List<BattleMemberData> FindList( BattleMemberData battleMember )
+		{
+			for( int i=0, imax=this.List.Count; i<imax; i++ )
+			{
+				if( this.List[i].Find( (b) => b == battleMember ) != null )
+				{
+					return this.List[i];
+				}
+			}
+
+			Debug.Assert( false, "List did not hit. battleMember = " + battleMember.ToString() );
+			return null;
+		}
+
+		public BattleMemberData GetBattleMemberData( int index )
 		{
 			return this.List[index][0];
 		}

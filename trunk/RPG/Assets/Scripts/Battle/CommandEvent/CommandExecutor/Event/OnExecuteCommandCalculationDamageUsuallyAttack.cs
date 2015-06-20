@@ -18,7 +18,11 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
-			AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.SetGiveDamage( 10 );
+			var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData;
+			var targetList = selectCommandData.GetGroupBattleMemberData( AllPartyManager.Instance, 0 );
+			TODO( "通常攻撃のターゲットをHPが低いやつを狙うよう実装する." );
+			Debug.Log( "targetList.Count = " + targetList.Count );
+			selectCommandData.SetGiveDamage( targetList[0], 10 );
 		}
 	}
 }

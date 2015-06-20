@@ -20,12 +20,12 @@ namespace RPG.Battle
 	{
 		public List<TBattleMemberData> List{ private set; get; }
 
-		public Group<TBattleMemberData> Group{ private set; get; }
+		public Group Group{ private set; get; }
 		
 		public Party()
 		{
 			this.List = new List<TBattleMemberData>();
-			this.Group = new Group<TBattleMemberData>();
+			this.Group = new Group();
 		}
 		
 		public void Add( TBattleMemberData data )

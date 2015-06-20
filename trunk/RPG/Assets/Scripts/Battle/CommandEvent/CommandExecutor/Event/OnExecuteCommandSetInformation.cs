@@ -62,10 +62,10 @@ namespace RPG.Battle
 						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.CharacterData.name );
 						break;
 					case BattleTypeConstants.InformationParameterType.GiveDamage:
-						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage );
+						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Damage );
 						break;
 					case BattleTypeConstants.InformationParameterType.TargetName:
-						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GetTargetCommandData( AllPartyManager.Instance ).CharacterData.name );
+						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Target.CharacterData.name );
 						break;
 					}
 				}
