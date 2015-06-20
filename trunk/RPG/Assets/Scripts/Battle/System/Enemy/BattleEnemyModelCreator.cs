@@ -20,8 +20,8 @@ namespace RPG.Battle
 	{
 		private const float Interval = 2.0f;
 		
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
-		void OnPreInitializeSystem()
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
+		void OnStartBattle()
 		{
 			var enemyDataList = Battle.SharedData.initializeData.EnemyDataList;
 			float originPosX = ((enemyDataList.Count - 1) * (Interval / 2.0f));
