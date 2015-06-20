@@ -19,9 +19,8 @@ namespace RPG.Battle
 		void OnExecuteCommand()
 		{
 			var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData;
-			var targetList = selectCommandData.GetGroupBattleMemberData( AllPartyManager.Instance, 0 );
+			var targetList = selectCommandData.GetGroupBattleMemberData( 0 );
 			TODO( "通常攻撃のターゲットをHPが低いやつを狙うよう実装する." );
-			Debug.Log( "targetList.Count = " + targetList.Count );
 			selectCommandData.SetGiveDamage( targetList[0], 10 );
 		}
 	}

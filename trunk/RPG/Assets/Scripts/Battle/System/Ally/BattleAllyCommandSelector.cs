@@ -171,7 +171,7 @@ namespace RPG.Battle
 
 		public void Cancel()
 		{
-			this.CommandData = null;
+			this.CommandData = new CommandData();
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 		}
 

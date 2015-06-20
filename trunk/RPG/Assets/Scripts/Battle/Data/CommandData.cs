@@ -48,29 +48,29 @@ namespace RPG.Battle
 			this.GiveDamage = new GiveDamageData( target, value );
 		}
 
-		public BattleMemberData GetTargetBattleMemberData( AllPartyManager allPartyManager, int targetId )
+		public BattleMemberData GetTargetBattleMemberData( int targetId )
 		{
 			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
 			{
-				return allPartyManager.AllParty.EnemyParty.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.EnemyParty.List[targetData.Id];
 			}
 			else
 			{
-				return allPartyManager.AllParty.AllyParty.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.AllyParty.List[targetData.Id];
 			}
 		}
 		
-		public List<BattleMemberData> GetGroupBattleMemberData( AllPartyManager allPartyManager, int targetId )
+		public List<BattleMemberData> GetGroupBattleMemberData( int targetId )
 		{
 			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
 			{
-				return allPartyManager.AllParty.EnemyParty.Group.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.EnemyParty.Group.List[targetData.Id];
 			}
 			else
 			{
-				return allPartyManager.AllParty.AllyParty.Group.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.AllyParty.Group.List[targetData.Id];
 			}
 		}
 		
