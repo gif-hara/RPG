@@ -66,12 +66,22 @@ namespace RPG.Battle
 			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
 			{
-				return AllPartyManager.Instance.AllParty.EnemyParty.Group.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.EnemyParty.GroupList[targetData.Id].List;
 			}
 			else
 			{
-				return AllPartyManager.Instance.AllParty.AllyParty.Group.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.AllyParty.GroupList[targetData.Id].List;
 			}
+		}
+
+		/// <summary>
+		/// 取得出来るグループ内のキャラクターが全て戦闘不能の場合は別グループを返す.
+		/// </summary>
+		/// <returns>The group battle member data safe.</returns>
+		/// <param name="targetId">Target identifier.</param>
+		public List<BattleMemberData> GetGroupBattleMemberDataSafe( int targetId )
+		{
+			return null;
 		}
 		
 		/// <summary>

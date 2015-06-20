@@ -1,4 +1,4 @@
-/*===========================================================================*/
+﻿/*===========================================================================*/
 /*
 *     * FileName    : Group.cs
 *
@@ -11,58 +11,44 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// パーティのグループ分け.
+	/// .
 	/// </summary>
 	public class Group
 	{
-		public List<List<BattleMemberData>> List{ private set; get; }
+		public List<BattleMemberData> List{ private set; get; }
+
+		public BattleMemberData this[int index]
+		{
+			get
+			{
+				return this.List[index];
+			}
+		}
 
 		public Group()
 		{
-			this.List = new List<List<BattleMemberData>>();
+			this.List = new List<BattleMemberData>();
 		}
 
 		public void Add( BattleMemberData data )
 		{
-			if( this.List.Count <= 0 )
+			this.List.Add( data );
+		}
+
+		public int Count
+		{
+			get
 			{
-				var groupElement = new List<BattleMemberData>();
-				groupElement.Add( data );
-				this.List.Add( groupElement );
-			}
-			else
-			{
-				var groupElement = this.List[this.List.Count - 1];
-				if( groupElement[0].InstanceData.id == data.InstanceData.id )
-				{
-					groupElement.Add( data );
-				}
-				else
-				{
-					groupElement = new List<BattleMemberData>();
-					groupElement.Add( data );
-					this.List.Add( groupElement );
-				}
+				return this.List.Count;
 			}
 		}
 
-		public List<BattleMemberData> FindList( BattleMemberData battleMember )
+		public bool IsAllDead
 		{
-			for( int i=0, imax=this.List.Count; i<imax; i++ )
+			get
 			{
-				if( this.List[i].Find( (b) => b == battleMember ) != null )
-				{
-					return this.List[i];
-				}
+				return this.List.Find( b => !b.IsDead ) == null;
 			}
-
-			Debug.Assert( false, "List did not hit. battleMember = " + battleMember.ToString() );
-			return null;
-		}
-
-		public BattleMemberData GetBattleMemberData( int index )
-		{
-			return this.List[index][0];
 		}
 	}
 }

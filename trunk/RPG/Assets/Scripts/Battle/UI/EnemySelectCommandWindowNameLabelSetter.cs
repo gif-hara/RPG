@@ -30,7 +30,7 @@ namespace RPG.Battle
 			if( type != BattleTypeConstants.CommandSelectType.Enemy )	return;
 
 			StringBuilder builder = new StringBuilder();
-			var group = refEnemyPartyManager.Party.Group;
+			var group = refEnemyPartyManager.Party.GroupList;
 			for( int i=0, imax=group.List.Count; i<imax; i++ )
 			{
 				builder.AppendLine( group.GetBattleMemberData( i ).InstanceData.name );

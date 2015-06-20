@@ -103,6 +103,14 @@ namespace RPG.Battle
 			}
 		}
 
+		public bool IsDead
+		{
+			get
+			{
+				return this.InstanceData.hitPoint <= 0;
+			}
+		}
+
 		public override string ToString ()
 		{
 			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandData={2}, SelectCommandType={3}, IsActiveTimeMax={4}]", InstanceData, ActiveTime, SelectCommandData, SelectCommandType, IsActiveTimeMax);

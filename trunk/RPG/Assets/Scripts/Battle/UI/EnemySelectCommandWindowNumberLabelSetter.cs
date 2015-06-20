@@ -27,10 +27,10 @@ namespace RPG.Battle
 			if( type != BattleTypeConstants.CommandSelectType.Enemy )	return;
 
 			StringBuilder builder = new StringBuilder();
-			var group = BattleEnemyPartyManager.Instance.Party.Group;
-			for( int i=0,imax=group.List.Count; i<imax; i++ )
+			var groupList = BattleEnemyPartyManager.Instance.Party.GroupList;
+			for( int i=0,imax=groupList.List.Count; i<imax; i++ )
 			{
-				builder.AppendLine( StringAsset.Format( "EnemyNumber", group.List[i].Count.ToString() ) );
+				builder.AppendLine( StringAsset.Format( "EnemyNumber", groupList[i].Count.ToString() ) );
 			}
 			refText.text = builder.ToString();
 		}
