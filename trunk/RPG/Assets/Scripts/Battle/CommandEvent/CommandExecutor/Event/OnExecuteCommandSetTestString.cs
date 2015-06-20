@@ -25,6 +25,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
+			TODO("テストなので削除問題無くなったら削除する.");
 			var methodName = this.type == BattleTypeConstants.SetTextInformationType.Set
 				? BattleMessageConstants.SetInformationTextMessage
 					: this.type == BattleTypeConstants.SetTextInformationType.Append
