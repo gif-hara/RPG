@@ -34,10 +34,5 @@ namespace RPG.Battle
 			}
 			refText.text = builder.ToString();
 		}
-
-		private static void AppendNumber( ref StringBuilder builder, int number )
-		{
-			builder.AppendLine( StringAsset.Format( "EnemyNumber", number.ToString() ) );
-		}
 	}
 }
