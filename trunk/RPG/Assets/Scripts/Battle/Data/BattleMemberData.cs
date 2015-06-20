@@ -24,11 +24,18 @@ namespace RPG.Battle
 		public float ActiveTime{ private set; get; }
 
 		public CommandData SelectCommandData{ private set; get; }
-				
+
+		public GameObject Model{ private set; get; }
+
 		public BattleMemberData( CharacterData data )
 		{
 			this.CharacterData = data;
 			this.ActiveTime = 0.0f;
+		}
+
+		public void SetModel( GameObject model )
+		{
+			this.Model = model;
 		}
 		
 		/// <summary>

@@ -23,11 +23,11 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
 		void OnStartBattle()
 		{
-			var enemyDataList = Battle.SharedData.initializeData.EnemyDataList;
-			float originPosX = ((enemyDataList.Count - 1) * (Interval / 2.0f));
-			for( int i=0,imax=enemyDataList.Count; i<imax; i++ )
+			var partyList = BattleEnemyPartyManager.Instance.Party.List;
+			float originPosX = ((partyList.Count - 1) * (Interval / 2.0f));
+			for( int i=0,imax=partyList.Count; i<imax; i++ )
 			{
-				var model = Instantiate( Define.GetEnemyModel( enemyDataList[i].id ), transform  );
+				var model = Instantiate( Define.GetEnemyModel( partyList[i].CharacterData.id ), transform  );
 				model.transform.localPosition = new Vector3( originPosX - Interval * i, 0.0f, 0.0f );
 			}
 		}

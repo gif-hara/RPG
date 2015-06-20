@@ -25,7 +25,7 @@ namespace RPG.Battle
 		{
 			var executeMember = BattleAllyPartyManager.Instance.Party.ActiveTimeMaxBattleMember;
 			var commandExecutorPrefab = refHolder.Get( executeMember.SelectCommandData.Type );
-			var commandExecutorObject = Instantiate( commandExecutorPrefab, transform );
+			Instantiate( commandExecutorPrefab, transform );
 		}
 	}
 }

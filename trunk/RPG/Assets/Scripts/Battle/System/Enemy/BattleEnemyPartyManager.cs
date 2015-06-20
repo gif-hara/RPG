@@ -10,15 +10,21 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Common;
 
 namespace RPG.Battle
 {
 	/// <summary>
 	/// 敵パーティ管理者コンポーネント.
 	/// </summary>
-	public class BattleEnemyPartyManager : MyMonoBehaviour
+	public class BattleEnemyPartyManager : A_Singleton<BattleEnemyPartyManager>
 	{
 		public Party<EnemyData> Party{ private set; get; }
+
+		void Awake()
+		{
+			Instance = this;
+		}
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
