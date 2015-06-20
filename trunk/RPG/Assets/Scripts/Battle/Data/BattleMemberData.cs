@@ -19,7 +19,7 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleMemberData
 	{
-		public CharacterData Data{ private set; get; }
+		public CharacterData CharacterData{ private set; get; }
 
 		public float ActiveTime{ private set; get; }
 
@@ -27,7 +27,7 @@ namespace RPG.Battle
 				
 		public BattleMemberData( CharacterData data )
 		{
-			this.Data = data;
+			this.CharacterData = data;
 			this.ActiveTime = 0.0f;
 		}
 		
@@ -81,7 +81,7 @@ namespace RPG.Battle
 
 		public override string ToString ()
 		{
-			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandData={2}, SelectCommandType={3}, IsActiveTimeMax={4}]", Data, ActiveTime, SelectCommandData, SelectCommandType, IsActiveTimeMax);
+			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandData={2}, SelectCommandType={3}, IsActiveTimeMax={4}]", CharacterData, ActiveTime, SelectCommandData, SelectCommandType, IsActiveTimeMax);
 		}
 	}
 }

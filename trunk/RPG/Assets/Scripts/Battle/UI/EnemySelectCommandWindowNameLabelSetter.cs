@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : EnemySelectCommandWindowNameLabelSetter.cs
 *
@@ -30,20 +30,12 @@ namespace RPG.Battle
 			if( type != BattleTypeConstants.CommandSelectType.Enemy )	return;
 
 			StringBuilder builder = new StringBuilder();
-			var party = refEnemyPartyManager.Party.List;
-			var enemyData = party[0].Data;
-			for( int i=1,imax=party.Count; i<imax; i++ )
+			var group = refEnemyPartyManager.Party.Group;
+			for( int i=0, imax=group.List.Count; i<imax; i++ )
 			{
-				if( enemyData.id == party[i].Data.id )
-				{
-					continue;
-				}
-
-				builder.AppendLine( enemyData.name );
-				enemyData = party[i].Data;
+				builder.AppendLine( group.GetBattleMemberData( i ).CharacterData.name );
 			}
 
-			builder.AppendLine( enemyData.name );
 			refText.text = builder.ToString();
 		}
 	}

@@ -23,7 +23,7 @@ namespace RPG.Battle
 		/// 誰に対してコマンドを実行するかのリスト.
 		/// </summary>
 		/// <value>The target identifier list.</value>
-		public List<int> TargetIdList{ private set; get; }
+		public List<TargetData> TargetIdList{ private set; get; }
 
 		/// <summary>
 		/// タイプ
@@ -31,9 +31,14 @@ namespace RPG.Battle
 		/// <value>The type.</value>
 		public BattleTypeConstants.CommandType Type{ private set; get; }
 
+		public int GiveDamage{ private set; get; }
+
+		public int CurrentTargetId{ private set; get; }
+
 		public CommandData()
 		{
-			this.TargetIdList = new List<int>();
+			this.TargetIdList = new List<TargetData>();
+			this.CurrentTargetId = 0;
 		}
 
 		public void SetCommandType( BattleTypeConstants.CommandType type )
@@ -41,13 +46,36 @@ namespace RPG.Battle
 			this.Type = type;
 		}
 
+		public void SetGiveDamage( int value )
+		{
+			this.GiveDamage = value;
+		}
+
+		public void NextTarget()
+		{
+			this.CurrentTargetId++;
+		}
+
+		public BattleMemberData GetTargetCommandData( AllPartyManager allPartyManager )
+		{
+			var targetData = this.TargetIdList[this.CurrentTargetId];
+			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
+			{
+				return allPartyManager.AllParty.EnemyParty.List[targetData.Id];
+			}
+			else
+			{
+				return allPartyManager.AllParty.AllyParty.List[targetData.Id];
+			}
+		}
+
 		/// <summary>
 		/// ターゲットIDの追加.
 		/// </summary>
 		/// <param name="id">Identifier.</param>
-		public void AddTargetId( int id )
+		public void AddTargetId( BattleTypeConstants.PartyType partyType, int id )
 		{
-			this.TargetIdList.Add( id );
+			this.TargetIdList.Add( new TargetData( partyType, id ) );
 		}
 
 		public override string ToString ()

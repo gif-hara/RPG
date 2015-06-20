@@ -16,18 +16,22 @@ namespace RPG.Battle
 	/// <summary>
 	/// 味方パーティ.
 	/// </summary>
-	public class Party<BattleMember> where BattleMember : BattleMemberData
+	public class Party<TBattleMemberData> where TBattleMemberData : BattleMemberData
 	{
-		public List<BattleMember> List{ private set; get; }
+		public List<TBattleMemberData> List{ private set; get; }
+
+		public Group<TBattleMemberData> Group{ private set; get; }
 		
 		public Party()
 		{
-			this.List = new List<BattleMember>();
+			this.List = new List<TBattleMemberData>();
+			this.Group = new Group<TBattleMemberData>();
 		}
 		
-		public void Add( BattleMember data )
+		public void Add( TBattleMemberData data )
 		{
 			this.List.Add( data );
+			this.Group.Add( data );
 		}
 		
 		/// <summary>
@@ -46,7 +50,7 @@ namespace RPG.Battle
 		/// アクティブタイムが最大のバトルメンバーを返す.
 		/// </summary>
 		/// <value>The active time max ally data.</value>
-		public BattleMember ActiveTimeMaxBattleMember
+		public TBattleMemberData ActiveTimeMaxBattleMember
 		{
 			get
 			{
@@ -70,7 +74,7 @@ namespace RPG.Battle
 		/// コマンド選択していないバトルメンバーを返す.
 		/// </summary>
 		/// <value>The none command ally data.</value>
-		public BattleMember NoneCommandBattleMember
+		public TBattleMemberData NoneCommandBattleMember
 		{
 			get
 			{

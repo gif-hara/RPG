@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : EnemySelectCommandWindowNameLabelSetter.cs
 *
@@ -31,18 +31,18 @@ namespace RPG.Battle
 
 			StringBuilder builder = new StringBuilder();
 			var party = refEnemyPartyManager.Party.List;
-			var enemyData = party[0].Data;
+			var enemyData = party[0].CharacterData;
 			int number = 1;
 			for( int i=1,imax=party.Count; i<imax; i++ )
 			{
-				if( enemyData.id == party[i].Data.id )
+				if( enemyData.id == party[i].CharacterData.id )
 				{
 					number++;
 				}
 				else
 				{
 					AppendNumber( ref builder, number );
-					enemyData = party[i].Data;
+					enemyData = party[i].CharacterData;
 					number = 1;
 				}
 			}

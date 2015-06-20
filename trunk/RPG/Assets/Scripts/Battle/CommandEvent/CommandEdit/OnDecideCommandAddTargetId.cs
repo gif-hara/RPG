@@ -16,12 +16,15 @@ namespace RPG.Battle
 	public class OnDecideCommandAddTargetId : MyMonoBehaviour
 	{
 		[SerializeField]
+		private BattleTypeConstants.PartyType partyType;
+
+		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideCommandMessage )]
 		void OnDecideCommand( int id )
 		{
-			refAllyCommandSelector.CommandData.AddTargetId( id );
+			refAllyCommandSelector.CommandData.AddTargetId( this.partyType, id );
 		}
 	}
 }

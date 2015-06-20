@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Information_GiveDamage
   m_EditorClassIdentifier: 
   informationKey: Information_GiveDamage
-  param: 0000000000000000
+  param: 0200000001000000

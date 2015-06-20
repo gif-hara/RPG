@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleEnemyPartyManager.cs
 *
@@ -43,15 +43,15 @@ namespace RPG.Battle
 				if( list.Count == 0 )	return 0;
 
 				int result = 1;
-				var enemyData = list[0].Data;
+				var enemyData = list[0].CharacterData;
 				for( int i=1,imax=list.Count; i<imax; i++ )
 				{
-					if( enemyData.id == list[i].Data.id )
+					if( enemyData.id == list[i].CharacterData.id )
 					{
 						continue;
 					}
 					
-					enemyData = list[i].Data;
+					enemyData = list[i].CharacterData;
 					result++;
 				}
 

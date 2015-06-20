@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnExecuteCommandSetInformation.cs
 *
@@ -59,7 +59,13 @@ namespace RPG.Battle
 					switch( refData.Parameter[i] )
 					{
 					case BattleTypeConstants.InformationParameterType.ExecuteMemberName:
-						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.Data.name );
+						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.CharacterData.name );
+						break;
+					case BattleTypeConstants.InformationParameterType.GiveDamage:
+						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage );
+						break;
+					case BattleTypeConstants.InformationParameterType.TargetName:
+						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GetTargetCommandData( AllPartyManager.Instance ).CharacterData.name );
 						break;
 					}
 				}

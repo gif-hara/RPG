@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : MainCommandWindowLabelSetter.cs
 *
@@ -30,7 +30,7 @@ namespace RPG.Battle
 		{
 			refText.text = StringAsset.Format(
 				"MainCommandLeftLabel",
-				Common.StringAssetUtility.AbilityName( this.refAllyCommandSelector.CurrentCommandSelectAllyData.Data.abilityType )
+				Common.StringAssetUtility.AbilityName( this.refAllyCommandSelector.CurrentCommandSelectAllyData.CharacterData.abilityType )
 				);
 		}
 	}

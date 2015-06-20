@@ -74,7 +74,18 @@ namespace RPG.Battle
 			/// <summary> コマンド実行者の名前. </summary>
 			ExecuteMemberName,
 
+			/// <summary> 与えるダメージ量. </summary>
+			GiveDamage,
 
+			/// <summary> ターゲットの名前. </summary>
+			TargetName,
+		}
+
+		public enum PartyType : int
+		{
+			Ally,
+
+			Enemy
 		}
 	}
 }

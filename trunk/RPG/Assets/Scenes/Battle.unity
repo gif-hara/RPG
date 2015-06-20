@@ -1491,6 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a394488ce61fb42a18822a8b3746dbfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partyType: 1
   refAllyCommandSelector: {fileID: 449675440}
 --- !u!114 &527859341
 MonoBehaviour:

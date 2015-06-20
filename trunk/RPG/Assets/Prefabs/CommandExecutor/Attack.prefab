@@ -28,7 +28,7 @@ GameObject:
   - 114: {fileID: 11445618}
   - 114: {fileID: 11437274}
   m_Layer: 0
-  m_Name: 2_ExecuteInformation
+  m_Name: 2_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,6 +42,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 470612}
+  - 114: {fileID: 11413584}
   - 114: {fileID: 11424652}
   - 114: {fileID: 11493152}
   m_Layer: 0
@@ -118,6 +119,17 @@ Transform:
   - {fileID: 469086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11413584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e4d652227d4cbc86e4d6ee182425d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11417332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +248,10 @@ Prefab:
       propertyPath: refParent
       value: 
       objectReference: {fileID: 11488764}
+    - target: {fileID: 0}
+      propertyPath: m_Name
+      value: 2_End
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 154874}

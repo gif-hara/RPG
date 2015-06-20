@@ -36,8 +36,6 @@ namespace RPG.Battle
 		public override void DecisionAction (BattleAllyCommandSelector owner)
 		{
 			owner.DecideEnemyCommand( commandId );
-//			owner.CommandData.AddTargetId( commandId );
-//			owner.Complete();
 		}
 		
 		public override void CancelAction (BattleAllyCommandSelector owner)

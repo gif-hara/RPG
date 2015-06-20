@@ -32,7 +32,6 @@ namespace RPG.Battle
 		
 		public override void DecisionAction (BattleAllyCommandSelector owner)
 		{
-			owner.CommandData.AddTargetId( commandId );
 			owner.Complete();
 		}
 		
