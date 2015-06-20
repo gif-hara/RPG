@@ -20,34 +20,18 @@ namespace RPG.Battle
 	{
 		[SerializeField]
 		private Text refText;
-		
-		[SerializeField]
-		private BattleEnemyPartyManager refEnemyPartyManager;
-		
+
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
 		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
 		{
 			if( type != BattleTypeConstants.CommandSelectType.Enemy )	return;
 
 			StringBuilder builder = new StringBuilder();
-			var party = refEnemyPartyManager.Party.List;
-			var enemyData = party[0].InstanceData;
-			int number = 1;
-			for( int i=1,imax=party.Count; i<imax; i++ )
+			var group = BattleEnemyPartyManager.Instance.Party.Group;
+			for( int i=0,imax=group.List.Count; i<imax; i++ )
 			{
-				if( enemyData.id == party[i].InstanceData.id )
-				{
-					number++;
-				}
-				else
-				{
-					AppendNumber( ref builder, number );
-					enemyData = party[i].InstanceData;
-					number = 1;
-				}
+				builder.AppendLine( StringAsset.Format( "EnemyNumber", group.List[i].Count.ToString() ) );
 			}
-
-			AppendNumber( ref builder, number );
 			refText.text = builder.ToString();
 		}
 
