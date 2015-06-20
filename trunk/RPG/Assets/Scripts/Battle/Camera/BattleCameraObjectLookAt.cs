@@ -18,5 +18,12 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleCameraObjectLookAt : MyMonoBehaviour
 	{
+		[SerializeField]
+		private Transform refTarget;
+
+		void LateUpdate()
+		{
+			transform.LookAt( refTarget.position );
+		}
 	}
 }

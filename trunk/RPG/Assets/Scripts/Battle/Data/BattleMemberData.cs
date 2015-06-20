@@ -19,7 +19,9 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleMemberData
 	{
-		public CharacterData CharacterData{ private set; get; }
+		public CharacterData MasterData{ private set; get; }
+
+		public CharacterData InstanceData{ private set; get; }
 
 		public float ActiveTime{ private set; get; }
 
@@ -29,7 +31,8 @@ namespace RPG.Battle
 
 		public BattleMemberData( CharacterData data )
 		{
-			this.CharacterData = data;
+			this.MasterData = data;
+			this.InstanceData = new CharacterData( data );
 			this.ActiveTime = 0.0f;
 		}
 
@@ -47,10 +50,24 @@ namespace RPG.Battle
 			this.SelectCommandData = commandData;
 		}
 
+		/// <summary>
+		/// コマンド実行の終了処理.
+		/// </summary>
 		public void EndExecuteCommand()
 		{
 			this.SelectCommandData = null;
 			this.ActiveTime = 0.0f;
+		}
+
+		public void TakeDamage( int damage )
+		{
+			this.InstanceData.hitPoint -= damage;
+
+			if( this.InstanceData.hitPoint <= 0 )
+			{
+				Development.TODO( "戦闘不能アニメーション再生" );
+				this.Model.SetActive( false );
+			}
 		}
 		
 		/// <summary>
@@ -88,7 +105,7 @@ namespace RPG.Battle
 
 		public override string ToString ()
 		{
-			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandData={2}, SelectCommandType={3}, IsActiveTimeMax={4}]", CharacterData, ActiveTime, SelectCommandData, SelectCommandType, IsActiveTimeMax);
+			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandData={2}, SelectCommandType={3}, IsActiveTimeMax={4}]", InstanceData, ActiveTime, SelectCommandData, SelectCommandType, IsActiveTimeMax);
 		}
 	}
 }

@@ -49,15 +49,15 @@ namespace RPG.Battle
 				if( list.Count == 0 )	return 0;
 
 				int result = 1;
-				var enemyData = list[0].CharacterData;
+				var enemyData = list[0].InstanceData;
 				for( int i=1,imax=list.Count; i<imax; i++ )
 				{
-					if( enemyData.id == list[i].CharacterData.id )
+					if( enemyData.id == list[i].InstanceData.id )
 					{
 						continue;
 					}
 					
-					enemyData = list[i].CharacterData;
+					enemyData = list[i].InstanceData;
 					result++;
 				}
 

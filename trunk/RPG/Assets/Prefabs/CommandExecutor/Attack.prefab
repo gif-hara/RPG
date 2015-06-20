@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1976427cc7094c0b9f13a389c113872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refExecutor: {fileID: 0}
-  refEventHolder: {fileID: 0}
+  refExecutor: {fileID: 11488764}
+  refEventHolder: {fileID: 125176}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

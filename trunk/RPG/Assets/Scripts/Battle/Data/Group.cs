@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : Group.cs
 *
@@ -33,7 +33,7 @@ namespace RPG.Battle
 			else
 			{
 				var groupElement = this.List[this.List.Count - 1];
-				if( groupElement[0].CharacterData.id == data.CharacterData.id )
+				if( groupElement[0].InstanceData.id == data.InstanceData.id )
 				{
 					groupElement.Add( data );
 				}

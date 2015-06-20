@@ -27,8 +27,9 @@ namespace RPG.Battle
 			float originPosX = ((partyList.Count - 1) * (Interval / 2.0f));
 			for( int i=0,imax=partyList.Count; i<imax; i++ )
 			{
-				var model = Instantiate( Define.GetEnemyModel( partyList[i].CharacterData.id ), transform  );
+				var model = Instantiate( Define.GetEnemyModel( partyList[i].InstanceData.id ), transform  );
 				model.transform.localPosition = new Vector3( originPosX - Interval * i, 0.0f, 0.0f );
+				partyList[i].SetModel( model );
 			}
 		}
 	}

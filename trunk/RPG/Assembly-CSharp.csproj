@@ -56,11 +56,11 @@
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandEdit\OnDecideCommandSetCommandType.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutor.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutorHolder.cs" />
-     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandCalculationDamageUsuallyAttack.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandEndExecuteCommand.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetInformation.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetNextEvent.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetTestString.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandUsuallyAttack.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleTypeConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\Battle\System\BattleSceneManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleSharedData.cs" />
      <Compile Include="Assets\Scripts\Battle\System\BattleStateManager.cs" />
+     <Compile Include="Assets\Scripts\Battle\System\CalcurateDamage.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Enemy\BattleEnemyModelCreator.cs" />
      <Compile Include="Assets\Scripts\Battle\System\Enemy\BattleEnemyPartyManager.cs" />
      <Compile Include="Assets\Scripts\Battle\System\FactoryPattern\AttackCommandData.cs" />
@@ -124,6 +125,7 @@
      <Compile Include="Assets\Scripts\Database\Master\AllyMasterData.cs" />
      <Compile Include="Assets\Scripts\Database\MasterData.cs" />
      <Compile Include="Assets\Scripts\Framework\Debug.cs" />
+     <Compile Include="Assets\Scripts\Framework\Development.cs" />
      <Compile Include="Assets\Scripts\Plugins\iTween.cs" />
      <Compile Include="Assets\Scripts\System\A_Singleton.cs" />
      <Compile Include="Assets\Scripts\System\DebugSystem.cs" />

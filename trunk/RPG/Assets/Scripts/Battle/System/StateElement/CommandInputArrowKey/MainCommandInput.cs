@@ -46,7 +46,7 @@ namespace RPG.Battle
 
 		public override void CancelAction (BattleAllyCommandSelector owner)
 		{
-			MyMonoBehaviour.TODO( "キャンセル処理の実装" );
+			Development.TODO( "キャンセル処理の実装" );
 		}
 
 		public override void LeftAction (BattleAllyCommandSelector owner)

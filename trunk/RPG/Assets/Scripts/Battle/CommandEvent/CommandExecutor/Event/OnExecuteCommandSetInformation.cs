@@ -52,13 +52,13 @@ namespace RPG.Battle
 					switch( refData.Parameter[i] )
 					{
 					case BattleTypeConstants.InformationParameterType.ExecuteMemberName:
-						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.CharacterData.name );
+						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.InstanceData.name );
 						break;
 					case BattleTypeConstants.InformationParameterType.GiveDamage:
 						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Damage );
 						break;
 					case BattleTypeConstants.InformationParameterType.TargetName:
-						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Target.CharacterData.name );
+						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Target.InstanceData.name );
 						break;
 					}
 				}

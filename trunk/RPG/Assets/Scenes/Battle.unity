@@ -193,7 +193,7 @@ MonoBehaviour:
       level: 0
       abilityType: 5
       maxHitPoint: 0
-      hitPoint: 0
+      hitPoint: 20
       strength: 0
       defence: 0
       speed: 0
@@ -1485,11 +1485,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 502431639}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 829d44fb6f4286f4c8adba7e91d0e15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refTarget: {fileID: 221814821}
 --- !u!1 &527859338
 GameObject:
   m_ObjectHideFlags: 0

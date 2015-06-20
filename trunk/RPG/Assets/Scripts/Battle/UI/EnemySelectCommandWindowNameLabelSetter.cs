@@ -33,7 +33,7 @@ namespace RPG.Battle
 			var group = refEnemyPartyManager.Party.Group;
 			for( int i=0, imax=group.List.Count; i<imax; i++ )
 			{
-				builder.AppendLine( group.GetBattleMemberData( i ).CharacterData.name );
+				builder.AppendLine( group.GetBattleMemberData( i ).InstanceData.name );
 			}
 
 			refText.text = builder.ToString();

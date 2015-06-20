@@ -34,7 +34,7 @@ namespace RPG.Battle
 			for( int i=0,imax=party.List.Count; i<imax; i++ )
 			{
 				var allyData = party.List[i];
-				allyData.UpdateActiveTime( (1.0f + (allyData.CharacterData.speed / 255.0f)) / 60.0f );
+				allyData.UpdateActiveTime( (1.0f + (allyData.InstanceData.speed / 255.0f)) / 60.0f );
 			}
 
 			if( party.IsAnyActiveTimeMax )

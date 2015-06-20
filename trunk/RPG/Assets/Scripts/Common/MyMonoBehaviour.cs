@@ -106,16 +106,6 @@ public class MyMonoBehaviour : MonoBehaviour
 		sender.SendMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
 	}
 	
-	public static void TODO( string message )
-	{
-		Debug.Log(
-			string.Format(
-			"<color=magenta>TODO[{0}]</color>",
-			message
-			)
-			);
-	}
-
 	public GameObject Instantiate( GameObject prefab, Transform parent )
 	{
 		var obj = Instantiate( prefab ) as GameObject;

@@ -30,7 +30,7 @@ namespace RPG.Battle
 		{
 			refText.text = StringAsset.Format(
 				"MainCommandLeftLabel",
-				Common.StringAssetUtility.AbilityName( this.refAllyCommandSelector.CurrentCommandSelectAllyData.CharacterData.abilityType )
+				Common.StringAssetUtility.AbilityName( this.refAllyCommandSelector.CurrentCommandSelectAllyData.InstanceData.abilityType )
 				);
 		}
 	}

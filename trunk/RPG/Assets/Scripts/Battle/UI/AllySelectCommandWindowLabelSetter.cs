@@ -35,7 +35,7 @@ namespace RPG.Battle
 			var party = refAllyPartyManager.Party.List;
 			for( int i=0,imax=party.Count; i<imax; i++ )
 			{
-				builder.AppendLine( party[i].CharacterData.name );
+				builder.AppendLine( party[i].InstanceData.name );
 			}
 
 			refText.text = builder.ToString();

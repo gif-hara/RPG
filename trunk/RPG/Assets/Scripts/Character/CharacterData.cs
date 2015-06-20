@@ -85,20 +85,22 @@ namespace RPG.Common
 		{
 			id = _id;
 		}
-		
-		public void Initialize( string data )
+
+		public CharacterData( CharacterData other )
 		{
-	//		Debug.Log( data );
-			
-			string[] split = data.Split( ',' );
-			name = split[0];
-			hitPoint = int.Parse( split[1] );
-			strength = int.Parse( split[3] );
-			defence = int.Parse( split[4] );
-			speed = int.Parse( split[5] );
-			avoid = int.Parse( split[6] );
-			
-			maxHitPoint = hitPoint;
+			this.id = other.id;
+			this.name = other.name;
+			this.level = other.level;
+			this.abilityType = other.abilityType;
+			this.maxHitPoint = other.maxHitPoint;
+			this.hitPoint = other.hitPoint;
+			this.strength = other.strength;
+			this.defence = other.defence;
+			this.speed = other.speed;
+			this.avoid = other.avoid;
+			this.maxSpirit = other.maxSpirit;
+			this.minSpirit = other.minSpirit;
+			this.spirit = other.spirit;
 		}
 
 		public override string ToString ()

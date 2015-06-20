@@ -31,18 +31,18 @@ namespace RPG.Battle
 
 			StringBuilder builder = new StringBuilder();
 			var party = refEnemyPartyManager.Party.List;
-			var enemyData = party[0].CharacterData;
+			var enemyData = party[0].InstanceData;
 			int number = 1;
 			for( int i=1,imax=party.Count; i<imax; i++ )
 			{
-				if( enemyData.id == party[i].CharacterData.id )
+				if( enemyData.id == party[i].InstanceData.id )
 				{
 					number++;
 				}
 				else
 				{
 					AppendNumber( ref builder, number );
-					enemyData = party[i].CharacterData;
+					enemyData = party[i].InstanceData;
 					number = 1;
 				}
 			}
