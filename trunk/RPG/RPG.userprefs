@@ -1,14 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Battle/CommandEvent/CommandExecutor/Event/OnExecuteCommandCalculationDamageUsuallyAttack.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Battle/System/Ally/BattleAllyCommandSelector.cs">
     <Files>
-      <File FileName="Assets/Scripts/Battle/CommandEvent/CommandExecutor/Event/OnExecuteCommandSetInformation.cs" Line="68" Column="155" />
-      <File FileName="Assets/Scripts/Battle/Data/CommandData.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Battle/Data/Party.cs" Line="35" Column="4" />
+      <File FileName="Assets/Scripts/Battle/Data/CommandData.cs" Line="51" Column="53" />
+      <File FileName="Assets/Scripts/Battle/Data/Party.cs" Line="28" Column="26" />
       <File FileName="Assets/Scripts/Battle/Common/BattleTypeConstants.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Battle/UI/EnemySelectCommandWindowNameLabelSetter.cs" Line="40" Column="1" />
-      <File FileName="Assets/Scripts/Battle/Data/Group.cs" Line="44" Column="36" />
-      <File FileName="Assets/Scripts/Battle/CommandEvent/CommandExecutor/Event/OnExecuteCommandCalculationDamageUsuallyAttack.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Battle/Data/Group.cs" Line="53" Column="62" />
+      <File FileName="Assets/Scripts/Battle/CommandEvent/CommandExecutor/Event/OnExecuteCommandCalculationDamageUsuallyAttack.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/Battle/Data/GiveDamageData.cs" Line="25" Column="25" />
+      <File FileName="Assets/Scripts/Battle/System/Enemy/BattleEnemyModelCreator.cs" Line="26" Column="38" />
+      <File FileName="Assets/Scripts/Battle/System/BattleSharedData.cs" Line="17" Column="2" />
+      <File FileName="Assets/Scripts/Battle/CommandEvent/CommandEdit/OnDecideCommandSetCommandType.cs" Line="19" Column="32" />
+      <File FileName="Assets/Scripts/Battle/System/Ally/BattleAllyCommandSelector.cs" Line="174" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -87,5 +87,12 @@ namespace RPG.Battle
 
 			Enemy
 		}
+
+		public enum SetTextInformationType : int
+		{
+			Set,
+			Append,
+			NewLine,
+		}
 	}
 }

@@ -16,25 +16,18 @@ namespace RPG.Battle
 	/// </summary>
 	public class OnExecuteCommandSetInformation : MyMonoBehaviour
 	{
-		public enum SetTextType : int
-		{
-			Set,
-			Append,
-			NewLine,
-		}
-
 		[SerializeField]
 		private InformationLabelSetterCommandEvent refData;
 
 		[SerializeField]
-		private SetTextType type;
+		private BattleTypeConstants.SetTextInformationType type;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
-			var methodName = this.type == SetTextType.Set
+			var methodName = this.type == BattleTypeConstants.SetTextInformationType.Set
 				? BattleMessageConstants.SetInformationTextMessage
-				: this.type == SetTextType.Append
+					: this.type == BattleTypeConstants.SetTextInformationType.Append
 				? BattleMessageConstants.AppendInformationTextMessage
 				: BattleMessageConstants.NewLineInformationTextMessage;
 

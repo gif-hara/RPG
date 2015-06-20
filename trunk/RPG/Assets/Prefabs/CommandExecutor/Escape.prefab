@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415636}
-  - 114: {fileID: 11417332}
+  - 114: {fileID: 11492330}
   - 114: {fileID: 11443772}
   m_Layer: 0
   m_Name: 0_ExecuteInformation
@@ -28,25 +28,7 @@ GameObject:
   - 114: {fileID: 11445618}
   - 114: {fileID: 11437274}
   m_Layer: 0
-  m_Name: 2_End
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &149876
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 470612}
-  - 114: {fileID: 11413584}
-  - 114: {fileID: 11424652}
-  - 114: {fileID: 11493152}
-  m_Layer: 0
-  m_Name: 1_ExecuteInformation
+  m_Name: 1_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +44,7 @@ GameObject:
   - 4: {fileID: 478756}
   - 114: {fileID: 11488764}
   m_Layer: 0
-  m_Name: Attack
+  m_Name: Escape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,18 +73,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 478756}
-  m_RootOrder: 2
---- !u!4 &470612
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149876}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 478756}
   m_RootOrder: 1
 --- !u!4 &478756
 Transform:
@@ -115,47 +85,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415636}
-  - {fileID: 470612}
   - {fileID: 469086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11413584
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6e4d652227d4cbc86e4d6ee182425d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11417332
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca87328e58d644e68d9e417f2b8b563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refData: {fileID: 11400000, guid: a3df463d6d6facd4eaaa7187465c3a5a, type: 2}
-  type: 0
---- !u!114 &11424652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca87328e58d644e68d9e417f2b8b563, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refData: {fileID: 11400000, guid: 9adb82fc9f7794992a94f48a2fb61ea6, type: 2}
-  type: 0
 --- !u!114 &11437274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refExecutor: {fileID: 11488764}
-  refEventHolder: {fileID: 149876}
+  refEventHolder: {fileID: 125176}
 --- !u!114 &11445618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,21 +137,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9892514987b824d4d9f114e31f0da45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 4
   refEventHolder: {fileID: 125124}
---- !u!114 &11493152
+--- !u!114 &11492330
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149876}
+  m_GameObject: {fileID: 125124}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1976427cc7094c0b9f13a389c113872, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c2b470258da74cae97d3d68900aae7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refExecutor: {fileID: 0}
-  refEventHolder: {fileID: 0}
+  message: "\u9003\u3052\u308B\u306F\u672A\u5B9F\u88C5\u3060\uFF01"
+  type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -234,12 +166,12 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: type
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: refEventHolder
       value: 
-      objectReference: {fileID: 149876}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: refExecutor
       value: 
@@ -251,6 +183,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: 2_End
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: message
+      value: "\u9003\u3052\u308B\u306F\u672A\u5B9F\u88C5\u3060\uFF01"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
