@@ -51,8 +51,15 @@ namespace RPG.Battle
 		public const string EndUpdateActiveTimeMessage = "OnEndUpdateActiveTime";
 
 		/// <summary>
+		/// キャラクターがターン処理を開始する際のメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( ExecuteCommandHook ) )]
+		public const string StartTurnMessage = "OnStartTurn";
+
+		/// <summary>
 		/// コマンドが実行された際のメッセージ.
 		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( ExecuteCommandHook ) )]
 		public const string ExecuteCommandMessage = "OnExecuteCommand";
 
 		/// <summary>
@@ -104,5 +111,18 @@ namespace RPG.Battle
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( string ) )]
 		public const string NewLineInformationTextMessage = "OnNewLineInformationText";
+
+		/// <summary>
+		/// コマンド実行系にフックするクラス.
+		/// </summary>
+		public class ExecuteCommandHook
+		{
+			public CommandExecutor Executor{ private set; get; }
+
+			public ExecuteCommandHook( CommandExecutor executor )
+			{
+				this.Executor = executor;
+			}
+		}
 	}
 }

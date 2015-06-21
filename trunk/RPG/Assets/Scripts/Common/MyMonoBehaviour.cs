@@ -75,7 +75,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		sender.BroadcastMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
 	}
 
-	public static void SendMessage( MonoBehaviour sender, string methodName )
+	public static void SendMessage( GameObject sender, string methodName )
 	{
 #if DEBUG
 		Debug.Log(
@@ -90,6 +90,37 @@ public class MyMonoBehaviour : MonoBehaviour
 		sender.SendMessage( methodName, SendMessageOptions.DontRequireReceiver );
 	}
 
+	public static void SendMessage( GameObject sender, string methodName, object parameter )
+	{
+#if DEBUG
+		Debug.Log(
+			string.Format(
+			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color> <color=yellow>parameter[{2}]</color>",
+			sender.gameObject.name,
+			methodName,
+			parameter.ToString()
+			),
+			sender
+			);
+#endif
+		sender.SendMessage( methodName, parameter, SendMessageOptions.DontRequireReceiver );
+	}
+
+	public static void SendMessage( MonoBehaviour sender, string methodName )
+	{
+#if DEBUG
+		Debug.Log(
+			string.Format(
+			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color>",
+			sender.gameObject.name,
+			methodName
+			),
+			sender
+			);
+#endif
+		sender.SendMessage( methodName, SendMessageOptions.DontRequireReceiver );
+	}
+	
 	public static void SendMessage( MonoBehaviour sender, string methodName, object parameter )
 	{
 #if DEBUG

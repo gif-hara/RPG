@@ -23,8 +23,14 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject refEventHolder;
 
+		[SerializeField]
+		private GameObject insertEventHolder;
+
 		void Awake()
 		{
+			var hook = new BattleMessageConstants.ExecuteCommandHook( this );
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartTurnMessage, hook );
+
 			this.Execute();
 		}
 
@@ -33,14 +39,41 @@ namespace RPG.Battle
 			this.Execute();
 		}
 
+		void OnEndCommandExecute()
+		{
+			Destroy( gameObject );
+		}
+
 		public void SetEventHolder( GameObject eventHolder )
 		{
 			this.refEventHolder = eventHolder;
 		}
 
+		public void InsertEvent( GameObject insertEventHolder )
+		{
+			this.insertEventHolder = insertEventHolder;
+			this.insertEventHolder.transform.parent = transform;
+		}
+
 		private void Execute()
 		{
-			this.BroadcastMessage( refEventHolder, BattleMessageConstants.ExecuteCommandMessage );
+			var hook = new BattleMessageConstants.ExecuteCommandHook( this );
+			SendMessage( this.CurrentEventHolder, BattleMessageConstants.ExecuteCommandMessage, hook );
+
+			if( this.insertEventHolder != null )
+			{
+				this.insertEventHolder = null;
+			}
+		}
+
+		private GameObject CurrentEventHolder
+		{
+			get
+			{
+				return this.insertEventHolder != null
+					? this.insertEventHolder
+					: this.refEventHolder;
+			}
 		}
 	}
 }

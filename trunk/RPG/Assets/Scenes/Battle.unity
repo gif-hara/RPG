@@ -460,6 +460,8 @@ Transform:
   - {fileID: 1222988001}
   - {fileID: 267458228}
   - {fileID: 449675439}
+  - {fileID: 1289067652}
+  - {fileID: 554374465}
   m_Father: {fileID: 78480608}
   m_RootOrder: 1
 --- !u!1 &172595869
@@ -1545,6 +1547,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refAllyCommandSelector: {fileID: 449675440}
+--- !u!1 &554374464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 554374465}
+  m_Layer: 0
+  m_Name: EndCommandHooker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554374465
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554374464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 109467030}
+  m_RootOrder: 7
 --- !u!1 &571992366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,6 +2285,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refAllyPartyManager: {fileID: 1769061122}
   refEnemyPartyManager: {fileID: 1421216111}
+--- !u!1 &1289067651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1289067652}
+  - 114: {fileID: 1289067653}
+  m_Layer: 0
+  m_Name: StartTurnHooker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1289067652
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289067651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 109467030}
+  m_RootOrder: 6
+--- !u!114 &1289067653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289067651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957fad1611aee4d8098d1b9c7ee35d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refEventHolder: {fileID: 154874, guid: 908c314d93e6144969aade0098bb67e9, type: 2}
 --- !u!1 &1357291823
 GameObject:
   m_ObjectHideFlags: 0

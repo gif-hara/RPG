@@ -16,13 +16,9 @@ namespace RPG.Battle
 	/// </summary>
 	public class OnExecuteCommandEndExecuteCommand : MyMonoBehaviour
 	{
-		[SerializeField]
-		private CommandExecutor refParent;
-
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
-			Destroy( this.refParent.gameObject );
 			AllPartyManager.Instance.ActiveTimeMaxBattleMember.EndExecuteCommand();
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.EndCommandExecuteMessage );
 		}

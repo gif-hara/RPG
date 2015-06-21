@@ -16,15 +16,12 @@ namespace RPG.Battle
 	public class OnExecuteCommandSetNextEvent : MyMonoBehaviour
 	{
 		[SerializeField]
-		private CommandExecutor refExecutor;
-
-		[SerializeField]
 		private GameObject refEventHolder;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand()
+		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
 		{
-			this.refExecutor.SetEventHolder( this.refEventHolder );
+			hook.Executor.SetEventHolder( this.refEventHolder );
 		}
 	}
 }
