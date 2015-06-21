@@ -26,6 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 469086}
   - 114: {fileID: 11445618}
+  - 114: {fileID: 11482928}
   - 114: {fileID: 11437274}
   m_Layer: 0
   m_Name: 2_End
@@ -167,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e277daab305c46ccb388e425bc7da51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refParent: {fileID: 11488764}
 --- !u!114 &11443772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,7 +179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1976427cc7094c0b9f13a389c113872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refExecutor: {fileID: 11488764}
   refEventHolder: {fileID: 149876}
 --- !u!114 &11445618
 MonoBehaviour:
@@ -194,6 +193,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refData: {fileID: 11400000, guid: 3b419bc42234d401b9c44c3e4063d88b, type: 2}
   type: 0
+--- !u!114 &11482928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e856585fb159a46d0b56045b30660334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11488764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,6 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   refEventHolder: {fileID: 125124}
+  insertEventHolder: {fileID: 0}
 --- !u!114 &11493152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,7 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1976427cc7094c0b9f13a389c113872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refExecutor: {fileID: 11488764}
   refEventHolder: {fileID: 125176}
 --- !u!1001 &100100000
 Prefab:

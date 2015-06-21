@@ -70,8 +70,8 @@ namespace RPG.Battle
 			this.NotifyActiveStateMessage( State.ExecuteCommand );
 		}
 
-		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndCommandExecuteMessage )]
-		void OnEndCommandExecute()
+		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndTurnMessage )]
+		void OnEndTurn()
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{

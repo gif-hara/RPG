@@ -56,11 +56,13 @@
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandEdit\OnDecideCommandSetCommandType.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutor.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\CommandExecutorHolder.cs" />
-     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandEndExecuteCommand.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandEndExecuteCommandCurrentExecuteBattleMember.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandEndExecuteCommandExecutor.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetInformation.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetNextEvent.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetTestString.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandUsuallyAttack.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\EndTurn\OnEndTurnCheckPoison.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\StartTurn\OnStartTurnCheckParalysis.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleTypeConstants.cs" />

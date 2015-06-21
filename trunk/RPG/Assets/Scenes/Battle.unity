@@ -148,45 +148,6 @@ MonoBehaviour:
       maxSpirit: 0
       minSpirit: 0
       spirit: 0
-    - id: 1
-      name: "\u91D1\u592A\u90CE"
-      level: 0
-      abilityType: 7
-      maxHitPoint: 0
-      hitPoint: 0
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 2
-      name: "\u6D66\u5CF6"
-      level: 0
-      abilityType: 6
-      maxHitPoint: 0
-      hitPoint: 0
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 3
-      name: "\u591C\u53C9\u59EB"
-      level: 0
-      abilityType: 6
-      maxHitPoint: 0
-      hitPoint: 0
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
     enemyDataList:
     - id: 0
       name: "\u8D64\u9B3C"
@@ -1555,6 +1516,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 554374465}
+  - 114: {fileID: 554374466}
   m_Layer: 0
   m_Name: EndCommandHooker
   m_TagString: Untagged
@@ -1574,6 +1536,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 109467030}
   m_RootOrder: 7
+--- !u!114 &554374466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554374464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f4ec0b032cc4210aa601dab75841f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabEventHolder: {fileID: 154874, guid: 2c9607e12795c469dabbd606c0a3ce9a, type: 2}
 --- !u!1 &571992366
 GameObject:
   m_ObjectHideFlags: 0

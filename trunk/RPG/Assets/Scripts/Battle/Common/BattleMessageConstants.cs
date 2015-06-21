@@ -65,7 +65,13 @@ namespace RPG.Battle
 		/// <summary>
 		/// コマンド実行終了時のメッセージ.
 		/// </summary>
-		public const string EndCommandExecuteMessage = "OnEndCommandExecute";
+		[Attribute.MessageMethodArgument( typeof( ExecuteCommandHook ) )]
+		public const string EndCommandExecuteMessage = "OnEndExecuteCommand";
+
+		/// <summary>
+		/// ターン終了時のメッセージ.
+		/// </summary>
+		public const string EndTurnMessage = "OnEndTurn";
 
 		/// <summary>
 		/// コマンドIDが変更された際のメッセージ.

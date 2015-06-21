@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &125124
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 415636}
-  - 114: {fileID: 11492330}
-  - 114: {fileID: 11443772}
-  m_Layer: 0
-  m_Name: 0_ExecuteInformation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &125176
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,10 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 469086}
   - 114: {fileID: 11445618}
-  - 114: {fileID: 11487142}
   - 114: {fileID: 11437274}
   m_Layer: 0
-  m_Name: 1_End
+  m_Name: 0_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,26 +25,15 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478756}
-  - 114: {fileID: 11488764}
+  - 114: {fileID: 11446864}
+  - 114: {fileID: 11400078}
   m_Layer: 0
-  m_Name: Escape
+  m_Name: Poison
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &415636
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 478756}
-  m_RootOrder: 0
 --- !u!4 &469086
 Transform:
   m_ObjectHideFlags: 1
@@ -74,7 +45,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 478756}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &478756
 Transform:
   m_ObjectHideFlags: 1
@@ -85,10 +56,21 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 415636}
   - {fileID: 469086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11400078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1976427cc7094c0b9f13a389c113872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refEventHolder: {fileID: 125176}
 --- !u!114 &11437274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,18 +82,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e277daab305c46ccb388e425bc7da51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11443772
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1976427cc7094c0b9f13a389c113872, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refEventHolder: {fileID: 125176}
 --- !u!114 &11445618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,18 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refData: {fileID: 11400000, guid: 3b419bc42234d401b9c44c3e4063d88b, type: 2}
   type: 0
---- !u!114 &11487142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e856585fb159a46d0b56045b30660334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11488764
+--- !u!114 &11446864
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -144,24 +103,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 154874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9892514987b824d4d9f114e31f0da45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 4
-  refEventHolder: {fileID: 125124}
-  insertEventHolder: {fileID: 0}
---- !u!114 &11492330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c2b470258da74cae97d3d68900aae7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: "\u9003\u3052\u308B\u306F\u672A\u5B9F\u88C5\u3060\uFF01"
+  message: "\u6BD2\u3060\uFF01"
   type: 0
 --- !u!1001 &100100000
 Prefab:
@@ -177,7 +122,7 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: type
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: refEventHolder
@@ -186,18 +131,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: refExecutor
       value: 
-      objectReference: {fileID: 11488764}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: refParent
       value: 
-      objectReference: {fileID: 11488764}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Name
       value: 2_End
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: message
-      value: "\u9003\u3052\u308B\u306F\u672A\u5B9F\u88C5\u3060\uFF01"
+      value: "\u6BD2\u3060\uFF01"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
