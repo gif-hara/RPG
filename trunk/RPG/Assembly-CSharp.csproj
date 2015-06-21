@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetNextEvent.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandSetTestString.cs" />
      <Compile Include="Assets\Scripts\Battle\CommandEvent\CommandExecutor\Event\OnExecuteCommandUsuallyAttack.cs" />
+     <Compile Include="Assets\Scripts\Battle\CommandEvent\StartTurn\OnStartTurnCheckParalysis.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleMessageConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Common\BattleTypeConstants.cs" />
      <Compile Include="Assets\Scripts\Battle\Data\AllyData.cs" />
