@@ -22,8 +22,8 @@ namespace RPG.Battle
 		void OnStartTurn( BattleMessageConstants.ExecuteCommandHook hook )
 		{
 			Development.TODO( "麻痺の実装." );
-			//var eventHolder = Instantiate( this.refEventHolder );
-			//hook.Executor.InsertEvent( eventHolder );
+			var eventHolder = Instantiate( this.refEventHolder );
+			hook.Executor.SetEventHolder( eventHolder );
 		}
 	}
 }

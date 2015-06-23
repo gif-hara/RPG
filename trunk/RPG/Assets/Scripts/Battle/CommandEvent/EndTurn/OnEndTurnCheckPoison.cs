@@ -22,13 +22,8 @@ namespace RPG.Battle
 		{
 			Development.TODO( "毒状態の実装." );
 
-			if( Random.Range( 0, 100 ) <= 50 )
-			{
-				return;
-			}
-
-			var eventObject = Instantiate( this.prefabEventHolder );
-			hook.Executor.SetEventHolder( eventObject );
+//			var eventObject = Instantiate( this.prefabEventHolder );
+//			hook.Executor.SetEventHolder( eventObject );
 		}
 	}
 }
