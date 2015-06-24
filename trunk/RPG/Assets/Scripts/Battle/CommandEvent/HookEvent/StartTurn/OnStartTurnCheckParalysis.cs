@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnStartTurnCheckParalysis.cs
 *
@@ -13,17 +13,25 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンドを実行したキャラクターが麻痺状態かチェックするコンポーネント.
 	/// </summary>
-	public class OnStartTurnCheckParalysis : MyMonoBehaviour
+	public class OnStartTurnCheckParalysis : OnStartTurnHookable
 	{
 		[SerializeField]
 		private GameObject refEventHolder;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartTurnMessage )]
-		void OnStartTurn( BattleMessageConstants.ExecuteCommandHook hook )
+		protected override void OnHook ( BattleMessageConstants.ExecuteCommandHook hookData )
 		{
 			Development.TODO( "麻痺の実装." );
 			var eventHolder = Instantiate( this.refEventHolder );
-			hook.Executor.SetEventHolder( eventHolder );
+			hookData.Executor.InsertEventHolder( eventHolder );
+			this.internalIsHooked = true;
+		}
+
+		protected override bool CanHook
+		{
+			get
+			{
+				return false;
+			}
 		}
 	}
 }

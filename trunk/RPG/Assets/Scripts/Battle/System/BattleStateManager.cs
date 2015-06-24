@@ -26,6 +26,7 @@ namespace RPG.Battle
 			SelectCommand = 0,
 			UpdateActiveTime,
 			ExecuteCommand,
+			DoNothing,
 		}
 
 		[SerializeField]
@@ -73,7 +74,11 @@ namespace RPG.Battle
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndTurnMessage )]
 		void OnEndTurn()
 		{
-			if( refAllyPartyManager.Party.IsAnyNoneCommand )
+			if( BattleEnemyPartyManager.Instance.Party.IsAllDead )
+			{
+				this.NotifyActiveStateMessage( State.DoNothing );
+			}
+			else if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{
 				this.NotifyActiveStateMessage( State.SelectCommand );
 			}

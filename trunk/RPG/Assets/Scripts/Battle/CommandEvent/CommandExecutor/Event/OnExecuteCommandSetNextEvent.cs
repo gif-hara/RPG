@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnExecuteCommandSetNextEvent.cs
 *
@@ -21,7 +21,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
 		{
-			hook.Executor.SetEventHolder( this.refEventHolder );
+			hook.Executor.InsertEventHolder( this.refEventHolder );
 		}
 	}
 }

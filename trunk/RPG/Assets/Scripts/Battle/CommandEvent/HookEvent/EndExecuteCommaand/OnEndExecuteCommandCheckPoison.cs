@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : OnEndTurnCheckPoison.cs
+*     * FileName    : OnEndExecuteCommandCheckPoison.cs
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -13,17 +13,26 @@ namespace RPG.Battle
 	/// <summary>
 	/// ターン終了時に毒状態かチェックするコンポーネント.
 	/// </summary>
-	public class OnEndTurnCheckPoison : MyMonoBehaviour
+	public class OnEndExecuteCommandCheckPoison : OnEndTurnHookable
 	{
 		[SerializeField]
 		private GameObject prefabEventHolder;
 
-		void OnEndExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
+		protected override void OnHook (BattleMessageConstants.ExecuteCommandHook hookData)
 		{
 			Development.TODO( "毒状態の実装." );
 
-//			var eventObject = Instantiate( this.prefabEventHolder );
-//			hook.Executor.SetEventHolder( eventObject );
+			var eventObject = Instantiate( this.prefabEventHolder );
+			hookData.Executor.InsertEventHolder( eventObject );
+			this.internalIsHooked = true;
+		}
+
+		protected override bool CanHook
+		{
+			get
+			{
+				return false;
+			}
 		}
 	}
 }

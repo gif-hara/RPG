@@ -125,9 +125,21 @@ namespace RPG.Battle
 		{
 			public CommandExecutor Executor{ private set; get; }
 
+			/// <summary>
+			/// 既にフックされたか？ <see cref="RPG.Battle.BattleMessageConstants+ExecuteCommandHook"/> is hooked.
+			/// </summary>
+			/// <value><c>true</c> if hooked; otherwise, <c>false</c>.</value>
+			public bool Hooked{ private set; get; }
+
 			public ExecuteCommandHook( CommandExecutor executor )
 			{
 				this.Executor = executor;
+				this.Hooked = false;
+			}
+
+			public void Hook()
+			{
+				this.Hooked = true;
 			}
 		}
 	}

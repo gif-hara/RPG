@@ -33,7 +33,19 @@ namespace RPG.Battle
 			this.List.Add( data );
 			this.GroupList.Add( data );
 		}
-		
+
+		/// <summary>
+		/// 全滅しているか？.
+		/// </summary>
+		/// <value><c>true</c> if this instance is all dead; otherwise, <c>false</c>.</value>
+		public bool IsAllDead
+		{
+			get
+			{
+				return this.List.Find( m => !m.IsDead ) == null;
+			}
+		}
+
 		/// <summary>
 		/// 誰かしらアクティブタイムが最大値に達しているか？.
 		/// </summary>
