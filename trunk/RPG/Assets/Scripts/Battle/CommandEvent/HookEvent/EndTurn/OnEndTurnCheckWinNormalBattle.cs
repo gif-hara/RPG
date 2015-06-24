@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : OnEndTurnTestString.cs
+*     * FileName    : OnEndTurnCheckWinNormalBattle.cs
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -12,23 +12,25 @@ using RPG.Common;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// OnEndTurnのタイミングでテストで文字列を表示するコンポーネント.
+	/// OnEndTurnのタイミングで通常戦闘の勝利処理を開始するコンポーネント.
 	/// </summary>
-	public class OnEndTurnTestString : OnEndTurnHookable
+	public class OnEndTurnCheckWinNormalBattle : OnEndTurnHookable
 	{
 		[SerializeField]
 		private string message;
 
 		protected override void OnHook (BattleMessageConstants.ExecuteCommandHook hookData)
 		{
+			Development.TODO( "勝利処理の実装." );
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SetInformationTextMessage, message );
+			this.internalIsHooked = true;
 		}
 
 		protected override bool CanHook
 		{
 			get
 			{
-				return true;
+				return BattleEnemyPartyManager.Instance.Party.IsAllDead;
 			}
 		}
 	}

@@ -1306,7 +1306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9042b1855d3066340806b5fbdf2d868d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: "\u30BF\u30FC\u30F3\u7D42\u4E86\u306E\u30D5\u30C3\u30AF\u30C6\u30B9\u30C8\u3060\u3088\uFF01"
+  message: "\u52DD\u5229\u3057\u305F\uFF01"
 --- !u!1 &493154039
 GameObject:
   m_ObjectHideFlags: 0
