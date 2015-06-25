@@ -1,6 +1,6 @@
 ﻿/*===========================================================================*/
 /*
-*     * FileName    : OnActiveStateCreateCommandExecutor.cs
+*     * FileName    : OnActiveStateCreateCommandExecutorActiveTimeMaxMember.cs
 *
 *     * Author      : Hiroki_Kitahara.
 */
@@ -13,9 +13,10 @@ using RPG.Framework;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// ステートがアクティブになった際にCommandExecutorを生成するコンポーネント.
+	/// ステートがアクティブになった際にアクティブタイムが最大値になったキャラクターの
+	/// CommandExecutorを生成するコンポーネント.
 	/// </summary>
-	public class OnActiveStateCreateCommandExecutor : MyMonoBehaviour
+	public class OnActiveStateCreateCommandExecutorActiveTimeMaxMember : MyMonoBehaviour
 	{
 		[SerializeField]
 		private CommandExecutorHolder refHolder;
@@ -23,7 +24,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ActiveStateMessage )]
 		void OnActiveState()
 		{
-			var executeMember = BattleAllyPartyManager.Instance.Party.ActiveTimeMaxBattleMember;
+			var executeMember = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
 			var commandExecutorPrefab = refHolder.Get( executeMember.SelectCommandData.Type );
 			Instantiate( commandExecutorPrefab, transform );
 		}

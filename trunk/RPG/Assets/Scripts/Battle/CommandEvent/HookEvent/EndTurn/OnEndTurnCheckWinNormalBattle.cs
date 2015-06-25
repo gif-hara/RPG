@@ -19,6 +19,9 @@ namespace RPG.Battle
 		[SerializeField]
 		private string message;
 
+		[SerializeField]
+		private CommandExecutor refEventHolder;
+
 		protected override void OnHook (BattleMessageConstants.ExecuteCommandHook hookData)
 		{
 			Development.TODO( "勝利処理の実装." );

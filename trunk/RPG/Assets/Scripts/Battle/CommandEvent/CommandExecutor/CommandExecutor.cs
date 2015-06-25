@@ -23,14 +23,6 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject refEventHolder;
 		
-		void Awake()
-		{
-			var hook = new BattleMessageConstants.ExecuteCommandHook( this );
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartTurnMessage, hook );
-
-			this.Execute();
-		}
-
 		void OnInputDecide()
 		{
 			this.Execute();
@@ -39,6 +31,14 @@ namespace RPG.Battle
 		void OnEndTurn()
 		{
 			Destroy( gameObject );
+		}
+
+		public void StartCommand()
+		{
+			var hook = new BattleMessageConstants.ExecuteCommandHook( this );
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartTurnMessage, hook );
+			
+			this.Execute();
 		}
 
 		public void End()
