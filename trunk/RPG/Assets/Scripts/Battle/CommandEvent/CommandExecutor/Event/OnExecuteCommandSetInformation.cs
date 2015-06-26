@@ -1,10 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : OnExecuteCommandSetInformation.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;

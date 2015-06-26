@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : OnActiveStateUpdateActiveTime.cs
-*
-*     * Description : プレイヤーのアクティブタイムを更新するコンポーネント.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;

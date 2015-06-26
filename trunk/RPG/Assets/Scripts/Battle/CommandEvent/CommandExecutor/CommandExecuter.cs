@@ -1,11 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : CommandExecutor.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 
@@ -14,23 +7,19 @@ namespace RPG.Battle
 	/// <summary>
 	/// 実際にコマンドを実行するコンポーネント.
 	/// </summary>
-	public class CommandExecutor : MyMonoBehaviour
+	public class CommandExecuter : MyMonoBehaviour
 	{
-		public BattleTypeConstants.CommandType CommandType{ get{ return this.type; } }
-		[SerializeField]
-		private BattleTypeConstants.CommandType type;
-
-		[SerializeField]
 		private GameObject refEventHolder;
-		
+
+		[Attribute.MessageMethodReceiver( CommonMessageConstants.InputDecideMessage )]
 		void OnInputDecide()
 		{
-			this.Execute();
-		}
+			if( this.refEventHolder == null )
+			{
+				return;
+			}
 
-		void OnEndTurn()
-		{
-			Destroy( gameObject );
+			this.Execute();
 		}
 
 		public void StartCommand()

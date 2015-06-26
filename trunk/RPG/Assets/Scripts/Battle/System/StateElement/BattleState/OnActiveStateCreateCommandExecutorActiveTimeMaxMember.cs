@@ -1,11 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : OnActiveStateCreateCommandExecutorActiveTimeMaxMember.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 using RPG.Framework;
@@ -19,14 +12,19 @@ namespace RPG.Battle
 	public class OnActiveStateCreateCommandExecutorActiveTimeMaxMember : MyMonoBehaviour
 	{
 		[SerializeField]
-		private CommandExecutorHolder refHolder;
+		private CommandExecuter refExecuter;
+
+		[SerializeField]
+		private CommandEventHolder refHolder;
 
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ActiveStateMessage )]
 		void OnActiveState()
 		{
 			var executeMember = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
 			var commandExecutorPrefab = refHolder.Get( executeMember.SelectCommandData.Type );
-			Instantiate( commandExecutorPrefab, transform );
+			var mediator = Instantiate( commandExecutorPrefab );
+			mediator.GetComponent<CommandEventMediator>().SetEvent( refExecuter );
+			refExecuter.StartCommand();
 		}
 	}
 }

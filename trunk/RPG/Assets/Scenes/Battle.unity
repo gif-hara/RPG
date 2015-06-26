@@ -1308,7 +1308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: "\u52DD\u5229\u3057\u305F\uFF01"
-  refEventHolder: {fileID: 0}
 --- !u!1 &493154039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1857,7 @@ GameObject:
   - 4: {fileID: 633672728}
   - 114: {fileID: 633672729}
   m_Layer: 0
-  m_Name: CommandExecutorHolder
+  m_Name: CommandEventHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1887,9 +1886,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbea0ce467bce63449304c45d5f830ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executorList:
-  - {fileID: 11488764, guid: 015016ad113214a6f82c3f2577987f80, type: 2}
-  - {fileID: 11488764, guid: edab99caeb62c4a9788f62ef9076b4f5, type: 2}
+  database:
+  - commandType: 0
+    prefabMediator: {fileID: 11400496, guid: 015016ad113214a6f82c3f2577987f80, type: 2}
+  - commandType: 4
+    prefabMediator: {fileID: 11457574, guid: edab99caeb62c4a9788f62ef9076b4f5, type: 2}
 --- !u!1 &708845710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,7 +2143,7 @@ GameObject:
   - 4: {fileID: 1034840438}
   - 114: {fileID: 1034840439}
   m_Layer: 0
-  m_Name: CommandExecutor
+  m_Name: CommandExecuter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2171,8 +2172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9892514987b824d4d9f114e31f0da45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  refEventHolder: {fileID: 0}
 --- !u!1 &1114454123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,6 +2837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fecd945f2e954bd98fd770de04a8507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refExecuter: {fileID: 1034840439}
   refHolder: {fileID: 633672729}
 --- !u!1 &1697315739
 GameObject:

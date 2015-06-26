@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnEndExecuteCommandCheckPoison.cs
 *
@@ -23,7 +23,7 @@ namespace RPG.Battle
 			Development.TODO( "毒状態の実装." );
 
 			var eventObject = Instantiate( this.prefabEventHolder );
-			hookData.Executor.InsertEventHolder( eventObject );
+			hookData.Executer.InsertEventHolder( eventObject );
 			this.internalIsHooked = true;
 		}
 

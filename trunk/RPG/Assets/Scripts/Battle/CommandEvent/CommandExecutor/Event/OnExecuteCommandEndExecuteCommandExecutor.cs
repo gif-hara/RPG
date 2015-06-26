@@ -1,11 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : OnExecuteCommandEndExecuteCommandExecutor.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 
@@ -19,7 +12,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
 		{
-			hook.Executor.End();
+			hook.Executer.End();
 		}
 	}
 }

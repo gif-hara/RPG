@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478756}
-  - 114: {fileID: 11488764}
+  - 114: {fileID: 11457574}
   m_Layer: 0
   m_Name: Escape
   m_TagString: Untagged
@@ -125,6 +125,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refData: {fileID: 11400000, guid: 3b419bc42234d401b9c44c3e4063d88b, type: 2}
   type: 0
+--- !u!114 &11457574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3443acc32d9e4d93987a00a20b45ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refEventHolder: {fileID: 125124}
 --- !u!114 &11487142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,20 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e856585fb159a46d0b56045b30660334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11488764
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9892514987b824d4d9f114e31f0da45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 4
-  refEventHolder: {fileID: 125124}
-  insertEventHolder: {fileID: 0}
 --- !u!114 &11492330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,15 +180,15 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: refEventHolder
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 125124}
     - target: {fileID: 0}
       propertyPath: refExecutor
       value: 
-      objectReference: {fileID: 11488764}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: refParent
       value: 
-      objectReference: {fileID: 11488764}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Name
       value: 2_End

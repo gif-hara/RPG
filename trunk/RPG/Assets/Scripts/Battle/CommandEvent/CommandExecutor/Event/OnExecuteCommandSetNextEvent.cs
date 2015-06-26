@@ -1,10 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : OnExecuteCommandSetNextEvent.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -21,7 +14,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
 		{
-			hook.Executor.InsertEventHolder( this.refEventHolder );
+			hook.Executer.InsertEventHolder( this.refEventHolder );
 		}
 	}
 }

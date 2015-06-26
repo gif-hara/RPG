@@ -22,7 +22,7 @@ namespace RPG.Battle
 		{
 			Development.TODO( "麻痺の実装." );
 			var eventHolder = Instantiate( this.refEventHolder );
-			hookData.Executor.InsertEventHolder( eventHolder );
+			hookData.Executer.InsertEventHolder( eventHolder );
 			this.internalIsHooked = true;
 		}
 
