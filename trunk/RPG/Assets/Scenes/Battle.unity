@@ -153,72 +153,7 @@ MonoBehaviour:
       name: "\u8D64\u9B3C"
       level: 0
       abilityType: 5
-      maxHitPoint: 0
-      hitPoint: 20
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 0
-      name: "\u8D64\u9B3C"
-      level: 0
-      abilityType: 5
-      maxHitPoint: 0
-      hitPoint: 10
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 0
-      name: "\u8D64\u9B3C"
-      level: 0
-      abilityType: 5
-      maxHitPoint: 0
-      hitPoint: 1
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 0
-      name: "\u8D64\u9B3C"
-      level: 0
-      abilityType: 5
-      maxHitPoint: 0
-      hitPoint: 1
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 1
-      name: "\u9752\u9B3C"
-      level: 0
-      abilityType: 5
-      maxHitPoint: 0
-      hitPoint: 1
-      strength: 0
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-    - id: 0
-      name: "\u8D64\u9B3C"
-      level: 0
-      abilityType: 5
-      maxHitPoint: 0
+      maxHitPoint: 1
       hitPoint: 1
       strength: 0
       defence: 0
@@ -424,7 +359,6 @@ Transform:
   - {fileID: 449675439}
   - {fileID: 1289067652}
   - {fileID: 554374465}
-  - {fileID: 483264484}
   m_Father: {fileID: 78480608}
   m_RootOrder: 1
 --- !u!1 &172595869
@@ -1268,46 +1202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689cc4289b4d44542980538d2d2e1f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &483264483
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 483264484}
-  - 114: {fileID: 483264485}
-  m_Layer: 0
-  m_Name: EndTurnHooker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &483264484
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 483264483}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 109467030}
-  m_RootOrder: 9
---- !u!114 &483264485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 483264483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9042b1855d3066340806b5fbdf2d868d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: "\u52DD\u5229\u3057\u305F\uFF01"
 --- !u!1 &493154039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,6 +2533,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1442169761}
+  - 114: {fileID: 1442169762}
   m_Layer: 0
   m_Name: Win
   m_TagString: Untagged
@@ -2658,6 +2553,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 267458228}
   m_RootOrder: 3
+--- !u!114 &1442169762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1442169760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d52a1d0f57243a4973eec1eb7dcad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refExecuter: {fileID: 1034840439}
+  commandType: 10
+  prefabMediator: {fileID: 11457574, guid: b03b85cd3104f4b58856942e82df9ff6, type: 2}
 --- !u!1 &1490677760
 GameObject:
   m_ObjectHideFlags: 0
