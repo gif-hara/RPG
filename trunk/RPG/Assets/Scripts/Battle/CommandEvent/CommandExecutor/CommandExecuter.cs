@@ -24,6 +24,15 @@ namespace RPG.Battle
 			this.Execute();
 		}
 
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.EndTurnMessage )]
+		void OnEndTurn()
+		{
+			for( int i=0, imax=this.transform.childCount; i<imax; i++ )
+			{
+				Destroy( this.transform.GetChild( i ).gameObject );
+			}
+		}
+
 		public void StartCommand()
 		{
 			var hook = CreateHook();

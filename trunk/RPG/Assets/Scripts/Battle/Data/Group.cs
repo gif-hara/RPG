@@ -43,7 +43,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				var result = this.List[0];
+				var result = this.List.Find( m => !m.IsDead );
 				this.List.ForEach( b =>
 				{
 					Debug.Log( "b.IsDead = " + b.IsDead );
