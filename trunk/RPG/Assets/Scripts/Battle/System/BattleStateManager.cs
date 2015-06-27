@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : BattleStateManager.cs
-*
-*     * Description : .
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,7 +17,7 @@ namespace RPG.Battle
 			SelectCommand = 0,
 			UpdateActiveTime,
 			ExecuteCommand,
-			DoNothing,
+			Win,
 		}
 
 		[SerializeField]
@@ -76,7 +67,7 @@ namespace RPG.Battle
 		{
 			if( BattleEnemyPartyManager.Instance.Party.IsAllDead )
 			{
-				this.NotifyActiveStateMessage( State.DoNothing );
+				this.NotifyActiveStateMessage( State.Win );
 			}
 			else if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{

@@ -34,9 +34,12 @@ namespace RPG.Battle
 			
 			/// <summary> 逃げる. </summary>
 			Escape,
-			
+
 			/// <summary> 無し. </summary>
 			None,
+
+			/// <summary> スキル無し. </summary>
+			NoSkill,
 			
 			/// <summary> 術. </summary>
 			Magic,
@@ -46,6 +49,9 @@ namespace RPG.Battle
 			
 			/// <summary> 盗む. </summary>
 			Steal,
+
+			/// <summary> 勝利. </summary>
+			Win,
 		}
 		
 		/// <summary>

@@ -24,12 +24,12 @@ namespace RPG.Battle
 		[SerializeField]
 		private List<Data> database;
 
-		public GameObject Get( BattleTypeConstants.CommandType type )
+		public Data Get( BattleTypeConstants.CommandType type )
 		{
 			var data = database.Find( e => e.CommandType == type );
 			Debug.Assert( data != null, string.Format( "CommandEventMediatorがありません. {0} に対応したCommandEventMediatorが登録されているか確認してください.", type ), this );
 
-			return data.PrefabMediator.gameObject;
+			return data;
 		}
 	}
 }

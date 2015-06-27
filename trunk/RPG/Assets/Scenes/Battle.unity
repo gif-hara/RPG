@@ -138,7 +138,7 @@ MonoBehaviour:
     - id: 0
       name: "\u6843\u592A\u90CE"
       level: 0
-      abilityType: 6
+      abilityType: 7
       maxHitPoint: 0
       hitPoint: 0
       strength: 0
@@ -2640,7 +2640,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1442169761}
   m_Layer: 0
-  m_Name: DoNothing
+  m_Name: Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

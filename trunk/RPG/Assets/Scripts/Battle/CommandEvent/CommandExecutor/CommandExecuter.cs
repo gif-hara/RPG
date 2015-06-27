@@ -11,6 +11,8 @@ namespace RPG.Battle
 	{
 		private GameObject refEventHolder;
 
+		public BattleTypeConstants.CommandType CommandType{ private set; get; }
+
 		[Attribute.MessageMethodReceiver( CommonMessageConstants.InputDecideMessage )]
 		void OnInputDecide()
 		{
@@ -24,7 +26,7 @@ namespace RPG.Battle
 
 		public void StartCommand()
 		{
-			var hook = new BattleMessageConstants.ExecuteCommandHook( this );
+			var hook = CreateHook();
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartTurnMessage, hook );
 			
 			this.Execute();
@@ -33,7 +35,7 @@ namespace RPG.Battle
 		public void End()
 		{
 			this.refEventHolder = null;
-			var hook = new BattleMessageConstants.ExecuteCommandHook( this );
+			var hook = CreateHook();
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.EndCommandExecuteMessage, hook );
 
 			if( this.refEventHolder == null )
@@ -46,6 +48,11 @@ namespace RPG.Battle
 			}
 		}
 
+		public void SetCommandType( BattleTypeConstants.CommandType commandType )
+		{
+			this.CommandType = commandType;
+		}
+
 		public void InsertEventHolder( GameObject eventHolder )
 		{
 			this.refEventHolder = eventHolder;
@@ -54,8 +61,13 @@ namespace RPG.Battle
 
 		private void Execute()
 		{
-			var hook = new BattleMessageConstants.ExecuteCommandHook( this );
+			var hook = CreateHook();
 			SendMessage( this.refEventHolder, BattleMessageConstants.ExecuteCommandMessage, hook );
+		}
+
+		private BattleMessageConstants.ExecuteCommandHook CreateHook()
+		{
+			return new BattleMessageConstants.ExecuteCommandHook( this );
 		}
 	}
 }

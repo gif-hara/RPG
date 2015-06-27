@@ -7,9 +7,9 @@ namespace RPG.Battle
 {
 	/// <summary>
 	/// ステートがアクティブになった際にアクティブタイムが最大値になったキャラクターの
-	/// CommandExecutorを生成するコンポーネント.
+	/// コマンドを実行するコンポーネント.
 	/// </summary>
-	public class OnActiveStateCreateCommandExecutorActiveTimeMaxMember : MyMonoBehaviour
+	public class OnActiveStateStartCommandActiveTimeMaxMember : MyMonoBehaviour
 	{
 		[SerializeField]
 		private CommandExecuter refExecuter;
@@ -21,9 +21,10 @@ namespace RPG.Battle
 		void OnActiveState()
 		{
 			var executeMember = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
-			var commandExecutorPrefab = refHolder.Get( executeMember.SelectCommandData.Type );
-			var mediator = Instantiate( commandExecutorPrefab );
+			var data = refHolder.Get( executeMember.SelectCommandData.Type );
+			var mediator = Instantiate( data.PrefabMediator );
 			mediator.GetComponent<CommandEventMediator>().SetEvent( refExecuter );
+			refExecuter.SetCommandType( data.CommandType );
 			refExecuter.StartCommand();
 		}
 	}

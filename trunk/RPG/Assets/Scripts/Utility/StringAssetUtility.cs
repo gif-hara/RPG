@@ -28,7 +28,7 @@ namespace RPG.Common
 				"Ability_Steal",
 			};
 
-			return StringAsset.Get( s[(int)type - (int)Battle.BattleTypeConstants.CommandType.None] );
+			return StringAsset.Get( s[(int)type - (int)Battle.BattleTypeConstants.CommandType.NoSkill] );
 		}
 	}
 }
