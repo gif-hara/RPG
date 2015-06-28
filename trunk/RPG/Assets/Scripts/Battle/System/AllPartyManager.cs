@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : AllPartyManager.cs
 *
@@ -14,9 +14,9 @@ namespace RPG.Battle
 {
 	public class AllParty
 	{
-		public Party<AllyData> AllyParty{ private set; get; }
+		public Party<Ally> AllyParty{ private set; get; }
 
-		public Party<EnemyData> EnemyParty{ private set; get; }
+		public Party<Enemy> EnemyParty{ private set; get; }
 
 		public AllParty( BattleAllyPartyManager allyPartyManager, BattleEnemyPartyManager enemyPartyManager )
 		{
@@ -47,7 +47,7 @@ namespace RPG.Battle
 			this.AllParty = new AllParty( this.refAllyPartyManager, this.refEnemyPartyManager );
 		}
 
-		public BattleMemberData ActiveTimeMaxBattleMember
+		public BattleCharacter ActiveTimeMaxBattleMember
 		{
 			get
 			{

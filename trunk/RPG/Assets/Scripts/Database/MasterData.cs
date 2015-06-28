@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : MasterData.cs
-*
-*     * Description : マスターデータ.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -18,11 +9,26 @@ namespace RPG.Database
 	/// </summary>
 	public class MasterData
 	{
-		public MasterData()
+		public static MasterData instance = null;
+
+		public static MasterData Instance
+		{
+			get
+			{
+				instance = instance ?? new MasterData();
+
+				return instance;
+			}
+		}
+
+		private MasterData()
 		{
 			this.Ally = AllyMasterData.Instance;
+			this.Enemy = EnemyMasterData.Instance;
 		}
 
 		public AllyMasterData Ally{ private set; get; }
+
+		public EnemyMasterData Enemy{ private set; get; }
 	}
 }

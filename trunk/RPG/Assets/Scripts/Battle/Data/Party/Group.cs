@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -8,9 +8,9 @@ namespace RPG.Battle
 	/// </summary>
 	public class Group
 	{
-		public List<BattleMemberData> List{ private set; get; }
+		public List<BattleCharacter> List{ private set; get; }
 
-		public BattleMemberData this[int index]
+		public BattleCharacter this[int index]
 		{
 			get
 			{
@@ -20,10 +20,10 @@ namespace RPG.Battle
 
 		public Group()
 		{
-			this.List = new List<BattleMemberData>();
+			this.List = new List<BattleCharacter>();
 		}
 
-		public void Add( BattleMemberData data )
+		public void Add( BattleCharacter data )
 		{
 			this.List.Add( data );
 		}
@@ -32,7 +32,7 @@ namespace RPG.Battle
 		/// HPが一番低いキャラクターを返す.
 		/// </summary>
 		/// <value>The weak member.</value>
-		public BattleMemberData WeakMember
+		public BattleCharacter WeakMember
 		{
 			get
 			{

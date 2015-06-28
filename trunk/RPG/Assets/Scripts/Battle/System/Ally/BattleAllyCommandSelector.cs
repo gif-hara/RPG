@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleAllyCommandSelector.cs
 *
@@ -29,7 +29,7 @@ namespace RPG.Battle
 		/// コマンド入力を行っている味方データ.
 		/// </summary>
 		/// <value>The current command select ally data.</value>
-		public AllyData CurrentCommandSelectAllyData{ private set; get; }
+		public Ally CurrentCommandSelectAllyData{ private set; get; }
 
 		/// <summary>
 		/// 入力操作ステートマシン.

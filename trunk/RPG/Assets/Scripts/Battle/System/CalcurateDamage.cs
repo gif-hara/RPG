@@ -15,7 +15,7 @@ namespace RPG.Battle
 		/// <param name="executer">Executer.</param>
 		/// <param name="target">Target.</param>
 		/// <param name="isCritical">If set to <c>true</c> is critical.</param>
-		public static int UsuallyDamage( BattleMemberData executer, BattleMemberData target, bool isCritical )
+		public static int UsuallyDamage( BattleCharacter executer, BattleCharacter target, bool isCritical )
 		{
 			int result = (2 * executer.InstanceData.strength - target.InstanceData.defence) / 4;
 			result += Mathf.FloorToInt( ((float)result / 10.0f) * Random.Range( -1.0f, 1.0f ) );

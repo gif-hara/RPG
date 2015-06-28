@@ -6,25 +6,29 @@ using RPG.Common;
 namespace RPG.Database
 {
 	/// <summary>
-	/// 味方マスターデータ.
+	/// 敵マスターデータ.
 	/// </summary>
-	public class AllyMasterData : ScriptableObject
+	public class EnemyMasterData : ScriptableObject
 	{
 		[System.Serializable]
 		public class Element
 		{
 			public CharacterData characterData;
+
+			public int experience;
+
+			public int gold;
 		}
 
 		public List<Element> ElementList{ get{ return this.elementList; } }
 		[SerializeField]
 		private List<Element> elementList;
 
-		public static AllyMasterData Instance
+		public static EnemyMasterData Instance
 		{
 			get
 			{
-				return Resources.Load<AllyMasterData>( "Database/Master/Character/Ally" );
+				return Resources.Load<EnemyMasterData>( "Database/Master/Character/Enemy" );
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleMessageConstants.cs
 *
@@ -37,7 +37,7 @@ namespace RPG.Battle
 		/// <summary>
 		/// コマンドが決定した際のメッセージ.
 		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( AllyData ) )]
+		[Attribute.MessageMethodArgument( typeof( Ally ) )]
 		public const string CompleteCommandSelectMessage = "OnCompleteCommandSelect";
 
 		/// <summary>

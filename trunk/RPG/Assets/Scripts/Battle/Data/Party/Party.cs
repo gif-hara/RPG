@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,7 +7,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// パーティ.
 	/// </summary>
-	public class Party<TBattleMemberData> where TBattleMemberData : BattleMemberData
+	public class Party<TBattleMemberData> where TBattleMemberData : BattleCharacter
 	{
 		public List<TBattleMemberData> List{ private set; get; }
 

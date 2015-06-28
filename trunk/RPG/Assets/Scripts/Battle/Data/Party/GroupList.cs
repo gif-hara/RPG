@@ -23,7 +23,7 @@ namespace RPG.Battle
 			this.List = new List<Group>();
 		}
 
-		public void Add( BattleMemberData data )
+		public void Add( BattleCharacter data )
 		{
 			if( this.List.Count <= 0 )
 			{
@@ -47,7 +47,7 @@ namespace RPG.Battle
 			}
 		}
 
-		public BattleMemberData GetBattleMemberData( int index )
+		public BattleCharacter GetBattleMemberData( int index )
 		{
 			return this.List[index][0];
 		}

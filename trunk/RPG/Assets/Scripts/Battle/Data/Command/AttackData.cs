@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -14,7 +14,7 @@ namespace RPG.Battle
 		/// <value>The number.</value>
 		public int Number{ private set; get; }
 
-		public void CalcurlateNumber( BattleMemberData member )
+		public void CalcurlateNumber( BattleCharacter member )
 		{
 			Development.TODO( "攻撃回数の計算処理の実装." );
 

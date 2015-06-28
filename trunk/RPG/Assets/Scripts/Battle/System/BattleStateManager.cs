@@ -40,7 +40,7 @@ namespace RPG.Battle
 		}
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.CompleteCommandSelectMessage )]
-		void OnCompleteCommandSelect( AllyData allyData )
+		void OnCompleteCommandSelect( Ally allyData )
 		{
 			if( refAllyPartyManager.Party.IsAnyNoneCommand )
 			{

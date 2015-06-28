@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
@@ -38,12 +38,12 @@ namespace RPG.Battle
 			this.Type = type;
 		}
 
-		public void SetGiveDamage( BattleMemberData target, int value, bool isCritical )
+		public void SetGiveDamage( BattleCharacter target, int value, bool isCritical )
 		{
 			this.GiveDamage = new GiveDamageData( target, value, isCritical );
 		}
 
-		public BattleMemberData GetTargetBattleMemberData( int targetId )
+		public BattleCharacter GetTargetBattleMemberData( int targetId )
 		{
 			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )

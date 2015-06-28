@@ -20,12 +20,12 @@ namespace RPG.Battle
 		private List<CharacterData> playerDataList;
 
 		/// <summary>
-		/// 敵パーティデータ.
+		/// 敵IDリスト.
 		/// </summary>
 		/// <value>The enemy data list.</value>
-		public List<CharacterData> EnemyDataList{ get{ return this.enemyDataList; } }
+		public List<int> EnemyIdList{ get{ return this.enemyIdList; } }
 		[SerializeField]
-		private List<CharacterData> enemyDataList;
+		private List<int> enemyIdList;
 
 
 		public InitializeData( List<CharacterData> playerData )

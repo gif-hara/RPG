@@ -81,6 +81,11 @@ namespace RPG.Common
 		/// </summary>
 		public int spirit;
 
+		/// <summary>
+		/// 所持している経験値.
+		/// </summary>
+		public int experience;
+
 		public CharacterData( int _id )
 		{
 			id = _id;

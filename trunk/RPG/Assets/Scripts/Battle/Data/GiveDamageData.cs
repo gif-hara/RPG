@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -8,13 +8,13 @@ namespace RPG.Battle
 	/// </summary>
 	public class GiveDamageData
 	{
-		public BattleMemberData Target{ private set; get; }
+		public BattleCharacter Target{ private set; get; }
 
 		public int Damage{ private set; get; }
 
 		public bool IsCritical{ private set; get; }
 
-		public GiveDamageData( BattleMemberData target, int damage, bool isCritical )
+		public GiveDamageData( BattleCharacter target, int damage, bool isCritical )
 		{
 			this.Target = target;
 			this.Damage = damage;

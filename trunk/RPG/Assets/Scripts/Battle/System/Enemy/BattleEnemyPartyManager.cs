@@ -19,7 +19,7 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleEnemyPartyManager : A_Singleton<BattleEnemyPartyManager>
 	{
-		public Party<EnemyData> Party{ private set; get; }
+		public Party<Enemy> Party{ private set; get; }
 
 		void Awake()
 		{
@@ -29,12 +29,15 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
-			this.Party = new Party<EnemyData>();
+			this.Party = new Party<Enemy>();
 			
-			var initializeData = SharedData.initializeData.EnemyDataList;
+			var initializeData = SharedData.initializeData.EnemyIdList;
+
 			for( int i=0,imax=initializeData.Count; i<imax; i++ )
 			{
-				this.Party.Add( new EnemyData( initializeData[i] ) );
+				var data = Database.MasterData.Instance.Enemy.ElementList[initializeData[i]];
+				Debug.Log( data );
+				this.Party.Add( new Enemy( data.characterData, data.experience, data.gold ) );
 			}
 		}
 		/// <summary>

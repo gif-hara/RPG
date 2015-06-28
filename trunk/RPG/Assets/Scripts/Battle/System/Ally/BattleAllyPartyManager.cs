@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleAllyPartyManager.cs
 *
@@ -19,7 +19,7 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleAllyPartyManager : A_Singleton<BattleAllyPartyManager>
 	{
-		public Party<AllyData> Party{ private set; get; }
+		public Party<Ally> Party{ private set; get; }
 
 		void Awake()
 		{
@@ -29,12 +29,12 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
-			this.Party = new Party<AllyData>();
+			this.Party = new Party<Ally>();
 
 			var initializeData = SharedData.initializeData.PlayerDataList;
 			for( int i=0,imax=initializeData.Count; i<imax; i++ )
 			{
-				this.Party.Add( new AllyData( initializeData[i] ) );
+				this.Party.Add( new Ally( initializeData[i] ) );
 			}
 		}
 	}

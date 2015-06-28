@@ -6,14 +6,18 @@ using RPG.Common;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// 敵データ.
+	/// 味方データ.
 	/// </summary>
-	public class EnemyData : BattleMemberData
+	public class Ally : BattleCharacter
 	{
-		public EnemyData( CharacterData data )
+		public Ally( CharacterData data )
 			:base( data )
 		{
-			
+
+		}
+
+		protected override void Dead ()
+		{
 		}
 	}
 }

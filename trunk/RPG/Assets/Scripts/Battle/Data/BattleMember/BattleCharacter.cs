@@ -8,7 +8,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// バトルメンバーデータ.
 	/// </summary>
-	public class BattleMemberData
+	public abstract class BattleCharacter
 	{
 		public CharacterData MasterData{ private set; get; }
 
@@ -20,7 +20,7 @@ namespace RPG.Battle
 
 		public GameObject Model{ private set; get; }
 
-		public BattleMemberData( CharacterData data )
+		public BattleCharacter( CharacterData data )
 		{
 			this.MasterData = data;
 			this.InstanceData = new CharacterData( data );
@@ -50,14 +50,17 @@ namespace RPG.Battle
 			this.ActiveTime = 0.0f;
 		}
 
+		/// <summary>
+		/// ダメージを受ける.
+		/// </summary>
+		/// <param name="damage">Damage.</param>
 		public void TakeDamage( int damage )
 		{
 			this.InstanceData.hitPoint -= damage;
 
 			if( this.InstanceData.hitPoint <= 0 )
 			{
-				Development.TODO( "戦闘不能アニメーション再生" );
-				this.Model.SetActive( false );
+				this.Dead();
 			}
 		}
 		
@@ -69,6 +72,11 @@ namespace RPG.Battle
 		{
 			this.ActiveTime += value;
 		}
+
+		/// <summary>
+		/// 死亡処理.
+		/// </summary>
+		protected abstract void Dead();
 
 		public BattleTypeConstants.CommandType SelectCommandType
 		{
