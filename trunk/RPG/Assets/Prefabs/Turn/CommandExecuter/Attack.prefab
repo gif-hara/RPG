@@ -44,6 +44,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 470612}
   - 114: {fileID: 11413584}
+  - 114: {fileID: 11427604}
+  - 114: {fileID: 11420858}
+  - 114: {fileID: 11432600}
   - 114: {fileID: 11424652}
   - 114: {fileID: 11469396}
   - 114: {fileID: 11439422}
@@ -223,6 +226,18 @@ MonoBehaviour:
   refConditioner: {fileID: 0}
   refData: {fileID: 11400000, guid: 9363c8dda8f1843048c999b00c7d2d22, type: 2}
   type: 2
+--- !u!114 &11420858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c115bc219904b508d140d83db90486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCriticalIfTrue: 1
 --- !u!114 &11424652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refConditioner: {fileID: 0}
   refData: {fileID: 11400000, guid: 9adb82fc9f7794992a94f48a2fb61ea6, type: 2}
-  type: 0
+  type: 1
 --- !u!114 &11425446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +275,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51290a30187834e75829803829eae272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11427604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca87328e58d644e68d9e417f2b8b563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refConditioner: {fileID: 0}
+  refData: {fileID: 11400000, guid: 3b419bc42234d401b9c44c3e4063d88b, type: 2}
+  type: 0
+--- !u!114 &11432600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca87328e58d644e68d9e417f2b8b563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refConditioner: {fileID: 11420858}
+  refData: {fileID: 11400000, guid: 16e2b5147d8e049e791e6f5d1b55766a, type: 2}
+  type: 1
 --- !u!114 &11437274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -400,7 +443,7 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: type
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: refEventHolder
@@ -422,6 +465,14 @@ Prefab:
       propertyPath: prefabEventHolder
       value: 
       objectReference: {fileID: 125124}
+    - target: {fileID: 0}
+      propertyPath: refConditioner
+      value: 
+      objectReference: {fileID: 11420858}
+    - target: {fileID: 0}
+      propertyPath: isCriticalIfTrue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 154874}

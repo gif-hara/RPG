@@ -17,7 +17,8 @@ namespace RPG.Battle
 		public void CalcurlateNumber( BattleMemberData member )
 		{
 			Development.TODO( "攻撃回数の計算処理の実装." );
-			this.Number = 2;
+
+			this.Number = Random.Range( 0, 100 ) < 10 ? 2 : 1;
 		}
 
 		public void Attacked()

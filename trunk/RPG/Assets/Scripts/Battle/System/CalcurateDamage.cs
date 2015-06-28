@@ -15,9 +15,16 @@ namespace RPG.Battle
 	/// </summary>
 	public static class CalcurateDamage
 	{
-		public static int UsuallyDamage()
+		public static int UsuallyDamage( bool isCritical )
 		{
-			return 10;
+			int result = 10;
+
+			if( isCritical )
+			{
+				result *= 2;
+			}
+
+			return result;
 		}
 	}
 }

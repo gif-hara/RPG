@@ -21,7 +21,7 @@ MonoBehaviour:
   - Empty
   - Information_DeclarationAttack
   - Information_ContinuityAttack
-  - Information_Critical
+  - Information_DeclarationCritical
   - Information_GiveDamage
   - Information_ReceiveDamage
   asset:

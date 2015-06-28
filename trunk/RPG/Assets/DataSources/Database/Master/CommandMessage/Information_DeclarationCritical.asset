@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519b154f3978fa54d9226dbba77f4228, type: 3}
   m_Name: Information_DeclarationCritical
   m_EditorClassIdentifier: 
-  informationKey: Information_GiveDamage
+  informationKey: Information_DeclarationCritical
   param: 

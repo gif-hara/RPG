@@ -18,8 +18,8 @@ namespace RPG.Battle
 			var group = selectCommandData.GetGroupBattleMemberDataSafe( 0 );
 			var target = group.WeakMember;
 
-			var isCritical = false;	Development.TODO( "会心の一撃の実装." );
-			var damage = CalcurateDamage.UsuallyDamage();
+			var isCritical = true;	Development.TODO( "会心の一撃の実装." );
+			var damage = CalcurateDamage.UsuallyDamage( isCritical );
 			selectCommandData.SetGiveDamage( target, damage, isCritical );
 			target.TakeDamage( selectCommandData.GiveDamage.Damage );
 
