@@ -12,10 +12,13 @@ namespace RPG.Battle
 
 		public int Damage{ private set; get; }
 
-		public GiveDamageData( BattleMemberData target, int damage )
+		public bool IsCritical{ private set; get; }
+
+		public GiveDamageData( BattleMemberData target, int damage, bool isCritical )
 		{
 			this.Target = target;
 			this.Damage = damage;
+			this.IsCritical = isCritical;
 		}
 	}
 }

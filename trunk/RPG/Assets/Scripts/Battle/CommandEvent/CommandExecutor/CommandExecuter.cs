@@ -78,5 +78,13 @@ namespace RPG.Battle
 		{
 			return new BattleMessageConstants.ExecuteCommandHook( this );
 		}
+
+		private bool IsForceEnd
+		{
+			get
+			{
+				return BattleEnemyPartyManager.Instance.Party.IsAllDead;
+			}
+		}
 	}
 }

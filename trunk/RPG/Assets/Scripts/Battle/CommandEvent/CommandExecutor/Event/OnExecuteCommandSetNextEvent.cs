@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンド実行イベント時に次のイベントを設定するコンポーネント.
+	/// コマンド実行イベント時に条件付きで次のイベントを設定するコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandSetNextEvent : MyMonoBehaviour
+	public class OnExecuteCommandSetNextEvent : MonoBehaviour
 	{
 		[SerializeField]
 		private GameObject refEventHolder;

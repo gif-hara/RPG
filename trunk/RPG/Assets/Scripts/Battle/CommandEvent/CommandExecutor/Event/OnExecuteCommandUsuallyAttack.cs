@@ -8,6 +8,9 @@ namespace RPG.Battle
 	/// </summary>
 	public class OnExecuteCommandUsuallyAttack : MyMonoBehaviour
 	{
+		[SerializeField]
+		private AttackData refAttackData;
+
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
@@ -15,8 +18,12 @@ namespace RPG.Battle
 			var group = selectCommandData.GetGroupBattleMemberDataSafe( 0 );
 			var target = group.WeakMember;
 
-			selectCommandData.SetGiveDamage( target, CalcurateDamage.UsuallyDamage() );
+			var isCritical = false;	Development.TODO( "会心の一撃の実装." );
+			var damage = CalcurateDamage.UsuallyDamage();
+			selectCommandData.SetGiveDamage( target, damage, isCritical );
 			target.TakeDamage( selectCommandData.GiveDamage.Damage );
+
+			this.refAttackData.Attacked();
 		}
 	}
 }

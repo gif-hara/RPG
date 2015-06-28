@@ -10,6 +10,9 @@ namespace RPG.Battle
 	public class OnExecuteCommandSetInformation : MyMonoBehaviour
 	{
 		[SerializeField]
+		private Conditioner refConditioner;
+
+		[SerializeField]
 		private InformationTextData refData;
 
 		[SerializeField]
@@ -18,44 +21,30 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
+			if( !this.IsCondition )
+			{
+				return;
+			}
+
 			var methodName = this.type == BattleTypeConstants.SetTextInformationType.Set
 				? BattleMessageConstants.SetInformationTextMessage
 					: this.type == BattleTypeConstants.SetTextInformationType.Append
 				? BattleMessageConstants.AppendInformationTextMessage
 				: BattleMessageConstants.NewLineInformationTextMessage;
 
-			this.BroadcastMessage( SceneRootBase.Root, methodName, Message );
+			this.BroadcastMessage( SceneRootBase.Root, methodName, InformationTextBuilder.Build( this.refData ) );
 		}
 
-		private string Message
+		private bool IsCondition
 		{
 			get
 			{
-				return StringAsset.Format( this.refData.Key, this.FormatArguments );
-			}
-		}
-
-		private object[] FormatArguments
-		{
-			get
-			{
-				List<object> result = new List<object>();
-				for( int i=0,imax=refData.Parameter.Count; i<imax; i++ )
+				if( this.refConditioner == null )
 				{
-					switch( refData.Parameter[i] )
-					{
-					case BattleTypeConstants.InformationParameterType.ExecuteMemberName:
-						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.InstanceData.name );
-						break;
-					case BattleTypeConstants.InformationParameterType.GiveDamage:
-						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Damage );
-						break;
-					case BattleTypeConstants.InformationParameterType.TargetName:
-						result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Target.InstanceData.name );
-						break;
-					}
+					return true;
 				}
-				return result.ToArray();
+
+				return this.refConditioner.Condition;
 			}
 		}
 	}

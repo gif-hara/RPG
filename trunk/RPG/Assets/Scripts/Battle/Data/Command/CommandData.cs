@@ -38,9 +38,9 @@ namespace RPG.Battle
 			this.Type = type;
 		}
 
-		public void SetGiveDamage( BattleMemberData target, int value )
+		public void SetGiveDamage( BattleMemberData target, int value, bool isCritical )
 		{
-			this.GiveDamage = new GiveDamageData( target, value );
+			this.GiveDamage = new GiveDamageData( target, value, isCritical );
 		}
 
 		public BattleMemberData GetTargetBattleMemberData( int targetId )
