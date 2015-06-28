@@ -46,7 +46,6 @@ namespace RPG.Battle
 				var result = this.List.Find( m => !m.IsDead );
 				this.List.ForEach( b =>
 				{
-					Debug.Log( "b.IsDead = " + b.IsDead );
 					if( !b.IsDead )
 					{
 						result = result.InstanceData.hitPoint > b.InstanceData.hitPoint ? b : result;
