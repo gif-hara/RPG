@@ -14,12 +14,13 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
-			var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData;
+			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
+			var selectCommandData = executer.SelectCommandData;
 			var group = selectCommandData.GetGroupBattleMemberDataSafe( 0 );
 			var target = group.WeakMember;
 
-			var isCritical = true;	Development.TODO( "会心の一撃の実装." );
-			var damage = CalcurateDamage.UsuallyDamage( isCritical );
+			var isCritical = Random.Range( 0, 100 ) < 10;	Development.TODO( "会心の一撃の実装." );
+			var damage = CalcurateDamage.UsuallyDamage( executer, target, isCritical );
 			selectCommandData.SetGiveDamage( target, damage, isCritical );
 			target.TakeDamage( selectCommandData.GiveDamage.Damage );
 

@@ -141,7 +141,7 @@ MonoBehaviour:
       abilityType: 7
       maxHitPoint: 0
       hitPoint: 0
-      strength: 0
+      strength: 10
       defence: 0
       speed: 0
       avoid: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
       maxHitPoint: 20
       hitPoint: 20
       strength: 0
-      defence: 0
+      defence: 3
       speed: 0
       avoid: 0
       maxSpirit: 0
