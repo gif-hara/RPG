@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : CommandData.cs
-*
-*     * Description : コマンドデータ.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
@@ -15,7 +6,7 @@ using RPG.Common;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンドデータ.
+	/// 使用するコマンドに必要なデータを格納するクラス.
 	/// </summary>
 	public class CommandData
 	{
@@ -26,11 +17,15 @@ namespace RPG.Battle
 		public List<TargetData> TargetIdList{ private set; get; }
 
 		/// <summary>
-		/// タイプ
+		/// 実行するコマンドタイプ.
 		/// </summary>
 		/// <value>The type.</value>
 		public BattleTypeConstants.CommandType Type{ private set; get; }
 
+		/// <summary>
+		/// 与えるダメージデータクラス.
+		/// </summary>
+		/// <value>The give damage.</value>
 		public GiveDamageData GiveDamage{ private set; get; }
 
 		public CommandData()

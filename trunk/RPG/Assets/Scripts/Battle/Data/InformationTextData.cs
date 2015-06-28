@@ -5,9 +5,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// 情報ウィンドウのラベルを設定するコマンドイベント.
+	/// 情報ウィンドウの文字列を構築するクラス.
 	/// </summary>
-	public class InformationLabelSetterCommandEvent : CommandEventBase
+	public class InformationTextData : ScriptableObject
 	{
 		public string Key
 		{

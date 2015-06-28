@@ -1,17 +1,10 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : Group.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
 {
 	/// <summary>
-	/// .
+	/// グループクラス.
 	/// </summary>
 	public class Group
 	{

@@ -1,17 +1,10 @@
-/*===========================================================================*/
-/*
-*     * FileName    : GroupList.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
 {
 	/// <summary>
-	/// パーティのグループ分け.
+	/// グループをまとめるクラス.
 	/// </summary>
 	public class GroupList
 	{

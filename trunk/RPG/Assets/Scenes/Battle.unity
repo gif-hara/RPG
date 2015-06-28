@@ -2982,6 +2982,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 149876, guid: 015016ad113214a6f82c3f2577987f80, type: 2}
+      propertyPath: m_Name
+      value: ExecuteUsuallyAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 125176, guid: 015016ad113214a6f82c3f2577987f80, type: 2}
+      propertyPath: m_Name
+      value: End
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 015016ad113214a6f82c3f2577987f80, type: 2}
   m_IsPrefabParent: 0

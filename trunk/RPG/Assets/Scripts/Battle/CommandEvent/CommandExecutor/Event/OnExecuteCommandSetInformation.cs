@@ -10,7 +10,7 @@ namespace RPG.Battle
 	public class OnExecuteCommandSetInformation : MyMonoBehaviour
 	{
 		[SerializeField]
-		private InformationLabelSetterCommandEvent refData;
+		private InformationTextData refData;
 
 		[SerializeField]
 		private BattleTypeConstants.SetTextInformationType type;

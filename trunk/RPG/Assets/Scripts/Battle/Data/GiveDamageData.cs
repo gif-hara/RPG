@@ -1,11 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : GiveDamageData.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle

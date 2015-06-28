@@ -1,20 +1,11 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : AllyParty.cs
-*
-*     * Description : 味方パーティ.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace RPG.Battle
 {
 	/// <summary>
-	/// 味方パーティ.
+	/// パーティ.
 	/// </summary>
 	public class Party<TBattleMemberData> where TBattleMemberData : BattleMemberData
 	{
