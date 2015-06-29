@@ -25,6 +25,8 @@ namespace RPG.Battle
 				result *= 2;
 			}
 
+			result = result <= 0 ? 1 : result;
+
 			return result;
 		}
 

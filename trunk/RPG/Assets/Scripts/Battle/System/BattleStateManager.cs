@@ -40,13 +40,13 @@ namespace RPG.Battle
 		}
 
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.CompleteCommandSelectMessage )]
-		void OnCompleteCommandSelect( Ally allyData )
+		void OnCompleteCommandSelect( Ally ally )
 		{
 			if( BattleAllyPartyManager.Instance.Party.IsAnyNoneCommand )
 			{
 				this.NotifyActiveStateMessage( State.SelectCommand );
 			}
-			else if( BattleAllyPartyManager.Instance.Party.IsAnyActiveTimeMax )
+			else if( AllPartyManager.Instance.IsAnyActiveTimeMax )
 			{
 				this.NotifyActiveStateMessage( State.ExecuteCommand );
 			}
@@ -73,9 +73,13 @@ namespace RPG.Battle
 			{
 				this.NotifyActiveStateMessage( State.SelectCommand );
 			}
-			else
+			else if( AllPartyManager.Instance.IsAnyActiveTimeMax )
 			{
 				this.NotifyActiveStateMessage( State.ExecuteCommand );
+			}
+			else
+			{
+				this.NotifyActiveStateMessage( State.UpdateActiveTime );
 			}
 		}
 

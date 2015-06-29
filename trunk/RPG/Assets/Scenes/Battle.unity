@@ -139,8 +139,8 @@ MonoBehaviour:
       name: "\u6843\u592A\u90CE"
       level: 0
       abilityType: 7
-      maxHitPoint: 0
-      hitPoint: 0
+      maxHitPoint: 20
+      hitPoint: 20
       strength: 10
       defence: 0
       speed: 0
@@ -2453,6 +2453,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1369213432}
+  - 114: {fileID: 1369213435}
   - 114: {fileID: 1369213433}
   - 114: {fileID: 1369213434}
   m_Layer: 0
@@ -2498,6 +2499,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refWindowActiveSetter: {fileID: 1490677762}
+--- !u!114 &1369213435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1369213431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50de84be34f7544c99953fed2d2b9c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1411561502
 GameObject:
   m_ObjectHideFlags: 0

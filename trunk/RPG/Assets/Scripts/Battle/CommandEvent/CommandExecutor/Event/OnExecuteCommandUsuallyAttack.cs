@@ -17,6 +17,7 @@ namespace RPG.Battle
 			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
 			var selectCommandData = executer.SelectCommandData;
 			var group = selectCommandData.GetGroupBattleMemberDataSafe( 0 );
+			Debug.Log( group );
 			var target = group.WeakMember;
 
 			var isCritical = Random.Range( 0, 100 ) < 10;	Development.TODO( "会心の一撃の実装." );

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
@@ -28,10 +28,12 @@ namespace RPG.Battle
 		}
 
 #if DEBUG
-		public void Update()
+		public void DrawDebugText()
 		{
 			DebugText.Instance.AppendLine( this.InstanceData.name );
 			DebugText.Instance.AppendLine( "ActiveTime = " + this.ActiveTime );
+			DebugText.Instance.AppendLine( "HP " + this.InstanceData.hitPoint + "/" + this.InstanceData.maxHitPoint );
+			DebugText.Instance.AppendLine( "====================" );
 		}
 #endif
 
@@ -44,7 +46,7 @@ namespace RPG.Battle
 		/// コマンド決定処理.
 		/// </summary>
 		/// <param name="type">Type.</param>
-		public void DecisionCommand( CommandData commandData )
+		public void DecideCommand( CommandData commandData )
 		{
 			this.SelectCommandData = commandData;
 		}

@@ -29,7 +29,7 @@ namespace RPG.Battle
 		/// コマンド入力を行っている味方データ.
 		/// </summary>
 		/// <value>The current command select ally data.</value>
-		public Ally CurrentCommandSelectAllyData{ private set; get; }
+		public Ally CurrentCommandSelectAlly{ private set; get; }
 
 		/// <summary>
 		/// 入力操作ステートマシン.
@@ -131,9 +131,8 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
 		void OnStartCommandSelect()
 		{
-			this.CurrentCommandSelectAllyData = refAllyPartyManager.Party.List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None );
-
-			if( this.CurrentCommandSelectAllyData == null )	return;
+			this.CurrentCommandSelectAlly = refAllyPartyManager.Party.NoneCommandBattleMember;
+			Debug.Assert( this.CurrentCommandSelectAlly != null, "誰もActiveTimeが最大値ではありませんでした.", this );
 
 			this.CommandData = new CommandData();
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
@@ -163,9 +162,9 @@ namespace RPG.Battle
 		/// </summary>
 		public void Complete()
 		{
-			this.CurrentCommandSelectAllyData.DecisionCommand( CommandData );
-			var tempAllyData = this.CurrentCommandSelectAllyData;
-			this.CurrentCommandSelectAllyData = null;
+			this.CurrentCommandSelectAlly.DecideCommand( CommandData );
+			var tempAllyData = this.CurrentCommandSelectAlly;
+			this.CurrentCommandSelectAlly = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.CompleteCommandSelectMessage, tempAllyData );
 		}
 
@@ -196,7 +195,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return this.canInput && this.CurrentCommandSelectAllyData != null;
+				return this.canInput && this.CurrentCommandSelectAlly != null;
 			}
 		}
 	}

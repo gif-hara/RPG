@@ -29,7 +29,7 @@ namespace RPG.Battle
 #if DEBUG
 		void Update()
 		{
-			this.Party.List.ForEach( a => a.Update() );
+			this.Party.List.ForEach( a => a.DrawDebugText() );
 		}
 #endif
 
