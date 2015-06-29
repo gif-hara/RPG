@@ -14,14 +14,14 @@ namespace RPG.Battle
 {
 	public class AllParty
 	{
-		public Party<Ally> AllyParty{ private set; get; }
+		public Party<Ally> Ally{ private set; get; }
 
-		public Party<Enemy> EnemyParty{ private set; get; }
+		public Party<Enemy> Enemy{ private set; get; }
 
 		public AllParty( BattleAllyPartyManager allyPartyManager, BattleEnemyPartyManager enemyPartyManager )
 		{
-			this.AllyParty = allyPartyManager.Party;
-			this.EnemyParty = enemyPartyManager.Party;
+			this.Ally = allyPartyManager.Party;
+			this.Enemy = enemyPartyManager.Party;
 		}
 	}
 	/// <summary>
@@ -60,5 +60,18 @@ namespace RPG.Battle
 				return this.refEnemyPartyManager.Party.ActiveTimeMaxBattleMember;
 			}
 		}
+
+		/// <summary>
+		/// 誰かしらアクティブタイムが最大値に達しているか？.
+		/// </summary>
+		/// <value><c>true</c> if any active time max; otherwise, <c>false</c>.</value>
+		public bool IsAnyActiveTimeMax
+		{
+			get
+			{
+				return this.ActiveTimeMaxBattleMember != null;
+			}
+		}
+
 	}
 }

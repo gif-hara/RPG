@@ -1,16 +1,9 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : CustomMenuItem.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
 /// <summary>
-/// .
+/// RPG用のカスタムメニュー.
 /// </summary>
 public class CustomMenuItem : MonoBehaviour
 {

@@ -12,23 +12,18 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleStateManager refStateManager;
 
-		[SerializeField]
-		private BattleAllyPartyManager refAllyPartyManager;
-
 		private bool isUpdate = false;
 
 		void Update()
 		{
 			if( !this.isUpdate )	return;
 
-			var party = refAllyPartyManager.Party;
-			for( int i=0,imax=party.List.Count; i<imax; i++ )
-			{
-				var allyData = party.List[i];
-				allyData.UpdateActiveTime( (1.0f + (allyData.InstanceData.speed / 255.0f)) / 60.0f );
-			}
+			var allParty = AllPartyManager.Instance.AllParty;
 
-			if( party.IsAnyActiveTimeMax )
+			this.UpdateActiveTime( allParty.Ally );
+			this.UpdateActiveTime( allParty.Enemy );
+
+			if( AllPartyManager.Instance.IsAnyActiveTimeMax )
 			{
 				this.BroadcastMessage( BattleSceneManager.Root, BattleMessageConstants.EndUpdateActiveTimeMessage );
 			}
@@ -42,6 +37,15 @@ namespace RPG.Battle
 		void OnDeactiveState()
 		{
 			this.isUpdate = false;
+		}
+
+		private void UpdateActiveTime<TBattleMember>( Party<TBattleMember> party ) where TBattleMember : Battle.BattleCharacter
+		{
+			for( int i=0,imax=party.List.Count; i<imax; i++ )
+			{
+				var character = party.List[i];
+				character.UpdateActiveTime();
+			}
 		}
 
 //		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]

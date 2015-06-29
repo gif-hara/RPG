@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : StringAssetEditor.cs
-*
-*     * Description : .
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;

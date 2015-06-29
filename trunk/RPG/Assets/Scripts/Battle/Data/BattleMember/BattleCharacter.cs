@@ -27,6 +27,14 @@ namespace RPG.Battle
 			this.ActiveTime = 0.0f;
 		}
 
+#if DEBUG
+		public void Update()
+		{
+			DebugText.Instance.AppendLine( this.InstanceData.name );
+			DebugText.Instance.AppendLine( "ActiveTime = " + this.ActiveTime );
+		}
+#endif
+
 		public void SetModel( GameObject model )
 		{
 			this.Model = model;
@@ -68,8 +76,15 @@ namespace RPG.Battle
 		/// アクティブタイムの更新処理.
 		/// </summary>
 		/// <param name="value">Value.</param>
-		public void UpdateActiveTime( float value )
+		public void UpdateActiveTime()
 		{
+			if( this.SelectCommandType == BattleTypeConstants.CommandType.None )
+			{
+				return;
+			}
+
+			var value =  (1.0f + (this.InstanceData.speed / 255.0f)) / 60.0f;
+
 			this.ActiveTime += value;
 		}
 
@@ -78,6 +93,11 @@ namespace RPG.Battle
 		/// </summary>
 		protected abstract void Dead();
 
+		/// <summary>
+		/// 選択中のコマンドタイプを返す.
+		/// 何も選択していない場合はNoneを返す.
+		/// </summary>
+		/// <value>The type of the select command.</value>
 		public BattleTypeConstants.CommandType SelectCommandType
 		{
 			get

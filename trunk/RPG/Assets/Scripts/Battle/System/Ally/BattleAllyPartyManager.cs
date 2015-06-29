@@ -26,6 +26,13 @@ namespace RPG.Battle
 			Instance = this;
 		}
 
+#if DEBUG
+		void Update()
+		{
+			this.Party.List.ForEach( a => a.Update() );
+		}
+#endif
+
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{

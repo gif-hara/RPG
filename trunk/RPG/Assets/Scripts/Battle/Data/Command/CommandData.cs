@@ -48,11 +48,11 @@ namespace RPG.Battle
 			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
 			{
-				return AllPartyManager.Instance.AllParty.EnemyParty.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.Enemy.List[targetData.Id];
 			}
 			else
 			{
-				return AllPartyManager.Instance.AllParty.AllyParty.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.Ally.List[targetData.Id];
 			}
 		}
 		
@@ -61,11 +61,11 @@ namespace RPG.Battle
 			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
 			{
-				return AllPartyManager.Instance.AllParty.EnemyParty.GroupList[targetData.Id];
+				return AllPartyManager.Instance.AllParty.Enemy.GroupList[targetData.Id];
 			}
 			else
 			{
-				return AllPartyManager.Instance.AllParty.AllyParty.GroupList[targetData.Id];
+				return AllPartyManager.Instance.AllParty.Ally.GroupList[targetData.Id];
 			}
 		}
 

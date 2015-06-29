@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : A_EditorBase.cs
-*
-*     * Description : エディター抽象クラス.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using UnityEditor;
 using System;
