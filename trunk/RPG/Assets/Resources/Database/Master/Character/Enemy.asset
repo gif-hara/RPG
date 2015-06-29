@@ -19,7 +19,7 @@ MonoBehaviour:
       abilityType: 6
       maxHitPoint: 7
       hitPoint: 7
-      strength: 2
+      strength: 9
       defence: 0
       speed: 0
       avoid: 0

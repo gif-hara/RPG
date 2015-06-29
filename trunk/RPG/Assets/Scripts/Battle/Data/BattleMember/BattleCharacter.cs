@@ -27,15 +27,14 @@ namespace RPG.Battle
 			this.ActiveTime = 0.0f;
 		}
 
-#if DEBUG
+		[System.Diagnostics.Conditional( "DEBUG" )]
 		public void DrawDebugText()
 		{
 			DebugText.Instance.AppendLine( this.InstanceData.name );
 			DebugText.Instance.AppendLine( "ActiveTime = " + this.ActiveTime );
-			DebugText.Instance.AppendLine( "HP " + this.InstanceData.hitPoint + "/" + this.InstanceData.maxHitPoint );
+			DebugText.Instance.AppendLine( this.ColorTagHP() + "HP " + this.InstanceData.hitPoint + "/" + this.InstanceData.maxHitPoint + "</color>" );
 			DebugText.Instance.Line();
 		}
-#endif
 
 		public void SetModel( GameObject model )
 		{
@@ -138,5 +137,17 @@ namespace RPG.Battle
 		{
 			return string.Format ("[BattleMemberData: Data={0}, ActiveTime={1}, SelectCommandData={2}, SelectCommandType={3}, IsActiveTimeMax={4}]", InstanceData, ActiveTime, SelectCommandData, SelectCommandType, IsActiveTimeMax);
 		}
+
+#if DEBUG
+		private string ColorTagHP()
+		{
+			return
+				this.InstanceData.hitPoint <= 0
+					? "<color=red>"
+					: this.InstanceData.hitPoint < (this.InstanceData.maxHitPoint / 2)
+					? "<color=orange>"
+					: "<color=white>";
+		}
+#endif
 	}
 }

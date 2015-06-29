@@ -2010,10 +2010,10 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 6
     m_MaxSize: 16
-    m_Alignment: 8
+    m_Alignment: 2
     m_RichText: 1
     m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
 --- !u!222 &717772967
