@@ -33,7 +33,7 @@ namespace RPG.Battle
 			DebugText.Instance.AppendLine( this.InstanceData.name );
 			DebugText.Instance.AppendLine( "ActiveTime = " + this.ActiveTime );
 			DebugText.Instance.AppendLine( "HP " + this.InstanceData.hitPoint + "/" + this.InstanceData.maxHitPoint );
-			DebugText.Instance.AppendLine( "====================" );
+			DebugText.Instance.Line();
 		}
 #endif
 

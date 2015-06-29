@@ -29,9 +29,16 @@ namespace RPG.Common
 			Instance = null;
 		}
 
+		[System.Diagnostics.Conditional( "DEBUG" )]
 		public void AppendLine( string message )
 		{
 			refText.text += System.Environment.NewLine + message;
+		}
+
+		[System.Diagnostics.Conditional( "DEBUG" )]
+		public void Line()
+		{
+			refText.text += System.Environment.NewLine + "<size=9>========================================</size>";
 		}
 	}
 }

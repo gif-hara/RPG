@@ -143,13 +143,13 @@ MonoBehaviour:
       hitPoint: 20
       strength: 10
       defence: 0
-      speed: 0
+      speed: 512
       avoid: 0
       maxSpirit: 0
       minSpirit: 0
       spirit: 0
       experience: 0
-    enemyIdList: 000000000000000001000000
+    enemyIdList: 00000000000000000100000000000000000000000000000000000000
 --- !u!114 &78480610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,9 +2007,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 6
+    m_MaxSize: 16
     m_Alignment: 8
     m_RichText: 1
     m_HorizontalOverflow: 1

@@ -28,6 +28,13 @@ namespace RPG.Battle
 
 		private GameObject currentStateEventHolder;
 
+		void Update()
+		{
+			DebugText.Instance.AppendLine( "StateManager" );
+			DebugText.Instance.AppendLine( this.currentStateEventHolder.name );
+			DebugText.Instance.Line();
+		}
+
 		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
