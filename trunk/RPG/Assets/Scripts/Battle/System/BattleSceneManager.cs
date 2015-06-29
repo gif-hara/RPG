@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    :BattleSceneManager.cs
-*
-*     * Description : バトルシーンのルートコンポーネント.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Battle;

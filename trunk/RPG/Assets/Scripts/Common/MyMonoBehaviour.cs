@@ -1,29 +1,23 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : MyMonoBehaviour.cs
-*
-*     * Description : .
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 /// <summary>
-/// .
+/// RPG用のMonoBehaviourクラス.
 /// </summary>
 public class MyMonoBehaviour : MonoBehaviour
 {
+	public const string MessageAttribute = "[Message:b]";
+
 	public static void BroadcastMessage( MonoBehaviour sender, string methodName )
 	{
 		#if DEBUG
 		Debug.Log(
 			string.Format(
-			"<color=red>Sender[{0}]</color> <color=blue>Broadcast[{1}]</color>",
-			sender.gameObject.name,
-			methodName
+				@"{0}{1}.BroadcastMessage( ""{2}"" );",
+				MessageAttribute,
+				sender.gameObject.name,
+				methodName
 			),
 			sender
 			);
@@ -35,7 +29,8 @@ public class MyMonoBehaviour : MonoBehaviour
 		#if DEBUG
 		Debug.Log(
 			string.Format(
-			"<color=red>Sender[{0}]</color> <color=blue>Broadcast[{1}]</color>",
+			@"{0}{1}.BroadcastMessage( ""{2}"" );",
+			MessageAttribute,
 			sender.name,
 			methodName
 			),
@@ -49,7 +44,8 @@ public class MyMonoBehaviour : MonoBehaviour
 		#if DEBUG
 		Debug.Log(
 			string.Format(
-			"<color=red>Sender[{0}]</color> <color=blue>Broadcast[{1}]</color> <color=yellow>parameter[{2}]</color>",
+			@"{0}{1}.BroadcastMessage( ""{2}"", {3} );",
+			MessageAttribute,
 			sender.gameObject.name,
 			methodName,
 			parameter.ToString()
@@ -64,7 +60,8 @@ public class MyMonoBehaviour : MonoBehaviour
 		#if DEBUG
 		Debug.Log(
 			string.Format(
-			"<color=red>Sender[{0}]</color> <color=blue>Broadcast[{1}]</color> <color=yellow>parameter[{2}]</color>",
+			@"{0}{1}.BroadcastMessage( ""{2}"", {3} );",
+			MessageAttribute,
 			sender.name,
 			methodName,
 			parameter.ToString()
@@ -80,7 +77,8 @@ public class MyMonoBehaviour : MonoBehaviour
 #if DEBUG
 		Debug.Log(
 			string.Format(
-			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color>",
+			@"{0}{1}.BroadcastMessage( ""{2}"" );",
+			MessageAttribute,
 			sender.gameObject.name,
 			methodName
 			),
@@ -95,7 +93,8 @@ public class MyMonoBehaviour : MonoBehaviour
 #if DEBUG
 		Debug.Log(
 			string.Format(
-			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color> <color=yellow>parameter[{2}]</color>",
+			@"{0}{1}.BroadcastMessage( ""{2}"", {3} );",
+			MessageAttribute,
 			sender.gameObject.name,
 			methodName,
 			parameter.ToString()
@@ -111,7 +110,8 @@ public class MyMonoBehaviour : MonoBehaviour
 #if DEBUG
 		Debug.Log(
 			string.Format(
-			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color>",
+			@"{0}{1}.BroadcastMessage( ""{2}"" );",
+			MessageAttribute,
 			sender.gameObject.name,
 			methodName
 			),
@@ -126,7 +126,8 @@ public class MyMonoBehaviour : MonoBehaviour
 #if DEBUG
 		Debug.Log(
 			string.Format(
-			"<color=red>Sender[{0}]</color> <color=blue>SendMessage[{1}]</color> <color=yellow>parameter[{2}]</color>",
+			@"{0}{1}.BroadcastMessage( ""{2}"", {3} );",
+			MessageAttribute,
 			sender.gameObject.name,
 			methodName,
 			parameter.ToString()

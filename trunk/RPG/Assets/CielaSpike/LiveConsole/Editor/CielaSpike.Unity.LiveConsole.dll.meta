@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 7a5a4442941c4924189e6fd4a77806d9
+labels:
+- Console
+- Search
+- Filter
+- Editor
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 1
+      settings: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

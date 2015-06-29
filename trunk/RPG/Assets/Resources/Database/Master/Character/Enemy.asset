@@ -16,7 +16,7 @@ MonoBehaviour:
       id: 0
       name: "\u8D64\u9B3C"
       level: 0
-      abilityType: 7
+      abilityType: 6
       maxHitPoint: 7
       hitPoint: 7
       strength: 2
@@ -33,9 +33,9 @@ MonoBehaviour:
       id: 1
       name: "\u9752\u9B3C"
       level: 0
-      abilityType: 7
-      maxHitPoint: 7
-      hitPoint: 7
+      abilityType: 6
+      maxHitPoint: 12
+      hitPoint: 12
       strength: 2
       defence: 0
       speed: 0

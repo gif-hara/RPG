@@ -10,6 +10,8 @@ namespace RPG.Battle
 	{
 		public int AcquiredExperience{ private set; get; }
 
+		public int AcquiredGold{ private set; get; }
+
 		public ResultData()
 		{
 			this.AcquiredExperience = 0;
@@ -18,6 +20,11 @@ namespace RPG.Battle
 		public void AddAcquiredExperience( int value )
 		{
 			this.AcquiredExperience += value;
+		}
+
+		public void AddGold( int value )
+		{
+			this.AcquiredGold += value;
 		}
 	}
 }

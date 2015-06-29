@@ -25,6 +25,10 @@ namespace RPG.Battle
 		{
 			Development.TODO( "戦闘不能アニメーション再生" );
 			this.Model.SetActive( false );
+
+			var resultData = ResultDataHolder.Instance.Data;
+			resultData.AddAcquiredExperience( this.experience );
+			resultData.AddGold( this.gold );
 		}
 	}
 }

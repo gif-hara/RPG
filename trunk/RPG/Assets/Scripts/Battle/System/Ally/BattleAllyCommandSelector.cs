@@ -186,7 +186,6 @@ namespace RPG.Battle
 			yield return new WaitForEndOfFrame();
 
 			this.canInput = true;
-			Debug.Log( "Unlock" );
 		}
 
 		/// <summary>

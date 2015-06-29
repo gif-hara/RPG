@@ -18,7 +18,7 @@ public static class Development
 	{
 		Debug.Log(
 			string.Format(
-			"<color=magenta>TODO[{0}]</color>",
+			"[TODO:m]{0}",
 			message
 			)
 		);
