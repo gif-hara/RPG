@@ -57,7 +57,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return List.Find( a => a.IsActiveTimeMax );
+				return List.Find( a => !a.IsDead && a.IsActiveTimeMax );
 			}
 		}
 		

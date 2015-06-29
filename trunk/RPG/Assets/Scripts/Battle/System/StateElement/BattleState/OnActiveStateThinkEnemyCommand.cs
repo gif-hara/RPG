@@ -13,7 +13,7 @@ namespace RPG.Battle
 		{
 			BattleEnemyPartyManager.Instance.Party.List.ForEach( e =>
 			{
-				if( e.SelectCommandType == BattleTypeConstants.CommandType.None )
+				if( !e.IsDead && e.SelectCommandType == BattleTypeConstants.CommandType.None )
 				{
 					Development.TODO( "AIプレハブから考えるよう実装する." );
 					var commandData = new CommandData();
