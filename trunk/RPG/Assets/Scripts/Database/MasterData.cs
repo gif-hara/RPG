@@ -25,10 +25,13 @@ namespace RPG.Database
 		{
 			this.Ally = AllyMasterData.Instance;
 			this.Enemy = EnemyMasterData.Instance;
+			this.Skill = SkillMasterData.Instance;
 		}
 
 		public AllyMasterData Ally{ private set; get; }
 
 		public EnemyMasterData Enemy{ private set; get; }
+
+		public SkillMasterData Skill{ private set; get; }
 	}
 }

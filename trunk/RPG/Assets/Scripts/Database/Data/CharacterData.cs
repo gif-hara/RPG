@@ -1,18 +1,11 @@
-/*===========================================================================*/
-/*
-*     * FileName    : CharacterData.cs
-*
-*     * Description : キャラクターデータクラス.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
-namespace RPG.Common
+namespace RPG.Database
 {
+	/// <summary>
+	/// キャラクターデータクラス.
+	/// </summary>
 	[System.Serializable]
 	public class CharacterData
 	{
@@ -35,6 +28,11 @@ namespace RPG.Common
 		/// 特殊能力.
 		/// </summary>
 		public Battle.BattleTypeConstants.CommandType abilityType;
+
+		/// <summary>
+		/// 使用出来る特殊能力IDリスト.
+		/// </summary>
+		public List<int> abilityList;
 		
 		/// <summary>
 		/// 最大体力.

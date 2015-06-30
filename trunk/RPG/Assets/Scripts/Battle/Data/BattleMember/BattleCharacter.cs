@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
+using RPG.Database;
 
 namespace RPG.Battle
 {
