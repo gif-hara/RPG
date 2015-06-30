@@ -32,7 +32,7 @@ namespace RPG.Battle
 		void Update()
 		{
 			DebugText.Instance.AppendLine( "StateManager" );
-			DebugText.Instance.AppendLine( this.currentStateEventHolder.name );
+			DebugText.Instance.AppendLine( "<color=aqua>" + this.currentStateEventHolder.name + "</color>" );
 			DebugText.Instance.Line();
 		}
 
