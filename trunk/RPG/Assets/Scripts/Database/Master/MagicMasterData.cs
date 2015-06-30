@@ -18,7 +18,7 @@ namespace RPG.Database
 		{
 			get
 			{
-				return Resources.Load<MagicMasterData>( "Database/Master/Ability/Skill" );
+				return Resources.Load<MagicMasterData>( "Database/Master/Ability/Magic" );
 			}
 		}
 	}
