@@ -95,6 +95,7 @@ namespace RPG.Database
 			this.name = other.name;
 			this.level = other.level;
 			this.abilityType = other.abilityType;
+			this.abilityList = new List<int>( other.abilityList );
 			this.maxHitPoint = other.maxHitPoint;
 			this.hitPoint = other.hitPoint;
 			this.strength = other.strength;

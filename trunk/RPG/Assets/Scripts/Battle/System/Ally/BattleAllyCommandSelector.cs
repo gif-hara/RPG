@@ -65,6 +65,7 @@ namespace RPG.Battle
 			this.inputArrowStateMachine.Add( new MainCommandInput() );
 			this.inputArrowStateMachine.Add( new AllyCommandInput() );
 			this.inputArrowStateMachine.Add( new EnemyCommandInput() );
+			this.inputArrowStateMachine.Add( new AbilityCommandInput() );
 		}
 
 		void OnInputLeft()
@@ -137,6 +138,7 @@ namespace RPG.Battle
 			this.CommandData = new CommandData();
 			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 			StartCoroutine( LockInputCoroutine() );
+			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Main );
 		}
 
 		/// <summary>

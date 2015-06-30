@@ -28,6 +28,18 @@ namespace RPG.Database
 			this.Skill = SkillMasterData.Instance;
 		}
 
+		public I_AbilityData GetAbilityData( Battle.BattleTypeConstants.CommandType type, int id )
+		{
+			switch( type )
+			{
+			case RPG.Battle.BattleTypeConstants.CommandType.Magic:
+				return this.Skill.ElementList[id];
+			default:
+				Debug.Assert( false, type + "は未対応の特殊能力タイプです." );
+				return null;
+			}
+		}
+
 		public AllyMasterData Ally{ private set; get; }
 
 		public EnemyMasterData Enemy{ private set; get; }

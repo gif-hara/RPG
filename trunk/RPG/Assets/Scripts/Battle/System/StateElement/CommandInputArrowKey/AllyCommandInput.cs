@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : AllyCommandInput.cs
-*
-*     * Description : 味方選択時のキー操作クラス.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
@@ -27,7 +18,6 @@ namespace RPG.Battle
 		public override void Enter (BattleAllyCommandSelector owner)
 		{
 			base.Enter (owner);
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Ally );
 		}
 		
 		public override void DecisionAction (BattleAllyCommandSelector owner)

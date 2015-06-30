@@ -9,21 +9,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51e3a5ccb99bc46ebbf6d6817d4ca4c6, type: 3}
-  m_Name: SkillMasterData
+  m_Name: Skill
   m_EditorClassIdentifier: 
   elementList:
   - id: 0
     name: "\u304D\u3093\u305F\u3093"
+    description: 
     needSpirit: 3
     minPower: 40
     maxPower: 40
   - id: 1
     name: "\u305B\u3093\u304D\u3093\u305F\u3093"
+    description: 
     needSpirit: 7
     minPower: 100
     maxPower: 100
   - id: 2
     name: "\u307E\u3093\u304D\u3093\u305F\u3093"
+    description: 
     needSpirit: 15
     minPower: 9999
     maxPower: 9999

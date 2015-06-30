@@ -7,7 +7,7 @@ namespace RPG.Database
 	/// 術データ.
 	/// </summary>
 	[System.Serializable]
-	public class SkillData
+	public class SkillData : I_AbilityData
 	{
 		/// <summary>
 		/// ID.
@@ -18,6 +18,11 @@ namespace RPG.Database
 		/// 名前.
 		/// </summary>
 		public string name;
+
+		/// <summary>
+		/// 説明.
+		/// </summary>
+		public string description;
 
 		/// <summary>
 		/// 必要な精神力.
@@ -33,5 +38,13 @@ namespace RPG.Database
 		/// 最大効果値.
 		/// </summary>
 		public int maxPower;
+
+		public int ID{ get{ return this.id; } }
+
+		public string Name{ get{ return this.name; } }
+
+		public string Description{ get{ return this.description; } }
+
+		public int NeedNumber{ get{ return this.needSpirit; } }
 	}
 }

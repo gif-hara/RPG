@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : MainCommandInput.cs
-*
-*     * Description : メインコマンド選択時のキー操作クラス.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
@@ -27,21 +18,11 @@ namespace RPG.Battle
 		public override void Enter (BattleAllyCommandSelector owner)
 		{
 			base.Enter (owner);
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Main );
 		}
 
 		public override void DecisionAction (BattleAllyCommandSelector owner)
 		{
 			owner.DecideMainCommand( commandId );
-
-//			if( commandId != 0 && commandId != 4 )
-//			{
-//				MyMonoBehaviour.TODO( "戦う以外のコマンド実装." );
-//				return;
-//			}
-//
-//			owner.CreateCommandData( (BattleTypeConstants.CommandType)(commandId + 1) );
-//			owner.ChangeInputState( NextCommandSelectType );
 		}
 
 		public override void CancelAction (BattleAllyCommandSelector owner)
