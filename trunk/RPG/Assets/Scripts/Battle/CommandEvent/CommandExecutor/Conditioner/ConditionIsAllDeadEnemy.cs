@@ -18,7 +18,15 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return isAllDeadIfTrue == BattleEnemyPartyManager.Instance.Party.IsAllDead;
+				var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData;
+				if( selectCommandData.TargetIdList[0].PartyType == BattleTypeConstants.PartyType.Ally )
+				{
+					return isAllDeadIfTrue == BattleAllyPartyManager.Instance.Party.IsAllDead;
+				}
+				else
+				{
+					return isAllDeadIfTrue == BattleEnemyPartyManager.Instance.Party.IsAllDead;
+				}
 			}
 		}
 	}

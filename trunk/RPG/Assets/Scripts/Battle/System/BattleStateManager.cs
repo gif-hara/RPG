@@ -18,6 +18,7 @@ namespace RPG.Battle
 			UpdateActiveTime,
 			ExecuteCommand,
 			Win,
+			Lose,
 		}
 
 		[SerializeField]
@@ -75,6 +76,10 @@ namespace RPG.Battle
 			if( BattleEnemyPartyManager.Instance.Party.IsAllDead )
 			{
 				this.NotifyActiveStateMessage( State.Win );
+			}
+			else if( BattleAllyPartyManager.Instance.Party.IsAllDead )
+			{
+				this.NotifyActiveStateMessage( State.Lose );
 			}
 			else if( BattleAllyPartyManager.Instance.Party.IsAnyNoneCommand )
 			{

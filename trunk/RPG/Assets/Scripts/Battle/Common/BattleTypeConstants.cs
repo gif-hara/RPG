@@ -52,6 +52,9 @@ namespace RPG.Battle
 
 			/// <summary> 勝利. </summary>
 			Win,
+
+			/// <summary> 敗北. </summary>
+			Lose,
 		}
 		
 		/// <summary>

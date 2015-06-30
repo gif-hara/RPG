@@ -17,11 +17,11 @@ MonoBehaviour:
       name: "\u8D64\u9B3C"
       level: 0
       abilityType: 6
-      maxHitPoint: 7
-      hitPoint: 7
-      strength: 9
+      maxHitPoint: 1
+      hitPoint: 1
+      strength: 98
       defence: 0
-      speed: 0
+      speed: 1
       avoid: 0
       maxSpirit: 0
       minSpirit: 0
