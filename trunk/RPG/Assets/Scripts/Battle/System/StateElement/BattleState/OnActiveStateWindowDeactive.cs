@@ -9,7 +9,7 @@ namespace RPG.Battle
 	public class OnActiveStateWindowDeactive : MonoBehaviour
 	{
 		[SerializeField]
-		private BattleWindowActiveSetter refWindowActiveSetter;
+		private CommandWindowActiveSetter refWindowActiveSetter;
 
 		void OnActiveState()
 		{

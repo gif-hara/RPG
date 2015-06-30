@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : BattleWindowActiveSetter.cs
-*
-*     * Description : バトルのコマンドウィンドウUIのアクティブフラグを設定するコンポーネント.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -16,7 +7,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// バトルのコマンドウィンドウUIのアクティブフラグを設定するコンポーネント.
 	/// </summary>
-	public class BattleWindowActiveSetter : MyMonoBehaviour
+	public class CommandWindowActiveSetter : MyMonoBehaviour
 	{
 		[System.Serializable]
 		public class WindowData

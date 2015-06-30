@@ -1,11 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : CommandWindowFrameSetter.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;

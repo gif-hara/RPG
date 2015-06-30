@@ -73,6 +73,9 @@ namespace RPG.Battle
 			
 			/// <summary> 敵. </summary>
 			Enemy,
+
+			/// <summary> 特殊能力. </summary>
+			Ability,
 		}
 
 		/// <summary>

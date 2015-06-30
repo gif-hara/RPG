@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : PositionSetterFromTiled.cs
-*
-*     * Description : 座標をタイル式に設定していくコンポーネント.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
