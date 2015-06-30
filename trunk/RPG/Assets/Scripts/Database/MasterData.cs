@@ -25,7 +25,7 @@ namespace RPG.Database
 		{
 			this.Ally = AllyMasterData.Instance;
 			this.Enemy = EnemyMasterData.Instance;
-			this.Skill = SkillMasterData.Instance;
+			this.Skill = MagicMasterData.Instance;
 		}
 
 		public I_AbilityData GetAbilityData( Battle.BattleTypeConstants.CommandType type, int id )
@@ -44,6 +44,6 @@ namespace RPG.Database
 
 		public EnemyMasterData Enemy{ private set; get; }
 
-		public SkillMasterData Skill{ private set; get; }
+		public MagicMasterData Skill{ private set; get; }
 	}
 }

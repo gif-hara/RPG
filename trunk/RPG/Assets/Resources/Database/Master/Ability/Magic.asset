@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51e3a5ccb99bc46ebbf6d6817d4ca4c6, type: 3}
-  m_Name: Skill
+  m_Name: Magic
   m_EditorClassIdentifier: 
   elementList:
   - id: 0

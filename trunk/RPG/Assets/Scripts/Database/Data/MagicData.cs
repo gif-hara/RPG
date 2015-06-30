@@ -7,7 +7,7 @@ namespace RPG.Database
 	/// 術データ.
 	/// </summary>
 	[System.Serializable]
-	public class SkillData : I_AbilityData
+	public class MagicData : I_AbilityData
 	{
 		/// <summary>
 		/// ID.
