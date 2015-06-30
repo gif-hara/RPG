@@ -18,6 +18,8 @@ namespace RPG.Battle
 
 		protected override void Dead ()
 		{
+			Development.TODO( "戦闘不能アニメーション再生" );
+			this.Model.SetActive( false );
 		}
 	}
 }
