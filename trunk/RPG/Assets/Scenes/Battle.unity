@@ -439,7 +439,6 @@ GameObject:
   - 4: {fileID: 177382959}
   - 114: {fileID: 177382961}
   - 114: {fileID: 177382960}
-  - 114: {fileID: 177382962}
   m_Layer: 0
   m_Name: 4_CoverUpEvent
   m_TagString: Untagged
@@ -484,19 +483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refAllyCommandSelector: {fileID: 449675440}
   type: 3
---- !u!114 &177382962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 177382958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 343421c1f3d8241f48ea35c6e208f2b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refAllyCommandSelector: {fileID: 449675440}
-  type: 2
 --- !u!1 &202024030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1198,8 @@ Transform:
   m_Children:
   - {fileID: 527859339}
   - {fileID: 1114454124}
+  - {fileID: 1718711610}
+  - {fileID: 566321170}
   m_Father: {fileID: 109467030}
   m_RootOrder: 6
 --- !u!114 &449675440
@@ -1235,6 +1223,8 @@ MonoBehaviour:
   - {fileID: 177382958}
   - {fileID: 1860123504}
   refEnemyCommandEventHolder: {fileID: 527859338}
+  refAllyCommandEventHolder: {fileID: 566321169}
+  refAbilityCommandEventHolder: {fileID: 1718711609}
 --- !u!1 &476941314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1548,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabEventHolder: {fileID: 154874, guid: 2c9607e12795c469dabbd606c0a3ce9a, type: 2}
+--- !u!1 &566321169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 566321170}
+  - 114: {fileID: 566321172}
+  - 114: {fileID: 566321171}
+  m_Layer: 0
+  m_Name: AllyCommand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &566321170
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 566321169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449675439}
+  m_RootOrder: 3
+--- !u!114 &566321171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 566321169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2085082c9b7a6442683def50694cc2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refAllyCommandSelector: {fileID: 449675440}
+--- !u!114 &566321172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 566321169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a394488ce61fb42a18822a8b3746dbfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partyType: 0
+  refAllyCommandSelector: {fileID: 449675440}
 --- !u!1 &602491530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,7 +1863,6 @@ GameObject:
   - 4: {fileID: 708845711}
   - 114: {fileID: 708845714}
   - 114: {fileID: 708845713}
-  - 114: {fileID: 708845712}
   m_Layer: 0
   m_Name: 1_AbilityEvent
   m_TagString: Untagged
@@ -1839,19 +1882,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1114454124}
   m_RootOrder: 1
---- !u!114 &708845712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 708845710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 343421c1f3d8241f48ea35c6e208f2b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refAllyCommandSelector: {fileID: 449675440}
-  type: 4
 --- !u!114 &708845713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2256,7 +2286,6 @@ GameObject:
   - 4: {fileID: 1208053001}
   - 114: {fileID: 1208053002}
   - 114: {fileID: 1208053003}
-  - 114: {fileID: 1208053004}
   m_Layer: 0
   m_Name: 0_AttackEvent
   m_TagString: Untagged
@@ -2300,19 +2329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2662e0354b4554b4497e381c75f18c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
---- !u!114 &1208053004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1208053000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 343421c1f3d8241f48ea35c6e208f2b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refAllyCommandSelector: {fileID: 449675440}
   type: 3
 --- !u!1 &1222988000
 GameObject:
@@ -3141,6 +3157,58 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!1 &1718711609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1718711610}
+  - 114: {fileID: 1718711611}
+  - 114: {fileID: 1718711612}
+  m_Layer: 0
+  m_Name: AbilityCommand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1718711610
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1718711609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449675439}
+  m_RootOrder: 2
+--- !u!114 &1718711611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1718711609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d895c4183df49adb2848d583881af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1718711612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1718711609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36348ee7be0df45989f876e488d3e080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refAllyCommandSelector: {fileID: 449675440}
 --- !u!1 &1731211618
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ namespace RPG.Battle
 		
 		public override void DecisionAction (BattleAllyCommandSelector owner)
 		{
-			owner.Complete();
+			owner.DecideAllyCommand( commandId );
 		}
 		
 		public override void CancelAction (BattleAllyCommandSelector owner)

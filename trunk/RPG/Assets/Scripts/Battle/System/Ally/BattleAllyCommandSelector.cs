@@ -49,6 +49,18 @@ namespace RPG.Battle
 		private GameObject refEnemyCommandEventHolder;
 
 		/// <summary>
+		/// 味方コマンドのイベントデータを保持したゲームオブジェクト.
+		/// </summary>
+		[SerializeField]
+		private GameObject refAllyCommandEventHolder;
+
+		/// <summary>
+		/// 特殊能力コマンドのイベントデータを保持したゲームオブジェクト.
+		/// </summary>
+		[SerializeField]
+		private GameObject refAbilityCommandEventHolder;
+
+		/// <summary>
 		/// 入力処理が可能であるか.
 		/// </summary>
 		private bool canInput = true;
@@ -136,9 +148,14 @@ namespace RPG.Battle
 			Debug.Assert( this.CurrentCommandSelectAlly != null, "誰もActiveTimeが最大値ではありませんでした.", this );
 
 			this.CommandData = new CommandData();
-			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 			StartCoroutine( LockInputCoroutine() );
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Main );
+		}
+
+		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
+		public void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
+		{
+			this.inputArrowStateMachine.Change( (int)type );
 		}
 
 		/// <summary>
@@ -158,6 +175,24 @@ namespace RPG.Battle
 		{
 			this.BroadcastMessage( refEnemyCommandEventHolder, BattleMessageConstants.DecideCommandMessage, id );
 		}
+		
+		/// <summary>
+		/// 味方コマンドの決定処理.
+		/// </summary>
+		/// <param name="id">Identifier.</param>
+		public void DecideAllyCommand( int id )
+		{
+			this.BroadcastMessage( refAllyCommandEventHolder, BattleMessageConstants.DecideCommandMessage, id );
+		}
+		
+		/// <summary>
+		/// 特殊能力コマンドの決定処理.
+		/// </summary>
+		/// <param name="id">Identifier.</param>
+		public void DecideAbilityCommand( int id )
+		{
+			this.BroadcastMessage( refAbilityCommandEventHolder, BattleMessageConstants.DecideCommandMessage, id );
+		}
 
 		/// <summary>
 		/// コマンド選択完了処理.
@@ -168,16 +203,12 @@ namespace RPG.Battle
 			var tempAllyData = this.CurrentCommandSelectAlly;
 			this.CurrentCommandSelectAlly = null;
 			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.CompleteCommandSelectMessage, tempAllyData );
+			Debug.Log( "?" );
 		}
 
 		public void Cancel()
 		{
-			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
-		}
-
-		public void ChangeInputState( BattleTypeConstants.CommandSelectType type )
-		{
-			this.inputArrowStateMachine.Change( (int)type );
+//			ChangeInputState( BattleTypeConstants.CommandSelectType.Main );
 		}
 
 		private IEnumerator LockInputCoroutine()

@@ -1,17 +1,10 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : OnDecideCommandAddTargetId.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
 {
 	/// <summary>
-	/// 敵コマンドが選択された際にターゲットリストを追加するコンポーネント.
+	/// コマンドが選択された際にターゲットリストを追加するコンポーネント.
 	/// </summary>
 	public class OnDecideCommandAddTargetId : MyMonoBehaviour
 	{

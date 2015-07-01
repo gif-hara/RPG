@@ -28,6 +28,12 @@ namespace RPG.Battle
 		/// <value>The give damage.</value>
 		public GiveDamageData GiveDamage{ private set; get; }
 
+		/// <summary>
+		/// 特殊能力ID.
+		/// </summary>
+		/// <value>The ability identifier.</value>
+		public int AbilityId{ private set; get; }
+
 		public CommandData()
 		{
 			this.TargetIdList = new List<TargetData>();
@@ -36,6 +42,11 @@ namespace RPG.Battle
 		public void SetCommandType( BattleTypeConstants.CommandType type )
 		{
 			this.Type = type;
+		}
+
+		public void SetAbilityId( int abilityId )
+		{
+			this.AbilityId = abilityId;
 		}
 
 		public void SetGiveDamage( BattleCharacter target, int value, bool isCritical )

@@ -39,8 +39,8 @@ MonoBehaviour:
   - id: 10100
     name: "\u7A32\u59BB"
     description: "\u5CA9\u3092\u58CA\u3057\u305F\u308A\u3001\u9B3C\u306E1\u30B0\u30EB\u30FC\u30D7\u306B\u6253\u6483\u3092\u4E0E\u3048\u307E\u3059\uFF01"
-    shout: "\u307E\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u3093\uFF01"
-    needSpirit: 15
+    shout: "\u3044\u306A\u305A\u307E\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
+    needSpirit: 4
     targetType: 1
     minPower: 9999
     maxPower: 9999
