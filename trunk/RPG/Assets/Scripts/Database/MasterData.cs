@@ -30,14 +30,20 @@ namespace RPG.Database
 
 		public I_AbilityData GetAbilityData( Battle.BattleTypeConstants.CommandType type, int id )
 		{
+			I_AbilityData result = null;
 			switch( type )
 			{
 			case RPG.Battle.BattleTypeConstants.CommandType.Magic:
-				return this.Skill.ElementList[id];
+				result = this.Skill.ElementList.Find( m => m.ID == id );
+				break;
 			default:
 				Debug.Assert( false, type + "は未対応の特殊能力タイプです." );
 				return null;
 			}
+
+			Debug.Assert( result != null, type + "の id = " + id + "が存在しません. idが間違っていないかなど確認してください." );
+
+			return result;
 		}
 
 		public AllyMasterData Ally{ private set; get; }

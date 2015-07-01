@@ -139,7 +139,7 @@ MonoBehaviour:
       name: "\u6843\u592A\u90CE"
       level: 0
       abilityType: 7
-      abilityList: 000000000100000002000000
+      abilityList: 10270000112700001227000074270000
       maxHitPoint: 20
       hitPoint: 20
       strength: 10

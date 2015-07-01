@@ -22,12 +22,23 @@ namespace RPG.Database
 		/// <summary>
 		/// 説明.
 		/// </summary>
+		[Multiline(3)]
 		public string description;
+
+		/// <summary>
+		/// 掛け声.
+		/// </summary>
+		public string shout;
 
 		/// <summary>
 		/// 必要な精神力.
 		/// </summary>
 		public int needSpirit;
+
+		/// <summary>
+		/// 誰に対して行える術か.
+		/// </summary>
+		public Battle.BattleTypeConstants.TargetType targetType;
 
 		/// <summary>
 		/// 最小効果値.
@@ -45,6 +56,10 @@ namespace RPG.Database
 
 		public string Description{ get{ return this.description; } }
 
+		public string Shout{ get{ return this.shout; } }
+
 		public int NeedNumber{ get{ return this.needSpirit; } }
+
+		public Battle.BattleTypeConstants.TargetType TargetType{ get{ return this.targetType; } }
 	}
 }

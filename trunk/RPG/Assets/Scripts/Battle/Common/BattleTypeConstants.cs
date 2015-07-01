@@ -97,7 +97,14 @@ namespace RPG.Battle
 		{
 			Ally,
 
-			Enemy
+			Enemy,
+		}
+
+		public enum TargetType : int
+		{
+			Partner,
+
+			Opponent,
 		}
 
 		public enum SetTextInformationType : int

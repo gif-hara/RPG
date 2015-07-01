@@ -27,49 +27,48 @@ namespace RPG.Battle
 
 		public override void LeftAction (BattleAllyCommandSelector owner)
 		{
-			commandId -= 3;
+			commandId -= 1;
 			if( commandId < 0 )
 			{
-				commandId += 6;
+				commandId = 1;
+			}
+			else if( (commandId % 2) == 1 )
+			{
+				commandId += 2;
 			}
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
 		public override void RightAction (BattleAllyCommandSelector owner)
 		{
-			commandId += 3;
-			if( commandId >= 6 )
+			commandId += 1;
+			if( (commandId % 2) == 0 )
 			{
-				commandId -= 6;
+				commandId -= 2;
 			}
+
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
 		public override void UpAction (BattleAllyCommandSelector owner)
 		{
-			commandId -= 1;
-			if( commandId == -1 )
+			commandId -= 2;
+			if( commandId < 0 )
 			{
-				commandId = 2;
+				var allyAbilityListCount = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData.abilityList.Count;
+				commandId += allyAbilityListCount;
 			}
-			else if( commandId == 2 )
-			{
-				commandId = 5;
-			}
-			
+
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
 		public override void DownAction (BattleAllyCommandSelector owner)
 		{
-			commandId += 1;
-			if( commandId == 3 )
+			commandId += 2;
+			var allyAbilityListCount = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData.abilityList.Count;
+			if( commandId >= allyAbilityListCount )
 			{
-				commandId = 0;
-			}
-			else if( commandId == 6 )
-			{
-				commandId = 3;
+				commandId -= allyAbilityListCount;
 			}
 
 			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );

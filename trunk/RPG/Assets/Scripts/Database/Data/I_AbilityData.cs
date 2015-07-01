@@ -14,6 +14,18 @@ namespace RPG.Database
 
 		string Description{ get; }
 
+		/// <summary>
+		/// 掛け声.
+		/// </summary>
+		/// <value>The shout.</value>
+		string Shout{ get; }
+
 		int NeedNumber{ get; }
+
+		/// <summary>
+		/// 誰に対して行える特殊能力か.
+		/// </summary>
+		/// <value>The type of the target.</value>
+		Battle.BattleTypeConstants.TargetType TargetType{ get; }
 	}
 }
