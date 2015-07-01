@@ -73,6 +73,16 @@ namespace RPG.Battle
 				this.Dead();
 			}
 		}
+
+		/// <summary>
+		/// 回復処理.
+		/// </summary>
+		/// <param name="value">Value.</param>
+		public void Recovery( int value )
+		{
+			this.InstanceData.hitPoint += value;
+			this.InstanceData.hitPoint = this.InstanceData.hitPoint > this.InstanceData.maxHitPoint ? this.InstanceData.maxHitPoint : this.InstanceData.hitPoint;
+		}
 		
 		/// <summary>
 		/// アクティブタイムの更新処理.

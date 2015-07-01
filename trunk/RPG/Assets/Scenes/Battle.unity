@@ -140,8 +140,8 @@ MonoBehaviour:
       level: 0
       abilityType: 7
       abilityList: 10270000112700001227000074270000
-      maxHitPoint: 20
-      hitPoint: 20
+      maxHitPoint: 320
+      hitPoint: 320
       strength: 10
       defence: 0
       speed: 0
