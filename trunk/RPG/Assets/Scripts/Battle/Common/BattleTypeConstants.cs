@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleTypeConstants.cs
 *
@@ -84,13 +84,16 @@ namespace RPG.Battle
 		public enum InformationParameterType : int
 		{
 			/// <summary> コマンド実行者の名前. </summary>
-			ExecuteMemberName,
+			ExecuteCharacterName,
 
 			/// <summary> 与えるダメージ量. </summary>
 			GiveDamage,
 
 			/// <summary> ターゲットの名前. </summary>
 			TargetName,
+
+			/// <summary> 特殊能力の名前. </summary>
+			AbilityName,
 		}
 
 		public enum PartyType : int

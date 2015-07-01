@@ -18,8 +18,8 @@ namespace RPG.Battle
 		{
 			Development.TODO( "攻撃回数の計算処理の実装." );
 
-			//this.Number = Random.Range( 0, 100 ) < 10 ? 2 : 1;
-			this.Number = 2;
+			this.Number = Random.Range( 0, 100 ) < 10 ? 2 : 1;
+			//this.Number = 2;
 		}
 
 		public void Attacked()

@@ -20,7 +20,7 @@ namespace RPG.Battle
 			{
 				switch( data.Parameter[i] )
 				{
-				case BattleTypeConstants.InformationParameterType.ExecuteMemberName:
+				case BattleTypeConstants.InformationParameterType.ExecuteCharacterName:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.InstanceData.name );
 					break;
 				case BattleTypeConstants.InformationParameterType.GiveDamage:
@@ -28,6 +28,9 @@ namespace RPG.Battle
 					break;
 				case BattleTypeConstants.InformationParameterType.TargetName:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Target.InstanceData.name );
+					break;
+				case BattleTypeConstants.InformationParameterType.AbilityName:
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.AbilityData.Name );
 					break;
 				}
 			}

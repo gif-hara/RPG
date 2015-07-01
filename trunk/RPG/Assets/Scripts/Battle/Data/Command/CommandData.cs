@@ -113,6 +113,18 @@ namespace RPG.Battle
 			this.TargetIdList.Add( new TargetData( partyType, id ) );
 		}
 
+		/// <summary>
+		/// 実行する特殊能力データ.
+		/// </summary>
+		/// <value>The ability data.</value>
+		public Database.I_AbilityData AbilityData
+		{
+			get
+			{
+				return Database.MasterData.Instance.GetAbilityData( this.Type, this.AbilityId );
+			}
+		}
+
 		public override string ToString ()
 		{
 			return string.Format ("[CommandData: TargetIdList={0}]", TargetIdList);
