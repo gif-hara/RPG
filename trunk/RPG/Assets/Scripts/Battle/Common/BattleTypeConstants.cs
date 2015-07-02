@@ -87,6 +87,9 @@ namespace RPG.Battle
 
 			/// <summary> 特殊能力の名前. </summary>
 			AbilityName,
+
+			/// <summary> 特殊能力の掛け声. </summary>
+			AbilityShout,
 		}
 
 		public enum PartyType : int
