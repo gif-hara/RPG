@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -6,15 +6,17 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベント時に次のイベントを設定するコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandSetNextEvent : MonoBehaviour
+	public class OnExecuteCommandSetNextEventPrefab : MyMonoBehaviour
 	{
 		[SerializeField]
-		private GameObject refEventHolder;
-
+		private GameObject prefabEventHolder;
+		
 		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
 		{
-			hook.Executer.InsertEventHolder( this.refEventHolder );
+			var instance = Instantiate( prefabEventHolder );
+			SendMessage( gameObject, BattleMessageConstants.InstantiateCustomizeMessage, instance );
+			hook.Executer.InsertEventHolder( instance );
 		}
 	}
 }

@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : BattleMessageConstants.cs
-*
-*     * Description : .
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +6,7 @@ using RPG.Common;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// .
+	/// バトルで使用するメッセージを定義するクラス.
 	/// </summary>
 	public class BattleMessageConstants
 	{
@@ -117,6 +108,12 @@ namespace RPG.Battle
 		/// </summary>
 		[Attribute.MessageMethodArgument( typeof( string ) )]
 		public const string NewLineInformationTextMessage = "OnNewLineInformationText";
+
+		/// <summary>
+		/// 生成したゲームオブジェクトをカスタマイズするメッセージ.
+		/// </summary>
+		[Attribute.MessageMethodArgument( typeof( GameObject ) )]
+		public const string InstantiateCustomizeMessage = "OnInstantiateCustomize";
 
 		/// <summary>
 		/// コマンド実行系にフックするクラス.
