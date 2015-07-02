@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnSetInformationTextSetText.cs
 *
@@ -19,7 +19,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private Text refText;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.SetInformationTextMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.SetInformationTextMessage )]
 		void OnSetInformationText( string message )
 		{
 			this.refText.text = message;

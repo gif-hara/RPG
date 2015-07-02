@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -11,8 +11,8 @@ namespace RPG.Battle
 		[SerializeField]
 		private AttackData refAttackData;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
+		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
+		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
 			var member = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
 			refAttackData.CalcurlateNumber( member );

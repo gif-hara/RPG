@@ -25,8 +25,8 @@ namespace RPG.Battle
 		[SerializeField]
 		private Text refText;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
+		[Attribute.MessageMethodReceiver( MessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow( TypeConstants.CommandSelectType type )
 		{
 			refText.text = StringAsset.Format(
 				"MainCommandLeftLabel",

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
@@ -11,7 +11,7 @@ namespace RPG.Battle
 	public class MainCommandInput : CommandInputElementBase
 	{
 		public MainCommandInput()
-			:base( BattleTypeConstants.CommandSelectType.Main )
+			:base( TypeConstants.CommandSelectType.Main )
 		{
 		}
 
@@ -37,7 +37,7 @@ namespace RPG.Battle
 			{
 				commandId += 6;
 			}
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
 		public override void RightAction (BattleAllyCommandSelector owner)
@@ -47,7 +47,7 @@ namespace RPG.Battle
 			{
 				commandId -= 6;
 			}
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
 		public override void UpAction (BattleAllyCommandSelector owner)
@@ -62,7 +62,7 @@ namespace RPG.Battle
 				commandId = 5;
 			}
 			
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
 		public override void DownAction (BattleAllyCommandSelector owner)
@@ -77,7 +77,7 @@ namespace RPG.Battle
 				commandId = 3;
 			}
 
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 
 		private int ConvertCommandType( BattleAllyCommandSelector owner )

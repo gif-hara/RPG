@@ -36,18 +36,18 @@ namespace RPG.Battle
 			DebugText.Instance.Line();
 		}
 
-		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
+		[RPG.Attribute.MessageMethodReceiver( MessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
 		}
 
-		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
+		[RPG.Attribute.MessageMethodReceiver( MessageConstants.StartBattleMessage )]
 		void OnStartBattle()
 		{
 			this.NotifyActiveStateMessage( State.SelectCommand );
 		}
 
-		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.CompleteCommandSelectMessage )]
+		[RPG.Attribute.MessageMethodReceiver( MessageConstants.CompleteCommandSelectMessage )]
 		void OnCompleteCommandSelect( Ally ally )
 		{
 			if( BattleAllyPartyManager.Instance.Party.IsAnyNoneCommand )
@@ -64,13 +64,13 @@ namespace RPG.Battle
 			}
 		}
 
-		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndUpdateActiveTimeMessage )]
+		[RPG.Attribute.MessageMethodReceiver( MessageConstants.EndUpdateActiveTimeMessage )]
 		void OnEndUpdateActiveTime()
 		{
 			this.NotifyActiveStateMessage( State.ExecuteCommand );
 		}
 
-		[RPG.Attribute.MessageMethodReceiver( BattleMessageConstants.EndTurnMessage )]
+		[RPG.Attribute.MessageMethodReceiver( MessageConstants.EndTurnMessage )]
 		void OnEndTurn()
 		{
 			if( BattleEnemyPartyManager.Instance.Party.IsAllDead )
@@ -99,11 +99,11 @@ namespace RPG.Battle
 		{
 			if( this.currentStateEventHolder != null )
 			{
-				this.BroadcastMessage( this.currentStateEventHolder, BattleMessageConstants.DeactiveStateMessage );
+				this.BroadcastMessage( this.currentStateEventHolder, MessageConstants.DeactiveStateMessage );
 			}
 
 			this.currentStateEventHolder = this.refStateEventHolders[(int)state];
-			this.BroadcastMessage( this.currentStateEventHolder, BattleMessageConstants.ActiveStateMessage );
+			this.BroadcastMessage( this.currentStateEventHolder, MessageConstants.ActiveStateMessage );
 		}
 	}
 }

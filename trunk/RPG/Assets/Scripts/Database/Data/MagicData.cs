@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Database
@@ -38,7 +38,7 @@ namespace RPG.Database
 		/// <summary>
 		/// 誰に対して行える術か.
 		/// </summary>
-		public Battle.BattleTypeConstants.TargetType targetType;
+		public Battle.TypeConstants.TargetType targetType;
 
 		/// <summary>
 		/// 最小効果値.
@@ -60,6 +60,6 @@ namespace RPG.Database
 
 		public int NeedNumber{ get{ return this.needSpirit; } }
 
-		public Battle.BattleTypeConstants.TargetType TargetType{ get{ return this.targetType; } }
+		public Battle.TypeConstants.TargetType TargetType{ get{ return this.targetType; } }
 	}
 }

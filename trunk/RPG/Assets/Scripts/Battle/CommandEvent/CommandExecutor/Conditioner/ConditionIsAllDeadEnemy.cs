@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -19,7 +19,7 @@ namespace RPG.Battle
 			get
 			{
 				var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData;
-				if( selectCommandData.TargetIdList[0].PartyType == BattleTypeConstants.PartyType.Ally )
+				if( selectCommandData.TargetIdList[0].PartyType == TypeConstants.PartyType.Ally )
 				{
 					return isAllDeadIfTrue == BattleAllyPartyManager.Instance.Party.IsAllDead;
 				}

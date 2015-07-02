@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -11,7 +11,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
 
-		[Attribute.MessageMethodReceiver(BattleMessageConstants.DecideCommandMessage)]
+		[Attribute.MessageMethodReceiver(MessageConstants.DecideCommandMessage)]
 		void OnDecideCommand( int id )
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;

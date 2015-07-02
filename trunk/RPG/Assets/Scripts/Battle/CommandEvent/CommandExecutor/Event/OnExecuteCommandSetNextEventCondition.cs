@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -17,8 +17,8 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject refNegativeEventHolder;
 		
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
+		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
+		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
 			if( this.refConditioner.Condition )
 			{

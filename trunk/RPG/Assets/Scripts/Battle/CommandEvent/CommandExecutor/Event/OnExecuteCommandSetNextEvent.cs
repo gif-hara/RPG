@@ -11,8 +11,8 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject refEventHolder;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
+		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
+		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
 			hook.Executer.InsertEventHolder( this.refEventHolder );
 		}

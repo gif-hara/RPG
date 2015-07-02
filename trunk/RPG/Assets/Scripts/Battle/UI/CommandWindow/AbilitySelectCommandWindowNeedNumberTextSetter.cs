@@ -17,10 +17,10 @@ namespace RPG.Battle
 		[SerializeField]
 		private int initializeId;
 		
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
+		[Attribute.MessageMethodReceiver( MessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow( TypeConstants.CommandSelectType type )
 		{
-			if( type != BattleTypeConstants.CommandSelectType.Ability )	return;
+			if( type != TypeConstants.CommandSelectType.Ability )	return;
 
 			var allyInstanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
 			var abilityList = allyInstanceData.abilityList;

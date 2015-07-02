@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnNewLineInformationTextNewLineText.cs
 *
@@ -19,7 +19,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private Text refText;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.NewLineInformationTextMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.NewLineInformationTextMessage )]
 		void OnNewLineInformationText( string message )
 		{
 			this.refText.text += System.Environment.NewLine + message;

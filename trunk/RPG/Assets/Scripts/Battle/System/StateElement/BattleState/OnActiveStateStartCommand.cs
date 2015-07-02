@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 using RPG.Framework;
@@ -14,12 +14,12 @@ namespace RPG.Battle
 		private CommandExecuter refExecuter;
 
 		[SerializeField]
-		private BattleTypeConstants.CommandType commandType;
+		private TypeConstants.CommandType commandType;
 
 		[SerializeField]
 		private CommandEventMediator prefabMediator;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ActiveStateMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.ActiveStateMessage )]
 		void OnActiveState()
 		{
 			var mediator = Instantiate( this.prefabMediator );

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -28,12 +28,12 @@ namespace RPG.Database
 			this.Skill = MagicMasterData.Instance;
 		}
 
-		public I_AbilityData GetAbilityData( Battle.BattleTypeConstants.CommandType type, int id )
+		public I_AbilityData GetAbilityData( Battle.TypeConstants.CommandType type, int id )
 		{
 			I_AbilityData result = null;
 			switch( type )
 			{
-			case RPG.Battle.BattleTypeConstants.CommandType.Magic:
+			case RPG.Battle.TypeConstants.CommandType.Magic:
 				result = this.Skill.ElementList.Find( m => m.ID == id );
 				break;
 			default:

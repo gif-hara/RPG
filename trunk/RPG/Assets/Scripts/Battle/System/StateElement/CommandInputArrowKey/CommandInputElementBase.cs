@@ -12,7 +12,7 @@ namespace RPG.Battle
 	{
 		protected static int commandId = 0;
 
-		public CommandInputElementBase( BattleTypeConstants.CommandSelectType type )
+		public CommandInputElementBase( TypeConstants.CommandSelectType type )
 			:base( (int)type )
 		{
 		}

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -12,9 +12,9 @@ namespace RPG.Battle
 		[System.Serializable]
 		public class WindowData
 		{
-			public BattleTypeConstants.CommandSelectType Type{ get{ return type; } }
+			public TypeConstants.CommandSelectType Type{ get{ return type; } }
 			[SerializeField]
-			private BattleTypeConstants.CommandSelectType type;
+			private TypeConstants.CommandSelectType type;
 
 			public GameObject TargetObject{ get{ return refTarget; } }
 			[SerializeField]
@@ -24,8 +24,8 @@ namespace RPG.Battle
 		[SerializeField]
 		private List<WindowData> data;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
+		[Attribute.MessageMethodReceiver( MessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow( TypeConstants.CommandSelectType type )
 		{
 			for( int i=0,imax=data.Count; i<imax; i++ )
 			{

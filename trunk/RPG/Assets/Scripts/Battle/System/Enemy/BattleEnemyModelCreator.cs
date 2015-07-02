@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : BattleEnemyModelCreator.cs
 *
@@ -20,7 +20,7 @@ namespace RPG.Battle
 	{
 		private const float Interval = 2.0f;
 		
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.StartBattleMessage )]
 		void OnStartBattle()
 		{
 			var partyList = BattleEnemyPartyManager.Instance.Party.List;

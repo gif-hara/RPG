@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;
@@ -11,7 +11,7 @@ namespace RPG.Battle
 	public class AllyCommandInput : CommandInputElementBase
 	{
 		public AllyCommandInput()
-			:base( BattleTypeConstants.CommandSelectType.Ally )
+			:base( TypeConstants.CommandSelectType.Ally )
 		{
 		}
 		
@@ -46,7 +46,7 @@ namespace RPG.Battle
 				commandId = owner.AllyPartyManager.Party.List.Count - 1;
 			}
 
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 		
 		public override void DownAction (BattleAllyCommandSelector owner)
@@ -57,7 +57,7 @@ namespace RPG.Battle
 				commandId = 0;
 			}
 
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.ModifiedCommandIdMessage, commandId );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.ModifiedCommandIdMessage, commandId );
 		}
 	}
 }

@@ -1,11 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : CommonMessageConstants.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Common
@@ -13,7 +6,7 @@ namespace RPG.Common
 	/// <summary>
 	/// 共通で使用するメッセージ定数定義.
 	/// </summary>
-	public static class CommonMessageConstants
+	public static class MessageConstants
 	{
 		/// <summary>
 		/// 左キーが押された際のメッセージ

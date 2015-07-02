@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnEndTurnHookable.cs
 *
@@ -15,7 +15,7 @@ namespace RPG.Battle
 	/// </summary>
 	public abstract class OnEndExecuteCommandHookable : CommandEventHookable
 	{
-		void OnEndExecuteCommand( BattleMessageConstants.ExecuteCommandHook hookData )
+		void OnEndExecuteCommand( MessageConstants.ExecuteCommandHook hookData )
 		{
 			if( !hookData.Hooked && this.InternalIsHooked )
 			{

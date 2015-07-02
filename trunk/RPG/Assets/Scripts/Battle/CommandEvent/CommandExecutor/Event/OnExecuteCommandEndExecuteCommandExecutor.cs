@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 
@@ -9,8 +9,8 @@ namespace RPG.Battle
 	/// </summary>
 	public class OnExecuteCommandEndExecuteCommandExecutor : MyMonoBehaviour
 	{
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
+		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
+		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
 			hook.Executer.End();
 		}

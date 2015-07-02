@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : InputSender.cs
 *
@@ -23,27 +23,27 @@ namespace RPG.Common
 		{
 			if( MyInput.Left )
 			{
-				this.BroadcastMessage( this.refReceiver, CommonMessageConstants.InputLeftMessage );
+				this.BroadcastMessage( this.refReceiver, MessageConstants.InputLeftMessage );
 			}
 			if( MyInput.Right )
 			{
-				this.BroadcastMessage( this.refReceiver, CommonMessageConstants.InputRightMessage );
+				this.BroadcastMessage( this.refReceiver, MessageConstants.InputRightMessage );
 			}
 			if( MyInput.Up )
 			{
-				this.BroadcastMessage( this.refReceiver, CommonMessageConstants.InputUpMessage );
+				this.BroadcastMessage( this.refReceiver, MessageConstants.InputUpMessage );
 			}
 			if( MyInput.Down )
 			{
-				this.BroadcastMessage( this.refReceiver, CommonMessageConstants.InputDownMessage );
+				this.BroadcastMessage( this.refReceiver, MessageConstants.InputDownMessage );
 			}
 			if( MyInput.Decide )
 			{
-				this.BroadcastMessage( this.refReceiver, CommonMessageConstants.InputDecideMessage, SendMessageOptions.DontRequireReceiver );
+				this.BroadcastMessage( this.refReceiver, MessageConstants.InputDecideMessage, SendMessageOptions.DontRequireReceiver );
 			}
 			if( MyInput.Cancel )
 			{
-				this.BroadcastMessage( this.refReceiver, CommonMessageConstants.InputCancelMessage, SendMessageOptions.DontRequireReceiver );
+				this.BroadcastMessage( this.refReceiver, MessageConstants.InputCancelMessage, SendMessageOptions.DontRequireReceiver );
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -11,20 +11,20 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideCommandMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.DecideCommandMessage )]
 		void OnDecideCommand( int id )
 		{
 			refAllyCommandSelector.CommandData.AddTargetId( GetPartyType( id ), id );
 		}
 
-		private BattleTypeConstants.PartyType GetPartyType( int id )
+		private TypeConstants.PartyType GetPartyType( int id )
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
 			var targetType = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] ).TargetType;
 
-			return targetType == BattleTypeConstants.TargetType.Partner
-				? BattleTypeConstants.PartyType.Ally
-				: BattleTypeConstants.PartyType.Enemy;
+			return targetType == TypeConstants.TargetType.Partner
+				? TypeConstants.PartyType.Ally
+				: TypeConstants.PartyType.Enemy;
 		}
 	}
 }

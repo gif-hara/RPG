@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -8,20 +8,20 @@ namespace RPG.Battle
 	/// </summary>
 	public class OnDecideCommandOpenWindowFromAbilityData : MyMonoBehaviour
 	{
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideCommandMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.DecideCommandMessage )]
 		void OnDecideCommand( int id )
 		{
-			this.BroadcastMessage( Common.SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, this.GetCommandSelectType( id ) );
+			this.BroadcastMessage( Common.SceneRootBase.Root, MessageConstants.OpenCommandWindowMessage, this.GetCommandSelectType( id ) );
 		}
 
-		private BattleTypeConstants.CommandSelectType GetCommandSelectType( int id )
+		private TypeConstants.CommandSelectType GetCommandSelectType( int id )
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
 			var targetType = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] ).TargetType;
 			
-			return targetType == BattleTypeConstants.TargetType.Partner
-				? BattleTypeConstants.CommandSelectType.Ally
-				: BattleTypeConstants.CommandSelectType.Enemy;
+			return targetType == TypeConstants.TargetType.Partner
+				? TypeConstants.CommandSelectType.Ally
+				: TypeConstants.CommandSelectType.Enemy;
 		}
 	}
 }

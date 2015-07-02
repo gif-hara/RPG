@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -12,9 +12,9 @@ namespace RPG.Battle
 		[System.Serializable]
 		public class Data
 		{
-			public BattleTypeConstants.CommandType CommandType{ get{ return this.commandType; } }
+			public TypeConstants.CommandType CommandType{ get{ return this.commandType; } }
 			[SerializeField]
-			private BattleTypeConstants.CommandType commandType;
+			private TypeConstants.CommandType commandType;
 
 			public CommandEventMediator PrefabMediator{ get{ return this.prefabMediator; } }
 			[SerializeField]
@@ -24,7 +24,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private List<Data> database;
 
-		public Data Get( BattleTypeConstants.CommandType type )
+		public Data Get( TypeConstants.CommandType type )
 		{
 			var data = database.Find( e => e.CommandType == type );
 			Debug.Assert( data != null, string.Format( "CommandEventMediatorがありません. {0} に対応したCommandEventMediatorが登録されているか確認してください.", type ), this );

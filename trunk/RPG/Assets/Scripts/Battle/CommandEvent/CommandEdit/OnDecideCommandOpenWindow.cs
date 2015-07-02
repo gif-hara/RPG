@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -9,12 +9,12 @@ namespace RPG.Battle
 	public class OnDecideCommandOpenWindow : MyMonoBehaviour
 	{
 		[SerializeField]
-		private BattleTypeConstants.CommandSelectType type;
+		private TypeConstants.CommandSelectType type;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideCommandMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.DecideCommandMessage )]
 		void OnDecideCommand()
 		{
-			this.BroadcastMessage( Common.SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, this.type );
+			this.BroadcastMessage( Common.SceneRootBase.Root, MessageConstants.OpenCommandWindowMessage, this.type );
 		}
 	}
 }

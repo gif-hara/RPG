@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -20,16 +20,16 @@ namespace RPG.Battle
 			{
 				switch( data.Parameter[i] )
 				{
-				case BattleTypeConstants.InformationParameterType.ExecuteCharacterName:
+				case TypeConstants.InformationParameterType.ExecuteCharacterName:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.InstanceData.name );
 					break;
-				case BattleTypeConstants.InformationParameterType.GiveDamage:
+				case TypeConstants.InformationParameterType.GiveDamage:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Damage );
 					break;
-				case BattleTypeConstants.InformationParameterType.TargetName:
+				case TypeConstants.InformationParameterType.TargetName:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Target.InstanceData.name );
 					break;
-				case BattleTypeConstants.InformationParameterType.AbilityName:
+				case TypeConstants.InformationParameterType.AbilityName:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.AbilityData.Name );
 					break;
 				}

@@ -95,7 +95,7 @@ namespace RPG.Battle
 				return;
 			}
 
-			Debug.Assert( this.SelectCommandType != BattleTypeConstants.CommandType.None, "敵のコマンドが決定していません " + this.InstanceData.name );
+			Debug.Assert( this.SelectCommandType != TypeConstants.CommandType.None, "敵のコマンドが決定していません " + this.InstanceData.name );
 
 			var value =  (1.0f + (this.InstanceData.speed / 255.0f)) / 60.0f;
 
@@ -112,13 +112,13 @@ namespace RPG.Battle
 		/// 何も選択していない場合はNoneを返す.
 		/// </summary>
 		/// <value>The type of the select command.</value>
-		public BattleTypeConstants.CommandType SelectCommandType
+		public TypeConstants.CommandType SelectCommandType
 		{
 			get
 			{
 				if( this.SelectCommandData == null )
 				{
-					return BattleTypeConstants.CommandType.None;
+					return TypeConstants.CommandType.None;
 				}
 
 				return this.SelectCommandData.Type;

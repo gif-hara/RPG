@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Battle;
@@ -10,14 +10,14 @@ namespace RPG.Common
 	/// </summary>
 	public class PositionSetterFromCommandId : PositionSetterFromTiled
 	{
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ModifiedCommandIdMessage )]
+		[Attribute.MessageMethodReceiver( Battle.MessageConstants.ModifiedCommandIdMessage )]
 		void OnModifiedCommandId( int commandId )
 		{
 			Set( commandId );
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow(BattleTypeConstants.CommandSelectType type)
+		[Attribute.MessageMethodReceiver( Battle.MessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow(TypeConstants.CommandSelectType type)
 		{
 			Set( 0 );
 		}

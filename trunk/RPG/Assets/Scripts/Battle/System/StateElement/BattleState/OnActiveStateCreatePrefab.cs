@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -11,7 +11,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject prefab;
 		
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ActiveStateMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.ActiveStateMessage )]
 		void OnActiveState()
 		{
 			Instantiate( prefab, transform );

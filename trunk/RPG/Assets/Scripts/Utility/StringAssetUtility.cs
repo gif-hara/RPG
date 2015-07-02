@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : StringAssetUtility.cs
 *
@@ -18,7 +18,7 @@ namespace RPG.Common
 	/// </summary>
 	public static class StringAssetUtility
 	{
-		public static string AbilityName( Battle.BattleTypeConstants.CommandType type )
+		public static string AbilityName( Battle.TypeConstants.CommandType type )
 		{
 			string[] s =
 			{
@@ -28,7 +28,7 @@ namespace RPG.Common
 				"Ability_Steal",
 			};
 
-			return StringAsset.Get( s[(int)type - (int)Battle.BattleTypeConstants.CommandType.NoSkill] );
+			return StringAsset.Get( s[(int)type - (int)Battle.TypeConstants.CommandType.NoSkill] );
 		}
 	}
 }

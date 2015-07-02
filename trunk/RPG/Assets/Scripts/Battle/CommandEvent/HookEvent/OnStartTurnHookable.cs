@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnStartTurnHookable.cs
 *
@@ -15,8 +15,8 @@ namespace RPG.Battle
 	/// </summary>
 	public abstract class OnStartTurnHookable : CommandEventHookable
 	{
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartTurnMessage )]
-		void OnStartTurn( BattleMessageConstants.ExecuteCommandHook hookData )
+		[Attribute.MessageMethodReceiver( MessageConstants.StartTurnMessage )]
+		void OnStartTurn( MessageConstants.ExecuteCommandHook hookData )
 		{
 			if( !hookData.Hooked && this.InternalIsHooked )
 			{

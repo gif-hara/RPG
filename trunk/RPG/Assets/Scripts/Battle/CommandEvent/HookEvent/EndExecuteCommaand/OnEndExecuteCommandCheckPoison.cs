@@ -18,7 +18,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject prefabEventHolder;
 
-		protected override void OnHook (BattleMessageConstants.ExecuteCommandHook hookData)
+		protected override void OnHook (MessageConstants.ExecuteCommandHook hookData)
 		{
 			Development.TODO( "毒状態の実装." );
 

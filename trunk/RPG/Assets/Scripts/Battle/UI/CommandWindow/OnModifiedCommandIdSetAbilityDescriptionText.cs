@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
@@ -12,14 +12,14 @@ namespace RPG.Battle
 		[SerializeField]
 		private Text refText;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ModifiedCommandIdMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.ModifiedCommandIdMessage )]
 		void OnModifiedCommandId( int commandId )
 		{
 			Set( commandId );
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow(BattleTypeConstants.CommandSelectType type)
+		[Attribute.MessageMethodReceiver( MessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow(TypeConstants.CommandSelectType type)
 		{
 			Set( 0 );
 		}

@@ -34,7 +34,7 @@ namespace RPG.Battle
 #endif
 
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.PreInitializeSystemMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
 			this.Party = new Party<Enemy>();

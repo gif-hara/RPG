@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 
@@ -9,10 +9,10 @@ namespace RPG.Battle
 {
 	public class OnActiveStateBroadcastStartCommandSelect : MyMonoBehaviour
 	{
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ActiveStateMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.ActiveStateMessage )]
 		void OnActiveState()
 		{
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartCommandSelectMessage );
+			this.BroadcastMessage( SceneRootBase.Root, MessageConstants.StartCommandSelectMessage );
 		}
 	}
 }

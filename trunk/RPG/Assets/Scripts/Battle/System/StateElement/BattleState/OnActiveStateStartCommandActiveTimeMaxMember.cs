@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 using RPG.Framework;
@@ -17,7 +17,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private CommandEventHolder refHolder;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ActiveStateMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.ActiveStateMessage )]
 		void OnActiveState()
 		{
 			var executeMember = AllPartyManager.Instance.ActiveTimeMaxBattleMember;

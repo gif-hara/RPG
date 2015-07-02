@@ -1,10 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : BattleTypeConstants.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -13,7 +6,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// バトルで使用するタイプ定義.
 	/// </summary>
-	public class BattleTypeConstants
+	public class TypeConstants
 	{
 		/// <summary>
 		/// コマンドタイプ.

@@ -27,7 +27,7 @@ namespace RPG.Database
 		/// <summary>
 		/// 特殊能力.
 		/// </summary>
-		public Battle.BattleTypeConstants.CommandType abilityType;
+		public Battle.TypeConstants.CommandType abilityType;
 
 		/// <summary>
 		/// 使用出来る特殊能力IDリスト.

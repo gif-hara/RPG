@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 
@@ -13,17 +13,17 @@ namespace RPG.Battle
 		private string message;
 
 		[SerializeField]
-		private BattleTypeConstants.SetTextInformationType type;
+		private TypeConstants.SetTextInformationType type;
 		
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
 			Development.TODO( message + " はテストなので問題無くなったら削除する." );
-			var methodName = this.type == BattleTypeConstants.SetTextInformationType.Set
-				? BattleMessageConstants.SetInformationTextMessage
-					: this.type == BattleTypeConstants.SetTextInformationType.Append
-					? BattleMessageConstants.AppendInformationTextMessage
-					: BattleMessageConstants.NewLineInformationTextMessage;
+			var methodName = this.type == TypeConstants.SetTextInformationType.Set
+				? MessageConstants.SetInformationTextMessage
+					: this.type == TypeConstants.SetTextInformationType.Append
+					? MessageConstants.AppendInformationTextMessage
+					: MessageConstants.NewLineInformationTextMessage;
 			
 			this.BroadcastMessage( SceneRootBase.Root, methodName, message );
 		}

@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : OnEndTurnCheckWinNormalBattle.cs
 *
@@ -19,10 +19,10 @@ namespace RPG.Battle
 		[SerializeField]
 		private string message;
 
-		protected override void OnHook (BattleMessageConstants.ExecuteCommandHook hookData)
+		protected override void OnHook (MessageConstants.ExecuteCommandHook hookData)
 		{
 			Development.TODO( "勝利処理の実装." );
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.SetInformationTextMessage, message );
+			this.BroadcastMessage( SceneRootBase.Root, MessageConstants.SetInformationTextMessage, message );
 			this.internalIsHooked = true;
 		}
 

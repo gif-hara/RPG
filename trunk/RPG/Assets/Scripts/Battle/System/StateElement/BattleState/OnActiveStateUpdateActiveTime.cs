@@ -25,7 +25,7 @@ namespace RPG.Battle
 
 			if( AllPartyManager.Instance.IsAnyActiveTimeMax )
 			{
-				this.BroadcastMessage( BattleSceneManager.Root, BattleMessageConstants.EndUpdateActiveTimeMessage );
+				this.BroadcastMessage( BattleSceneManager.Root, MessageConstants.EndUpdateActiveTimeMessage );
 			}
 		}
 

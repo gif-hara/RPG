@@ -81,7 +81,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return List.Find( a => a.SelectCommandType == BattleTypeConstants.CommandType.None );
+				return List.Find( a => a.SelectCommandType == TypeConstants.CommandType.None );
 			}
 		}
 	}

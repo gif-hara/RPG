@@ -1,4 +1,4 @@
-﻿/*===========================================================================*/
+/*===========================================================================*/
 /*
 *     * FileName    : CommandEventHookable.cs
 *
@@ -17,7 +17,7 @@ namespace RPG.Battle
 	{
 		protected bool internalIsHooked = false;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.EndTurnMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.EndTurnMessage )]
 		void OnEndTurn()
 		{
 			this.internalIsHooked = false;
@@ -31,7 +31,7 @@ namespace RPG.Battle
 			}
 		}
 
-		protected abstract void OnHook( BattleMessageConstants.ExecuteCommandHook hookData );
+		protected abstract void OnHook( MessageConstants.ExecuteCommandHook hookData );
 		
 		protected abstract bool CanHook{ get; }
 	}

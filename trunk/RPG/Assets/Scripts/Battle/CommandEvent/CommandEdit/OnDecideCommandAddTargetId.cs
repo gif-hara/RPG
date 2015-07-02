@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -9,12 +9,12 @@ namespace RPG.Battle
 	public class OnDecideCommandAddTargetId : MyMonoBehaviour
 	{
 		[SerializeField]
-		private BattleTypeConstants.PartyType partyType;
+		private TypeConstants.PartyType partyType;
 
 		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.DecideCommandMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.DecideCommandMessage )]
 		void OnDecideCommand( int id )
 		{
 			refAllyCommandSelector.CommandData.AddTargetId( this.partyType, id );

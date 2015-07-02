@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,7 +19,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private string informationKey;
 
-		public List<BattleTypeConstants.InformationParameterType> Parameter
+		public List<TypeConstants.InformationParameterType> Parameter
 		{
 			get
 			{
@@ -27,7 +27,7 @@ namespace RPG.Battle
 			}
 		}
 		[SerializeField]
-		private List<BattleTypeConstants.InformationParameterType> param;
+		private List<TypeConstants.InformationParameterType> param;
 
 	}
 }

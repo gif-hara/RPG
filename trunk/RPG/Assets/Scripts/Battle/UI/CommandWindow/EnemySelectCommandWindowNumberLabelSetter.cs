@@ -21,10 +21,10 @@ namespace RPG.Battle
 		[SerializeField]
 		private Text refText;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
+		[Attribute.MessageMethodReceiver( MessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow( TypeConstants.CommandSelectType type )
 		{
-			if( type != BattleTypeConstants.CommandSelectType.Enemy )	return;
+			if( type != TypeConstants.CommandSelectType.Enemy )	return;
 
 			StringBuilder builder = new StringBuilder();
 			var groupList = BattleEnemyPartyManager.Instance.Party.GroupList;

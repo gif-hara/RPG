@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -12,9 +12,9 @@ namespace RPG.Battle
 		private BattleAllyCommandSelector refAllyCommandSelector;
 
 		[SerializeField]
-		private BattleTypeConstants.CommandType type;
+		private TypeConstants.CommandType type;
 
-		[Attribute.MessageMethodReceiver(BattleMessageConstants.DecideCommandMessage)]
+		[Attribute.MessageMethodReceiver(MessageConstants.DecideCommandMessage)]
 		void OnDecideCommand()
 		{
 			refAllyCommandSelector.CommandData.SetCommandType( this.type );

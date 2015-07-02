@@ -8,7 +8,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// バトルで使用するメッセージを定義するクラス.
 	/// </summary>
-	public class BattleMessageConstants
+	public class MessageConstants
 	{
 		/// <summary>
 		/// バトルシステム初期化時のメッセージ.

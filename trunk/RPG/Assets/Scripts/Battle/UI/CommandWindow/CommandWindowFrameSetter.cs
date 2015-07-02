@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace RPG.Battle
 		private RectTransform refRectTransform;
 
 		[SerializeField]
-		private BattleTypeConstants.CommandSelectType commandSelectType;
+		private TypeConstants.CommandSelectType commandSelectType;
 
 		[SerializeField]
 		private int defaultScale;
@@ -22,8 +22,8 @@ namespace RPG.Battle
 		[SerializeField]
 		private int addScale;
 		
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
+		[Attribute.MessageMethodReceiver( MessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow( TypeConstants.CommandSelectType type )
 		{
 			if( type != commandSelectType )	return;
 

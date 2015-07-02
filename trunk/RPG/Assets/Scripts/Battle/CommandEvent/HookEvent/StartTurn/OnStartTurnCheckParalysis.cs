@@ -18,7 +18,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject refEventHolder;
 
-		protected override void OnHook ( BattleMessageConstants.ExecuteCommandHook hookData )
+		protected override void OnHook ( MessageConstants.ExecuteCommandHook hookData )
 		{
 			Development.TODO( "麻痺の実装." );
 			var eventHolder = Instantiate( this.refEventHolder );

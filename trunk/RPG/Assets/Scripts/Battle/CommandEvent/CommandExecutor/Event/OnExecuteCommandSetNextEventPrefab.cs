@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -11,11 +11,11 @@ namespace RPG.Battle
 		[SerializeField]
 		private GameObject prefabEventHolder;
 		
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand( BattleMessageConstants.ExecuteCommandHook hook )
+		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
+		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
 			var instance = Instantiate( prefabEventHolder );
-			SendMessage( gameObject, BattleMessageConstants.InstantiateCustomizeMessage, instance );
+			SendMessage( gameObject, MessageConstants.InstantiateCustomizeMessage, instance );
 			hook.Executer.InsertEventHolder( instance );
 		}
 	}

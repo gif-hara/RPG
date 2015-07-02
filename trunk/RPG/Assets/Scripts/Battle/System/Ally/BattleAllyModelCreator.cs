@@ -25,7 +25,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private float Interval;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartBattleMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.StartBattleMessage )]
 		void OnStartBattle()
 		{
 			var partyList = BattleAllyPartyManager.Instance.Party.List;

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Database
@@ -26,6 +26,6 @@ namespace RPG.Database
 		/// 誰に対して行える特殊能力か.
 		/// </summary>
 		/// <value>The type of the target.</value>
-		Battle.BattleTypeConstants.TargetType TargetType{ get; }
+		Battle.TypeConstants.TargetType TargetType{ get; }
 	}
 }

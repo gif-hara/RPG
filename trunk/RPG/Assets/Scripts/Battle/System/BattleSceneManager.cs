@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Battle;
@@ -26,8 +26,8 @@ namespace RPG.Battle
 				SharedData.initializeData = debugInitializeData;
 			}
 
-			this.BroadcastMessage( this, BattleMessageConstants.PreInitializeSystemMessage );
-			this.BroadcastMessage( this, BattleMessageConstants.StartBattleMessage );
+			this.BroadcastMessage( this, MessageConstants.PreInitializeSystemMessage );
+			this.BroadcastMessage( this, MessageConstants.StartBattleMessage );
 		}
 	}
 }

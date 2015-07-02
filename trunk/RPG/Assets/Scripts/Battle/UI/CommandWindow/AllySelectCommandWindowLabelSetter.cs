@@ -26,10 +26,10 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyPartyManager refAllyPartyManager;
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
+		[Attribute.MessageMethodReceiver( MessageConstants.OpenCommandWindowMessage )]
+		void OnOpenCommandWindow( TypeConstants.CommandSelectType type )
 		{
-			if( type != BattleTypeConstants.CommandSelectType.Ally )	return;
+			if( type != TypeConstants.CommandSelectType.Ally )	return;
 
 			StringBuilder builder = new StringBuilder();
 			var party = refAllyPartyManager.Party.List;

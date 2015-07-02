@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using RPG.Common;
 
@@ -11,9 +11,9 @@ namespace RPG.Battle
 	{
 		private GameObject refEventHolder;
 
-		public BattleTypeConstants.CommandType CommandType{ private set; get; }
+		public TypeConstants.CommandType CommandType{ private set; get; }
 
-		[Attribute.MessageMethodReceiver( CommonMessageConstants.InputDecideMessage )]
+		[Attribute.MessageMethodReceiver( Common.MessageConstants.InputDecideMessage )]
 		void OnInputDecide()
 		{
 			if( this.refEventHolder == null )
@@ -24,7 +24,7 @@ namespace RPG.Battle
 			this.Execute();
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.EndTurnMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.EndTurnMessage )]
 		void OnEndTurn()
 		{
 			for( int i=0, imax=this.transform.childCount; i<imax; i++ )
@@ -36,7 +36,7 @@ namespace RPG.Battle
 		public void StartCommand()
 		{
 			var hook = CreateHook();
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.StartTurnMessage, hook );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.StartTurnMessage, hook );
 			
 			this.Execute();
 		}
@@ -45,11 +45,11 @@ namespace RPG.Battle
 		{
 			this.refEventHolder = null;
 			var hook = CreateHook();
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.EndCommandExecuteMessage, hook );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.EndCommandExecuteMessage, hook );
 
 			if( this.refEventHolder == null )
 			{
-				BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.EndTurnMessage );
+				BroadcastMessage( SceneRootBase.Root, MessageConstants.EndTurnMessage );
 			}
 			else
 			{
@@ -57,7 +57,7 @@ namespace RPG.Battle
 			}
 		}
 
-		public void SetCommandType( BattleTypeConstants.CommandType commandType )
+		public void SetCommandType( TypeConstants.CommandType commandType )
 		{
 			this.CommandType = commandType;
 		}
@@ -71,12 +71,12 @@ namespace RPG.Battle
 		private void Execute()
 		{
 			var hook = CreateHook();
-			SendMessage( this.refEventHolder, BattleMessageConstants.ExecuteCommandMessage, hook );
+			SendMessage( this.refEventHolder, MessageConstants.ExecuteCommandMessage, hook );
 		}
 
-		private BattleMessageConstants.ExecuteCommandHook CreateHook()
+		private MessageConstants.ExecuteCommandHook CreateHook()
 		{
-			return new BattleMessageConstants.ExecuteCommandHook( this );
+			return new MessageConstants.ExecuteCommandHook( this );
 		}
 
 		private bool IsForceEnd

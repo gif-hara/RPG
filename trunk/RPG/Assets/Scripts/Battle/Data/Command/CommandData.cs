@@ -20,7 +20,7 @@ namespace RPG.Battle
 		/// 実行するコマンドタイプ.
 		/// </summary>
 		/// <value>The type.</value>
-		public BattleTypeConstants.CommandType Type{ private set; get; }
+		public TypeConstants.CommandType Type{ private set; get; }
 
 		/// <summary>
 		/// 与えるダメージデータクラス.
@@ -39,7 +39,7 @@ namespace RPG.Battle
 			this.TargetIdList = new List<TargetData>();
 		}
 
-		public void SetCommandType( BattleTypeConstants.CommandType type )
+		public void SetCommandType( TypeConstants.CommandType type )
 		{
 			this.Type = type;
 		}
@@ -57,7 +57,7 @@ namespace RPG.Battle
 		public BattleCharacter GetTargetBattleMemberData( int targetId )
 		{
 			var targetData = this.TargetIdList[targetId];
-			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
+			if( targetData.PartyType == TypeConstants.PartyType.Enemy )
 			{
 				return AllPartyManager.Instance.AllParty.Enemy.List[targetData.Id];
 			}
@@ -70,7 +70,7 @@ namespace RPG.Battle
 		public Group GetGroupBattleMemberData( int targetId )
 		{
 			var targetData = this.TargetIdList[targetId];
-			if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
+			if( targetData.PartyType == TypeConstants.PartyType.Enemy )
 			{
 				return AllPartyManager.Instance.AllParty.Enemy.GroupList[targetData.Id];
 			}
@@ -91,7 +91,7 @@ namespace RPG.Battle
 			if( result.IsAllDead )
 			{
 				var targetData = this.TargetIdList[targetId];
-				if( targetData.PartyType == BattleTypeConstants.PartyType.Enemy )
+				if( targetData.PartyType == TypeConstants.PartyType.Enemy )
 				{
 					return BattleEnemyPartyManager.Instance.Party.GroupList.List.Find( g => !g.IsAllDead );
 				}
@@ -108,7 +108,7 @@ namespace RPG.Battle
 		/// ターゲットIDの追加.
 		/// </summary>
 		/// <param name="id">Identifier.</param>
-		public void AddTargetId( BattleTypeConstants.PartyType partyType, int id )
+		public void AddTargetId( TypeConstants.PartyType partyType, int id )
 		{
 			this.TargetIdList.Add( new TargetData( partyType, id ) );
 		}

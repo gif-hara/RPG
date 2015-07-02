@@ -141,7 +141,7 @@ namespace RPG.Battle
 		}
 		
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.StartCommandSelectMessage )]
+		[Attribute.MessageMethodReceiver( MessageConstants.StartCommandSelectMessage )]
 		void OnStartCommandSelect()
 		{
 			this.CurrentCommandSelectAlly = refAllyPartyManager.Party.NoneCommandBattleMember;
@@ -149,11 +149,11 @@ namespace RPG.Battle
 
 			this.CommandData = new CommandData();
 			StartCoroutine( LockInputCoroutine() );
-			BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.OpenCommandWindowMessage, BattleTypeConstants.CommandSelectType.Main );
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.OpenCommandWindowMessage, TypeConstants.CommandSelectType.Main );
 		}
 
-		[Attribute.MessageMethodReceiver( BattleMessageConstants.OpenCommandWindowMessage )]
-		public void OnOpenCommandWindow( BattleTypeConstants.CommandSelectType type )
+		[Attribute.MessageMethodReceiver( MessageConstants.OpenCommandWindowMessage )]
+		public void OnOpenCommandWindow( TypeConstants.CommandSelectType type )
 		{
 			this.inputArrowStateMachine.Change( (int)type );
 		}
@@ -164,7 +164,7 @@ namespace RPG.Battle
 		/// <param name="id">Identifier.</param>
 		public void DecideMainCommand( int id )
 		{
-			this.BroadcastMessage( refMainCommandEventHolders[id], BattleMessageConstants.DecideCommandMessage, id );
+			this.BroadcastMessage( refMainCommandEventHolders[id], MessageConstants.DecideCommandMessage, id );
 		}
 
 		/// <summary>
@@ -173,7 +173,7 @@ namespace RPG.Battle
 		/// <param name="id">Identifier.</param>
 		public void DecideEnemyCommand( int id )
 		{
-			this.BroadcastMessage( refEnemyCommandEventHolder, BattleMessageConstants.DecideCommandMessage, id );
+			this.BroadcastMessage( refEnemyCommandEventHolder, MessageConstants.DecideCommandMessage, id );
 		}
 		
 		/// <summary>
@@ -182,7 +182,7 @@ namespace RPG.Battle
 		/// <param name="id">Identifier.</param>
 		public void DecideAllyCommand( int id )
 		{
-			this.BroadcastMessage( refAllyCommandEventHolder, BattleMessageConstants.DecideCommandMessage, id );
+			this.BroadcastMessage( refAllyCommandEventHolder, MessageConstants.DecideCommandMessage, id );
 		}
 		
 		/// <summary>
@@ -191,7 +191,7 @@ namespace RPG.Battle
 		/// <param name="id">Identifier.</param>
 		public void DecideAbilityCommand( int id )
 		{
-			this.BroadcastMessage( refAbilityCommandEventHolder, BattleMessageConstants.DecideCommandMessage, id );
+			this.BroadcastMessage( refAbilityCommandEventHolder, MessageConstants.DecideCommandMessage, id );
 		}
 
 		/// <summary>
@@ -202,7 +202,7 @@ namespace RPG.Battle
 			this.CurrentCommandSelectAlly.DecideCommand( CommandData );
 			var tempAllyData = this.CurrentCommandSelectAlly;
 			this.CurrentCommandSelectAlly = null;
-			this.BroadcastMessage( SceneRootBase.Root, BattleMessageConstants.CompleteCommandSelectMessage, tempAllyData );
+			this.BroadcastMessage( SceneRootBase.Root, MessageConstants.CompleteCommandSelectMessage, tempAllyData );
 			Debug.Log( "?" );
 		}
 
