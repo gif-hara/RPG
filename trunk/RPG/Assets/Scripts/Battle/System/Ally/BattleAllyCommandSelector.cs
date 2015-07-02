@@ -203,7 +203,6 @@ namespace RPG.Battle
 			var tempAllyData = this.CurrentCommandSelectAlly;
 			this.CurrentCommandSelectAlly = null;
 			this.BroadcastMessage( SceneRootBase.Root, MessageConstants.CompleteCommandSelectMessage, tempAllyData );
-			Debug.Log( "?" );
 		}
 
 		public void Cancel()

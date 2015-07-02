@@ -21,16 +21,16 @@ namespace RPG.Battle
 				switch( data.Parameter[i] )
 				{
 				case TypeConstants.InformationParameterType.ExecuteCharacterName:
-					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.InstanceData.name );
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.InstanceData.name );
 					break;
 				case TypeConstants.InformationParameterType.GiveDamage:
-					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Damage );
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GiveDamage.Damage );
 					break;
 				case TypeConstants.InformationParameterType.TargetName:
-					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.Target.InstanceData.name );
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GiveDamage.Target.InstanceData.name );
 					break;
 				case TypeConstants.InformationParameterType.AbilityName:
-					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.AbilityData.Name );
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.AbilityData.Name );
 					break;
 				}
 			}

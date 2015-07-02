@@ -25,6 +25,8 @@ MonoBehaviour:
   - Information_GiveDamage
   - Information_ReceiveDamage
   - Information_DeclarationMagic
+  - Information_Recovery
+  - Information_RecoveryMax
   asset:
   - "\u6226\u3046\n{0}\n\u9053\u5177"
   - 
@@ -39,3 +41,5 @@ MonoBehaviour:
   - "{0}\u306B\n{1}\u306E\u6253\u6483\u3092\u4E0E\u3048\u305F\uFF01"
   - "{0}\u306B\n{1}\u306E\u6253\u6483\u3092\u53D7\u3051\u305F\uFF01"
   - "{0}\u306F\n{1}\u306E\u8853\u3092\u3068\u306A\u3048\u305F\uFF01"
+  - "{0}\u306E\u4F53\u529B\u306F\n{1}\u56DE\u5FA9\u3057\u305F\uFF01"
+  - "{0}\u306E\u4F53\u529B\u306F\n\u5168\u56DE\u5FA9\u3057\u305F\uFF01"

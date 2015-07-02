@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンド実行イベント時に次のイベントを設定するコンポーネント.
+	/// コマンド実行イベント時に特殊能力データのコマンドイベントプレハブを生成して次のイベントを設定するコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandSetNextEventPrefab : MyMonoBehaviour
+	public class OnExecuteCommandSetNextEventFromAbilityData : MyMonoBehaviour
 	{
 		[SerializeField]
 		private GameObject prefabEventHolder;
@@ -14,7 +14,8 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
-			var instance = Instantiate( prefabEventHolder );
+			var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData;
+			var instance = Instantiate( selectCommandData.AbilityData.PrefabCommandEventHolder );
 			SendMessage( gameObject, MessageConstants.InstantiateCustomizeMessage, instance );
 			hook.Executer.InsertEventHolder( instance );
 		}

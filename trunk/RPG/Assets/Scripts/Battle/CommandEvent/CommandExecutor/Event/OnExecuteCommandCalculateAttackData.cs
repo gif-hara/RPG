@@ -14,7 +14,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
-			var member = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
+			var member = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			refAttackData.CalcurlateNumber( member );
 		}
 	}

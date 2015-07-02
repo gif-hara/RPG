@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -10,7 +10,7 @@ namespace RPG.Battle
 	{
 		void OnExecuteCommand()
 		{
-			AllPartyManager.Instance.ActiveTimeMaxBattleMember.EndExecuteCommand();
+			AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.EndExecuteCommand();
 		}
 	}
 }

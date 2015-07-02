@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 namespace RPG.Battle
@@ -15,7 +15,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return isCriticalIfTrue == AllPartyManager.Instance.ActiveTimeMaxBattleMember.SelectCommandData.GiveDamage.IsCritical;
+				return isCriticalIfTrue == AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GiveDamage.IsCritical;
 			}
 		}
 	}

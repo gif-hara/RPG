@@ -14,7 +14,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
-			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
+			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var selectCommandData = executer.SelectCommandData;
 			var group = selectCommandData.GetGroupBattleMemberDataSafe( 0 );
 			var target = group.WeakMember;

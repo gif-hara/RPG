@@ -8,12 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403612}
-  - 114: {fileID: 11495180}
-  - 114: {fileID: 11426270}
-  - 114: {fileID: 11421142}
+  - 114: {fileID: 11485328}
   - 114: {fileID: 11446286}
+  - 114: {fileID: 11495180}
   m_Layer: 0
-  m_Name: Recovery
+  m_Name: RangeDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,34 +30,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11421142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 147010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65503a0b9dcda4b01807d3b3e172c3cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refConditioner: {fileID: 11426270}
-  refPositiveData: {fileID: 11400000, guid: 0752f8b2e2c40411294fca959ef96de6, type: 2}
-  refNegativeData: {fileID: 11400000, guid: 28e32fdcd0774454fa00c10730991aaa, type: 2}
-  type: 0
---- !u!114 &11426270
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 147010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fe61b47e198f4901a70d137e0ef2bf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMaxIfTrue: 1
-  targetId: 0
 --- !u!114 &11446286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,6 +42,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refEventHolder: {fileID: 0}
+--- !u!114 &11485328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2b470258da74cae97d3d68900aae7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: "\u8853\u3092\u5B9F\u884C\u3059\u308B\uFF01"
+  type: 0
 --- !u!114 &11495180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,30 +73,7 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: refData
-      value: 
-      objectReference: {fileID: 11400000, guid: 28e32fdcd0774454fa00c10730991aaa,
-        type: 2}
-    - target: {fileID: 0}
-      propertyPath: refPositiveData
-      value: 
-      objectReference: {fileID: 11400000, guid: 0752f8b2e2c40411294fca959ef96de6,
-        type: 2}
-    - target: {fileID: 0}
-      propertyPath: refNegativeData
-      value: 
-      objectReference: {fileID: 11400000, guid: 28e32fdcd0774454fa00c10730991aaa,
-        type: 2}
-    - target: {fileID: 0}
-      propertyPath: refConditioner
-      value: 
-      objectReference: {fileID: 11426270}
-    - target: {fileID: 0}
-      propertyPath: isMaxIfTrue
-      value: 1
-      objectReference: {fileID: 0}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147010}

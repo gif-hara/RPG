@@ -16,5 +16,10 @@ namespace RPG.Battle
 		{
 			hook.Executer.InsertEventHolder( this.refEventHolder );
 		}
+
+		public void SetEventHolder( GameObject obj )
+		{
+			this.refEventHolder = obj;
+		}
 	}
 }

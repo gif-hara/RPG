@@ -27,5 +27,7 @@ namespace RPG.Database
 		/// </summary>
 		/// <value>The type of the target.</value>
 		Battle.TypeConstants.TargetType TargetType{ get; }
+
+		GameObject PrefabCommandEventHolder{ get; }
 	}
 }

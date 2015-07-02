@@ -50,6 +50,11 @@ namespace RPG.Database
 		/// </summary>
 		public int maxPower;
 
+		/// <summary>
+		/// コマンドイベントを保持しているプレハブ.
+		/// </summary>
+		public GameObject prefabCommandEventHolder;
+
 		public int ID{ get{ return this.id; } }
 
 		public string Name{ get{ return this.name; } }
@@ -61,5 +66,7 @@ namespace RPG.Database
 		public int NeedNumber{ get{ return this.needSpirit; } }
 
 		public Battle.TypeConstants.TargetType TargetType{ get{ return this.targetType; } }
+
+		public GameObject PrefabCommandEventHolder{ get{ return this.prefabCommandEventHolder; } }
 	}
 }

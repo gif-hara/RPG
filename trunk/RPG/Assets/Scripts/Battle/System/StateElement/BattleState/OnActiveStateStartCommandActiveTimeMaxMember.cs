@@ -20,7 +20,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( MessageConstants.ActiveStateMessage )]
 		void OnActiveState()
 		{
-			var executeMember = AllPartyManager.Instance.ActiveTimeMaxBattleMember;
+			var executeMember = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var data = refHolder.Get( executeMember.SelectCommandData.Type );
 			var mediator = Instantiate( data.PrefabMediator );
 			mediator.GetComponent<CommandEventMediator>().SetEvent( refExecuter );

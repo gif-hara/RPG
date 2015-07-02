@@ -47,7 +47,7 @@ namespace RPG.Battle
 			this.AllParty = new AllParty( this.refAllyPartyManager, this.refEnemyPartyManager );
 		}
 
-		public BattleCharacter ActiveTimeMaxBattleMember
+		public BattleCharacter ActiveTimeMaxBattleCharacter
 		{
 			get
 			{
@@ -69,7 +69,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return this.ActiveTimeMaxBattleMember != null;
+				return this.ActiveTimeMaxBattleCharacter != null;
 			}
 		}
 
