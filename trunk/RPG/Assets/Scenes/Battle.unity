@@ -150,7 +150,52 @@ MonoBehaviour:
       minSpirit: 0
       spirit: 0
       experience: 0
-    enemyIdList: 00000000
+    - id: 1
+      name: "\u91D1\u592A\u90CE"
+      level: 0
+      abilityType: 8
+      abilityList: 
+      maxHitPoint: 320
+      hitPoint: 320
+      strength: 10
+      defence: 0
+      speed: 0
+      avoid: 0
+      maxSpirit: 0
+      minSpirit: 0
+      spirit: 0
+      experience: 0
+    - id: 2
+      name: "\u6D66\u5CF6"
+      level: 0
+      abilityType: 7
+      abilityList: 10270000112700001227000074270000
+      maxHitPoint: 320
+      hitPoint: 320
+      strength: 10
+      defence: 0
+      speed: 0
+      avoid: 0
+      maxSpirit: 0
+      minSpirit: 0
+      spirit: 0
+      experience: 0
+    - id: 3
+      name: "\u591C\u53C9\u59EB"
+      level: 0
+      abilityType: 7
+      abilityList: 10270000112700001227000074270000
+      maxHitPoint: 320
+      hitPoint: 320
+      strength: 10
+      defence: 0
+      speed: 0
+      avoid: 0
+      maxSpirit: 0
+      minSpirit: 0
+      spirit: 0
+      experience: 0
+    enemyIdList: 000000000000000001000000000000000000000000000000
 --- !u!114 &78480610
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -136,8 +136,9 @@ namespace RPG.Battle
 			{
 				return;
 			}
-			
-			this.inputArrowStateMachine.Current.CancelAction( this );
+
+			BroadcastMessage( SceneRootBase.Root, MessageConstants.OpenCommandWindowMessage, TypeConstants.CommandSelectType.Main );
+//			this.inputArrowStateMachine.Current.CancelAction( this );
 		}
 		
 

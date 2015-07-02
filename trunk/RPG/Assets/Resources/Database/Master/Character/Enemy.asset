@@ -19,10 +19,10 @@ MonoBehaviour:
       abilityType: 6
       abilityList: 
       maxHitPoint: 1
-      hitPoint: 1
-      strength: 300
+      hitPoint: 6
+      strength: 16
       defence: 0
-      speed: 0
+      speed: 80
       avoid: 0
       maxSpirit: 0
       minSpirit: 0
@@ -30,6 +30,7 @@ MonoBehaviour:
       experience: 0
     experience: 2
     gold: 3
+    prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}
   - characterData:
       id: 1
       name: "\u9752\u9B3C"
@@ -48,3 +49,4 @@ MonoBehaviour:
       experience: 0
     experience: 9
     gold: 12
+    prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}

@@ -18,6 +18,8 @@ namespace RPG.Database
 			public int experience;
 
 			public int gold;
+
+			public Battle.A_EnemyAI prefabAI;
 		}
 
 		public List<Element> ElementList{ get{ return this.elementList; } }

@@ -15,7 +15,7 @@ MonoBehaviour:
   - id: 10000
     name: "\u304D\u3093\u305F\u3093"
     description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u309240\u56DE\u5FA9\u3059\u308B\u3002"
-    shout: "\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u3093\uFF01"
+    shout: "\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 3
     targetType: 0
     minPower: 40
@@ -25,7 +25,7 @@ MonoBehaviour:
   - id: 10001
     name: "\u305B\u3093\u304D\u3093\u305F\u3093"
     description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092100\u56DE\u5FA9\u3059\u308B\u3002"
-    shout: "\u305B\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u3093\uFF01"
+    shout: "\u305B\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 7
     targetType: 0
     minPower: 100
@@ -35,7 +35,7 @@ MonoBehaviour:
   - id: 10002
     name: "\u307E\u3093\u304D\u3093\u305F\u3093"
     description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092\u5168\u56DE\u5FA9\u3059\u308B\u3002"
-    shout: "\u307E\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u3093\uFF01"
+    shout: "\u307E\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 15
     targetType: 0
     minPower: 9999

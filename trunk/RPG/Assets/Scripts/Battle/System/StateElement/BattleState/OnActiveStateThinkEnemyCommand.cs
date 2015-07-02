@@ -15,11 +15,7 @@ namespace RPG.Battle
 			{
 				if( !e.IsDead && e.SelectCommandType == TypeConstants.CommandType.None )
 				{
-					Development.TODO( "AIプレハブから考えるよう実装する." );
-					var commandData = new CommandData();
-					commandData.AddTargetId( TypeConstants.PartyType.Ally, 0 );
-					commandData.SetCommandType( TypeConstants.CommandType.Attack );
-					e.DecideCommand( commandData );
+					e.ThinkCommand();
 				}
 			});
 		}

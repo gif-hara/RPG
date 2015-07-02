@@ -15,11 +15,19 @@ namespace RPG.Battle
 
 		private int gold;
 
-		public Enemy( CharacterData data, int experience, int gold )
+		private A_EnemyAI AI;
+
+		public Enemy( CharacterData data, int experience, int gold, A_EnemyAI AI )
 			:base( data )
 		{
 			this.experience = experience;
 			this.gold = gold;
+			this.AI = AI;
+		}
+
+		public void ThinkCommand()
+		{
+			this.AI.Think( this );
 		}
 
 		protected override void Dead ()
