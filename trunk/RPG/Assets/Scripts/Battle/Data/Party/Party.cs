@@ -25,6 +25,11 @@ namespace RPG.Battle
 			this.GroupList.Add( data );
 		}
 
+		public void Rename()
+		{
+			this.GroupList.Rename();
+		}
+
 		/// <summary>
 		/// 全滅しているか？.
 		/// </summary>

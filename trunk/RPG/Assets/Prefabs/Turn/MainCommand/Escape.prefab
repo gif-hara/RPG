@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11492330}
   - 114: {fileID: 11443772}
   m_Layer: 0
-  m_Name: 0_ExecuteInformation
+  m_Name: ExecuteInformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ GameObject:
   - 114: {fileID: 11487142}
   - 114: {fileID: 11437274}
   m_Layer: 0
-  m_Name: 1_End
+  m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca87328e58d644e68d9e417f2b8b563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refConditioner: {fileID: 0}
   refData: {fileID: 11400000, guid: 3b419bc42234d401b9c44c3e4063d88b, type: 2}
   type: 0
 --- !u!114 &11457574

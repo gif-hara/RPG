@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : BattleEnemyModelCreator.cs
-*
-*     * Description : バトル時の敵モデルを生成するコンポーネント.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;

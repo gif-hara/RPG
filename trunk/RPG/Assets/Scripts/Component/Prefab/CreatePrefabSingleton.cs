@@ -1,18 +1,11 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : CreatePrefabSingleton.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 /// <summary>
 /// シングルトン的なオブジェクトを生成するコンポーネント.
 /// </summary>
-public class CreatePrefabSingleton : MonoBehaviour
+public class CreatePrefabSingleton : MyMonoBehaviour
 {
 	[SerializeField]
 	private GameObject prefabDontDestroyObject;
@@ -21,10 +14,14 @@ public class CreatePrefabSingleton : MonoBehaviour
 
 	void Awake()
 	{
-		if( isCreate )	return;
+		if( isCreate )
+		{
+			Destroy( gameObject );
+			return;
+		}
 
 		isCreate = true;
-		var obj = Instantiate( prefabDontDestroyObject );
-		DontDestroyOnLoad( obj );
+		Instantiate( prefabDontDestroyObject, transform );
+		DontDestroyOnLoad( gameObject );
 	}
 }

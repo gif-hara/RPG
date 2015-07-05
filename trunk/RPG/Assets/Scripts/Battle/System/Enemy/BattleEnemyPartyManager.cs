@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : BattleEnemyPartyManager.cs
-*
-*     * Description : 敵パーティ管理者コンポーネント.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,6 +37,8 @@ namespace RPG.Battle
 				var data = Database.MasterData.Instance.Enemy.ElementList[initializeData[i]];
 				this.Party.Add( new Enemy( data.characterData, data.experience, data.gold, data.prefabAI ) );
 			}
+
+			this.Party.Rename();
 		}
 		/// <summary>
 		/// パーティの数をグループ単位で返す.

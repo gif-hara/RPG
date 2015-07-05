@@ -28,6 +28,22 @@ namespace RPG.Battle
 			this.List.Add( data );
 		}
 
+		public void Rename( ref int classification )
+		{
+			for( int i=0,imax=this.List.Count; i<imax; i++ )
+			{
+				this.List[i].Rename( ref classification );
+			}
+		}
+
+		public BattleCharacter BattleCharacter
+		{
+			get
+			{
+				return this.List[0];
+			}
+		}
+
 		/// <summary>
 		/// HPが一番低いキャラクターを返す.
 		/// </summary>

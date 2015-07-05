@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11492330}
   - 114: {fileID: 11443772}
   m_Layer: 0
-  m_Name: 0_ExecuteInformation
+  m_Name: ExecuteInformation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 469086}
   - 114: {fileID: 11417202}
   m_Layer: 0
-  m_Name: 1_End
+  m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

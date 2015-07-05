@@ -102,6 +102,12 @@ namespace RPG.Battle
 			this.ActiveTime += value;
 		}
 
+		public void Rename( ref int classification )
+		{
+			this.InstanceData.name = this.MasterData.name + System.Convert.ToChar(System.Convert.ToInt32( 'A' ) + classification);
+			classification++;
+		}
+
 		/// <summary>
 		/// 死亡処理.
 		/// </summary>
