@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : BattleAllyPartyManager.cs
-*
-*     * Description : 味方パーティデータ管理者コンポーネント.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
