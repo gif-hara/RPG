@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 482706}
-  - 114: {fileID: 11460988}
+  - 114: {fileID: 11408366}
   - 114: {fileID: 11443940}
-  - 114: {fileID: 11473526}
+  - 114: {fileID: 11472712}
   m_Layer: 0
   m_Name: GroupRangeDamage
   m_TagString: Untagged
@@ -61,6 +61,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 482706}
   m_RootOrder: 0
+--- !u!114 &11408366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6c67f867ad245b19628fdea1d0971b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11434296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,18 +97,6 @@ MonoBehaviour:
   refConditioner: {fileID: 0}
   refData: {fileID: 11400000, guid: 9adb82fc9f7794992a94f48a2fb61ea6, type: 2}
   type: 0
---- !u!114 &11460988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3d4c72f101c4c0098e95aab101dc62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetId: 0
 --- !u!114 &11468578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +111,7 @@ MonoBehaviour:
   refConditioner: {fileID: 0}
   refData: {fileID: 11400000, guid: 3b419bc42234d401b9c44c3e4063d88b, type: 2}
   type: 0
---- !u!114 &11473526
+--- !u!114 &11472712
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -120,10 +119,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 110632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1976427cc7094c0b9f13a389c113872, type: 3}
+  m_Script: {fileID: 11500000, guid: 2619507a8350742968b99bd3a9f6b948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refEventHolder: {fileID: 193468}
+  refConditioner: {fileID: 11408366}
+  refPositiveEventHolder: {fileID: 110632}
+  refNegativeEventHolder: {fileID: 193468}
 --- !u!114 &11478546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +142,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: refConditioner
+      value: 
+      objectReference: {fileID: 11408366}
+    - target: {fileID: 0}
+      propertyPath: refPositiveEventHolder
+      value: 
+      objectReference: {fileID: 110632}
+    - target: {fileID: 0}
+      propertyPath: refNegativeEventHolder
+      value: 
+      objectReference: {fileID: 193468}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110632}

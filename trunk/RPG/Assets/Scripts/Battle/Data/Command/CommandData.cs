@@ -14,7 +14,7 @@ namespace RPG.Battle
 		/// 誰に対してコマンドを実行するかのリスト.
 		/// </summary>
 		/// <value>The target identifier list.</value>
-		public List<TargetData> TargetIdList{ private set; get; }
+		public TargetData TargetData{ private set; get; }
 
 		/// <summary>
 		/// 実行するコマンドタイプ.
@@ -36,7 +36,7 @@ namespace RPG.Battle
 
 		public CommandData()
 		{
-			this.TargetIdList = new List<TargetData>();
+			this.TargetData = null;
 		}
 
 		public void SetCommandType( TypeConstants.CommandType type )
@@ -54,29 +54,32 @@ namespace RPG.Battle
 			this.GiveDamage = new GiveDamageData( target, value, isCritical );
 		}
 
-		public BattleCharacter GetTargetBattleCharacterData( int targetId )
+		public BattleCharacter GetTargetBattleCharacter( int id )
 		{
-			var targetData = this.TargetIdList[targetId];
-			if( targetData.PartyType == TypeConstants.PartyType.Enemy )
+			if( this.TargetData.PartyType == TypeConstants.PartyType.Enemy )
 			{
-				return AllPartyManager.Instance.AllParty.Enemy.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.Enemy.List[id];
 			}
 			else
 			{
-				return AllPartyManager.Instance.AllParty.Ally.List[targetData.Id];
+				return AllPartyManager.Instance.AllParty.Ally.List[id];
 			}
 		}
 		
-		public Group GetGroupBattleMemberData( int targetId )
+		public BattleCharacter GetTargetBattleCharacter()
 		{
-			var targetData = this.TargetIdList[targetId];
-			if( targetData.PartyType == TypeConstants.PartyType.Enemy )
+			return this.GetTargetBattleCharacter( this.TargetData.Id );
+		}
+		
+		public Group GetTargetGroup()
+		{
+			if( this.TargetData.PartyType == TypeConstants.PartyType.Enemy )
 			{
-				return AllPartyManager.Instance.AllParty.Enemy.GroupList[targetData.Id];
+				return AllPartyManager.Instance.AllParty.Enemy.GroupList[this.TargetData.Id];
 			}
 			else
 			{
-				return AllPartyManager.Instance.AllParty.Ally.GroupList[targetData.Id];
+				return AllPartyManager.Instance.AllParty.Ally.GroupList[this.TargetData.Id];
 			}
 		}
 
@@ -85,13 +88,12 @@ namespace RPG.Battle
 		/// </summary>
 		/// <returns>The group battle member data safe.</returns>
 		/// <param name="targetId">Target identifier.</param>
-		public Group GetGroupBattleMemberDataSafe( int targetId )
+		public Group GetTargetGroupSafe()
 		{
-			var result = this.GetGroupBattleMemberData( targetId );
+			var result = this.GetTargetGroup();
 			if( result.IsAllDead )
 			{
-				var targetData = this.TargetIdList[targetId];
-				if( targetData.PartyType == TypeConstants.PartyType.Enemy )
+				if( this.TargetData.PartyType == TypeConstants.PartyType.Enemy )
 				{
 					return BattleEnemyPartyManager.Instance.Party.GroupList.List.Find( g => !g.IsAllDead );
 				}
@@ -110,7 +112,7 @@ namespace RPG.Battle
 		/// <param name="id">Identifier.</param>
 		public void AddTargetId( TypeConstants.PartyType partyType, int id )
 		{
-			this.TargetIdList.Add( new TargetData( partyType, id ) );
+			this.TargetData = new TargetData( partyType, id );
 		}
 
 		/// <summary>
@@ -127,7 +129,7 @@ namespace RPG.Battle
 
 		public override string ToString ()
 		{
-			return string.Format ("[CommandData: TargetIdList={0}]", TargetIdList);
+			return string.Format ("[CommandData: TargetIdList={0}]", TargetData);
 		}
 	}
 }

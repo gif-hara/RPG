@@ -20,7 +20,7 @@ namespace RPG.Battle
 			get
 			{
 				var targetInstanceData =
-					AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GetTargetBattleCharacterData( this.targetId ).InstanceData;
+					AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GetTargetBattleCharacter( this.targetId ).InstanceData;
 				return isMaxIfTrue == (targetInstanceData.hitPoint >= targetInstanceData.maxHitPoint);
 			}
 		}

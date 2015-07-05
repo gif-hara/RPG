@@ -4,19 +4,16 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンド実行イベント時に術データから範囲ダメージを行うコンポーネント.
+	/// コマンド実行イベント時に術データから範囲ダメージを弱い敵に対して行うコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandRangeAttackFromMagicData : MyMonoBehaviour
+	public class OnExecuteCommandRangeAttackFromMagicDataAtWeakCharacter : MyMonoBehaviour
 	{
-		[SerializeField]
-		private int targetId;
-
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
 			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var selectCommandData = executer.SelectCommandData;
-			var target = selectCommandData.GetTargetBattleCharacterData( this.targetId );
+			var target = selectCommandData.GetTargetGroupSafe().WeakCharacter;
 			var magicData = selectCommandData.AbilityData as Database.MagicData;
 
 			Debug.Assert(

@@ -19,7 +19,7 @@ namespace RPG.Battle
 			get
 			{
 				var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData;
-				if( selectCommandData.TargetIdList[0].PartyType == TypeConstants.PartyType.Ally )
+				if( selectCommandData.TargetData.PartyType == TypeConstants.PartyType.Ally )
 				{
 					return isAllDeadIfTrue == BattleAllyPartyManager.Instance.Party.IsAllDead;
 				}

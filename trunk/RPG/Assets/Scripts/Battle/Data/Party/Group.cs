@@ -48,7 +48,7 @@ namespace RPG.Battle
 		/// HPが一番低いキャラクターを返す.
 		/// </summary>
 		/// <value>The weak member.</value>
-		public BattleCharacter WeakMember
+		public BattleCharacter WeakCharacter
 		{
 			get
 			{

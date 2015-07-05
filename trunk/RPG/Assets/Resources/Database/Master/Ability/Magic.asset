@@ -50,5 +50,5 @@ MonoBehaviour:
     targetType: 1
     minPower: 20
     maxPower: 30
-    prefabCommandEventHolder: {fileID: 147010, guid: a2825e7fad2254fb3906deb0d8d43490,
+    prefabCommandEventHolder: {fileID: 110632, guid: c71946399358d434388d8317d684b0ff,
       type: 2}
