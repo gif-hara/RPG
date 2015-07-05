@@ -22,7 +22,7 @@ namespace RPG.Battle
 		/// コマンド入力を行っている味方データ.
 		/// </summary>
 		/// <value>The current command select ally data.</value>
-		public Ally CurrentCommandSelectAlly{ private set; get; }
+		public BattleCharacter CurrentCommandSelectAlly{ private set; get; }
 
 		/// <summary>
 		/// 入力操作ステートマシン.

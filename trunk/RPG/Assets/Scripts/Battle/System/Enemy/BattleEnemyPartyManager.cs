@@ -10,7 +10,7 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleEnemyPartyManager : A_Singleton<BattleEnemyPartyManager>
 	{
-		public Party<Enemy> Party{ private set; get; }
+		public Party Party{ private set; get; }
 
 		void Awake()
 		{
@@ -28,7 +28,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( MessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
-			this.Party = new Party<Enemy>();
+			this.Party = new Party();
 			
 			var initializeData = SharedData.initializeData.EnemyIdList;
 

@@ -14,9 +14,9 @@ namespace RPG.Battle
 {
 	public class AllParty
 	{
-		public Party<Ally> Ally{ private set; get; }
+		public Party Ally{ private set; get; }
 
-		public Party<Enemy> Enemy{ private set; get; }
+		public Party Enemy{ private set; get; }
 
 		public AllParty( BattleAllyPartyManager allyPartyManager, BattleEnemyPartyManager enemyPartyManager )
 		{

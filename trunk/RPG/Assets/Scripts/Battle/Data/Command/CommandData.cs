@@ -56,14 +56,7 @@ namespace RPG.Battle
 
 		public BattleCharacter GetTargetBattleCharacter( int id )
 		{
-			if( this.TargetData.PartyType == TypeConstants.PartyType.Enemy )
-			{
-				return AllPartyManager.Instance.AllParty.Enemy.List[id];
-			}
-			else
-			{
-				return AllPartyManager.Instance.AllParty.Ally.List[id];
-			}
+			return TargetParty.List[id];
 		}
 		
 		public BattleCharacter GetTargetBattleCharacter()
@@ -73,14 +66,7 @@ namespace RPG.Battle
 		
 		public Group GetTargetGroup()
 		{
-			if( this.TargetData.PartyType == TypeConstants.PartyType.Enemy )
-			{
-				return AllPartyManager.Instance.AllParty.Enemy.GroupList[this.TargetData.Id];
-			}
-			else
-			{
-				return AllPartyManager.Instance.AllParty.Ally.GroupList[this.TargetData.Id];
-			}
+			return TargetParty.GroupList[this.TargetData.Id];
 		}
 
 		/// <summary>
@@ -93,17 +79,25 @@ namespace RPG.Battle
 			var result = this.GetTargetGroup();
 			if( result.IsAllDead )
 			{
-				if( this.TargetData.PartyType == TypeConstants.PartyType.Enemy )
-				{
-					return BattleEnemyPartyManager.Instance.Party.GroupList.List.Find( g => !g.IsAllDead );
-				}
-				else
-				{
-					return BattleAllyPartyManager.Instance.Party.GroupList.List.Find( g => !g.IsAllDead );
-				}
+				return TargetParty.GroupList.List.Find( g => !g.IsAllDead );
 			}
 
 			return result;
+		}
+
+		public Party TargetParty
+		{
+			get
+			{
+				if( this.TargetData.PartyType == TypeConstants.PartyType.Enemy )
+				{
+					return AllPartyManager.Instance.AllParty.Enemy;
+				}
+				else
+				{
+					return AllPartyManager.Instance.AllParty.Ally;
+				}
+			}
 		}
 		
 		/// <summary>

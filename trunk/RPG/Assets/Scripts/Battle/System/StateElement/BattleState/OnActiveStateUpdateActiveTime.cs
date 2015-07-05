@@ -39,7 +39,7 @@ namespace RPG.Battle
 			this.isUpdate = false;
 		}
 
-		private void UpdateActiveTime<TBattleMember>( Party<TBattleMember> party ) where TBattleMember : Battle.BattleCharacter
+		private void UpdateActiveTime( Party party )
 		{
 			for( int i=0,imax=party.List.Count; i<imax; i++ )
 			{

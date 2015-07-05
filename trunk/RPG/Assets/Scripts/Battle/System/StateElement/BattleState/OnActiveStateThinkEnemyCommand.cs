@@ -15,7 +15,7 @@ namespace RPG.Battle
 			{
 				if( !e.IsDead && e.SelectCommandType == TypeConstants.CommandType.None )
 				{
-					e.ThinkCommand();
+					(e as Enemy).ThinkCommand();
 				}
 			});
 		}

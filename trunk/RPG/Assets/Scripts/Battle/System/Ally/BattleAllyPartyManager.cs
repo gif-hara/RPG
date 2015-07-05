@@ -10,7 +10,7 @@ namespace RPG.Battle
 	/// </summary>
 	public class BattleAllyPartyManager : A_Singleton<BattleAllyPartyManager>
 	{
-		public Party<Ally> Party{ private set; get; }
+		public Party Party{ private set; get; }
 
 		void Awake()
 		{
@@ -27,7 +27,7 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( MessageConstants.PreInitializeSystemMessage )]
 		void OnPreInitializeSystem()
 		{
-			this.Party = new Party<Ally>();
+			this.Party = new Party();
 
 			var initializeData = SharedData.initializeData.PlayerDataList;
 			for( int i=0,imax=initializeData.Count; i<imax; i++ )
