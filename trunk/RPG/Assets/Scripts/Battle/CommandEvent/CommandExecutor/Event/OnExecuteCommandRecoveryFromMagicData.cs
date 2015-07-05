@@ -16,7 +16,7 @@ namespace RPG.Battle
 		{
 			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var selectCommandData = executer.SelectCommandData;
-			var target = selectCommandData.GetTargetBattleMemberData( this.targetId );
+			var target = selectCommandData.GetTargetBattleCharacterData( this.targetId );
 			var magicData = selectCommandData.AbilityData as Database.MagicData;
 
 			Debug.Assert(

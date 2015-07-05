@@ -54,7 +54,7 @@ namespace RPG.Battle
 			this.GiveDamage = new GiveDamageData( target, value, isCritical );
 		}
 
-		public BattleCharacter GetTargetBattleMemberData( int targetId )
+		public BattleCharacter GetTargetBattleCharacterData( int targetId )
 		{
 			var targetData = this.TargetIdList[targetId];
 			if( targetData.PartyType == TypeConstants.PartyType.Enemy )

@@ -150,7 +150,7 @@ MonoBehaviour:
       minSpirit: 0
       spirit: 0
       experience: 0
-    enemyIdList: 00000000000000000100000000000000010000000000000000000000
+    enemyIdList: 0000000001000000
 --- !u!114 &78480610
 MonoBehaviour:
   m_ObjectHideFlags: 0

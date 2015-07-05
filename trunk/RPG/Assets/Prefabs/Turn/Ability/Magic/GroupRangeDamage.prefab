@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 482706}
-  - 114: {fileID: 11473526}
   - 114: {fileID: 11460988}
   - 114: {fileID: 11443940}
+  - 114: {fileID: 11473526}
   m_Layer: 0
   m_Name: GroupRangeDamage
   m_TagString: Untagged

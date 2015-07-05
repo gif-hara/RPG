@@ -1,10 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : EnemySelectCommandWindowNameLabelSetter.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;

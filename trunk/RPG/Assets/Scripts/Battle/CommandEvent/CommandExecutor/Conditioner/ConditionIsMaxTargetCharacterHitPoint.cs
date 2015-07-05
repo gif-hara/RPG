@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using RPG;
 
@@ -20,7 +20,7 @@ namespace RPG.Battle
 			get
 			{
 				var targetInstanceData =
-					AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GetTargetBattleMemberData( this.targetId ).InstanceData;
+					AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GetTargetBattleCharacterData( this.targetId ).InstanceData;
 				return isMaxIfTrue == (targetInstanceData.hitPoint >= targetInstanceData.maxHitPoint);
 			}
 		}
