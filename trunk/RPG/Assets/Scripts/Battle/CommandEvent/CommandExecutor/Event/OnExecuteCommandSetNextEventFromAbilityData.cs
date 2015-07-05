@@ -8,9 +8,6 @@ namespace RPG.Battle
 	/// </summary>
 	public class OnExecuteCommandSetNextEventFromAbilityData : MyMonoBehaviour
 	{
-		[SerializeField]
-		private GameObject prefabEventHolder;
-		
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
