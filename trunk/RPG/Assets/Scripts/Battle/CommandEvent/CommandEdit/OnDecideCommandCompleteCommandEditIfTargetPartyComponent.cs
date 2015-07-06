@@ -14,7 +14,8 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver(MessageConstants.DecideCommandMessage)]
 		void OnDecideCommand( int id )
 		{
-			var ability = Database.MasterData.Instance.Skill.ElementList[id];
+			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
+			var ability = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] );
 			if( ability.PrefabCommandEventHolder.GetComponent<TargetPartyComponent>() == null )
 			{
 				return;
