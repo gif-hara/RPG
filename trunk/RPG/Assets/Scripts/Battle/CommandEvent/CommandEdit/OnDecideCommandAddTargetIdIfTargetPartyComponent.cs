@@ -4,30 +4,33 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンドが決定された際に特殊能力データからコマンドウィンドウを開くコンポーネント.
+	/// コマンドが選択された際にTargetPartyComponentが存在するならターゲットリストを追加するコンポーネント.
 	/// </summary>
-	public class OnDecideCommandOpenWindowFromAbilityData : MyMonoBehaviour
+	public class OnDecideCommandAddTargetIdIfTargetPartyComponent : MyMonoBehaviour
 	{
+		[SerializeField]
+		private BattleAllyCommandSelector refAllyCommandSelector;
+
 		[Attribute.MessageMethodReceiver( MessageConstants.DecideCommandMessage )]
 		void OnDecideCommand( int id )
 		{
 			var ability = Database.MasterData.Instance.Skill.ElementList[id];
-			if( ability.PrefabCommandEventHolder.GetComponent<TargetPartyComponent>() != null )
+			if( ability.PrefabCommandEventHolder.GetComponent<TargetPartyComponent>() == null )
 			{
 				return;
 			}
 
-			this.BroadcastMessage( Common.SceneRootBase.Root, MessageConstants.OpenCommandWindowMessage, this.GetCommandSelectType( id ) );
+			refAllyCommandSelector.CommandData.AddTargetId( this.GetPartyType( id ), id );
 		}
 
-		private TypeConstants.CommandSelectType GetCommandSelectType( int id )
+		private TypeConstants.PartyType GetPartyType( int id )
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
 			var targetType = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] ).TargetType;
 			
 			return targetType == TypeConstants.TargetType.Partner
-				? TypeConstants.CommandSelectType.Ally
-				: TypeConstants.CommandSelectType.Enemy;
+				? TypeConstants.PartyType.Ally
+					: TypeConstants.PartyType.Enemy;
 		}
 	}
 }

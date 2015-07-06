@@ -11,6 +11,7 @@ namespace RPG.Battle
 		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
 
+		[Attribute.MessageMethodReceiver(MessageConstants.DecideCommandMessage)]
 		void OnDecideCommand()
 		{
 			this.refAllyCommandSelector.Complete();

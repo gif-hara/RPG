@@ -16,7 +16,8 @@ MonoBehaviour:
       id: 0
       name: "\u6843\u592A\u90CE"
       level: 1
-      abilityType: 6
+      abilityType: 7
+      abilityList: 10270000112700001227000074270000e84e0000132700001427000015270000
       maxHitPoint: 30
       hitPoint: 30
       strength: 0
@@ -26,3 +27,52 @@ MonoBehaviour:
       maxSpirit: 0
       minSpirit: 0
       spirit: 0
+      experience: 0
+  - characterData:
+      id: 1
+      name: "\u91D1\u592A\u90CE"
+      level: 1
+      abilityType: 8
+      abilityList: 
+      maxHitPoint: 30
+      hitPoint: 30
+      strength: 0
+      defence: 0
+      speed: 0
+      avoid: 0
+      maxSpirit: 0
+      minSpirit: 0
+      spirit: 0
+      experience: 0
+  - characterData:
+      id: 2
+      name: "\u6D66\u5CF6"
+      level: 1
+      abilityType: 7
+      abilityList: 10270000112700001227000074270000e84e0000
+      maxHitPoint: 30
+      hitPoint: 30
+      strength: 0
+      defence: 0
+      speed: 0
+      avoid: 0
+      maxSpirit: 0
+      minSpirit: 0
+      spirit: 0
+      experience: 0
+  - characterData:
+      id: 3
+      name: "\u591C\u53C9\u59EB"
+      level: 1
+      abilityType: 7
+      abilityList: 10270000112700001227000074270000e84e0000
+      maxHitPoint: 30
+      hitPoint: 30
+      strength: 0
+      defence: 0
+      speed: 0
+      avoid: 0
+      maxSpirit: 0
+      minSpirit: 0
+      spirit: 0
+      experience: 0

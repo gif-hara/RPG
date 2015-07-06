@@ -134,23 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDebug: 1
   debugInitializeData:
-    playerDataList:
-    - id: 0
-      name: "\u6843\u592A\u90CE"
-      level: 0
-      abilityType: 7
-      abilityList: 10270000112700001227000074270000
-      maxHitPoint: 320
-      hitPoint: 320
-      strength: 10
-      defence: 0
-      speed: 0
-      avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
-      experience: 0
-    enemyIdList: 00000000000000000000000000000000
+    playerDataList: 00000000010000000200000003000000
+    enemyIdList: 000000000000000000000000
 --- !u!114 &78480610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3197,6 +3182,8 @@ GameObject:
   - 4: {fileID: 1718711610}
   - 114: {fileID: 1718711611}
   - 114: {fileID: 1718711612}
+  - 114: {fileID: 1718711614}
+  - 114: {fileID: 1718711613}
   m_Layer: 0
   m_Name: AbilityCommand
   m_TagString: Untagged
@@ -3236,6 +3223,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36348ee7be0df45989f876e488d3e080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refAllyCommandSelector: {fileID: 449675440}
+--- !u!114 &1718711613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1718711609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c50a1c693438421597688480768af88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refAllyCommandSelector: {fileID: 449675440}
+--- !u!114 &1718711614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1718711609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f9de4daa50b462bbd934faa6613f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   refAllyCommandSelector: {fileID: 449675440}

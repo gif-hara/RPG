@@ -8,15 +8,12 @@ namespace RPG.Battle
 	/// </summary>
 	public class OnExecuteCommandRecoveryFromMagicData : MyMonoBehaviour
 	{
-		[SerializeField]
-		private int targetId;
-
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
 		void OnExecuteCommand()
 		{
 			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var selectCommandData = executer.SelectCommandData;
-			var target = selectCommandData.GetTargetBattleCharacter( this.targetId );
+			var target = selectCommandData.GetTargetBattleCharacter();
 			var magicData = selectCommandData.AbilityData as Database.MagicData;
 
 			Debug.Assert(

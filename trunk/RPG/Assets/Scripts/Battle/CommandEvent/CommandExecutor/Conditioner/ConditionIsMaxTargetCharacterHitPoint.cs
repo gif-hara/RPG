@@ -12,15 +12,12 @@ namespace RPG.Battle
 		[SerializeField]
 		private bool isMaxIfTrue;
 
-		[SerializeField]
-		private int targetId;
-
 		public override bool Condition
 		{
 			get
 			{
 				var targetInstanceData =
-					AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GetTargetBattleCharacter( this.targetId ).InstanceData;
+					AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GiveDamage.Target.InstanceData;
 				return isMaxIfTrue == (targetInstanceData.hitPoint >= targetInstanceData.maxHitPoint);
 			}
 		}

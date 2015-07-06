@@ -14,7 +14,7 @@ MonoBehaviour:
   elementList:
   - id: 10000
     name: "\u304D\u3093\u305F\u3093"
-    description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u309240\u56DE\u5FA9\u3059\u308B\u3002"
+    description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092\u5C11\u3057\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
     shout: "\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 3
     targetType: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
       type: 2}
   - id: 10001
     name: "\u305B\u3093\u304D\u3093\u305F\u3093"
-    description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092100\u56DE\u5FA9\u3059\u308B\u3002"
+    description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092\u304B\u306A\u308A\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
     shout: "\u305B\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 7
     targetType: 0
@@ -34,13 +34,43 @@ MonoBehaviour:
       type: 2}
   - id: 10002
     name: "\u307E\u3093\u304D\u3093\u305F\u3093"
-    description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092\u5168\u56DE\u5FA9\u3059\u308B\u3002"
+    description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092\u5168\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
     shout: "\u307E\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 15
     targetType: 0
     minPower: 9999
     maxPower: 9999
     prefabCommandEventHolder: {fileID: 147010, guid: 1af89d73346ae4a3995f4bd5911ecfe2,
+      type: 2}
+  - id: 10003
+    name: "\u307F\u306A\u304D\u3093\u305F\u3093"
+    description: "\u5473\u65B9\u5168\u3066\u306E\u4F53\u529B\u3092\u5C11\u3057\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
+    shout: "\u307F\u306A\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
+    needSpirit: 20
+    targetType: 0
+    minPower: 40
+    maxPower: 40
+    prefabCommandEventHolder: {fileID: 131146, guid: f1c1d84dba72c46b990aace26ad40043,
+      type: 2}
+  - id: 10004
+    name: "\u307F\u306A\u305B\u3093\u305F\u3093"
+    description: "\u5473\u65B9\u5168\u3066\u306E\u4F53\u529B\u3092\u304B\u306A\u308A\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
+    shout: "\u307F\u306A\u305B\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
+    needSpirit: 40
+    targetType: 0
+    minPower: 100
+    maxPower: 100
+    prefabCommandEventHolder: {fileID: 131146, guid: f1c1d84dba72c46b990aace26ad40043,
+      type: 2}
+  - id: 10005
+    name: "\u307F\u306A\u307E\u3093\u305F\u3093"
+    description: "\u5473\u65B9\u5168\u3066\u306E\u4F53\u529B\u3092\u5168\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
+    shout: "\u307F\u306A\u307E\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
+    needSpirit: 56
+    targetType: 0
+    minPower: 9999
+    maxPower: 9999
+    prefabCommandEventHolder: {fileID: 131146, guid: f1c1d84dba72c46b990aace26ad40043,
       type: 2}
   - id: 10100
     name: "\u7A32\u59BB"
@@ -51,4 +81,14 @@ MonoBehaviour:
     minPower: 20
     maxPower: 30
     prefabCommandEventHolder: {fileID: 110632, guid: c71946399358d434388d8317d684b0ff,
+      type: 2}
+  - id: 20200
+    name: "\u5C0F\u6CE2"
+    description: "\u5168\u3066\u306E\u9B3C\u306B\u5C11\u3057\u6253\u6483\u3092\u4E0E\u3048\u307E\u3059\uFF01"
+    shout: "\u3055\u30FC\u30FC\u3056\u30FC\u30FC\u306A\u30FC\u30FC\u307F\u30FC\u30FC\u30FC\uFF01"
+    needSpirit: 3
+    targetType: 1
+    minPower: 20
+    maxPower: 30
+    prefabCommandEventHolder: {fileID: 110632, guid: e869896a188c646a8892c4f212955097,
       type: 2}

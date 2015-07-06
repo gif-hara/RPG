@@ -14,6 +14,15 @@ namespace RPG.Database
 		[SerializeField]
 		private List<MagicData> elementList;
 
+		[ContextMenu("Sort")]
+		private void Sort()
+		{
+			this.elementList.Sort( (x, y) =>
+			{
+				return x.ID - y.ID;
+			});
+		}
+
 		public static MagicMasterData Instance
 		{
 			get

@@ -32,7 +32,8 @@ namespace RPG.Battle
 			var initializeData = SharedData.initializeData.PlayerDataList;
 			for( int i=0,imax=initializeData.Count; i<imax; i++ )
 			{
-				this.Party.Add( new Ally( initializeData[i] ) );
+				var data = Database.MasterData.Instance.Ally.ElementList[initializeData[i]];
+				this.Party.Add( new Ally( data.characterData ) );
 			}
 		}
 	}

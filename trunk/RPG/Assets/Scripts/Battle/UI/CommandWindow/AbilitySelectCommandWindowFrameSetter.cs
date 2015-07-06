@@ -16,8 +16,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				var abilityCount = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData.abilityList.Count / 2;
-				return abilityCount < this.minCount ? this.minCount : abilityCount;
+				return minCount;
 			}
 		}
 	}
