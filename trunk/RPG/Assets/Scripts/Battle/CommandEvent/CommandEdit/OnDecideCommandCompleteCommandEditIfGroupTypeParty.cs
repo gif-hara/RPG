@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンド選択イベントの際にTargetPartyComponentが存在するならコマンド選択処理を完了するコンポーネント.
+	/// コマンド選択イベントの際にGroupTypeがPartyならコマンド選択処理を完了するコンポーネント.
 	/// </summary>
-	public class OnDecideCommandCompleteCommandEditIfTargetPartyComponent : MyMonoBehaviour
+	public class OnDecideCommandCompleteCommandEditIfGroupTypeParty : MyMonoBehaviour
 	{
 		[SerializeField]
 		private BattleAllyCommandSelector refAllyCommandSelector;
@@ -16,7 +16,7 @@ namespace RPG.Battle
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
 			var ability = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] );
-			if( ability.PrefabCommandEventHolder.GetComponent<TargetPartyComponent>() == null )
+			if( ability.GroupType != TypeConstants.GroupType.Party )
 			{
 				return;
 			}

@@ -41,6 +41,11 @@ namespace RPG.Database
 		public Battle.TypeConstants.TargetType targetType;
 
 		/// <summary>
+		/// ターゲットグループタイプ.
+		/// </summary>
+		public Battle.TypeConstants.GroupType groupType;
+
+		/// <summary>
 		/// 最小効果値.
 		/// </summary>
 		public int minPower;
@@ -66,6 +71,8 @@ namespace RPG.Database
 		public int NeedNumber{ get{ return this.needSpirit; } }
 
 		public Battle.TypeConstants.TargetType TargetType{ get{ return this.targetType; } }
+
+		public Battle.TypeConstants.GroupType GroupType{ get{ return this.groupType; } }
 
 		public GameObject PrefabCommandEventHolder{ get{ return this.prefabCommandEventHolder; } }
 	}

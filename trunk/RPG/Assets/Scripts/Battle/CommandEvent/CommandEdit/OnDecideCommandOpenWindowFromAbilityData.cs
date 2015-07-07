@@ -13,7 +13,7 @@ namespace RPG.Battle
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
 			var ability = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] );
-			if( ability.PrefabCommandEventHolder.GetComponent<TargetPartyComponent>() != null )
+			if( ability.GroupType == TypeConstants.GroupType.Party )
 			{
 				return;
 			}

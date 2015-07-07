@@ -112,5 +112,13 @@ namespace RPG.Battle
 			Append,
 			NewLine,
 		}
+
+		public enum GroupType : int
+		{
+			Simple,
+			Group,
+			Party,
+			All,
+		}
 	}
 }

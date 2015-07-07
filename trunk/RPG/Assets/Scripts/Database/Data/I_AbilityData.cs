@@ -20,6 +20,10 @@ namespace RPG.Database
 		/// <value>The shout.</value>
 		string Shout{ get; }
 
+		/// <summary>
+		/// 特殊能力を発動するのに必要な値
+		/// </summary>
+		/// <value>The need number.</value>
 		int NeedNumber{ get; }
 
 		/// <summary>
@@ -28,6 +32,16 @@ namespace RPG.Database
 		/// <value>The type of the target.</value>
 		Battle.TypeConstants.TargetType TargetType{ get; }
 
+		/// <summary>
+		/// ターゲットグループタイプ.
+		/// </summary>
+		/// <value>The type of the group.</value>
+		Battle.TypeConstants.GroupType GroupType{ get; }
+
+		/// <summary>
+		/// コマンドイベントを保持するプレハブ.
+		/// </summary>
+		/// <value>The prefab command event holder.</value>
 		GameObject PrefabCommandEventHolder{ get; }
 	}
 }
