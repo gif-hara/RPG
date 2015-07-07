@@ -54,7 +54,7 @@ MonoBehaviour:
     groupType: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
     minPower: 40
     maxPower: 40
-    prefabCommandEventHolder: {fileID: 131146, guid: f1c1d84dba72c46b990aace26ad40043,
+    prefabCommandEventHolder: {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a,
       type: 2}
   - id: 10004
     name: "\u307F\u306A\u305B\u3093\u305F\u3093"
@@ -65,7 +65,7 @@ MonoBehaviour:
     groupType: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
     minPower: 100
     maxPower: 100
-    prefabCommandEventHolder: {fileID: 131146, guid: f1c1d84dba72c46b990aace26ad40043,
+    prefabCommandEventHolder: {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a,
       type: 2}
   - id: 10005
     name: "\u307F\u306A\u307E\u3093\u305F\u3093"
@@ -76,7 +76,7 @@ MonoBehaviour:
     groupType: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
     minPower: 9999
     maxPower: 9999
-    prefabCommandEventHolder: {fileID: 131146, guid: f1c1d84dba72c46b990aace26ad40043,
+    prefabCommandEventHolder: {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a,
       type: 2}
   - id: 10100
     name: "\u7A32\u59BB"
