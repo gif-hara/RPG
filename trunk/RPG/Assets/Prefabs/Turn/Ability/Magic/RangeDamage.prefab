@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refConditioner: {fileID: 0}
   refData: {fileID: 11400000, guid: 9adb82fc9f7794992a94f48a2fb61ea6, type: 2}
-  type: 0
+  type: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -72,6 +72,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: refNegativeEventHolder
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: type
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

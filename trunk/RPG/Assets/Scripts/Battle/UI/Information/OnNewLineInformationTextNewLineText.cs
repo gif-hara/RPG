@@ -22,7 +22,14 @@ namespace RPG.Battle
 		[Attribute.MessageMethodReceiver( MessageConstants.NewLineInformationTextMessage )]
 		void OnNewLineInformationText( string message )
 		{
-			this.refText.text += System.Environment.NewLine + message;
+			if( this.refText.text == string.Empty )
+			{
+				this.refText.text += message;
+			}
+			else
+			{
+				this.refText.text += System.Environment.NewLine + message;
+			}
 		}
 	}
 }

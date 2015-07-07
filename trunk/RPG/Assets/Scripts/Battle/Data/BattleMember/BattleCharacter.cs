@@ -95,7 +95,7 @@ namespace RPG.Battle
 				return;
 			}
 
-			Debug.Assert( this.SelectCommandType != TypeConstants.CommandType.None, "敵のコマンドが決定していません " + this.InstanceData.name );
+			Debug.Assert( this.SelectCommandType != TypeConstants.CommandType.None, "コマンドが決定していません " + this.InstanceData.name );
 
 			var value =  (1.0f + (this.InstanceData.speed / 255.0f)) / 60.0f;
 

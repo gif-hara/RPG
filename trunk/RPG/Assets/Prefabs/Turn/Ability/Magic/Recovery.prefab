@@ -44,7 +44,7 @@ MonoBehaviour:
   refConditioner: {fileID: 11426270}
   refPositiveData: {fileID: 11400000, guid: 0752f8b2e2c40411294fca959ef96de6, type: 2}
   refNegativeData: {fileID: 11400000, guid: 28e32fdcd0774454fa00c10730991aaa, type: 2}
-  type: 0
+  type: 2
 --- !u!114 &11426270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,6 +97,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: isMaxIfTrue
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: type
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

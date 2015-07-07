@@ -58,7 +58,7 @@ namespace RPG.Database
 		/// <summary>
 		/// コマンドイベントを保持しているプレハブ.
 		/// </summary>
-		public GameObject prefabCommandEventHolder;
+		public List<GameObject> prefabCommandEventHolders;
 
 		public int ID{ get{ return this.id; } }
 
@@ -74,6 +74,6 @@ namespace RPG.Database
 
 		public GameObject PrefabGroupType{ get{ return this.groupType; } }
 
-		public GameObject PrefabCommandEventHolder{ get{ return this.prefabCommandEventHolder; } }
+		public List<GameObject> PrefabCommandEventHolders{ get{ return this.prefabCommandEventHolders; } }
 	}
 }

@@ -42,6 +42,6 @@ namespace RPG.Database
 		/// コマンドイベントを保持するプレハブ.
 		/// </summary>
 		/// <value>The prefab command event holder.</value>
-		GameObject PrefabCommandEventHolder{ get; }
+		List<GameObject> PrefabCommandEventHolders{ get; }
 	}
 }

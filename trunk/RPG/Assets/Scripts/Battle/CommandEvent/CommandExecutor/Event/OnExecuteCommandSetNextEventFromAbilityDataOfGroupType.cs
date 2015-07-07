@@ -8,15 +8,6 @@ namespace RPG.Battle
 	/// </summary>
 	public class OnExecuteCommandSetNextEventFromAbilityDataOfGroupType : MyMonoBehaviour, I_OnExecuteCommandHookable
 	{
-		[SerializeField]
-		private GameObject prefabExecuteSimple;
-
-		[SerializeField]
-		private GameObject prefabExecuteGroup;
-
-		[SerializeField]
-		private GameObject prefabExecuteParty;
-
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
 		public void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
