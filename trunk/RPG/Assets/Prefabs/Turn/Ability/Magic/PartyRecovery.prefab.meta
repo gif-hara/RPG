@@ -1,5 +1,8 @@
 fileFormatVersion: 2
 guid: f1c1d84dba72c46b990aace26ad40043
+labels:
+- Ability
+- Magic
 timeCreated: 1436198629
 licenseType: Free
 NativeFormatImporter:

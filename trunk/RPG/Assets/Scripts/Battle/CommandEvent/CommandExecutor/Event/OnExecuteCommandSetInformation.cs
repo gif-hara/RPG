@@ -7,7 +7,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベントをキャッチして情報テキストを設定するコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandSetInformation : MyMonoBehaviour
+	public class OnExecuteCommandSetInformation : MyMonoBehaviour, I_OnExecuteCommandHookable
 	{
 		[SerializeField]
 		private Conditioner refConditioner;
@@ -19,7 +19,7 @@ namespace RPG.Battle
 		private TypeConstants.SetTextInformationType type;
 
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand()
+		public void OnExecuteCommand( Battle.MessageConstants.ExecuteCommandHook hook )
 		{
 			if( !this.IsCondition )
 			{

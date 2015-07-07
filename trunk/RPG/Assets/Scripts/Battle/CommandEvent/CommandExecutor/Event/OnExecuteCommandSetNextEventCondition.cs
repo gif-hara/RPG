@@ -6,7 +6,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベント時に条件付きで次のイベントを設定するコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandSetNextEventCondition : MonoBehaviour
+	public class OnExecuteCommandSetNextEventCondition : MonoBehaviour, I_OnExecuteCommandHookable
 	{
 		[SerializeField]
 		private Common.Conditioner refConditioner;
@@ -18,7 +18,7 @@ namespace RPG.Battle
 		private GameObject refNegativeEventHolder;
 		
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
+		public void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
 			if( this.refConditioner.Condition )
 			{

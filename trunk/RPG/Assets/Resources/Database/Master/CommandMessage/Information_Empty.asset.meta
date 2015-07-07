@@ -3,6 +3,7 @@ guid: 3b419bc42234d401b9c44c3e4063d88b
 labels:
 - Data
 - ScriptableObject
+- Master
 timeCreated: 1434382648
 licenseType: Free
 NativeFormatImporter:

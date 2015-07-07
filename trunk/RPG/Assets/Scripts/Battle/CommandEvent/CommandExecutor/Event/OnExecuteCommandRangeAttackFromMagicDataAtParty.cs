@@ -6,7 +6,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベント時に術データから範囲ダメージをパーティに対して行うコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandRangeAttackFromMagicDataAtParty : Common.Conditioner
+	public class OnExecuteCommandRangeAttackFromMagicDataAtParty : Common.Conditioner, I_OnExecuteCommandHookable
 	{
 		private bool isInitialize = false;
 
@@ -17,7 +17,7 @@ namespace RPG.Battle
 		private int targetId = 0;
 
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand()
+		public void OnExecuteCommand(Battle.MessageConstants.ExecuteCommandHook hook)
 		{
 			this.Initialize();
 
@@ -34,9 +34,9 @@ namespace RPG.Battle
 					selectCommandData.AbilityData.ID
 				));
 
-			var damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );
-			selectCommandData.SetGiveDamage( this.targetCharacter, damage, false );
-			this.targetCharacter.TakeDamage( selectCommandData.GiveDamage.Damage );
+			selectCommandData.SetTarget( this.targetCharacter );
+			selectCommandData.Impact.Damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );
+			this.targetCharacter.TakeDamage( selectCommandData.Impact.Damage );
 			SetTargetCharacter();
 		}
 

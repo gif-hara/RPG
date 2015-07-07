@@ -7,7 +7,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベント時にテストで文字列を表示するコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandSetTestString : MyMonoBehaviour
+	public class OnExecuteCommandSetTestString : MyMonoBehaviour, I_OnExecuteCommandHookable
 	{
 		[SerializeField]
 		private string message;
@@ -16,7 +16,7 @@ namespace RPG.Battle
 		private TypeConstants.SetTextInformationType type;
 		
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand()
+		public void OnExecuteCommand( Battle.MessageConstants.ExecuteCommandHook hook )
 		{
 			Development.TODO( message + " はテストなので問題無くなったら削除する." );
 			var methodName = this.type == TypeConstants.SetTextInformationType.Set

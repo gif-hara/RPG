@@ -6,10 +6,10 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベント時に術データから範囲ダメージを弱い敵に対して行うコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandRangeAttackFromMagicDataAtWeakCharacter : MyMonoBehaviour
+	public class OnExecuteCommandRangeAttackFromMagicDataAtWeakCharacter : MyMonoBehaviour, I_OnExecuteCommandHookable
 	{
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand()
+		public void OnExecuteCommand( Battle.MessageConstants.ExecuteCommandHook hook )
 		{
 			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var selectCommandData = executer.SelectCommandData;
@@ -25,9 +25,9 @@ namespace RPG.Battle
 					selectCommandData.AbilityData.ID
 				));
 
-			var damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );
-			selectCommandData.SetGiveDamage( target, damage, false );
-			target.TakeDamage( selectCommandData.GiveDamage.Damage );
+			selectCommandData.SetTarget( target );
+			selectCommandData.Impact.Damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );
+			target.TakeDamage( selectCommandData.Impact.Damage );
 		}
 	}
 }

@@ -6,14 +6,14 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベント時に術データから回復を行うコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandRecoveryFromMagicData : MyMonoBehaviour
+	public class OnExecuteCommandRecoveryFromMagicData : MyMonoBehaviour, I_OnExecuteCommandHookable
 	{
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand()
+		public void OnExecuteCommand( Battle.MessageConstants.ExecuteCommandHook hook )
 		{
 			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var selectCommandData = executer.SelectCommandData;
-			var target = selectCommandData.GetTargetBattleCharacter();
+			var target = selectCommandData.Impact.Target;
 			var magicData = selectCommandData.AbilityData as Database.MagicData;
 
 			Debug.Assert(
@@ -25,10 +25,9 @@ namespace RPG.Battle
 					selectCommandData.AbilityData.ID
 				));
 
-			var isCritical = Random.Range( 0, 100 ) < 1;	Development.TODO( "会心の術の実装." );
-			var damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );
-			selectCommandData.SetGiveDamage( target, damage, isCritical );
-			target.Recovery( selectCommandData.GiveDamage.Damage );
+			selectCommandData.Impact.Damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );
+			selectCommandData.Impact.IsCritical = Random.Range( 0, 100 ) < 1;	Development.TODO( "会心の術の実装." );
+			target.Recovery( selectCommandData.Impact.Damage );
 		}
 	}
 }

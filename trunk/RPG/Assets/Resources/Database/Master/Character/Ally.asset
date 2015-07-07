@@ -20,7 +20,7 @@ MonoBehaviour:
       abilityList: 10270000112700001227000074270000e84e0000132700001427000015270000
       maxHitPoint: 30
       hitPoint: 30
-      strength: 0
+      strength: 900
       defence: 0
       speed: 512
       avoid: 0

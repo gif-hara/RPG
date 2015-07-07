@@ -23,10 +23,10 @@ namespace RPG.Battle
 		public TypeConstants.CommandType Type{ private set; get; }
 
 		/// <summary>
-		/// 与えるダメージデータクラス.
+		/// このコマンドでステータスの影響を受けたデータ.
 		/// </summary>
 		/// <value>The give damage.</value>
-		public GiveDamageData GiveDamage{ private set; get; }
+		public CommandImpactData Impact{ private set; get; }
 
 		/// <summary>
 		/// 特殊能力ID.
@@ -49,9 +49,9 @@ namespace RPG.Battle
 			this.AbilityId = abilityId;
 		}
 
-		public void SetGiveDamage( BattleCharacter target, int value, bool isCritical )
+		public void SetTarget( BattleCharacter target )
 		{
-			this.GiveDamage = new GiveDamageData( target, value, isCritical );
+			this.Impact = new CommandImpactData( target );
 		}
 
 		public BattleCharacter GetTargetBattleCharacter( int id )

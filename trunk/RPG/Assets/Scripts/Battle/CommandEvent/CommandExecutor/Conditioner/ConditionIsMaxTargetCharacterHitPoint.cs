@@ -17,7 +17,7 @@ namespace RPG.Battle
 			get
 			{
 				var targetInstanceData =
-					AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GiveDamage.Target.InstanceData;
+					AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.Impact.Target.InstanceData;
 				return isMaxIfTrue == (targetInstanceData.hitPoint >= targetInstanceData.maxHitPoint);
 			}
 		}

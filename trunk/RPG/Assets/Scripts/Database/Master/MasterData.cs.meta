@@ -1,8 +1,12 @@
 fileFormatVersion: 2
 guid: b7cc3b90820239f43a6c61115d556536
+labels:
+- Master
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

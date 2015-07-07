@@ -108,6 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65085f8320cc04226bf3b660c6b0756b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabExecuteSimple: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
+  prefabExecuteGroup: {fileID: 147010, guid: 2cde13fc47fcd4d33948889288d0d764, type: 2}
+  prefabExecuteParty: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
 --- !u!114 &11477574
 MonoBehaviour:
   m_ObjectHideFlags: 1

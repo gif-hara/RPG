@@ -118,7 +118,6 @@ namespace RPG.Battle
 			Simple,
 			Group,
 			Party,
-			All,
 		}
 	}
 }

@@ -6,7 +6,7 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベント時に術データからパーティに対して回復を行うコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandRecoveryFromMagicDataAtParty : Common.Conditioner
+	public class OnExecuteCommandRecoveryFromMagicDataAtParty : Common.Conditioner, I_OnExecuteCommandHookable
 	{
 		private bool isInitialize = false;
 		
@@ -17,7 +17,7 @@ namespace RPG.Battle
 		private int targetId = 0;
 
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand()
+		public void OnExecuteCommand( Battle.MessageConstants.ExecuteCommandHook hook )
 		{
 			this.Initialize();
 
@@ -34,10 +34,10 @@ namespace RPG.Battle
 					selectCommandData.AbilityData.ID
 				));
 
-			var isCritical = Random.Range( 0, 100 ) < 1;	Development.TODO( "会心の術の実装." );
-			var damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );
-			selectCommandData.SetGiveDamage( this.targetCharacter, damage, isCritical );
-			this.targetCharacter.Recovery( selectCommandData.GiveDamage.Damage );
+			selectCommandData.SetTarget( this.targetCharacter );
+			selectCommandData.Impact.Damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );;
+			selectCommandData.Impact.IsCritical = Random.Range( 0, 100 ) < 1;	Development.TODO( "会心の術の実装." );
+			this.targetCharacter.Recovery( selectCommandData.Impact.Damage );
 			SetTargetCharacter();
 		}
 

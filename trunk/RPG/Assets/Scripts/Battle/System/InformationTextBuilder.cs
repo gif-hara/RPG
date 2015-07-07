@@ -24,10 +24,10 @@ namespace RPG.Battle
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.InstanceData.name );
 					break;
 				case TypeConstants.InformationParameterType.GiveDamage:
-					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GiveDamage.Damage );
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.Impact.Damage );
 					break;
 				case TypeConstants.InformationParameterType.TargetName:
-					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GiveDamage.Target.InstanceData.name );
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.Impact.Target.InstanceData.name );
 					break;
 				case TypeConstants.InformationParameterType.AbilityName:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.AbilityData.Name );

@@ -6,13 +6,13 @@ namespace RPG.Battle
 	/// <summary>
 	/// コマンド実行イベント時に次のイベントを設定するコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandSetNextEvent : MonoBehaviour
+	public class OnExecuteCommandSetNextEvent : MonoBehaviour, I_OnExecuteCommandHookable
 	{
 		[SerializeField]
 		private GameObject refEventHolder;
 
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
+		public void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
 			hook.Executer.InsertEventHolder( this.refEventHolder );
 		}

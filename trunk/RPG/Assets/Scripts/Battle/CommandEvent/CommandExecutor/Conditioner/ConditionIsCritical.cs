@@ -15,7 +15,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return isCriticalIfTrue == AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.GiveDamage.IsCritical;
+				return isCriticalIfTrue == AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.Impact.IsCritical;
 			}
 		}
 	}

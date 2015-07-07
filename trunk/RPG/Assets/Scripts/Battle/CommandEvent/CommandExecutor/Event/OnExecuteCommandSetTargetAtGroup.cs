@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンド実行イベント時に術データから範囲ダメージをグループに対して行うコンポーネント.
+	/// コマンド実行イベント時にグループを選択するコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandRangeAttackFromMagicDataAtGroup : Common.Conditioner
+	public class OnExecuteCommandSetTargetAtGroup : Common.Conditioner, I_OnExecuteCommandHookable
 	{
 		private bool isInitialize = false;
 
@@ -17,26 +17,12 @@ namespace RPG.Battle
 		private int targetId = 0;
 
 		[Attribute.MessageMethodReceiver( MessageConstants.ExecuteCommandMessage )]
-		void OnExecuteCommand()
+		public void OnExecuteCommand(Battle.MessageConstants.ExecuteCommandHook hook)
 		{
 			this.Initialize();
 
-			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
-			var selectCommandData = executer.SelectCommandData;
-			var magicData = selectCommandData.AbilityData as Database.MagicData;
-
-			Debug.Assert(
-				magicData != null,
-				string.Format(
-					"術ではありません. 実行者 = {0} 特殊能力タイプ = {1} ID = {2}",
-					executer.InstanceData.name,
-					selectCommandData.Type,
-					selectCommandData.AbilityData.ID
-				));
-
-			var damage = CalcurateDamage.Range( magicData.minPower, magicData.maxPower );
-			selectCommandData.SetGiveDamage( this.targetCharacter, damage, false );
-			this.targetCharacter.TakeDamage( selectCommandData.GiveDamage.Damage );
+			var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData;
+			selectCommandData.SetTarget( this.targetCharacter );
 			SetTargetCharacter();
 		}
 

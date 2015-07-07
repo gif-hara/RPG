@@ -43,7 +43,7 @@ namespace RPG.Database
 		/// <summary>
 		/// ターゲットグループタイプ.
 		/// </summary>
-		public Battle.TypeConstants.GroupType groupType;
+		public GameObject groupType;
 
 		/// <summary>
 		/// 最小効果値.
@@ -72,7 +72,7 @@ namespace RPG.Database
 
 		public Battle.TypeConstants.TargetType TargetType{ get{ return this.targetType; } }
 
-		public Battle.TypeConstants.GroupType GroupType{ get{ return this.groupType; } }
+		public GameObject PrefabGroupType{ get{ return this.groupType; } }
 
 		public GameObject PrefabCommandEventHolder{ get{ return this.prefabCommandEventHolder; } }
 	}
