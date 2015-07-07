@@ -18,8 +18,8 @@ MonoBehaviour:
       level: 0
       abilityType: 6
       abilityList: 
-      maxHitPoint: 1
-      hitPoint: 1
+      maxHitPoint: 290
+      hitPoint: 290
       strength: 16
       defence: 0
       speed: 80

@@ -32,7 +32,7 @@ MonoBehaviour:
     groupType: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
     minPower: 100
     maxPower: 100
-    prefabCommandEventHolder: {fileID: 147010, guid: 1af89d73346ae4a3995f4bd5911ecfe2,
+    prefabCommandEventHolder: {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a,
       type: 2}
   - id: 10002
     name: "\u307E\u3093\u304D\u3093\u305F\u3093"
@@ -43,7 +43,7 @@ MonoBehaviour:
     groupType: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
     minPower: 9999
     maxPower: 9999
-    prefabCommandEventHolder: {fileID: 147010, guid: 1af89d73346ae4a3995f4bd5911ecfe2,
+    prefabCommandEventHolder: {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a,
       type: 2}
   - id: 10003
     name: "\u307F\u306A\u304D\u3093\u305F\u3093"
@@ -98,5 +98,16 @@ MonoBehaviour:
     groupType: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
     minPower: 20
     maxPower: 30
+    prefabCommandEventHolder: {fileID: 110632, guid: 8d79e29c19c234dc3921a0481efabfe2,
+      type: 2}
+  - id: 20003
+    name: "\u96F7\u9706"
+    description: "\u9B3C1\u5339\u306B\u8D85\u5927\u6253\u6483\u3092\u4E0E\u3048\u307E\u3059\uFF01"
+    shout: "\u30D0\u30EA\u30B4\u30ED\u30D3\u30AB\u30C9\u30AC\u30FC\u30FC\u30FC\u30FC\u30F3\uFF01"
+    needSpirit: 25
+    targetType: 1
+    groupType: {fileID: 147010, guid: f5297dd9d3c4f4d659a3d4d7e0c05c04, type: 2}
+    minPower: 270
+    maxPower: 300
     prefabCommandEventHolder: {fileID: 110632, guid: 8d79e29c19c234dc3921a0481efabfe2,
       type: 2}
