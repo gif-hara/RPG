@@ -41,9 +41,9 @@ namespace RPG.Database
 		public Battle.TypeConstants.TargetType targetType;
 
 		/// <summary>
-		/// ターゲットグループタイプ.
+		/// ターゲットを設定するプレハブ.
 		/// </summary>
-		public GameObject groupType;
+		public GameObject prefabSetTarget;
 
 		/// <summary>
 		/// 最小効果値.
@@ -72,7 +72,7 @@ namespace RPG.Database
 
 		public Battle.TypeConstants.TargetType TargetType{ get{ return this.targetType; } }
 
-		public GameObject PrefabGroupType{ get{ return this.groupType; } }
+		public GameObject PrefabSetTarget{ get{ return this.prefabSetTarget; } }
 
 		public List<GameObject> PrefabCommandEventHolders{ get{ return this.prefabCommandEventHolders; } }
 	}

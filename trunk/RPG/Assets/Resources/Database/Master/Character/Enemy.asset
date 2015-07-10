@@ -22,7 +22,7 @@ MonoBehaviour:
       hitPoint: 290
       strength: 16
       defence: 0
-      speed: 80
+      speed: 0
       avoid: 0
       maxSpirit: 0
       minSpirit: 0

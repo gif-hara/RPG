@@ -36,7 +36,7 @@ namespace RPG.Database
 		/// ターゲットグループタイプ.
 		/// </summary>
 		/// <value>The type of the group.</value>
-		GameObject PrefabGroupType{ get; }
+		GameObject PrefabSetTarget{ get; }
 
 		/// <summary>
 		/// コマンドイベントを保持するプレハブ.

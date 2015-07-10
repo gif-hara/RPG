@@ -18,7 +18,7 @@ MonoBehaviour:
     shout: "\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 3
     targetType: 0
-    groupType: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
     minPower: 40
     maxPower: 40
     prefabCommandEventHolders:
@@ -29,7 +29,7 @@ MonoBehaviour:
     shout: "\u305B\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 7
     targetType: 0
-    groupType: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
     minPower: 100
     maxPower: 100
     prefabCommandEventHolders:
@@ -40,7 +40,7 @@ MonoBehaviour:
     shout: "\u307E\u30FC\u3093\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 15
     targetType: 0
-    groupType: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
     minPower: 9999
     maxPower: 9999
     prefabCommandEventHolders:
@@ -51,7 +51,7 @@ MonoBehaviour:
     shout: "\u307F\u306A\u304D\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 20
     targetType: 0
-    groupType: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
     minPower: 40
     maxPower: 40
     prefabCommandEventHolders:
@@ -62,7 +62,7 @@ MonoBehaviour:
     shout: "\u307F\u306A\u305B\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 40
     targetType: 0
-    groupType: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
     minPower: 100
     maxPower: 100
     prefabCommandEventHolders:
@@ -73,7 +73,7 @@ MonoBehaviour:
     shout: "\u307F\u306A\u307E\u30FC\u3093\u305F\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 56
     targetType: 0
-    groupType: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
     minPower: 9999
     maxPower: 9999
     prefabCommandEventHolders:
@@ -84,7 +84,7 @@ MonoBehaviour:
     shout: "\u3044\u306A\u305A\u307E\u30FC\u30FC\u30FC\u30FC\u30FC\u3093\uFF01"
     needSpirit: 4
     targetType: 1
-    groupType: {fileID: 147010, guid: 2cde13fc47fcd4d33948889288d0d764, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: 2cde13fc47fcd4d33948889288d0d764, type: 2}
     minPower: 20
     maxPower: 30
     prefabCommandEventHolders:
@@ -95,7 +95,7 @@ MonoBehaviour:
     shout: "\u3055\u30FC\u30FC\u3056\u30FC\u30FC\u306A\u30FC\u30FC\u307F\u30FC\u30FC\u30FC\uFF01"
     needSpirit: 3
     targetType: 1
-    groupType: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
     minPower: 20
     maxPower: 30
     prefabCommandEventHolders:
@@ -106,7 +106,7 @@ MonoBehaviour:
     shout: "\u30D0\u30EA\u30B4\u30ED\u30D3\u30AB\u30C9\u30AC\u30FC\u30FC\u30FC\u30FC\u30F3\uFF01"
     needSpirit: 25
     targetType: 1
-    groupType: {fileID: 147010, guid: f5297dd9d3c4f4d659a3d4d7e0c05c04, type: 2}
+    prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
     minPower: 270
     maxPower: 300
     prefabCommandEventHolders:

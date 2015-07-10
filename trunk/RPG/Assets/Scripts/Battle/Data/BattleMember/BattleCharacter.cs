@@ -21,11 +21,14 @@ namespace RPG.Battle
 
 		public GameObject Model{ private set; get; }
 
+		private float addActiveTimeValue;
+
 		public BattleCharacter( CharacterData data )
 		{
 			this.MasterData = data;
 			this.InstanceData = new CharacterData( data );
 			this.ActiveTime = 0.0f;
+			this.addActiveTimeValue = 0.0f;
 		}
 
 		[System.Diagnostics.Conditional( "DEBUG" )]
@@ -49,6 +52,7 @@ namespace RPG.Battle
 		public void DecideCommand( CommandData commandData )
 		{
 			this.SelectCommandData = commandData;
+			this.SetAddActiveTimeValue();
 		}
 
 		/// <summary>
@@ -97,9 +101,7 @@ namespace RPG.Battle
 
 			Debug.Assert( this.SelectCommandType != TypeConstants.CommandType.None, "コマンドが決定していません " + this.InstanceData.name );
 
-			var value =  (1.0f + (this.InstanceData.speed / 255.0f)) / 60.0f;
-
-			this.ActiveTime += value;
+			this.ActiveTime += this.addActiveTimeValue;
 		}
 
 		public void Rename( ref int classification )
@@ -147,6 +149,20 @@ namespace RPG.Battle
 			get
 			{
 				return this.InstanceData.hitPoint <= 0;
+			}
+		}
+
+		private void SetAddActiveTimeValue()
+		{
+			if( TypeConstants.IsAbility( this.SelectCommandData.Type ) )
+			{
+				var currentSpirit = this.InstanceData.spirit;
+				currentSpirit = currentSpirit < 1 ? 1 : currentSpirit;
+				this.addActiveTimeValue = ((float)currentSpirit / this.SelectCommandData.AbilityData.NeedNumber) / 60.0f;
+			}
+			else
+			{
+				this.addActiveTimeValue = (1.0f + (this.InstanceData.speed / 255.0f)) / 60.0f;
 			}
 		}
 

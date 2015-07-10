@@ -119,5 +119,18 @@ namespace RPG.Battle
 			Group,
 			Party,
 		}
+
+		/// <summary>
+		/// 引数のCommandTypeが特殊能力であるか返す.
+		/// </summary>
+		/// <returns><c>true</c> if is ability the specified type; otherwise, <c>false</c>.</returns>
+		/// <param name="type">Type.</param>
+		public static bool IsAbility( CommandType type )
+		{
+			return
+				type == CommandType.Magic ||
+				type == CommandType.Steal ||
+				type == CommandType.Sumo;
+		}
 	}
 }

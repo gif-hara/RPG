@@ -12,7 +12,7 @@ namespace RPG.Battle
 		public void OnExecuteCommand( MessageConstants.ExecuteCommandHook hook )
 		{
 			var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData;
-			var instance = Instantiate( selectCommandData.AbilityData.PrefabGroupType );
+			var instance = Instantiate( selectCommandData.AbilityData.PrefabSetTarget );
 			SendMessage( gameObject, MessageConstants.InstantiateCustomizeMessage, instance );
 			hook.Executer.InsertEventHolder( instance );
 		}

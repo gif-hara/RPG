@@ -22,11 +22,11 @@ MonoBehaviour:
       hitPoint: 30
       strength: 900
       defence: 0
-      speed: 512
+      speed: 255
       avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
+      maxSpirit: 3
+      minSpirit: 3
+      spirit: 3
       experience: 0
   - characterData:
       id: 1
