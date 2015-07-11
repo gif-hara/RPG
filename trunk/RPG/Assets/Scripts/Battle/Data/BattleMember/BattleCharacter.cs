@@ -70,6 +70,11 @@ namespace RPG.Battle
 		/// <param name="damage">Damage.</param>
 		public void TakeDamage( int damage )
 		{
+			if( DebugData.isInvincible )
+			{
+				return;
+			}
+
 			this.InstanceData.hitPoint -= damage;
 
 			if( this.InstanceData.hitPoint <= 0 )
@@ -159,7 +164,6 @@ namespace RPG.Battle
 			random = Random.Range( -random, random );
 			fixedSpeed += random;
 			this.addActiveTimeValue = (1.0f + (fixedSpeed / 255.0f)) / 60.0f;
-			Debug.Log( this.InstanceData.name + " this.addActiveTimeValue = " + this.addActiveTimeValue + " fixedSpeed = " + fixedSpeed + " random = " + random );
 		}
 
 		public override string ToString ()

@@ -119,6 +119,7 @@ Transform:
   - {fileID: 109467030}
   - {fileID: 221814821}
   - {fileID: 1206404918}
+  - {fileID: 140933455}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &78480609
@@ -135,7 +136,7 @@ MonoBehaviour:
   isDebug: 1
   debugInitializeData:
     playerDataList: 00000000
-    enemyIdList: 000000000000000000000000
+    enemyIdList: 00000000
 --- !u!114 &78480610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +336,49 @@ Transform:
   - {fileID: 202024031}
   m_Father: {fileID: 78480608}
   m_RootOrder: 1
+--- !u!1 &140933454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 140933455}
+  - 114: {fileID: 140933456}
+  m_Layer: 0
+  m_Name: Debug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &140933455
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 140933454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1912183820}
+  m_Father: {fileID: 78480608}
+  m_RootOrder: 4
+--- !u!114 &140933456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 140933454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1cd7e3d7b064266a6c4bb35972246b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  database:
+  - refConditioner: {fileID: 1912183822}
+    refAction: {fileID: 1912183821}
 --- !u!1 &172595869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,6 +3930,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refText: {fileID: 1880927945}
   initializeId: 1
+--- !u!1 &1912183819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1912183820}
+  - 114: {fileID: 1912183822}
+  - 114: {fileID: 1912183821}
+  m_Layer: 0
+  m_Name: Invincible
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1912183820
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912183819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 140933455}
+  m_RootOrder: 0
+--- !u!114 &1912183821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912183819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70335fd10199434b826881a8b07a276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1912183822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1912183819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03618464d29764a06a743679576dac74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  keyCode: 113
 --- !u!1 &1946333226
 GameObject:
   m_ObjectHideFlags: 0

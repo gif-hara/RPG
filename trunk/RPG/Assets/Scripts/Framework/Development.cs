@@ -1,12 +1,6 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : Development.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
+using RPG.Framework;
 
 /// <summary>
 /// 開発で扱う関数群.
@@ -18,7 +12,8 @@ public static class Development
 	{
 		Debug.Log(
 			string.Format(
-			"[TODO:m]{0}",
+			"{0}{1}",
+			LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.TODO ),
 			message
 			)
 		);

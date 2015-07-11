@@ -1,21 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using RPG.Framework;
 
 /// <summary>
 /// RPG用のMonoBehaviourクラス.
 /// </summary>
 public class MyMonoBehaviour : MonoBehaviour
 {
-	public const string MessageAttribute = "[Message:b]";
-
 	public static void BroadcastMessage( MonoBehaviour sender, string methodName )
 	{
 		#if DEBUG
 		Debug.Log(
 			string.Format(
 				@"{0}{1}.BroadcastMessage( ""{2}"" );",
-				MessageAttribute,
+				LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.Message ),
 				sender.gameObject.name,
 				methodName
 			),
@@ -30,7 +29,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		Debug.Log(
 			string.Format(
 			@"{0}{1}.BroadcastMessage( ""{2}"" );",
-			MessageAttribute,
+			LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.Message ),
 			sender.name,
 			methodName
 			),
@@ -45,7 +44,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		Debug.Log(
 			string.Format(
 			@"{0}{1}.BroadcastMessage( ""{2}"", {3} );",
-			MessageAttribute,
+			LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.Message ),
 			sender.gameObject.name,
 			methodName,
 			parameter.ToString()
@@ -61,7 +60,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		Debug.Log(
 			string.Format(
 			@"{0}{1}.BroadcastMessage( ""{2}"", {3} );",
-			MessageAttribute,
+			LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.Message ),
 			sender.name,
 			methodName,
 			parameter.ToString()
@@ -78,7 +77,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		Debug.Log(
 			string.Format(
 			@"{0}{1}.BroadcastMessage( ""{2}"" );",
-			MessageAttribute,
+			LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.Message ),
 			sender.gameObject.name,
 			methodName
 			),
@@ -94,7 +93,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		Debug.Log(
 			string.Format(
 			@"{0}{1}.BroadcastMessage( ""{2}"", {3} );",
-			MessageAttribute,
+			LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.Message ),
 			sender.gameObject.name,
 			methodName,
 			parameter.ToString()
@@ -111,7 +110,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		Debug.Log(
 			string.Format(
 			@"{0}{1}.BroadcastMessage( ""{2}"" );",
-			MessageAttribute,
+			LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.Message ),
 			sender.gameObject.name,
 			methodName
 			),
@@ -127,7 +126,7 @@ public class MyMonoBehaviour : MonoBehaviour
 		Debug.Log(
 			string.Format(
 			@"{0}{1}.BroadcastMessage( ""{2}"", {3} );",
-			MessageAttribute,
+			LiveConsoleLogAttribute.Get( LiveConsoleLogAttribute.Attribute.Message ),
 			sender.gameObject.name,
 			methodName,
 			parameter.ToString()
