@@ -20,13 +20,12 @@ MonoBehaviour:
       abilityList: 1027000011270000234e000074270000e84e0000132700001427000015270000
       maxHitPoint: 30
       hitPoint: 30
-      strength: 900
+      maxMagicPoint: 0
+      magicPoint: 0
+      strength: 1
       defence: 0
-      speed: 255
+      speed: 10
       avoid: 0
-      maxSpirit: 3
-      minSpirit: 3
-      spirit: 3
       experience: 0
   - characterData:
       id: 1
@@ -36,13 +35,12 @@ MonoBehaviour:
       abilityList: 
       maxHitPoint: 30
       hitPoint: 30
+      maxMagicPoint: 0
+      magicPoint: 0
       strength: 0
       defence: 0
       speed: 0
       avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
       experience: 0
   - characterData:
       id: 2
@@ -52,13 +50,12 @@ MonoBehaviour:
       abilityList: 10270000112700001227000074270000e84e0000
       maxHitPoint: 30
       hitPoint: 30
+      maxMagicPoint: 0
+      magicPoint: 0
       strength: 0
       defence: 0
       speed: 0
       avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
       experience: 0
   - characterData:
       id: 3
@@ -68,11 +65,10 @@ MonoBehaviour:
       abilityList: 10270000112700001227000074270000e84e0000
       maxHitPoint: 30
       hitPoint: 30
+      maxMagicPoint: 0
+      magicPoint: 0
       strength: 0
       defence: 0
       speed: 0
       avoid: 0
-      maxSpirit: 0
-      minSpirit: 0
-      spirit: 0
       experience: 0

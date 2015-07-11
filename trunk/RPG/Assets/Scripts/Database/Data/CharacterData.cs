@@ -35,14 +35,24 @@ namespace RPG.Database
 		public List<int> abilityList;
 		
 		/// <summary>
-		/// 最大体力.
+		/// 体力最大値.
 		/// </summary>
 		public int maxHitPoint;
 		
 		/// <summary>
-		/// 体力.
+		/// 体力現在値.
 		/// </summary>
 		public int hitPoint;
+
+		/// <summary>
+		/// 術最大値.
+		/// </summary>
+		public int maxMagicPoint;
+
+		/// <summary>
+		/// 術現在値.
+		/// </summary>
+		public int magicPoint;
 		
 		/// <summary>
 		/// 攻撃力.
@@ -65,21 +75,6 @@ namespace RPG.Database
 		public int avoid;
 
 		/// <summary>
-		/// 最大精神力.
-		/// </summary>
-		public int maxSpirit;
-
-		/// <summary>
-		/// 最小精神力.
-		/// </summary>
-		public int minSpirit;
-
-		/// <summary>
-		/// 現在の精神力.
-		/// </summary>
-		public int spirit;
-
-		/// <summary>
 		/// 所持している経験値.
 		/// </summary>
 		public int experience;
@@ -98,19 +93,18 @@ namespace RPG.Database
 			this.abilityList = new List<int>( other.abilityList );
 			this.maxHitPoint = other.maxHitPoint;
 			this.hitPoint = other.hitPoint;
+			this.maxMagicPoint = other.maxMagicPoint;
+			this.magicPoint = other.magicPoint;
 			this.strength = other.strength;
 			this.defence = other.defence;
 			this.speed = other.speed;
 			this.avoid = other.avoid;
-			this.maxSpirit = other.maxSpirit;
-			this.minSpirit = other.minSpirit;
-			this.spirit = other.spirit;
 		}
 
 		public override string ToString ()
 		{
 			return string.Format (
-				"[CharacterData: id={0}, name={1}, level={2}, abilityType={3}, maxHitPoint={4}, hitPoint={5} strength={6} defence={7}, speed={8}, avoid={9}, maxSpirit={10}, minSpirit={11}, spirit={12}]",
+				"[CharacterData: id={0}, name={1}, level={2}, abilityType={3}, maxHitPoint={4}, hitPoint={5} strength={6} defence={7}, speed={8}, avoid={9}]",
 				id,
 				name,
 				level,
@@ -120,10 +114,7 @@ namespace RPG.Database
 				strength,
 				defence,
 				speed,
-				avoid,
-				maxSpirit,
-				minSpirit,
-				spirit
+				avoid
 				);
 		}
 	}

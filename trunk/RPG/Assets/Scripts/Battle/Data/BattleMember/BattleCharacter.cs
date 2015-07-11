@@ -154,16 +154,12 @@ namespace RPG.Battle
 
 		private void SetAddActiveTimeValue()
 		{
-			if( TypeConstants.IsAbility( this.SelectCommandData.Type ) )
-			{
-				var currentSpirit = this.InstanceData.spirit;
-				currentSpirit = currentSpirit < 1 ? 1 : currentSpirit;
-				this.addActiveTimeValue = ((float)currentSpirit / this.SelectCommandData.AbilityData.NeedNumber) / 60.0f;
-			}
-			else
-			{
-				this.addActiveTimeValue = (1.0f + (this.InstanceData.speed / 255.0f)) / 60.0f;
-			}
+			var fixedSpeed = this.InstanceData.speed * 2.0f;
+			var random = this.InstanceData.speed * 0.5f;
+			random = Random.Range( -random, random );
+			fixedSpeed += random;
+			this.addActiveTimeValue = (1.0f + (fixedSpeed / 255.0f)) / 60.0f;
+			Debug.Log( this.InstanceData.name + " this.addActiveTimeValue = " + this.addActiveTimeValue + " fixedSpeed = " + fixedSpeed + " random = " + random );
 		}
 
 		public override string ToString ()
