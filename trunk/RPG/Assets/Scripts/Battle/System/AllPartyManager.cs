@@ -1,10 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : AllPartyManager.cs
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +15,30 @@ namespace RPG.Battle
 		{
 			this.Ally = allyPartyManager.Party;
 			this.Enemy = enemyPartyManager.Party;
+		}
+
+		public BattleCharacter ActiveTimeMaxBattleCharacter
+		{
+			get
+			{
+				var ally = Ally.ActiveTimeMaxBattleCharacter;
+				var enemy = Enemy.ActiveTimeMaxBattleCharacter;
+
+				if( ally != null && enemy != null )
+				{
+					return ally.ActiveTime > enemy.ActiveTime ? ally : enemy;
+				}
+				else if( ally != null && enemy == null )
+				{
+					return ally;
+				}
+				else if( ally == null && enemy != null )
+				{
+					return enemy;
+				}
+
+				return null;
+			}
 		}
 	}
 	/// <summary>
@@ -51,13 +68,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				var memberData = this.refAllyPartyManager.Party.ActiveTimeMaxBattleMember;
-				if( memberData != null )
-				{
-					return memberData;
-				}
-
-				return this.refEnemyPartyManager.Party.ActiveTimeMaxBattleMember;
+				return this.AllParty.ActiveTimeMaxBattleCharacter;
 			}
 		}
 

@@ -50,7 +50,7 @@ namespace RPG.Battle
 		{
 			get
 			{
-				return ActiveTimeMaxBattleMember != null;
+				return ActiveTimeMaxBattleCharacter != null;
 			}
 		}
 		
@@ -58,11 +58,23 @@ namespace RPG.Battle
 		/// アクティブタイムが最大のバトルメンバーを返す.
 		/// </summary>
 		/// <value>The active time max ally data.</value>
-		public BattleCharacter ActiveTimeMaxBattleMember
+		public BattleCharacter ActiveTimeMaxBattleCharacter
 		{
 			get
 			{
-				return List.Find( a => !a.IsDead && a.IsActiveTimeMax );
+				var maxCharacters = List.FindAll( a => !a.IsDead && a.IsActiveTimeMax );
+				if( maxCharacters.Count <= 0 )
+				{
+					return null;
+				}
+
+				var result = maxCharacters[0];
+				for( int i=1, imax=maxCharacters.Count; i<imax; i++ )
+				{
+					result = result.ActiveTime > maxCharacters[i].ActiveTime ? result : maxCharacters[i];
+				}
+
+				return result;
 			}
 		}
 		

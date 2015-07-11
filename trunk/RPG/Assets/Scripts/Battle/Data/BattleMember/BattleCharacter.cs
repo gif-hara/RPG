@@ -36,6 +36,7 @@ namespace RPG.Battle
 		{
 			DebugText.Instance.AppendLine( this.InstanceData.name );
 			DebugText.Instance.AppendLine( "ActiveTime = " + this.ActiveTime );
+			DebugText.Instance.AppendLine( "AddActiveTime = " + this.addActiveTimeValue );
 			DebugText.Instance.AppendLine( this.ColorTagHP() + "HP " + this.InstanceData.hitPoint + "/" + this.InstanceData.maxHitPoint + "</color>" );
 			DebugText.Instance.Line();
 		}
@@ -106,7 +107,8 @@ namespace RPG.Battle
 
 			Debug.Assert( this.SelectCommandType != TypeConstants.CommandType.None, "コマンドが決定していません " + this.InstanceData.name );
 
-			this.ActiveTime += this.addActiveTimeValue;
+			var random = this.addActiveTimeValue * 0.1f;
+			this.ActiveTime += this.addActiveTimeValue + Random.Range( -random, random );
 		}
 
 		public void Rename( ref int classification )
@@ -159,10 +161,7 @@ namespace RPG.Battle
 
 		private void SetAddActiveTimeValue()
 		{
-			var fixedSpeed = this.InstanceData.speed * 2.0f;
-			var random = this.InstanceData.speed * 0.5f;
-			random = Random.Range( -random, random );
-			fixedSpeed += random;
+			var fixedSpeed = this.InstanceData.speed * 10.0f;
 			this.addActiveTimeValue = (1.0f + (fixedSpeed / 255.0f)) / 60.0f;
 		}
 
