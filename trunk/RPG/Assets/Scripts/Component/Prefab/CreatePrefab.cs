@@ -1,12 +1,3 @@
-/*===========================================================================*/
-/*
-*     * FileName    : CreatePrefab.cs
-*
-*     * Description : .
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,7 +30,7 @@ public class CreatePrefab : MyMonoBehaviour, I_Poolable
 	public int delay;
 
 	[SerializeField]
-	private CommonDefine.CreateType objectCreateType = CommonDefine.CreateType.Instantiate;
+	private TypeConstants.CreateType objectCreateType = TypeConstants.CreateType.Instantiate;
 
 	private int cachedDelay;
 
@@ -107,7 +98,7 @@ public class CreatePrefab : MyMonoBehaviour, I_Poolable
 	{
 		Transform obj = null;
 
-		if( this.objectCreateType == CommonDefine.CreateType.Pool )
+		if( this.objectCreateType == TypeConstants.CreateType.Pool )
 		{
 			obj = ObjectPool.Instance.GetGameObject( element.prefab ).transform;
 			if( element.parent != null )

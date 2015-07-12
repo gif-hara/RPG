@@ -97,7 +97,7 @@ public class SceneManager : A_Singleton<SceneManager>
 			yield return new WaitForEndOfFrame();
 		}
 
-		this.refParentObject.BroadcastMessage( CommonDefine.ChangeSceneMessage, sceneName, SendMessageOptions.DontRequireReceiver );
+		this.refParentObject.BroadcastMessage( TypeConstants.ChangeSceneMessage, sceneName, SendMessageOptions.DontRequireReceiver );
 		Application.LoadLevel( sceneName );
 
 		Destroy( obj );

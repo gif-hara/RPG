@@ -27,6 +27,7 @@ MonoBehaviour:
       speed: 10
       avoid: 0
       experience: 0
+      abnormalState: 0
   - characterData:
       id: 1
       name: "\u91D1\u592A\u90CE"
@@ -42,6 +43,7 @@ MonoBehaviour:
       speed: 0
       avoid: 0
       experience: 0
+      abnormalState: 0
   - characterData:
       id: 2
       name: "\u6D66\u5CF6"
@@ -57,6 +59,7 @@ MonoBehaviour:
       speed: 0
       avoid: 0
       experience: 0
+      abnormalState: 0
   - characterData:
       id: 3
       name: "\u591C\u53C9\u59EB"
@@ -72,3 +75,4 @@ MonoBehaviour:
       speed: 0
       avoid: 0
       experience: 0
+      abnormalState: 0

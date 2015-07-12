@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : MessageMethodReceiverAttribute.cs
-*
-*     * Description : メッセージ受信関数であることを示す属性.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using RPG.Common;

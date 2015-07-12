@@ -26,11 +26,11 @@ public class LockRotation : MonoBehaviour
 	private bool applyZ = true;
 
 	[SerializeField]
-	private CommonDefine.UpdateType updateType = CommonDefine.UpdateType.LateUpdate;
+	private TypeConstants.UpdateType updateType = TypeConstants.UpdateType.LateUpdate;
 
 	void Update()
 	{
-		if( updateType != CommonDefine.UpdateType.Update )
+		if( updateType != TypeConstants.UpdateType.Update )
 		{
 			return;
 		}
@@ -39,7 +39,7 @@ public class LockRotation : MonoBehaviour
 	}
 	void LateUpdate()
 	{
-		if( updateType != CommonDefine.UpdateType.LateUpdate )
+		if( updateType != TypeConstants.UpdateType.LateUpdate )
 		{
 			return;
 		}

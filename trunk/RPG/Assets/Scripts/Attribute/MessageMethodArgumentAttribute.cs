@@ -1,13 +1,4 @@
-﻿/*===========================================================================*/
-/*
-*     * FileName    : MessageMethodArgument.cs
-*
-*     * Description : メッセージ関数の引数の型を示す属性.
-*
-*     * Author      : Hiroki_Kitahara.
-*/
-/*===========================================================================*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 

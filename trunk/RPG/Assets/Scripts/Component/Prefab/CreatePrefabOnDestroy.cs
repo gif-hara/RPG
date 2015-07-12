@@ -30,7 +30,7 @@ public class CreatePrefabOnDestroy : MyMonoBehaviour
 	private bool isApplicationQuit = false;
 
 	[SerializeField]
-	private CommonDefine.CreateType createType = CommonDefine.CreateType.Instantiate;
+	private TypeConstants.CreateType createType = TypeConstants.CreateType.Instantiate;
 	
 	void OnApplicationQuit()
 	{
@@ -41,7 +41,7 @@ public class CreatePrefabOnDestroy : MyMonoBehaviour
 	{
 		if( !isApplicationQuit )
 		{
-			if( this.createType == CommonDefine.CreateType.Instantiate )
+			if( this.createType == TypeConstants.CreateType.Instantiate )
 			{
 				Instantiate( prefab, refTarget.position, prefab.transform.rotation );
 			}

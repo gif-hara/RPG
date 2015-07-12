@@ -79,6 +79,12 @@ namespace RPG.Database
 		/// </summary>
 		public int experience;
 
+		/// <summary>
+		/// 状態異常.
+		/// </summary>
+		[EnumFlagsAttribute]
+		public Common.TypeConstants.AbnormalStateType abnormalState = Common.TypeConstants.AbnormalStateType.Paralysis;
+
 		public CharacterData( int _id )
 		{
 			id = _id;

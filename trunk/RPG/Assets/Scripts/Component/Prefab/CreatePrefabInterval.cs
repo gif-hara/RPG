@@ -57,7 +57,7 @@ public class CreatePrefabInterval : MyMonoBehaviour, I_Poolable
 	public int createNum;
 
 	[SerializeField]
-	private CommonDefine.CreateType createType = CommonDefine.CreateType.Instantiate;
+	private TypeConstants.CreateType createType = TypeConstants.CreateType.Instantiate;
 	
 	private int currentInterval = 0;
 
@@ -72,7 +72,7 @@ public class CreatePrefabInterval : MyMonoBehaviour, I_Poolable
 
 			Transform obj = null;
 
-			if( this.createType == CommonDefine.CreateType.Instantiate )
+			if( this.createType == TypeConstants.CreateType.Instantiate )
 			{
 				obj = Instantiate( prefabList[Random.Range( 0, prefabList.Count)], transform ).transform;
 			}

@@ -24,7 +24,7 @@ namespace MyProject
 		private Transform refTo;
 
 		[SerializeField]
-		private CommonDefine.WorldSpaceType worldSpaceType = CommonDefine.WorldSpaceType.Local;
+		private TypeConstants.WorldSpaceType worldSpaceType = TypeConstants.WorldSpaceType.Local;
 
 		[SerializeField]
 		private float duration;
@@ -38,7 +38,7 @@ namespace MyProject
 		
 		void Update ()
 		{
-			if( this.worldSpaceType == CommonDefine.WorldSpaceType.Local )
+			if( this.worldSpaceType == TypeConstants.WorldSpaceType.Local )
 			{
 				this.cachedTrans.localPosition = Vector3.Lerp( refFrom.localPosition, refTo.localPosition, this.duration );
 			}

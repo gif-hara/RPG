@@ -30,7 +30,7 @@ public class MeshUVOffsetTile : MyMonoBehaviour, I_Poolable
 	public int initialOffset = 0;
 
 	[SerializeField]
-	private CommonDefine.CreateType createType = CommonDefine.CreateType.Instantiate;
+	private TypeConstants.CreateType createType = TypeConstants.CreateType.Instantiate;
 	
 	private Mesh mesh;
 	
@@ -58,7 +58,7 @@ public class MeshUVOffsetTile : MyMonoBehaviour, I_Poolable
 			this.offset++;
 			if( !loop && offset >= (tileX * tileY) )
 			{
-				if( createType == CommonDefine.CreateType.Instantiate )
+				if( createType == TypeConstants.CreateType.Instantiate )
 				{
 					Destroy( refDestroyObject );
 				}

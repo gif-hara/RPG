@@ -17,7 +17,7 @@ namespace RPG.Common
 		}
 
 		[Attribute.MessageMethodReceiver( Battle.MessageConstants.OpenCommandWindowMessage )]
-		void OnOpenCommandWindow(TypeConstants.CommandSelectType type)
+		void OnOpenCommandWindow(Battle.TypeConstants.CommandSelectType type)
 		{
 			Set( 0 );
 		}
