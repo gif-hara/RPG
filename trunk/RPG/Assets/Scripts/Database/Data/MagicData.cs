@@ -10,15 +10,15 @@ namespace RPG.Database
 	public class MagicData : I_AbilityData
 	{
 		/// <summary>
-		/// ID.
-		/// </summary>
-		public int id;
-
-		/// <summary>
 		/// 名前.
 		/// </summary>
 		public string name;
 
+		/// <summary>
+		/// ID.
+		/// </summary>
+		public int id;
+		
 		/// <summary>
 		/// 説明.
 		/// </summary>

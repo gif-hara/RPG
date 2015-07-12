@@ -35,6 +35,12 @@ namespace RPG.Battle
 				case TypeConstants.InformationParameterType.AbilityShout:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.AbilityData.Shout );
 					break;
+				case TypeConstants.InformationParameterType.ImpactStrength:
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.Impact.Strength );
+					break;
+				case TypeConstants.InformationParameterType.ImpactDefence:
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.Impact.Defence );
+					break;
 				}
 			}
 			return result.ToArray();

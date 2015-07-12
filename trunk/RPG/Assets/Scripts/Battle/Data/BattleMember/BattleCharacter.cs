@@ -37,6 +37,8 @@ namespace RPG.Battle
 			DebugText.Instance.AppendLine( this.InstanceData.name );
 			DebugText.Instance.AppendLine( "ActiveTime = " + this.ActiveTime );
 			DebugText.Instance.AppendLine( "AddActiveTime = " + this.addActiveTimeValue );
+			DebugText.Instance.AppendLine( "Strength = " + this.InstanceData.strength );
+			DebugText.Instance.AppendLine( "Defence = " + this.InstanceData.defence );
 			DebugText.Instance.AppendLine( this.ColorTagHP() + "HP " + this.InstanceData.hitPoint + "/" + this.InstanceData.maxHitPoint + "</color>" );
 			DebugText.Instance.Line();
 		}
@@ -92,6 +94,33 @@ namespace RPG.Battle
 		{
 			this.InstanceData.hitPoint += value;
 			this.InstanceData.hitPoint = this.InstanceData.hitPoint > this.InstanceData.maxHitPoint ? this.InstanceData.maxHitPoint : this.InstanceData.hitPoint;
+		}
+
+		/// <summary>
+		/// 割合で攻撃力を加算する.
+		/// </summary>
+		/// <param name="percentage">Percentage.</param>
+		public int AddStrengthPercentage( int percentage )
+		{
+			var value = Mathf.FloorToInt( this.MasterData.strength * (percentage / 100.0f) );
+			value = value <= 0 ? 1 : value;
+			this.InstanceData.strength += value;
+
+			return value;
+		}
+
+		/// <summary>
+		/// 割合で防御力を加算する.
+		/// </summary>
+		/// <returns>The defence percentage.</returns>
+		/// <param name="percentage">Percentage.</param>
+		public int AddDefencePercentage( int percentage )
+		{
+			var value = Mathf.FloorToInt( this.MasterData.defence * (percentage / 100.0f) );
+			value = value <= 0 ? 1 : value;
+			this.InstanceData.defence += value;
+			
+			return value;
 		}
 		
 		/// <summary>

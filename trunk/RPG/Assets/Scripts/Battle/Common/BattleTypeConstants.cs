@@ -90,6 +90,12 @@ namespace RPG.Battle
 
 			/// <summary> 特殊能力の掛け声. </summary>
 			AbilityShout,
+
+			/// <summary> 加減された攻撃力. </summary>
+			ImpactStrength,
+
+			/// <summary> 加減された守備力. </summary>
+			ImpactDefence,
 		}
 
 		public enum PartyType : int

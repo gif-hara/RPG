@@ -13,7 +13,6 @@ namespace RPG.Battle
 		{
 			var selectCommandData = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData;
 			var instance = Instantiate( selectCommandData.AbilityData.PrefabSetTarget );
-			SendMessage( gameObject, MessageConstants.InstantiateCustomizeMessage, instance );
 			hook.Executer.InsertEventHolder( instance );
 		}
 	}

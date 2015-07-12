@@ -17,13 +17,13 @@ MonoBehaviour:
       name: "\u6843\u592A\u90CE"
       level: 1
       abilityType: 7
-      abilityList: 1027000011270000234e000074270000e84e0000132700001427000015270000
+      abilityList: 1027000040510000234e000074270000e84e00001327000014270000152700003c2800003d280000
       maxHitPoint: 30
       hitPoint: 30
       maxMagicPoint: 0
       magicPoint: 0
-      strength: 1
-      defence: 0
+      strength: 512
+      defence: 100
       speed: 10
       avoid: 0
       experience: 0

@@ -110,12 +110,6 @@ namespace RPG.Battle
 		public const string NewLineInformationTextMessage = "OnNewLineInformationText";
 
 		/// <summary>
-		/// 生成したゲームオブジェクトをカスタマイズするメッセージ.
-		/// </summary>
-		[Attribute.MessageMethodArgument( typeof( GameObject ) )]
-		public const string InstantiateCustomizeMessage = "OnInstantiateCustomize";
-
-		/// <summary>
 		/// コマンド実行系にフックするクラス.
 		/// </summary>
 		public class ExecuteCommandHook

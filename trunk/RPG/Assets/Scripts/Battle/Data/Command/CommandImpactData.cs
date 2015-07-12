@@ -14,11 +14,13 @@ namespace RPG.Battle
 
 		public bool IsCritical{ set; get; }
 
+		public int Strength{ set; get; }
+
+		public int Defence{ set; get; }
+
 		public CommandImpactData( BattleCharacter target )
 		{
 			this.Target = target;
-			this.Damage = 0;
-			this.IsCritical = false;
 		}
 	}
 }

@@ -135,8 +135,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDebug: 1
   debugInitializeData:
-    playerDataList: 00000000
-    enemyIdList: 00000000000000000000000000000000
+    playerDataList: 00000000010000000200000003000000
+    enemyIdList: 00000000
 --- !u!114 &78480610
 MonoBehaviour:
   m_ObjectHideFlags: 0
