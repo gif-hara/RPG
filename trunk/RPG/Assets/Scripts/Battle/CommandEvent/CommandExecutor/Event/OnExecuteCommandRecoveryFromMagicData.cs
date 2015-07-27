@@ -16,7 +16,7 @@ namespace RPG.Battle
 			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var selectCommandData = executer.SelectCommandData;
 			var target = selectCommandData.Impact.Target;
-			selectCommandData.Impact.Damage = CalcurateDamage.Range( data.PowerMin, data.PowerMax );
+			selectCommandData.Impact.Damage = CalcurateDamage.Range( data.PowerMinToInt, data.PowerMaxToInt );
 			selectCommandData.Impact.IsCritical = Random.Range( 0, 100 ) < 1;	Development.TODO( "会心の術の実装." );
 			target.Recovery( selectCommandData.Impact.Damage );
 		}

@@ -14,13 +14,15 @@ namespace RPG.Database
 		[SerializeField]
 		private GameObject prefabEventHolder;
 
-		public int PowerMin{ get{ return this.powerMin; } }
+		public int PowerMinToInt{ get{ return Mathf.FloorToInt( this.powerMin ); } }
+		public float PowerMin{ get{ return this.powerMin; } }
 		[SerializeField]
-		private int powerMin;
+		private float powerMin;
 
-		public int PowerMax{ get{ return this.powerMax; } }
+		public int PowerMaxToInt{ get{ return Mathf.FloorToInt( this.powerMax ); } }
+		public float PowerMax{ get{ return this.powerMax; } }
 		[SerializeField]
-		private int powerMax;
+		private float powerMax;
 
 		public int Probability{ get{ return this.probability; } }
 		[SerializeField]

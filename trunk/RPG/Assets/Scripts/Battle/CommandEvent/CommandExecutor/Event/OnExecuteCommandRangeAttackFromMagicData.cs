@@ -15,7 +15,7 @@ namespace RPG.Battle
 		{
 			var executer = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter;
 			var selectCommandData = executer.SelectCommandData;
-			selectCommandData.Impact.Damage = CalcurateDamage.Range( this.data.PowerMin, this.data.PowerMax );
+			selectCommandData.Impact.Damage = CalcurateDamage.Range( this.data.PowerMinToInt, this.data.PowerMaxToInt );
 			selectCommandData.Impact.Target.TakeDamage( selectCommandData.Impact.Damage );
 		}
 

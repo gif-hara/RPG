@@ -100,7 +100,7 @@ namespace RPG.Battle
 		/// 割合で攻撃力を加算する.
 		/// </summary>
 		/// <param name="percentage">Percentage.</param>
-		public int AddStrengthPercentage( int percentage )
+		public int AddStrengthPercentage( float percentage )
 		{
 			var value = Mathf.FloorToInt( this.MasterData.strength * (percentage / 100.0f) );
 			value = value <= 0 ? 1 : value;
@@ -114,7 +114,7 @@ namespace RPG.Battle
 		/// </summary>
 		/// <returns>The defence percentage.</returns>
 		/// <param name="percentage">Percentage.</param>
-		public int AddDefencePercentage( int percentage )
+		public int AddDefencePercentage( float percentage )
 		{
 			var value = Mathf.FloorToInt( this.MasterData.defence * (percentage / 100.0f) );
 			value = value <= 0 ? 1 : value;
