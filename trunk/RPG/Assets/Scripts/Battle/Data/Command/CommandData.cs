@@ -113,11 +113,11 @@ namespace RPG.Battle
 		/// 実行する特殊能力データ.
 		/// </summary>
 		/// <value>The ability data.</value>
-		public Database.I_AbilityData AbilityData
+		public Database.AbilityData AbilityData
 		{
 			get
 			{
-				return Database.MasterData.Instance.GetAbilityData( this.Type, this.AbilityId );
+				return Database.MasterData.Instance.GetAbilityData( this.AbilityId );
 			}
 		}
 

@@ -25,23 +25,13 @@ namespace RPG.Database
 		{
 			this.Ally = AllyMasterData.Instance;
 			this.Enemy = EnemyMasterData.Instance;
-			this.Magic = MagicMasterData.Instance;
+			this.Ability = AbilityMasterData.Instance;
 		}
 
-		public I_AbilityData GetAbilityData( Battle.TypeConstants.CommandType type, int id )
+		public AbilityData GetAbilityData( int id )
 		{
-			I_AbilityData result = null;
-			switch( type )
-			{
-			case RPG.Battle.TypeConstants.CommandType.Magic:
-				result = this.Magic.ElementList.Find( m => m.ID == id );
-				break;
-			default:
-				Debug.Assert( false, type + "は未対応の特殊能力タイプです." );
-				return null;
-			}
-
-			Debug.Assert( result != null, type + "の id = " + id + "が存在しません. idが間違っていないかなど確認してください." );
+			AbilityData result = this.Ability.ElementList.Find( m => m.ID == id );
+			Debug.Assert( result != null, "id = " + id + "が存在しません. idが間違っていないかなど確認してください." );
 
 			return result;
 		}
@@ -50,6 +40,6 @@ namespace RPG.Database
 
 		public EnemyMasterData Enemy{ private set; get; }
 
-		public MagicMasterData Magic{ private set; get; }
+		public AbilityMasterData Ability{ private set; get; }
 	}
 }

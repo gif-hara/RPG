@@ -20,7 +20,7 @@ namespace RPG.Battle
 		private TypeConstants.PartyType GetPartyType( int id )
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
-			var targetType = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] ).TargetType;
+			var targetType = Database.MasterData.Instance.GetAbilityData( instanceData.abilityList[id] ).TargetType;
 
 			return targetType == TypeConstants.TargetType.Partner
 				? TypeConstants.PartyType.Ally

@@ -15,7 +15,7 @@ namespace RPG.Battle
 		void OnDecideCommand( int id )
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
-			refAllyCommandSelector.CommandData.SetAbilityId( Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] ).ID );
+			refAllyCommandSelector.CommandData.SetAbilityId( Database.MasterData.Instance.GetAbilityData( instanceData.abilityList[id] ).ID );
 		}
 	}
 }

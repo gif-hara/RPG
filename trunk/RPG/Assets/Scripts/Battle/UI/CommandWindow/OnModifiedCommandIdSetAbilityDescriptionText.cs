@@ -27,7 +27,7 @@ namespace RPG.Battle
 		private void Set( int index )
 		{
 			var allyInstanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
-			refText.text = Database.MasterData.Instance.GetAbilityData( allyInstanceData.abilityType, allyInstanceData.abilityList[index] ).Description;
+			refText.text = Database.MasterData.Instance.GetAbilityData( allyInstanceData.abilityList[index] ).Description;
 		}
 	}
 }

@@ -27,7 +27,7 @@ namespace RPG.Battle
 			var builder = new StringBuilder();
 			for( int i=initializeId, imax=abilityList.Count; i<imax; i+=2 )
 			{
-				builder.AppendLine( Database.MasterData.Instance.GetAbilityData( allyInstanceData.abilityType, abilityList[i] ).NeedNumber.ToString() );
+				builder.AppendLine( Database.MasterData.Instance.GetAbilityData( abilityList[i] ).NeedNumber.ToString() );
 			}
 
 			refText.text = builder.ToString();

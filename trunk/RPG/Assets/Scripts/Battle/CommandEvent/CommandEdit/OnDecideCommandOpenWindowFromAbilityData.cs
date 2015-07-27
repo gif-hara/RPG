@@ -12,7 +12,7 @@ namespace RPG.Battle
 		void OnDecideCommand( int id )
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
-			var ability = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] );
+			var ability = Database.MasterData.Instance.GetAbilityData( instanceData.abilityList[id] );
 			if( ability.PrefabSetTarget.GetComponent<SubstantiationTargetParty>() != null )
 			{
 				return;
@@ -24,7 +24,7 @@ namespace RPG.Battle
 		private TypeConstants.CommandSelectType GetCommandSelectType( int id )
 		{
 			var instanceData = BattleAllyPartyManager.Instance.Party.NoneCommandBattleMember.InstanceData;
-			var targetType = Database.MasterData.Instance.GetAbilityData( instanceData.abilityType, instanceData.abilityList[id] ).TargetType;
+			var targetType = Database.MasterData.Instance.GetAbilityData( instanceData.abilityList[id] ).TargetType;
 			
 			return targetType == TypeConstants.TargetType.Partner
 				? TypeConstants.CommandSelectType.Ally

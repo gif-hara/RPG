@@ -6,13 +6,13 @@ using RPG.Common;
 namespace RPG.Database
 {
 	/// <summary>
-	/// 術マスターデータ.
+	/// アビリティマスターデータ.
 	/// </summary>
-	public class MagicMasterData : ScriptableObject
+	public class AbilityMasterData : ScriptableObject
 	{
-		public List<MagicData> ElementList{ get{ return this.elementList; } }
+		public List<AbilityData> ElementList{ get{ return this.elementList; } }
 		[SerializeField]
-		private List<MagicData> elementList;
+		private List<AbilityData> elementList;
 
 		[ContextMenu("Sort")]
 		private void Sort()
@@ -23,11 +23,11 @@ namespace RPG.Database
 			});
 		}
 
-		public static MagicMasterData Instance
+		public static AbilityMasterData Instance
 		{
 			get
 			{
-				return Resources.Load<MagicMasterData>( "Database/Master/Ability/Magic" );
+				return Resources.Load<AbilityMasterData>( "Database/Master/Ability/Ability" );
 			}
 		}
 	}
