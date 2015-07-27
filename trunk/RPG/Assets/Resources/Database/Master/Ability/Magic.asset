@@ -19,10 +19,14 @@ MonoBehaviour:
     needSpirit: 3
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
-    minPower: 40
-    maxPower: 40
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a, type: 2}
+    commandEventDatabase:
+    - prefabEventHolder: {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a,
+        type: 2}
+      powerMin: 40
+      powerMax: 40
+      probability: 0
+      continuationTurnMin: 0
+      continuationTurnMax: 0
   - name: "\u305B\u3093\u304D\u3093\u305F\u3093"
     id: 10001
     description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092\u304B\u306A\u308A\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
@@ -30,10 +34,7 @@ MonoBehaviour:
     needSpirit: 7
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
-    minPower: 100
-    maxPower: 100
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a, type: 2}
+    commandEventDatabase: []
   - name: "\u307E\u3093\u304D\u3093\u305F\u3093"
     id: 10002
     description: "\u5473\u65B91\u4EBA\u306E\u4F53\u529B\u3092\u5168\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
@@ -41,10 +42,7 @@ MonoBehaviour:
     needSpirit: 15
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
-    minPower: 9999
-    maxPower: 9999
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a, type: 2}
+    commandEventDatabase: []
   - name: "\u307F\u306A\u304D\u3093\u305F\u3093"
     id: 10003
     description: "\u5473\u65B9\u5168\u3066\u306E\u4F53\u529B\u3092\u5C11\u3057\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
@@ -52,10 +50,7 @@ MonoBehaviour:
     needSpirit: 20
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
-    minPower: 40
-    maxPower: 40
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a, type: 2}
+    commandEventDatabase: []
   - name: "\u307F\u306A\u305B\u3093\u305F\u3093"
     id: 10004
     description: "\u5473\u65B9\u5168\u3066\u306E\u4F53\u529B\u3092\u304B\u306A\u308A\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
@@ -63,10 +58,7 @@ MonoBehaviour:
     needSpirit: 40
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
-    minPower: 100
-    maxPower: 100
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a, type: 2}
+    commandEventDatabase: []
   - name: "\u307F\u306A\u307E\u3093\u305F\u3093"
     id: 10005
     description: "\u5473\u65B9\u5168\u3066\u306E\u4F53\u529B\u3092\u5168\u56DE\u5FA9\u51FA\u6765\u307E\u3059\uFF01"
@@ -74,10 +66,7 @@ MonoBehaviour:
     needSpirit: 56
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
-    minPower: 9999
-    maxPower: 9999
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: 867375797c31f42058f6856e9a86015a, type: 2}
+    commandEventDatabase: []
   - name: "\u7A32\u59BB"
     id: 10100
     description: "\u5CA9\u3092\u58CA\u3057\u305F\u308A\u3001\u9B3C\u306E1\u30B0\u30EB\u30FC\u30D7\u306B\u6253\u6483\u3092\u4E0E\u3048\u307E\u3059\uFF01"
@@ -85,10 +74,7 @@ MonoBehaviour:
     needSpirit: 4
     targetType: 1
     prefabSetTarget: {fileID: 147010, guid: 2cde13fc47fcd4d33948889288d0d764, type: 2}
-    minPower: 20
-    maxPower: 30
-    prefabCommandEventHolders:
-    - {fileID: 110632, guid: 8d79e29c19c234dc3921a0481efabfe2, type: 2}
+    commandEventDatabase: []
   - name: "\u307E\u3082\u308A"
     id: 10300
     description: "\u5473\u65B91\u4EBA\u306E\u5B88\u5099\u529B\u304C\u4E0A\u304C\u308A\u307E\u3059\uFF01\n\u6226\u95D8\u4E2D\u4F55\u5EA6\u3067\u3082\u4F7F\u3048\u307E\u3059\uFF01"
@@ -96,10 +82,7 @@ MonoBehaviour:
     needSpirit: 4
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
-    minPower: 18
-    maxPower: 22
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: bf99318bb57c1402793d6040775062f9, type: 2}
+    commandEventDatabase: []
   - name: "\u307F\u306A\u307E\u3082\u308A"
     id: 10301
     description: "\u5473\u65B9\u5168\u3066\u306E\u5B88\u5099\u529B\u304C\u4E0A\u304C\u308A\u307E\u3059\uFF01\n\u6226\u95D8\u4E2D\u4F55\u5EA6\u3067\u3082\u4F7F\u3048\u307E\u3059\uFF01"
@@ -107,10 +90,7 @@ MonoBehaviour:
     needSpirit: 9
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
-    minPower: 18
-    maxPower: 22
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: bf99318bb57c1402793d6040775062f9, type: 2}
+    commandEventDatabase: []
   - name: "\u96F7\u9706"
     id: 20003
     description: "\u9B3C1\u5339\u306B\u8D85\u5927\u6253\u6483\u3092\u4E0E\u3048\u307E\u3059\uFF01"
@@ -118,10 +98,7 @@ MonoBehaviour:
     needSpirit: 25
     targetType: 1
     prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
-    minPower: 270
-    maxPower: 300
-    prefabCommandEventHolders:
-    - {fileID: 110632, guid: 8d79e29c19c234dc3921a0481efabfe2, type: 2}
+    commandEventDatabase: []
   - name: "\u5C0F\u6CE2"
     id: 20200
     description: "\u5168\u3066\u306E\u9B3C\u306B\u5C11\u3057\u6253\u6483\u3092\u4E0E\u3048\u307E\u3059\uFF01"
@@ -129,10 +106,7 @@ MonoBehaviour:
     needSpirit: 3
     targetType: 1
     prefabSetTarget: {fileID: 147010, guid: 4c2a6cad7e2c04cc1ae81d238b35d196, type: 2}
-    minPower: 20
-    maxPower: 30
-    prefabCommandEventHolders:
-    - {fileID: 110632, guid: 8d79e29c19c234dc3921a0481efabfe2, type: 2}
+    commandEventDatabase: []
   - name: "\u3070\u3044\u308A\u304D"
     id: 20800
     description: "\u5473\u65B91\u4EBA\u306E\u653B\u6483\u529B\u304C\u4E0A\u304C\u308A\u307E\u3059\uFF01\n\u6226\u95D8\u4E2D\u4F55\u5EA6\u3067\u3082\u4F7F\u3048\u307E\u3059\uFF01"
@@ -140,7 +114,4 @@ MonoBehaviour:
     needSpirit: 6
     targetType: 0
     prefabSetTarget: {fileID: 147010, guid: febe9907c62294198a2adc6ee39358f3, type: 2}
-    minPower: 18
-    maxPower: 22
-    prefabCommandEventHolders:
-    - {fileID: 147010, guid: 296892c5708874c4da07f13cc66d087c, type: 2}
+    commandEventDatabase: []

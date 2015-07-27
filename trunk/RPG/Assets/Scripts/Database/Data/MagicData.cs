@@ -46,19 +46,9 @@ namespace RPG.Database
 		public GameObject prefabSetTarget;
 
 		/// <summary>
-		/// 最小効果値.
-		/// </summary>
-		public int minPower;
-
-		/// <summary>
-		/// 最大効果値.
-		/// </summary>
-		public int maxPower;
-
-		/// <summary>
 		/// コマンドイベントを保持しているプレハブ.
 		/// </summary>
-		public List<GameObject> prefabCommandEventHolders;
+		public List<CommandEventData> commandEventDatabase;
 
 		public int ID{ get{ return this.id; } }
 
@@ -74,6 +64,6 @@ namespace RPG.Database
 
 		public GameObject PrefabSetTarget{ get{ return this.prefabSetTarget; } }
 
-		public List<GameObject> PrefabCommandEventHolders{ get{ return this.prefabCommandEventHolders; } }
+		public List<CommandEventData> CommandEventDatabase{ get{ return this.commandEventDatabase; } }
 	}
 }

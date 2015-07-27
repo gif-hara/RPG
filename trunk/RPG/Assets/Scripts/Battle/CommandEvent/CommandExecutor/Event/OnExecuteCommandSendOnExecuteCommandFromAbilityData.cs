@@ -13,14 +13,19 @@ namespace RPG.Battle
 		public void OnExecuteCommand (Battle.MessageConstants.ExecuteCommandHook hook)
 		{
 			var abilityData = AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.AbilityData;
-			abilityData.PrefabCommandEventHolders.ForEach( p =>
+			abilityData.CommandEventDatabase.ForEach( p =>
 			{
-				var components = p.GetComponents( typeof( I_OnExecuteCommandHookable ) );
+				var components = p.PrefabEventHolder.GetComponents( typeof( I_SetCommandEventParameter ) );
+				for( int i=0, imax=components.Length; i<imax; i++ )
+				{
+					(components[i] as I_SetCommandEventParameter).SetCommandEventParameter( p );
+				}
+
+				components = p.PrefabEventHolder.GetComponents( typeof( I_OnExecuteCommandHookable ) );
 				for( int i=0, imax=components.Length; i<imax; i++ )
 				{
 					(components[i] as I_OnExecuteCommandHookable).OnExecuteCommand( hook );
 				}
-
 			});
 		}
 	}

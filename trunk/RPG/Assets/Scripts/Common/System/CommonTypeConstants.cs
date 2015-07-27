@@ -26,11 +26,11 @@ namespace RPG.Common
 			Local,
 		}
 
-		[System.Flags]
 		public enum AbnormalStateType
 		{
 			Paralysis = 1 << 0,
 			Poison    = 1 << 1,
+			Sleep     = 1 << 2,
 		}
 
 		public const string ChangeSceneMessage = "OnChangeScene";
