@@ -39,6 +39,7 @@ namespace RPG.Battle
 			DebugText.Instance.AppendLine( "AddActiveTime = " + this.addActiveTimeValue );
 			DebugText.Instance.AppendLine( "Strength = " + this.InstanceData.strength );
 			DebugText.Instance.AppendLine( "Defence = " + this.InstanceData.defence );
+			DebugText.Instance.AppendLine( "Speed = " + this.InstanceData.speed );
 			DebugText.Instance.AppendLine( this.ColorTagHP() + "HP " + this.InstanceData.hitPoint + "/" + this.InstanceData.maxHitPoint + "</color>" );
 			DebugText.Instance.Line();
 		}
@@ -119,6 +120,20 @@ namespace RPG.Battle
 			var value = Mathf.FloorToInt( this.MasterData.defence * (percentage / 100.0f) );
 			value = value <= 0 ? 1 : value;
 			this.InstanceData.defence += value;
+			
+			return value;
+		}
+
+		/// <summary>
+		/// 割合で素早さを加算する.
+		/// </summary>
+		/// <returns>The speed percentage.</returns>
+		/// <param name="percentage">Percentage.</param>
+		public int AddSpeedPercentage( float percentage )
+		{
+			var value = Mathf.FloorToInt( this.MasterData.speed * (percentage / 100.0f) );
+			value = value <= 0 ? 1 : value;
+			this.InstanceData.speed += value;
 			
 			return value;
 		}

@@ -96,6 +96,9 @@ namespace RPG.Battle
 
 			/// <summary> 加減された守備力. </summary>
 			ImpactDefence,
+
+			/// <summary> 加減された素早さ. </summary>
+			ImpactSpeed,
 		}
 
 		public enum PartyType : int

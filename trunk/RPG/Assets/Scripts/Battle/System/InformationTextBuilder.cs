@@ -41,6 +41,9 @@ namespace RPG.Battle
 				case TypeConstants.InformationParameterType.ImpactDefence:
 					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.Impact.Defence );
 					break;
+				case TypeConstants.InformationParameterType.ImpactSpeed:
+					result.Add( AllPartyManager.Instance.ActiveTimeMaxBattleCharacter.SelectCommandData.Impact.Speed );
+					break;
 				}
 			}
 			return result.ToArray();

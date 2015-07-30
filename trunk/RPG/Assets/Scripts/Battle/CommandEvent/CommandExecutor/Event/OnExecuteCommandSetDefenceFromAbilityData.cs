@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace RPG.Battle
 {
 	/// <summary>
-	/// コマンド実行イベント時に術データから防御力の加減を行うコンポーネント.
+	/// コマンド実行イベント時にアビリティデータから防御力の加減を行うコンポーネント.
 	/// </summary>
-	public class OnExecuteCommandSetDefenceFromMagicData : MyMonoBehaviour, I_OnExecuteCommandHookable, I_SetCommandEventParameter
+	public class OnExecuteCommandSetDefenceFromAbilityData : MyMonoBehaviour, I_OnExecuteCommandHookable, I_SetCommandEventParameter
 	{
 		private Database.CommandEventData data;
 

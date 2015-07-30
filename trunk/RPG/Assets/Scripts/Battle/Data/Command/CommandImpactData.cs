@@ -18,6 +18,8 @@ namespace RPG.Battle
 
 		public int Defence{ set; get; }
 
+		public int Speed{ set; get; }
+
 		public CommandImpactData( BattleCharacter target )
 		{
 			this.Target = target;
