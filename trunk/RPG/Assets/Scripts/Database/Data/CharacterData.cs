@@ -10,14 +10,14 @@ namespace RPG.Database
 	public class CharacterData
 	{
 		/// <summary>
-		/// ID.
-		/// </summary>
-		public int id;
-		
-		/// <summary>
 		/// 名前.
 		/// </summary>
 		public string name;
+		
+		/// <summary>
+		/// ID.
+		/// </summary>
+		public int id;
 		
 		/// <summary>
 		/// 段.

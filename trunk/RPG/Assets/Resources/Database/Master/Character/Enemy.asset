@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementList:
   - characterData:
-      id: 0
       name: "\u8D64\u9B3C"
+      id: 0
       level: 0
       abilityType: 6
       abilityList: 
-      maxHitPoint: 1
-      hitPoint: 1
+      maxHitPoint: 400
+      hitPoint: 400
       maxMagicPoint: 0
       magicPoint: 0
       strength: 1
@@ -27,12 +27,13 @@ MonoBehaviour:
       speed: 10
       avoid: 0
       experience: 0
+      abnormalState: 0
     experience: 2
     gold: 3
     prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}
   - characterData:
-      id: 1
       name: "\u9752\u9B3C"
+      id: 1
       level: 0
       abilityType: 6
       abilityList: 
@@ -45,6 +46,7 @@ MonoBehaviour:
       speed: 0
       avoid: 0
       experience: 0
+      abnormalState: 0
     experience: 9
     gold: 12
     prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}

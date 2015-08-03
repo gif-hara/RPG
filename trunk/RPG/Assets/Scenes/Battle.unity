@@ -136,7 +136,7 @@ MonoBehaviour:
   isDebug: 1
   debugInitializeData:
     playerDataList: 00000000
-    enemyIdList: 00000000
+    enemyIdList: 000000000000000000000000
 --- !u!114 &78480610
 MonoBehaviour:
   m_ObjectHideFlags: 0
