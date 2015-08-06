@@ -15,19 +15,20 @@ namespace RPG.Battle
 
 		private int gold;
 
-		private A_EnemyAI AI;
+		private Database.EnemyAISelector AISelector;
 
-		public Enemy( CharacterData data, int experience, int gold, A_EnemyAI AI )
+		public Enemy( CharacterData data, int experience, int gold, Database.EnemyAISelector AISelector )
 			:base( data )
 		{
 			this.experience = experience;
 			this.gold = gold;
-			this.AI = AI;
+			this.AISelector = AISelector;
+			this.AISelector.Initialize();
 		}
 
 		public void ThinkCommand()
 		{
-			this.AI.Think( this );
+			this.AISelector.Get.Think( this );
 		}
 
 		protected override void Dead ()

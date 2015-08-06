@@ -30,7 +30,10 @@ MonoBehaviour:
       abnormalState: 0
     experience: 2
     gold: 3
-    prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}
+    AISelector:
+      database:
+      - prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}
+        weight: 1
   - characterData:
       name: "\u9752\u9B3C"
       id: 1
@@ -49,4 +52,29 @@ MonoBehaviour:
       abnormalState: 0
     experience: 9
     gold: 12
-    prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}
+    AISelector:
+      database:
+      - prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}
+        weight: 1
+  - characterData:
+      name: "\u96F7\u9B3C"
+      id: 1
+      level: 0
+      abilityType: 6
+      abilityList: 
+      maxHitPoint: 12
+      hitPoint: 12
+      maxMagicPoint: 0
+      magicPoint: 0
+      strength: 2
+      defence: 0
+      speed: 0
+      avoid: 0
+      experience: 0
+      abnormalState: 0
+    experience: 9
+    gold: 12
+    AISelector:
+      database:
+      - prefabAI: {fileID: 11421518, guid: 19f0d6a685dd9437983e38f942f22302, type: 2}
+        weight: 1

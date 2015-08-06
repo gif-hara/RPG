@@ -35,7 +35,7 @@ namespace RPG.Battle
 			for( int i=0,imax=initializeData.Count; i<imax; i++ )
 			{
 				var data = Database.MasterData.Instance.Enemy.ElementList[initializeData[i]];
-				this.Party.Add( new Enemy( data.characterData, data.experience, data.gold, data.prefabAI ) );
+				this.Party.Add( new Enemy( data.characterData, data.experience, data.gold, data.AISelector ) );
 			}
 
 			this.Party.Rename();

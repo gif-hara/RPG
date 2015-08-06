@@ -19,7 +19,7 @@ namespace RPG.Database
 
 			public int gold;
 
-			public Battle.A_EnemyAI prefabAI;
+			public EnemyAISelector AISelector;
 		}
 
 		public List<Element> ElementList{ get{ return this.elementList; } }
